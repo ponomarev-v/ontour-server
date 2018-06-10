@@ -10,6 +10,7 @@
         <?php
         $x = random_int(-100, 100);
         $y = random_int(-100, 100);
+
         ?>
         function init() {
             myMap = new ymaps.Map("map", {
