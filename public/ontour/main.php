@@ -20,6 +20,10 @@
                 hintContent: 'рандомная точка',
                 balloonContent: 'перезагрузи страницу - убедишься'
             }));
+            myMap.events.add('click', function (e) {
+                var eMap = e.get('target');// Получение ссылки на объект, сгенерировавший событие (карта).
+                eMap.setType('yandex#hybrid');
+            });
         }
     </script>
 </head>
