@@ -8,8 +8,8 @@
         ymaps.ready(init);
         var myMap;
         <?php
-        $x = random_int(-10, 10);
-        $y = random_int(-10, 10);
+        $x = random_int(-100, 100);
+        $y = random_int(-100, 100);
         ?>
         function init() {
             myMap = new ymaps.Map("map", {
