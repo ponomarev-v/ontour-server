@@ -65,6 +65,7 @@
                             "<form action='main.php'>" +
                             "<input type='submit' value='добавить точку'></form>" +
                             "</div>"
+
                         })
                     ;
                 });
