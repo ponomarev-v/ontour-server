@@ -20,9 +20,23 @@
                 hintContent: 'рандомная точка',
                 balloonContent: 'перезагрузи страницу - убедишься'
             }));
+
             myMap.events.add('click', function (e) {
-                var eMap = e.get('target');// Получение ссылки на объект, сгенерировавший событие (карта).
-                eMap.setType('yandex#hybrid');
+                if (!myMap.balloon.isOpen()) {
+                    var coords = e.get('coords');
+                    myMap.balloon.open(coords, {
+                        contentHeader:'Событие!',
+                        contentBody:'<p>Кто-то щелкнул по карте.</p>' +
+                        '<p>Координаты щелчка: ' + [
+                            coords[0].toPrecision(6),
+                            coords[1].toPrecision(6)
+                        ].join(', ') + '</p>',
+                        contentFooter:'<sup>Щелкните еще раз</sup>'
+                    });
+                }
+                else {
+                    myMap.balloon.close();
+                }
             });
         }
     </script>
