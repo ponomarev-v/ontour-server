@@ -33,6 +33,10 @@
                         ].join(', ') + '</p>',
                         contentFooter:'<sup>Щелкните еще раз</sup>'
                     });
+                    myMap.geoObjects.add(new ymaps.Placemark(coords, {
+                        hintContent: 'новая точка',
+                        balloonContent: 'нет описания'
+                    }));
                 }
                 else {
                     myMap.balloon.close();
