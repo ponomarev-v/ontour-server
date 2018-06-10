@@ -14,7 +14,7 @@
         function init() {
             myMap = new ymaps.Map("map", {
                 center: [<?php echo $x; ?>, <?php echo $y; ?>],
-                zoom: 7
+                zoom: 2
             });
             myMap.geoObjects.add(new ymaps.Placemark([<?php echo $x; ?>, <?php echo $y; ?>], {
                 hintContent: 'рандомная точка',
