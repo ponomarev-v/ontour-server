@@ -11,8 +11,8 @@
         function init() {
             var myPlacemark,
                 myMap = new ymaps.Map('map', {
-                    center: [55.753994, 37.622093],
-                    zoom: 9
+                    center: [56.1365500, 40.3965800],
+                    zoom: 10
                 }, {
                     searchControlProvider: 'yandex#search'
                 });
@@ -99,7 +99,7 @@
                 </li>
                 <li><a href=#>Цели</a>
                     <ul class="submenu">
-                        <li><a href=#>Обмен быллами</a></li>
+                        <li><a href=#>Обмен баллами</a></li>
                         <li><a href=#>История</a></li>
                     </ul>
                 </li>
@@ -134,13 +134,35 @@
                                     </h3>
                                     <input type="password" name="pas">
                                     <h3>
-                                        Почта
-                                    </h3>
-                                    <input type="email" name="mail">
-                                    <h3>
                                     </h3>
                                     <input type="submit">
                                 </form>
+                                <h3>
+                                    Если у вас нет аккаунта, Вы можете
+                                </h3>
+                                <button id="myBtn">зарегестрироваться</button>
+                                <div id="myModal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <p>Some text in the Modal..</p>
+                                    </div>
+                                </div>
+                                <script>
+                                    var modal = document.getElementById('myModal');
+                                    var btn = document.getElementById("myBtn");
+                                    var span = document.getElementsByClassName("close")[0];
+                                    btn.onclick = function () {
+                                        modal.style.display = "block";
+                                    }
+                                    span.onclick = function () {
+                                        modal.style.display = "none";
+                                    }
+                                    window.onclick = function (event) {
+                                        if (event.target == modal) {
+                                            modal.style.display = "none";
+                                        }
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
