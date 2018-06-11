@@ -2,6 +2,9 @@
 
 class Core
 {
+    /**
+     * @return MysqliDb
+     */
     static public $db;
 
     /**
