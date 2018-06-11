@@ -81,7 +81,6 @@
 
     </script>
 </head>
-
 <body>
 <div id="body">
     <div id="map"></div>
@@ -117,7 +116,51 @@
                 </li>
                 <li><a href=#>Квесты</a>
                 </li>
-                <li><a href=#>Вход</a>
+                <li><a href=# id="myBtn">Вход</a>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div id="form" align="center">
+                                <h1>
+                                    Вход ON TOUR
+                                </h1>
+                                <form>
+                                    <h3>
+                                        Имя
+                                    </h3>
+                                    <input type="text" name="name">
+                                    <h3>
+                                        Пароль
+                                    </h3>
+                                    <input type="password" name="pas">
+                                    <h3>
+                                        Почта
+                                    </h3>
+                                    <input type="email" name="mail">
+                                    <h3>
+                                    </h3>
+                                    <input type="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var modal = document.getElementById('myModal');
+                        var btn = document.getElementById("myBtn");
+                        var span = document.getElementsByClassName("close")[0];
+                        btn.onclick = function () {
+                            modal.style.display = "block";
+                        }
+                        span.onclick = function () {
+                            modal.style.display = "none";
+                        }
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+
                 </li>
             </ul>
         </div>
