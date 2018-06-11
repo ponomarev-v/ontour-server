@@ -1,5 +1,6 @@
 <?php
 $dir = dir('/tmp');
+
 while($item = $dir->read())
     echo $item."<br>";
 
