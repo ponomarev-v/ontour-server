@@ -111,6 +111,8 @@
                 </li>
                 <li><a href=#>Квесты</a>
                 </li>
+                <li><a href=#>Вход</a>
+                </li>
             </ul>
         </div>
     </div>

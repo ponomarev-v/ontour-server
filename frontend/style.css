@@ -31,6 +31,7 @@ body {
 
 #menu {
     float: left;
+    width: calc(100% - 249px);
 }
 
 ul {
@@ -54,7 +55,10 @@ ul.menu > li {
 
 ul.menu > li > a {
     display: block;
-    padding: 41px 30px 41px 30px;
+    width: 150px;
+    height: 57px;
+    padding: 43px 0px 0px 0px;
+    text-align: center;
     color: green;
     background-color: white;
     text-decoration: none;
@@ -68,7 +72,7 @@ ul.menu > li > a:hover {
 ul.submenu {
     display: none;
     position: absolute;
-    width: 120px;
+    width: 148px;
     top: 100px;
     left: 0;
     background-color: white;
