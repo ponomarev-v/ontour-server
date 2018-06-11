@@ -31,7 +31,6 @@ body {
 
 #menu {
     float: left;
-    width: calc(100% - 249px);
 }
 
 #form {
