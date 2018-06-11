@@ -13,4 +13,16 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
-echo Utils::Request('aaa');
+try {
+    $method = Utils::Request('method');
+    $method = explode('.', $method);
+    if(sizeof($method) != 2) {
+        throw new Exception('Unknown method');
+    }
+} catch(Exception $e) {
+    $res = array(
+        'error' => $e->getMessage(),
+    );
+}
+
+echo json_encode($res);
