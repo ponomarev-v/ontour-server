@@ -113,4 +113,33 @@ class Utils
             }
         }
     }
+
+    public static function CreateGUID($namespace = '', $format = true)
+    {
+        $uid = uniqid("", true);
+        $data = $namespace . getmypid();
+        if(array_key_exists('REQUEST_TIME', $_SERVER)) $data .= $_SERVER['REQUEST_TIME'];
+        if(array_key_exists('HTTP_USER_AGENT', $_SERVER)) $data .= $_SERVER['HTTP_USER_AGENT'];
+        if(array_key_exists('LOCAL_ADDR', $_SERVER)) $data .= $_SERVER['LOCAL_ADDR'];
+        if(array_key_exists('LOCAL_PORT', $_SERVER)) $data .= $_SERVER['LOCAL_PORT'];
+        if(array_key_exists('REMOTE_ADDR', $_SERVER)) $data .= $_SERVER['REMOTE_ADDR'];
+        if(array_key_exists('REMOTE_PORT', $_SERVER)) $data .= $_SERVER['REMOTE_PORT'];
+        if(array_key_exists('HOSTNAME', $_SERVER)) $data .= $_SERVER['HOSTNAME'];
+        $hash = strtoupper(hash('ripemd128', $uid . md5($data)));
+        if($format) {
+            return '{' .
+                substr($hash, 0, 8) .
+                '-' .
+                substr($hash, 8, 4) .
+                '-' .
+                substr($hash, 12, 4) .
+                '-' .
+                substr($hash, 16, 4) .
+                '-' .
+                substr($hash, 20, 12) .
+                '}';
+        } else {
+            return $hash;
+        }
+    }
 }
