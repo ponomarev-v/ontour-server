@@ -1,16 +1,96 @@
 body {
     margin: 0;
+    font: 14px 'Verdana';
 }
+
+#body {
+    width: 100%;
+    height: 100%;
+}
+
 #map {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 0;
 }
+
 #header {
     width: 100%;
     height: 100px;
     position: absolute;
     z-index: 1;
-    opacity: 0.5;
+    background-color: white;
+    opacity: 0.9;
+    display: inline;
+}
+
+#logo {
+    float: left;
+}
+
+#menu {
+    float: left;
+}
+
+ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+
+ul.menu > li {
+    float: left;
+    position: relative;
+}
+
+ul.menu > li > a {
+    display: block;
+    padding: 41px 30px 41px 30px;
+    color: green;
+    background-color: white;
+    text-decoration: none;
+}
+
+ul.menu > li > a:hover {
+    background-color: green;
+    color: white;
+}
+
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 120px;
+    top: 100px;
+    left: 0;
+    background-color: white;
+    border: 1px solid white;
+}
+
+ul.submenu > li {
+    display: block;
+}
+
+ul.submenu > li > a {
+    display: block;
+    padding: 10px;
+    color: green;
+    background-color: white;
+    text-decoration: none;
+}
+
+ul.submenu > li > a:hover {
+    text-decoration: underline;
+}
+
+ul.menu > li:hover > ul.submenu {
+    display: block;
 }
