@@ -9,7 +9,7 @@ namespace API {
             $password = \Utils::Request('password');
             return array(
                 'result' => 'success',
-                'token'  => \Utils::CreateGUID(),
+                'token'  => \Utils::CreateGUID(__METHOD__, false),
             );
         }
     }
