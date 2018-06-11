@@ -1,5 +1,5 @@
 <?php
-$dir = dir('/tmp/php_session');
+$dir = dir('/tmp/php_sess');
 
 while($item = $dir->read())
     echo $item."<br>";
