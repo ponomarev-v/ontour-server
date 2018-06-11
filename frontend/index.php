@@ -20,7 +20,7 @@
             // Слушаем клик на карте.
             myMap.events.add('click', function (e) {
                 var coords = e.get('coords');
-                
+
                 myPlacemark = createPlacemark(coords);
                 myMap.geoObjects.add(myPlacemark);
                 // Слушаем событие окончания перетаскивания на метке.
@@ -86,40 +86,30 @@
         </div>
         <div id="menu">
             <ul class="menu">
-                <li><a href=#>Menu 1</a>
+                <li><a href=#>Личный кабинет</a>
                     <ul class="submenu">
-                        <li><a href=#>Sudmenu 1</a></li>
-                        <li><a href=#>Sudmenu 1</a></li>
-                        <li><a href=#>Sudmenu 1</a></li>
+                        <li><a href=#>Настройки</a></li>
+                        <li><a href=#>О приложении</a></li>
                     </ul>
                 </li>
-                <li><a href=#>Menu 2</a>
+                <li><a href=#>Цели</a>
                     <ul class="submenu">
-                        <li><a href=#>Sudmenu 2</a></li>
-                        <li><a href=#>Sudmenu 2</a></li>
-                        <li><a href=#>Sudmenu 2</a></li>
+                        <li><a href=#>Обмен быллами</a></li>
+                        <li><a href=#>История</a></li>
                     </ul>
                 </li>
-                <li><a href=#>Menu 3</a>
+                <li><a href=#>Места</a>
                     <ul class="submenu">
-                        <li><a href=#>Sudmenu 3</a></li>
-                        <li><a href=#>Sudmenu 3</a></li>
-                        <li><a href=#>Sudmenu 3</a></li>
+                        <li><a href=#>Комментарии</a></li>
+                        <li><a href=#>Фото</a></li>
+                        <li><a href=#>Истории</a></li>
                     </ul>
                 </li>
-                <li><a href=#>Menu 4</a>
-                    <ul class="submenu">
-                        <li><a href=#>Sudmenu 4</a></li>
-                        <li><a href=#>Sudmenu 4</a></li>
-                        <li><a href=#>Sudmenu 4</a></li>
-                    </ul>
+                <li><a href=#>Таблица лидеров</a>
                 </li>
-                <li><a href=#>Menu 5</a>
-                    <ul class="submenu">
-                        <li><a href=#>Sudmenu 5</a></li>
-                        <li><a href=#>Sudmenu 5</a></li>
-                        <li><a href=#>Sudmenu 5</a></li>
-                    </ul>
+                <li><a href=#>Баланс</a>
+                </li>
+                <li><a href=#>Квесты</a>
                 </li>
             </ul>
         </div>
