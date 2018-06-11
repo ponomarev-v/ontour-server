@@ -21,13 +21,19 @@
             myMap.events.add('click', function (e) {
                 var coords = e.get('coords');
 
-                myPlacemark = createPlacemark(coords);
-                myMap.geoObjects.add(myPlacemark);
-                // Слушаем событие окончания перетаскивания на метке.
-                myPlacemark.events.add('dragend', function () {
-                    getAddress(myPlacemark.geometry.getCoordinates());
-                });
-
+                // Если метка уже создана – просто передвигаем ее.
+                if (myPlacemark) {
+                    myPlacemark.geometry.setCoordinates(coords);
+                }
+                // Если нет – создаем.
+                else {
+                    myPlacemark = createPlacemark(coords);
+                    myMap.geoObjects.add(myPlacemark);
+                    // Слушаем событие окончания перетаскивания на метке.
+                    myPlacemark.events.add('dragend', function () {
+                        getAddress(myPlacemark.geometry.getCoordinates());
+                    });
+                }
                 getAddress(coords);
             });
 
