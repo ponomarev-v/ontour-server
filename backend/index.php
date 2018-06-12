@@ -1,7 +1,7 @@
 <?php
 define("ROOT_PATH", __DIR__);
 require_once(ROOT_PATH.'/config.php');
-
+header('Access-Control-Allow-Origin: *');
 function load_class($class_name) {
     $items = explode('\\', strtolower($class_name));
     foreach(array('lib', 'modules') as $item) {
