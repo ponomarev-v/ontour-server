@@ -25,7 +25,8 @@
                 data: $("#login_form").serialize(),
                 success: function(data)
                 {
-                    alert(data);
+                    data = eval("(" + data + ")");
+                    $("#res").html("AAAAAAAAAAAA! " + data.token);
                 }
             });
             e.preventDefault();

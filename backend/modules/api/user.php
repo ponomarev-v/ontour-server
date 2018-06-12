@@ -7,11 +7,14 @@ namespace API {
         {
             $login = \Utils::Request('login');
             $password = \Utils::Request('password');
-            return array(
-                'result' => 'success',
-                'token'  => \Utils::CreateGUID(__METHOD__, false),
-                'param0' => 2324234,
-            );
+            if($login == 'artem' && $password == '123') {
+                return array(
+                    'result' => 'success',
+                    'token'  => \Utils::CreateGUID(__METHOD__, false),
+                );
+            } else {
+                throw new \Exception("Invalid login or password");
+            }
         }
     }
 }

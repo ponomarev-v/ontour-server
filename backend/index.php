@@ -36,7 +36,8 @@ try {
     }
 } catch(Exception $e) {
     $res = array(
-        'error' => $e->getMessage(),
+        'result' => 'error',
+        'message' => $e->getMessage(),
     );
 }
 
