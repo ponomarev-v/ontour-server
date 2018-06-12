@@ -22,6 +22,8 @@ try {
     if($token) {
         session_id($token);
     }
+    if(!is_dir('/tmp/php_session'))
+        mkdir('/tmp/php_session');
     session_start();
     $method = Utils::Request('method');
     $method = explode('.', $method);
