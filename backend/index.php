@@ -2,10 +2,8 @@
 define("ROOT_PATH", __DIR__);
 require_once(ROOT_PATH.'/config.php');
 
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
 header('Access-Control-Allow-Credentials: true');
-
-print_r($_SERVER);
 
 function load_class($class_name) {
     $items = explode('\\', strtolower($class_name));
