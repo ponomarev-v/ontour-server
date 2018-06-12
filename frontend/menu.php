@@ -23,7 +23,13 @@
         <li><a href=#>Баланс</a></li>
         <li><a href=#>Квесты</a></li>
         <li id="menu_login"><a href=# id="btn_login">Вход</a></li>
-        <li id="menu_logout" style="display: none;"><a href=# id="btn_profile">...</a></li>
+        <li id="menu_logout" style="display: none;"><a href=# id="btn_profile">Профиль</a>
+            <ul class="submenu">
+                <li><a href=#>1</a></li>
+                <li><a href=#>2</a></li>
+                <li><a href=# id="btn_logout">Выход</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 <?php

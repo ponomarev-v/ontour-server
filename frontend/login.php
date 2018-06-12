@@ -46,6 +46,22 @@
                 }
             }
         });
+        
+        $("#btn_logout").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
+                xhrFields: {withCredentials: true},
+                success: function(data)
+                {
+                    data = eval("(" + data + ")");
+                    if(data.result == "success") {
+                        $("#menu_logout").hide();
+                        $("#menu_login").show();
+                    }
+                }
+            });
+        });
 
         $("#btn_login").click(function () {
             $("#login_window").show();
