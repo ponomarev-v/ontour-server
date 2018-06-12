@@ -13,7 +13,7 @@
                 <h3>
                     Телефон
                 </h3>
-                <input type="text" name="phone">
+                <input type="text" name="phone" id="phone">
                 <h3>
                     Пароль
                 </h3>
@@ -28,6 +28,7 @@
 </div>
 <script>
     $(document).ready(function() {
+        $('#phone').mask('8(000)000-00-00');
         $("#btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();

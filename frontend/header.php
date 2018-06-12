@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="/js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="/js/jquery.mask.js" type="text/javascript"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
