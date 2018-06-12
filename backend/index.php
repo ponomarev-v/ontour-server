@@ -18,7 +18,7 @@ function load_class($class_name) {
 spl_autoload_register('load_class');
 
 try {
-    $token = Utils::Request('token');
+    $token = \Utils::Request('token');
     if($token) {
         session_id($token);
     }
