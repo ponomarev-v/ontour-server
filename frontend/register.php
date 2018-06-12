@@ -58,7 +58,7 @@
                         $("#register_window").hide();
                         createProfile(data);
                     } else {
-                        $("#register_error").html("Не вышло =(");
+                        $("#register_error").html("Ничего не вышло =(");
                     }
                 }
             });
