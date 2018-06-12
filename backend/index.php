@@ -5,6 +5,8 @@ require_once(ROOT_PATH.'/config.php');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Credentials: true');
 
+print_r($_SERVER);
+
 function load_class($class_name) {
     $items = explode('\\', strtolower($class_name));
     foreach(array('lib', 'modules') as $item) {

@@ -48,7 +48,7 @@
                 type: "POST",
                 url: "http://ontourapi.kvantorium33.ru/?method=user.register",
                 data: $("#register_form").serialize(),
-                xhrFields: {withCredentials: true}
+                xhrFields: {withCredentials: true},
                 success: function(data)
                 {
                     data = eval("(" + data + ")");
