@@ -26,6 +26,7 @@ try {
     if(!is_dir('/tmp/php_session'))
         mkdir('/tmp/php_session');
     session_start();
+    echo session_save_path();
     $method = Utils::Request('method');
     $method = explode('.', $method);
     if(sizeof($method) == 2) {
