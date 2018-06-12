@@ -22,6 +22,10 @@
         <li><a href=#>Таблица лидеров</a></li>
         <li><a href=#>Баланс</a></li>
         <li><a href=#>Квесты</a></li>
-        <li><a href=# id="myBtn">Вход</a></li>
+        <li id="menu_login"><a href=# id="btn_login">Вход</a></li>
+        <li id="menu_logout" style="display: none;"><a href=# id="btn_profile">...</a></li>
     </ul>
 </div>
+<?php
+include "login.php";
+include "register.php";
