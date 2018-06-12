@@ -3,8 +3,7 @@
     <title>Быстрый старт. Размещение интерактивной карты на странице</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
-    </script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"/>
     <script type="text/javascript">
         ymaps.ready(init);
 
@@ -140,29 +139,81 @@
                                 <h3>
                                     Если у вас нет аккаунта, Вы можете
                                 </h3>
-                                <button id="myBtn">зарегестрироваться</button>
-                                <div id="myModal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p>Some text in the Modal..</p>
-                                    </div>
+                                <div align="center" style="width: 150px">
+                                    <ul class="menu">
+                                        <li><a href=# id="myBtn">зарегистрироваться</a>
+                                            <div id="myModal" class="modal">
+                                                <div class="modal-content">
+                                                    <span class="close">&times;</span>
+                                                    <div id="form" align="center">
+                                                        <h1>
+                                                            Регистрация ON TOUR
+                                                        </h1>
+                                                        <form>
+                                                            <h3>
+                                                                Имя
+                                                            </h3>
+                                                            <input type="text" name="name">
+                                                            <h3>
+                                                                Email
+                                                            </h3>
+                                                            <input type="email" name="mail">
+                                                            <h3>
+                                                                Пароль
+                                                            </h3>
+                                                            <input type="password" name="pas">
+                                                            <h3>
+                                                            </h3>
+                                                            <input type="submit">
+                                                        </form>
+                                                        <h3>
+                                                            Если у вас нет аккаунта, Вы можете
+                                                        </h3>
+                                                        <button id="myBtn">зарегестрироваться</button>
+                                                        <div id="myModal" class="modal">
+                                                            <div class="modal-content">
+                                                                <span class="close">&times;</span>
+                                                                <p>Some text in the Modal..</p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            var modal = document.getElementById('myModal');
+                                                            var btn = document.getElementById("myBtn");
+                                                            var span = document.getElementsByClassName("close")[0];
+                                                            btn.onclick = function () {
+                                                                modal.style.display = "block";
+                                                            }
+                                                            span.onclick = function () {
+                                                                modal.style.display = "none";
+                                                            }
+                                                            window.onclick = function (event) {
+                                                                if (event.target == modal) {
+                                                                    modal.style.display = "none";
+                                                                }
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                var modal = document.getElementById('myModal');
+                                                var btn = document.getElementById("myBtn");
+                                                var span = document.getElementsByClassName("close")[0];
+                                                btn.onclick = function () {
+                                                    modal.style.display = "block";
+                                                }
+                                                span.onclick = function () {
+                                                    modal.style.display = "none";
+                                                }
+                                                window.onclick = function (event) {
+                                                    if (event.target == modal) {
+                                                        modal.style.display = "none";
+                                                    }
+                                                }
+                                            </script>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <script>
-                                    var modal = document.getElementById('myModal');
-                                    var btn = document.getElementById("myBtn");
-                                    var span = document.getElementsByClassName("close")[0];
-                                    btn.onclick = function () {
-                                        modal.style.display = "block";
-                                    }
-                                    span.onclick = function () {
-                                        modal.style.display = "none";
-                                    }
-                                    window.onclick = function (event) {
-                                        if (event.target == modal) {
-                                            modal.style.display = "none";
-                                        }
-                                    }
-                                </script>
                             </div>
                         </div>
                     </div>

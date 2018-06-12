@@ -10,6 +10,7 @@ namespace API {
             return array(
                 'result' => 'success',
                 'token'  => \Utils::CreateGUID(__METHOD__, false),
+                'param0' => 2324234,
             );
         }
     }
