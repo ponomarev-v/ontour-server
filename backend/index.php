@@ -35,14 +35,10 @@ try {
             $method = $method[1];
             if(method_exists($instance, $method)) {
                 $res = $instance->$method();
-                if (is_array($res)) {
-                    $res = array_merge(array('result' => 'success'), $res);
-                } else {
-                    $res = array(
-                        'result' => 'success',
-                        'data' => $res,
-                    );
+                if (!is_array($res)) {
+                    $res = array('data' => $res);
                 }
+                $res = array_merge(array('result' => 'success'), $res);
             } else {
                 throw new Exception('Unknown method');
             }
