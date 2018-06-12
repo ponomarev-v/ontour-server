@@ -7,7 +7,6 @@ namespace API {
         {
             if (\Utils::ArrayGet('active', $_SESSION)) {
                 return array(
-                    'result' => 'success',
                     'token' => session_id(),
                     'login' => $_SESSION['login'],
                 );
@@ -32,9 +31,7 @@ namespace API {
         public function Logout()
         {
             session_destroy();
-            return array(
-                'result' => 'success',
-            );
+            return true;
         }
     }
 }
