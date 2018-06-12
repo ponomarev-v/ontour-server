@@ -1,7 +1,9 @@
 <?php
 define("ROOT_PATH", __DIR__);
 require_once(ROOT_PATH.'/config.php');
+
 header('Access-Control-Allow-Origin: *');
+
 function load_class($class_name) {
     $items = explode('\\', strtolower($class_name));
     foreach(array('lib', 'modules') as $item) {
@@ -16,6 +18,11 @@ function load_class($class_name) {
 spl_autoload_register('load_class');
 
 try {
+    $token = Utils::Request('token');
+    if($token) {
+        session_id($token);
+    }
+    session_start();
     $method = Utils::Request('method');
     $method = explode('.', $method);
     if(sizeof($method) == 2) {

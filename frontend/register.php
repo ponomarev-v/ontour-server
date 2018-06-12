@@ -54,10 +54,7 @@
                     if(data.result == "success") {
                         $("#register_error").html("");
                         $("#register_window").hide();
-                        $("#menu_register").hide();
-                        $("#menu_logout").show();
-                        $("#btn_profile").html("Профиль");
-                        $("#btn_profile").attr("title", "Click here!");
+                        createProfile(data);
                     } else {
                         $("#register_error").html("Не вышло =(");
                     }

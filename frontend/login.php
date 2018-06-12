@@ -26,7 +26,26 @@
     </div>
 </div>
 <script>
+    function createProfile(user_info) {
+        $("#menu_login").hide();
+        $("#menu_logout").show();
+        $("#btn_profile").html("Профиль");
+        $("#btn_profile").attr("title", "Click here!");
+    }
+
     $(document).ready(function() {
+        $.ajax({
+            type: "POST",
+            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+            success: function(data)
+            {
+                data = eval("(" + data + ")");
+                if(data.result == "success") {
+                    createProfile(data);
+                }
+            }
+        });
+
         $("#btn_login").click(function () {
             $("#login_window").show();
         });
@@ -52,10 +71,7 @@
                     if(data.result == "success") {
                         $("#login_error").html("");
                         $("#login_window").hide();
-                        $("#menu_login").hide();
-                        $("#menu_logout").show();
-                        $("#btn_profile").html("Профиль");
-                        $("#btn_profile").attr("title", "Click here!");
+                        createProfile(data);
                     } else {
                         $("#login_error").html("Неправильный логин или пароль");
                     }
