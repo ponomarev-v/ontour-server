@@ -46,7 +46,7 @@
         $("#register_form").submit(function(e) {
 
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "http://ontourapi.kvantorium33.ru/?method=user.register",
                 data: $("#register_form").serialize(),
                 xhrFields: {withCredentials: true},
