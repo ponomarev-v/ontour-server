@@ -19,7 +19,7 @@
     $("#send").click(function(){
         $.ajax({
             type:"POST",
-            url:"http://ontourapi.kvantorium33.ru/?method=vg.aa",
+            url:"http://ontourapi.kvantorium33.ru/?method=ara.func&a="+$("#a").val()+"&b="+$("#b").val(),
             success: function(data)
             {
                     data = eval("(" + data + ")");
