@@ -1,7 +1,7 @@
 <?php
     namespase API{
         class ART{
-            public function func()
+            public function __construct()
             {
                 $b = \Utils::Request('b');
                 $a = \Utils::Request('a');
