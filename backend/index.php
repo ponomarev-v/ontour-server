@@ -3,8 +3,10 @@ define("ROOT_PATH", __DIR__);
 require_once(ROOT_PATH . '/config.php');
 require_once(ROOT_PATH . '/autoload.php');
 
-header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-header('Access-Control-Allow-Credentials: true');
+if(isset($_SERVER['HTTP_ORIGIN'])) {
+    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+    header('Access-Control-Allow-Credentials: true');
+}
 
 try {
     $token = \Utils::Request('token');
