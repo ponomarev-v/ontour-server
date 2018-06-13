@@ -25,12 +25,19 @@
         $.ajax({
             type:"POST",
             url:'http://ontourapi.kvantorium33.ru/?method=ab.func&a='+$("#a").val()+"&b="+$("#b").val(),
+            xhrFields: {
+                withCredentials: true
+                },
             success: function(data)
             {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         alert(data.data);
-                }
+                    }
+                    else {
+                        alert("Enter current data");
+                    }
+                
             }
         });
         
