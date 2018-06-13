@@ -17,7 +17,18 @@
     <input type="submit" name="send" id="send">
     <script type="text/javascript">
     $("#send").click(function(){
-        alert("It work!");
+        $.ajax({
+            type:"POST",
+            url:"http://ontourapi.kvantorium33.ru/?method=vg.aa"
+            success: function(data)
+            {
+                    data = eval("(" + data + ")");
+                    if(data.result == "success") {
+                        alert("Hi");
+                }
+            }
+        });
+        
     });
     </script>
 </body>
