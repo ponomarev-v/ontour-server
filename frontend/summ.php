@@ -10,14 +10,25 @@
 <body>
     <form id="sum">
     <h2>Enter a</h2>
-    <input type="text" name="a">
+    <input type="text" name="a" id="a">
     <h2>Enter b</h2>
-    <input type="text" name="b">
+    <input type="text" name="b" i ="b">
     </form>
     <input type="submit" name="send" id="send">
     <script type="text/javascript">
     $("#send").click(function(){
-        alert("It work!");
+        $.ajax({
+            type:"POST",
+            url:"http://ontourapi.kvantorium33.ru/?method=vg.aa",
+            success: function(data)
+            {
+                    data = eval("(" + data + ")");
+                    if(data.result == "success") {
+                        alert($("#a".value));
+                }
+            }
+        });
+        
     });
     </script>
 </body>
