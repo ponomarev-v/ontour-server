@@ -38,6 +38,7 @@
             type: "POST",
             url: "http://ontourapi.kvantorium33.ru/?method=user.info",
             xhrFields: {withCredentials: true},
+
             success: function(data)
             {
                 data = eval("(" + data + ")");
@@ -77,9 +78,8 @@
         });
 
         $("#login_form").submit(function(e) {
-
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "http://ontourapi.kvantorium33.ru/?method=user.login",
                 data: $("#login_form").serialize(),
                 xhrFields: {withCredentials: true},
