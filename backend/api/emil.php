@@ -1,6 +1,5 @@
 <?php
 namespace API {
-    
     class bg
     {
         public function bg() {
@@ -8,8 +7,8 @@ namespace API {
             $b = \Utils::Request('b');
             return $a+$b;
         }
-        }
     }
+}
 
 
 
