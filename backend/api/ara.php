@@ -3,8 +3,8 @@
         class ARA{
             public function func()
             {
-                $b = \Utils::Request('b');
-                $a = \Utils::Request('a');
+                $b = $_REQUEST['b'];
+                $a = $_REQUEST['a'];
                 return ($a + $b);
             }
         }
