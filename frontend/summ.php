@@ -29,10 +29,11 @@
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         alert(data.data);
+                    }
                     else {
                         alert("Enter current data");
                     }
-                }
+                
             }
         });
         
