@@ -12,20 +12,20 @@
     <h2>Enter a</h2>
     <input type="text" name="a" id="a">
     <h2>Enter b</h2>
-    <input type="text" name="b" i ="b">
+    <input type="text" name="b" id ="b">
     </form>
     <input type="submit" name="send" id="send">
     <script type="text/javascript">
     $("#send").click(function(){
-        alert('http://ontourapi.kvantorium33.ru/?method=ara.func&a='+$("#a").val()+"&b="+$("#b").val()+"'")
+        
         $.ajax({
             type:"POST",
-            url:"http://ontourapi.kvantorium33.ru/?method=ara.func&a="+$("#a").val()+"&b="+$("#b").val(),
+            url:'http://ontourapi.kvantorium33.ru/?method=ara.func&a='+$("#a").val()+"&b="+$("#b").val()+"'",
             success: function(data)
             {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
-                        alert($("#a").val());
+                        alert(data.data);
                 }
             }
         });
