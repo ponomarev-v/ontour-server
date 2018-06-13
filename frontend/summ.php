@@ -13,9 +13,9 @@
     <h2>Enter b</h2>
     <input type="text" name="b">
     </form>
-    <input type="submit">
+    <input type="submit" name="send" id="send">
     <script type="text/javascript">
-    $("#sum").click(function(){
+    $("#send").click(function(){
         $.ajax({
             type:"POST",
             url:"http://ontourapi.kvantorium33.ru/?method=vg.aa",
@@ -23,7 +23,7 @@
             {
                 data = eval("(" + data + ")");
                 if(data.result == "success") {
-                   document.write("True")
+                  alert("True");
                 }
             }
         });
