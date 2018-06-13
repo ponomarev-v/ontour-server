@@ -24,7 +24,7 @@
             {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
-                        alert("Hi");
+                        alert(data);
                 }
             }
         });
