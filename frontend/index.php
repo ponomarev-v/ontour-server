@@ -1,5 +1,4 @@
 <?php
-$title = "Первая страница";
-include "header.php";
-include "map.php";
-include "footer.php";
+include "header.php";/*подключение головы сайта*/
+include "map.php";/*подключение тела сайта*/
+include "footer.php";/*подключение ног сайта*/

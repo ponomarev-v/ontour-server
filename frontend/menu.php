@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="menu"><!--меню сверху страницы-->
     <ul class="menu">
         <li><a href=#>Личный кабинет</a>
             <ul class="submenu">
@@ -33,5 +33,5 @@
     </ul>
 </div>
 <?php
-include "login.php";
-include "register.php";
+include "login.php";//подключение всплывающего окна логина
+include "register.php";//подключение всплывающего окна регистрации
