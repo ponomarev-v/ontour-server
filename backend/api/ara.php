@@ -5,7 +5,7 @@
             {
                 //$b = \Utils::Request('b');
                 //$a = \Utils::Request('a');
-                return 123;
+                return 1234;
             }
         }
 }
