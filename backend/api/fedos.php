@@ -2,10 +2,10 @@
 namespace API{
 class Gas
 {
-    public function Gas (){
+    public function GG(){
         
         return 123;
     }
 }
-}
+};
 ?>
