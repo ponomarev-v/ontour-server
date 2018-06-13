@@ -17,7 +17,7 @@
     <input type="submit" name="send" id="send">
     <script type="text/javascript">
     $("#send").click(function(){
-        alert('http://ontourapi.kvantorium33.ru/?method=ab.func&a='+$("#a").val()+"&b="+$("#b").val()+"'")
+        alert("'"+'http://ontourapi.kvantorium33.ru/?method=ab.func&a='+$("#a").val()+"&b="+$("#b").val()+"'")
         $.ajax({
             type:"POST",
             url:'http://ontourapi.kvantorium33.ru/?method=ab.func&a='+$("#a").val()+"&b="+$("#b").val()+"'",
