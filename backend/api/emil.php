@@ -1,9 +1,19 @@
 <?php
 namespace API {
-    class BG
+    
+    class bg
     {
-        public function AA() {
-            return 123;
+        public function bg() {
+            $a = \Utils::Request('a');
+            $b = \Utils::Request('b');
+            return $a+$b;
+        }
         }
     }
-}
+
+
+
+
+
+
+        
