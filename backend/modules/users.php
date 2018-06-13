@@ -28,7 +28,7 @@ class Users
         $db = Core::DB();
         // Ищем пользователя в базе
         $res = $db->where('login', $data['login'], 'like')->get('user');
-        if(!empty($res)) {
+        if(empty($res)) {
             $user_data = array(
                 'login'     => $data['login'],
                 'password'  => md5($data['password']),
