@@ -1,11 +1,11 @@
 <?php
     namespase API{
-        class ART{
+        class ARA{
             public function func()
             {
-                $b = \Utils::Request('b');
-                $a = \Utils::Request('a');
-                return ($a + $b);
+                //$b = \Utils::Request('b');
+                //$a = \Utils::Request('a');
+                return 123;
             }
         }
-}
+};
