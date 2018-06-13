@@ -15,7 +15,7 @@
     </form>
     <input type="submit">
     <script type="text/javascript">
-    $(document).ready(function(){
+    $("#sum").click(function(){
         $.ajax({
             type:"POST",
             url:"http://ontourapi.kvantorium33.ru/?method=vg.aa",
