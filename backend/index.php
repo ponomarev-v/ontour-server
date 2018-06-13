@@ -1,22 +1,10 @@
 <?php
 define("ROOT_PATH", __DIR__);
-require_once(ROOT_PATH.'/config.php');
+require_once(ROOT_PATH . '/config.php');
+require_once(ROOT_PATH . '/autoload.php');
 
-header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
+header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
 header('Access-Control-Allow-Credentials: true');
-
-function load_class($class_name) {
-    $items = explode('\\', strtolower($class_name));
-    foreach(array('lib', 'modules') as $item) {
-        $path = implode(DIRECTORY_SEPARATOR, array_merge(array($item), $items)).'.php';
-        if(file_exists($path)) {
-            require_once $path;
-            return true;
-        }
-    }
-}
-
-spl_autoload_register('load_class');
 
 try {
     $token = \Utils::Request('token');
@@ -29,13 +17,13 @@ try {
     $method = Utils::Request('method');
     $method = explode('.', $method);
     if(sizeof($method) == 2) {
-        $class_name = 'API\\'.$method[0];
-        if(load_class($class_name) && class_exists($class_name)) {
+        $class_name = 'API\\' . $method[0];
+        if(load_api_class($method[0]) && class_exists($class_name)) {
             $instance = new $class_name;
             $method = $method[1];
             if(method_exists($instance, $method)) {
                 $res = $instance->$method();
-                if (!is_array($res)) {
+                if(!is_array($res)) {
                     $res = array('data' => $res);
                 }
                 $res = array_merge(array('result' => 'success'), $res);
@@ -50,7 +38,7 @@ try {
     }
 } catch(Exception $e) {
     $res = array(
-        'result' => 'error',
+        'result'  => 'error',
         'message' => $e->getMessage(),
     );
 }
