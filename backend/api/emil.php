@@ -1,17 +1,9 @@
 <?php
 namespace API {
-    class bg
+    class VGG
     {
-        public function bg() {
-           
+        public function AA() {
             return 123;
         }
     }
 }
-
-
-
-
-
-
-        
