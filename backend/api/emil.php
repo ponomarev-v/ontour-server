@@ -5,7 +5,7 @@ namespace API{
         public function sum(){
             $a = \Utils::Request('a');
             $b = \Utils::Request('b');
-            return $this->a+$this->b;
+            return 123;
         }
     }
 }
