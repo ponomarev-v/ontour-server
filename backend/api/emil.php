@@ -1,6 +1,6 @@
 <?php
 namespace API{
-    class Sum{
+    class SUM{
        
         public function sum(){
             $a = \Utils::Request('a');
