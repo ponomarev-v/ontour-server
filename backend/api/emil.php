@@ -1,9 +1,12 @@
 <?php
 namespace API {
-    class BG
-    {
+    class vg{ 
+   
         public function AA() {
-            return 123;
+            $a = \Utils::Request('a');
+            $b = \Utils::Request('b');
+            return $a+$b;
         }
-    }
+    
+}
 }
