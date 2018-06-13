@@ -13,5 +13,21 @@
     <h2>Enter b</h2>
     <input type="text" name="b">
     </form>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            type:"POST",
+            url:"http://ontourapi.kvantorium33.ru/?method=vg.aa",
+            success: function(data)
+            {
+                data = eval("(" + data + ")");
+                if(data.result == "success") {
+                   document.write("True")
+                }
+            }
+        });
+    });
+    </script>
 </body>
 </html>
