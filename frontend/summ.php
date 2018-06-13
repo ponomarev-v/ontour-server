@@ -20,7 +20,7 @@
         
         $.ajax({
             type:"POST",
-            url:'http://ontourapi.kvantorium33.ru/?method=ara.func&a='+$("#a").val()+"&b="+$("#b").val()+"'",
+            url:'http://ontourapi.kvantorium33.ru/?method=ab.func&a='+$("#a").val()+"&b="+$("#b").val()+"'",
             success: function(data)
             {
                     data = eval("(" + data + ")");
