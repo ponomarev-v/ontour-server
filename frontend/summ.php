@@ -10,9 +10,9 @@
 <body>
     <form id="sum">
     <h2>Enter a</h2>
-    <input type="text" name="a">
+    <input type="text" name="a" id="a">
     <h2>Enter b</h2>
-    <input type="text" name="b">
+    <input type="text" name="b" i ="b">
     </form>
     <input type="submit" name="send" id="send">
     <script type="text/javascript">
@@ -24,7 +24,7 @@
             {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
-                        alert(data.data);
+                        alert($("#a"));
                 }
             }
         });
