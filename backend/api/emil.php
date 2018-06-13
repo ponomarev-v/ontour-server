@@ -1,12 +1,9 @@
 <?php
-namespace API{
-    class myClass{
-       
-        public function sum(){
-           // $a = \Utils::Request('a');
-            //$b = \Utils::Request('b');
+namespace API {
+    class BG
+    {
+        public function AA() {
             return 123;
         }
     }
 }
-?>
