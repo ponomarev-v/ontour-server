@@ -8,4 +8,5 @@ class Gas
         return $a+$b;
     }
 }
+}
 ?>
