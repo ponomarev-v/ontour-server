@@ -1,18 +1,9 @@
 <?php
 namespace API {
-    class bg
+    class VGG
     {
-        public function bg() {
-            $a = \Utils::Request('a');
-            $b = \Utils::Request('b');
-            return $a+$b;
+        public function AA() {
+            return 123;
         }
     }
 }
-
-
-
-
-
-
-        
