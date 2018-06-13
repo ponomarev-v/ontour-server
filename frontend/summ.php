@@ -8,7 +8,9 @@
 </head>
 <body>
     <form id="sum">
+    <h2>Enter a</h2>
     <input type="text" name="a">
+    <h2>Enter b</h2>
     <input type="text" name="b">
     </form>
 </body>
