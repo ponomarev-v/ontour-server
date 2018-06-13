@@ -3,17 +3,17 @@
 class Core
 {
     /**
-     * @return MysqliDb
+     * @return mysqlidb
      */
     static public $db;
 
     /**
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public static function DB()
     {
         if(empty(self::$db)) {
-            self::$db = new MysqliDb(
+            self::$db = new mysqlidb(
                 Config::DB_HOST,
                 Config::DB_LOGIN,
                 Config::DB_PASSWORD,

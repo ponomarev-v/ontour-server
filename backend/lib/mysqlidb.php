@@ -13,11 +13,11 @@
  * @version   2.7
  */
 
-class MysqliDb
+class mysqlidb
 {
     /**
      * Static instance of self
-     * @var MysqliDb
+     * @var mysqlidb
      */
     protected static $_instance;
 
@@ -308,7 +308,7 @@ class MysqliDb
      *
      * @uses $db = MySqliDb::getInstance();
      *
-     * @return MysqliDb Returns the current instance.
+     * @return mysqlidb Returns the current instance.
      */
     public static function getInstance()
     {
@@ -318,7 +318,7 @@ class MysqliDb
     /**
      * Reset states after an execution
      *
-     * @return MysqliDb Returns the current instance.
+     * @return mysqlidb Returns the current instance.
      */
     public function reset()
     {
@@ -348,7 +348,7 @@ class MysqliDb
     /**
      * Helper function to create dbObject with JSON return type
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function jsonBuilder()
     {
@@ -360,7 +360,7 @@ class MysqliDb
      * Helper function to create dbObject with array return type
      * Added for consistency as thats default output type
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function arrayBuilder()
     {
@@ -371,7 +371,7 @@ class MysqliDb
     /**
      * Helper function to create dbObject with object return type.
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function objectBuilder()
     {
@@ -384,7 +384,7 @@ class MysqliDb
      *
      * @param string $prefix     Contains a tableprefix
      * 
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function setPrefix($prefix = '')
     {
@@ -527,7 +527,7 @@ class MysqliDb
      * @param string|array $options The optons name of the query.
      * 
      * @throws Exception
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function setQueryOption($options)
     {
@@ -562,7 +562,7 @@ class MysqliDb
     /**
      * Function to enable SQL_CALC_FOUND_ROWS in the get queries
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function withTotalCount()
     {
@@ -623,7 +623,7 @@ class MysqliDb
     {
         $res = $this->get($tableName, 1, $columns);
 
-        if ($res instanceof MysqliDb) {
+        if ($res instanceof mysqlidb) {
             return $res;
         } elseif (is_array($res) && isset($res[0])) {
             return $res[0];
@@ -816,7 +816,7 @@ class MysqliDb
      * @param string $operator Comparison operator. Default is =
      * @param string $cond Condition of where statement (OR, AND)
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function where($whereProp, $whereValue = 'DBNULL', $operator = '=', $cond = 'AND')
     {
@@ -841,7 +841,7 @@ class MysqliDb
      * @param array $updateColumns Variable with values
      * @param string $lastInsertId Variable value
      * 
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function onDuplicate($updateColumns, $lastInsertId = null)
     {
@@ -859,7 +859,7 @@ class MysqliDb
      * @param mixed  $whereValue The value of the database field.
      * @param string $operator Comparison operator. Default is =
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function orWhere($whereProp, $whereValue = 'DBNULL', $operator = '=')
     {
@@ -875,7 +875,7 @@ class MysqliDb
      * @param mixed  $havingValue The value of the database field.
      * @param string $operator Comparison operator. Default is =
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
 
     public function having($havingProp, $havingValue = 'DBNULL', $operator = '=', $cond = 'AND')
@@ -903,7 +903,7 @@ class MysqliDb
      * @param mixed  $havingValue The value of the database field.
      * @param string $operator Comparison operator. Default is =
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function orHaving($havingProp, $havingValue = null, $operator = null)
     {
@@ -920,7 +920,7 @@ class MysqliDb
      * @param string $joinType 'LEFT', 'INNER' etc.
      * 
      * @throws Exception
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function join($joinTable, $joinCondition, $joinType = '')
     {
@@ -1067,7 +1067,7 @@ class MysqliDb
      * @param array $customFields Fieldset for ORDER BY FIELD() ordering
      * 
      * @throws Exception
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function orderBy($orderByField, $orderbyDirection = "DESC", $customFields = null)
     {
@@ -1104,7 +1104,7 @@ class MysqliDb
      *
      * @param string $groupByField The name of the database field.
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function groupBy($groupByField)
     {
@@ -1122,7 +1122,7 @@ class MysqliDb
 	 * @param  string   $method The table lock method. Can be READ or WRITE.
 	 *                                                                 
 	 * @throws Exception
-	 * @return MysqliDb
+	 * @return mysqlidb
 	 */
 	public function setLockMethod($method)
 	{
@@ -1148,7 +1148,7 @@ class MysqliDb
 	 * @param string  $table The table to be locked. Can be a table or a view.
 	 *                       
 	 * @throws Exception
-	 * @return MysqliDb if succeeeded;
+	 * @return mysqlidb if succeeeded;
 	 */
 	public function lock($table)
 	{
@@ -1202,7 +1202,7 @@ class MysqliDb
 	 * Also commits transactions.
 	 * 
 	 * @author Jonas Barascu
-	 * @return MysqliDb
+	 * @return mysqlidb
 	 */
 	public function unlock()
 	{
@@ -1592,7 +1592,7 @@ class MysqliDb
             }
 
             // Subquery value
-            if ($value instanceof MysqliDb) {
+            if ($value instanceof mysqlidb) {
                 $this->_query .= $this->_buildPair("", $value) . ", ";
                 continue;
             }
@@ -2069,7 +2069,7 @@ class MysqliDb
      * 
      * @param string $subQueryAlias
      * 
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public static function subQuery($subQueryAlias = "")
     {
@@ -2079,7 +2079,7 @@ class MysqliDb
     /**
      * Method returns a copy of a mysqlidb subquery object
      *
-     * @return MysqliDb new mysqlidb object
+     * @return mysqlidb new mysqlidb object
      */
     public function copy()
     {
@@ -2149,7 +2149,7 @@ class MysqliDb
      * @param bool $enabled Enable execution time tracking
      * @param string $stripPrefix Prefix to strip from the path in exec log
      * 
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function setTrace($enabled, $stripPrefix = null)
     {
@@ -2205,7 +2205,7 @@ class MysqliDb
      * 
      * @param string $idField field name to use for a mapped element key
      *
-     * @return MysqliDb
+     * @return mysqlidb
      */
     public function map($idField)
     {
