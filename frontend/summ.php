@@ -13,7 +13,7 @@
     <h2>Enter b</h2>
     <input type="text" name="b">
     </form>
-
+    <input type="submit">
     <script type="text/javascript">
     $(document).ready(function(){
         $.ajax({
