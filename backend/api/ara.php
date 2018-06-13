@@ -1,5 +1,5 @@
 <?php
-    namespase API{
+    namespace API{
         class ARA{
             public function func()
             {
