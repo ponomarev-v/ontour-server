@@ -78,7 +78,6 @@
         });
 
         $("#login_form").submit(function(e) {
-
             $.ajax({
                 type: "GET",
                 url: "http://ontourapi.kvantorium33.ru/?method=user.login",
