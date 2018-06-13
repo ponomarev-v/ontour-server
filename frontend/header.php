@@ -11,7 +11,7 @@
 <div id="body">
     <div id="header">
         <div id="logo">
-            <img src="/images/logo.png" height=100%>
+            <img src="/images/logo.png" height=100px>
         </div>
         <?php include "menu.php"; ?>
     </div>
