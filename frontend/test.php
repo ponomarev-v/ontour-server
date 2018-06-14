@@ -7,8 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+<form action="">
+<input name="login" type="login" ip="login">
+<input name="register" type="register" id="register">
+<input name="sumbit" type="sumbit" id="sumbit">
 <script>
 alert('Привет, мир!');
 </script>
+</form>
 </body>
 </html>
