@@ -23,6 +23,7 @@ class Users
 
     public static function RegisgterUser($data)
     {
+        print_r($data);
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
