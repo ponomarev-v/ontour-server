@@ -145,13 +145,13 @@ class Utils
 
     public static function FormatPhone($phone) {
         // TODO обрезка телефона до 10-значного формата
-        if (strlen($phone) > 10 && $phone[0] == '8'){
+        /*if (strlen($phone) > 10 && $phone[0] == '8'){
             array_shift($phone);
         }
         elseif (strlen($phone) > 10 && ($phone[0] == '+' && $phone[1] == '7')){
             array_shift($phone);
             array_shift($phone);
-        }
+        }*/
         return $phone;
     }
 }
