@@ -9,11 +9,11 @@
                 <h3>
                     Старый номер телефона
                 </h3>
-                <input type="text" name="old_phone" id="phone">
+                <input type="text" name="old_phone" class="phone">
                 <h3>
                     Новый номер телефона
                 </h3>
-                <input type="text" name="new_phone" id="phone">
+                <input type="text" name="new_phone" class="phone">
                 <h3>
                 </h3>
                 <input type="submit" id="submit_new_phone">
@@ -23,7 +23,7 @@
 </div>
 <script>
     $(document).ready(function () {
-        $('#phone').mask('8(000)000-00-00');
+        $('.phone').mask('8(000)000-00-00');
         $.ajax({
             type: "POST",
             url: "http://ontourapi.kvantorium33.ru/?method=user.info",
