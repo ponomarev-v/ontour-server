@@ -35,6 +35,7 @@
         });
         $("#change_email_window .close").click(function () {
             $("#change_email_window").hide();
+            $("#profile_window").show();
         });
         $("#change_email_window").click(function (e) {
             if (e.target == this)

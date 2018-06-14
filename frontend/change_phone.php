@@ -36,6 +36,7 @@
         });
         $("#change_phone_window .close").click(function () {
             $("#change_phone_window").hide();
+            $("#profile_window").show();
         });
         $("#change_phone_window").click(function (e) {
             if (e.target == this)
