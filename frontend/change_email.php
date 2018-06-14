@@ -52,7 +52,7 @@
                         $("#change_email_error").html("");
                         $("#change_email_window").hide();
                         $("#profile_window").show();
-                        $("#profile_window".email).html(data [1]);
+                        $("#profile_window" .email).html(data [1]);
                     } else {
                         $("#change_email_error").html("Не удалось изменить почту");
                     }

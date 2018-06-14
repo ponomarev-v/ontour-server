@@ -53,7 +53,7 @@
                         $("#change_phone_error").html("");
                         $("#change_phone_window").hide();
                         $("#profile_window").show();
-                        $("#profile_window".phone).html(data [0]);
+                        $("#profile_window" .phone).html(data [0]);
                     } else {
                         $("#change_phone_error").html("Не удалось изменить номер телефона");
                     }
