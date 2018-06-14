@@ -28,10 +28,10 @@ $(document).ready(function() {
                 if (data.result == "success") {
                     $("#change_phone_error").html("");
                     $("#change_phone_window").hide();
-                    $("#menu_main").show();
-                    createchange_phone(data);
+                    $("#profile_window").show();
+                    $("#profile_window" .phone).html(data [0]);
                 } else {
-                    $("#change_phone_error").html("Неправильный логин или пароль");
+                    $("#change_phone_error").html("Не удалось изменить номер телефона");
                 }
             }
         });
@@ -41,10 +41,5 @@ $(document).ready(function() {
     $("#btn_change_phone").click(function () {
         $("#profile_window").hide();
         $("#change_phone_window").show();
-    });
-
-    $("#submit_new_phone").click(function () {
-        $("#profile_window").show();
-        $("#change_phone_window").hide();
     });
 });

@@ -7,6 +7,7 @@ function createProfile(user_info) {
 }
 
 $(document).ready(function() {
+    $('#phone').mask('8(000)000-00-00');
     $.ajax({
         type: "POST",
         url: "http://ontourapi.kvantorium33.ru/?method=user.info",

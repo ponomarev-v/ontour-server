@@ -27,10 +27,10 @@ $(document).ready(function() {
                 if (data.result == "success") {
                     $("#change_email_error").html("");
                     $("#change_email_window").hide();
-                    $("#menu_main").show();
-                    createchange_email(data);
+                    $("#profile_window").show();
+                    $("#profile_window" .email).html(data [1]);
                 } else {
-                    $("#change_email_error").html("Неправильный логин или пароль");
+                    $("#change_email_error").html("Не удалось изменить почту");
                 }
             }
         });
@@ -40,10 +40,5 @@ $(document).ready(function() {
     $("#btn_change_email").click(function () {
         $("#profile_window").hide();
         $("#change_email_window").show();
-    });
-
-    $("#submit_new_email").click(function () {
-        $("#profile_window").show();
-        $("#change_email_window").hide();
     });
 });

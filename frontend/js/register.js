@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('#phone').mask('8(000)000-00-00');
     $("#btn_register").click(function () {
         $("#login_window").hide();
         $("#register_window").show();
