@@ -9,7 +9,7 @@
                 <h3>
                     Логин
                 </h3>
-                <input type="text" name="register">
+                <input type="text" name="login">
                 <h3>
                     Телефон
                 </h3>
