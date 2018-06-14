@@ -27,7 +27,7 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         // Ищем пользователя в базе
-        $res = $db->where('login', $data['login'], 'like')->get('user');
+        $res = $db->where('login', $data['login'])->get('user');
         if(empty($res)) {
             $user_data = array(
                 'login'     => $data['login'],
@@ -50,5 +50,17 @@ class Users
         } else {
             throw new Exception('Пользователь '.$data['login'].' уже существует');
         }
+    }
+
+    public static function CheckUserCredentials($login, $password)
+    {
+        // Подключаемся к базе
+        $db = Core::DB();
+        // Ищем пользователя
+        $res = $db
+            ->where('login', $login)
+            ->where('password', md5($password))
+            ->get('user');
+        print_r($res);
     }
 }

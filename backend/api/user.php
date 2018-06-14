@@ -11,7 +11,7 @@ namespace API {
                     'login' => $_SESSION['login'],
                 );
             } else {
-                throw new \Exception('User not logged in');
+                throw new \Exception('Пользователь не авторизован в системе');
             }
         }
 
@@ -19,12 +19,10 @@ namespace API {
         {
             $login = \Utils::Request('login');
             $password = \Utils::Request('password');
-            if($login == 'artem' && $password == '123') {
-                $_SESSION['active'] = true;
-                $_SESSION['login'] = $login;
-                return $this->Info();
+            if($id = \Users::CheckUserCredentials($login, $password)) {
+                return $this->internalLogin($login, $id);
             } else {
-                throw new \Exception("Invalid login or password");
+                throw new \Exception("Неверно указано имя пользователя или пароль");
             }
         }
 
@@ -43,11 +41,21 @@ namespace API {
                 'phone'    => \Utils::Request('phone'),
             );
             if($id = \Users::RegisgterUser($data)) {
-                $_SESSION['active'] = true;
-                $_SESSION['login'] = $data['login'];
-                $_SESSION['userid'] = $id;
-                return $this->Info();
+                return $this->internalLogin($data['login'], $id);
             }
+        }
+
+        /**
+         * @param $login
+         * @param $id
+         * @return array
+         */
+        private function internalLogin($login, $id)
+        {
+            $_SESSION['active'] = true;
+            $_SESSION['login'] = $login;
+            $_SESSION['userid'] = $id;
+            return $this->Info();
         }
     }
 }
