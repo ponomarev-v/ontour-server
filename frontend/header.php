@@ -3,6 +3,7 @@
     <title>ON TOUR</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"><!--общие стили-->
     <link rel="stylesheet" type="text/css" href="/css/menu.css"><!--стили меню-->
+    <link rel="stylesheet" type="text/css" href="/css/menu_main.css"><!--стили меню после регистрации-->
     <link rel="stylesheet" type="text/css" href="/css/window.css"><!--стили всплывающих окон-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="/js/jquery-3.3.1.js" type="text/javascript"></script><!--скрипт jquery-->

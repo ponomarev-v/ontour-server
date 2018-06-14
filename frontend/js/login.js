@@ -1,8 +1,9 @@
 function createProfile(user_info) {
     $("#menu_login").hide();
+    $("#menu_register").hide();
     $("#menu_logout").show();
-    $("#btn_profile").html("Профиль");
-    $("#btn_profile").attr("title", "Click here!");
+    $("#menu_profile").show();
+    $("#menu_main").show();
 }
 
 $(document).ready(function() {
@@ -30,7 +31,10 @@ $(document).ready(function() {
                 data = eval("(" + data + ")");
                 if(data.result == "success") {
                     $("#menu_logout").hide();
+                    $("#menu_profile").hide();
+                    $("#menu_register").show();
                     $("#menu_login").show();
+                    $("#menu_main").hide();
                 }
             }
         });
@@ -50,7 +54,6 @@ $(document).ready(function() {
     });
 
     $("#login_form").submit(function(e) {
-
         $.ajax({
             type: "POST",
             url: "http://ontourapi.kvantorium33.ru/?method=user.login",
@@ -62,6 +65,7 @@ $(document).ready(function() {
                 if(data.result == "success") {
                     $("#login_error").html("");
                     $("#login_window").hide();
+                    $("#menu_main").show();
                     createProfile(data);
                 } else {
                     $("#login_error").html("Неправильный логин или пароль");

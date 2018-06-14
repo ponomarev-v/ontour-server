@@ -27,6 +27,7 @@ $(document).ready(function() {
                 if(data.result == "success") {
                     $("#register_error").html("");
                     $("#register_window").hide();
+                    $("#menu_main").show();
                     createProfile(data);
                 } else {
                     $("#register_error").html("Ничего не вышло =(");
