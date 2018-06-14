@@ -1,11 +1,11 @@
 <?php
-namespace API {
-    class br
-    {
-        public function br() {
-        $a = \Utils::Request('a');
-        $b = \Utils::Request('b');
-        return ($a + $b);
+    namespace API{
+        class br{
+            public function aa()
+            {
+                $b = $_REQUEST['b'];
+                $a = $_REQUEST['a'];
+                return ($a + $b);
+            }
         }
-    }
 }
