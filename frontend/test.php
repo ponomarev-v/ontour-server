@@ -10,10 +10,13 @@
 <body>
 <p>Начало</p>
 <form id="sum">
-<input name="login" type="login" ip="login">
-<input name="register" type="register" id="register">
+<input name="a" type="text" id="a">
+<input name="b" type="text" id="b">
+<input type="submit">
 <script type="text/javascript">
-    alert($("#login").val())
+    $("#sum").on("submit",function(){
+        $(this).serialize();
+    });
 </script>
 <p>Конец</p>
 </form>
