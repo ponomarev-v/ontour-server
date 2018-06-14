@@ -6,13 +6,21 @@ namespace API {
         public function Info()
         {
             if(\Utils::ArrayGet('active', $_SESSION)) {
-                $info = \Users::GetUserInfo($_SESSION['userid']);
-                \Users::UpdateLastActive($_SESSION['userid'], time());
-                return array(
-                    'token' => session_id(),
-                    'login' => $_SESSION['login'],
-                    'gsgsfg'=> '',
-                );
+                if($info = \Users::GetUserInfo($_SESSION['userid'])) {
+                    \Users::UpdateLastActive($_SESSION['userid'], time());
+                    return array(
+                        'token'  => session_id(),
+                        'userid' => $_SESSION['userid'],
+                        'login'  => $_SESSION['login'],
+                        'name'   => $info['name'],
+                        'phone'  => $info['phone'],
+                        'email'  => $info['email'],
+                        'rating' => $info['rating'],
+                        'score'  => $info['score'],
+                    );
+                } else {
+                    throw new \Exception('Ошибка при получении информации о пользователе');
+                }
             } else {
                 throw new \Exception('Пользователь не авторизован в системе');
             }
