@@ -45,6 +45,7 @@ class Users
                 'name'      => $data['login'],
             );
             print_r($user_data);
+
             $db->insert('user', $user_data);
             $new_id = $db->getInsertId();
             return $new_id;
