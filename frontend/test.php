@@ -15,7 +15,7 @@
 <input type="submit">
 <script type="text/javascript">
     $("#sum").on("submit",function(){
-        $(this).serialize();
+        alert($(this).serialize());
     });
 </script>
 <p>Конец</p>
