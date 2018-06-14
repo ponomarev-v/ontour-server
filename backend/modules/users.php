@@ -85,7 +85,7 @@ class Users
 
     public static function GetUserInfo($userid)
     {
-        $res = Core::DB()->where('id', $userid)->get('user');
+        $res = Core::DB()->where('id', $userid)->getOne('user');
         return $res;
     }
 
