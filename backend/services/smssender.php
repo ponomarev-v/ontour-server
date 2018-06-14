@@ -6,6 +6,7 @@ while(true) {
     foreach($res as $sms) {
         $command = 'gammu --sendsms text +7' . $sms['phone'] . ' -text "' . $sms['message'] . '" -unicode';
         exec($command);
+
         echo $command.PHP_EOL;
         $db->where('id', $sms['id'])->update('sms', array('date_send' => time()));
     }
