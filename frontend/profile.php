@@ -6,15 +6,15 @@
                 Профиль
             </h1>
             <form id="profile_form">
-                <h3>
+                <h3 class="phone">
                     Телефон
                 </h3>
                 <a href=# id="btn_change_phone">Сменить телефон</a>
-                <h3>
+                <h3 class="email">
                     Почта
                 </h3>
                 <a href=# id="btn_change_email">Сменить почту</a>
-                <h3>
+                <h3 class="password">
                     Пароль
                 </h3>
                 <a href=# id="btn_change_password">Сменить пароль</a>

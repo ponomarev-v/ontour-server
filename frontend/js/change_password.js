@@ -27,10 +27,10 @@ $(document).ready(function() {
                 if (data.result == "success") {
                     $("#change_password_error").html("");
                     $("#change_password_window").hide();
-                    $("#menu_main").show();
-                    createchange_password(data);
+                    $("#profile_window").show();
+                    $("#profile_window" .password).html(data [2]);
                 } else {
-                    $("#change_password_error").html("Неправильный логин или пароль");
+                    $("#change_password_error").html("Не удалось изменить пароль");
                 }
             }
         });
@@ -40,10 +40,5 @@ $(document).ready(function() {
     $("#btn_change_password").click(function () {
         $("#profile_window").hide();
         $("#change_password_window").show();
-    });
-
-    $("#submit_new_password").click(function () {
-        $("#profile_window").show();
-        $("#change_password_window").hide();
     });
 });
