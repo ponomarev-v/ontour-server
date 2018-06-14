@@ -30,7 +30,7 @@ class Users
         // Ищем пользователя в базе
         $res = $db->where('login', $data['login'])->get('user');
         if(!empty($res)) {
-            throw new Exception('Пользователь '.$data['login'].' уже существует');
+            throw new Exception('Пользователь ' . $data['login'] . ' уже существует');
         }
         // Проверка по имени телефона
         $res = $db->where('phone', $data['phone'])->get('user');
@@ -85,18 +85,15 @@ class Users
 
     public static function GetUserInfo($userid)
     {
-        // Подключиться к базу
-        // получить информацию по ID
-        // вернуть ее
-        $db = Core::DB();
-        $res = $db -> where('id', $userid);
+        $res = Core::DB()->where('id', $userid)->get('user');
         return $res;
-
     }
 
     public static function UpdateLastActive($userid, $time)
     {
-        // Подключиться к базу
-        // Обновляем поле date_last
+        Core::DB()->where('id', $userid)->update('user', array(
+            'date_last' => time(),
+        ));
+        return true;
     }
 }
