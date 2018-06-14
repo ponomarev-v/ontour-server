@@ -17,7 +17,7 @@
                 <h3>
                     Почта
                 </h3>
-                <input type="password" name="password">
+                <input type="email" name="email">
                 <h3>
                     Пароль
                 </h3>
