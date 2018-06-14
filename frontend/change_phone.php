@@ -7,10 +7,6 @@
             </h1>
             <form id="change_phone_form">
                 <h3>
-                    Старый номер телефона
-                </h3>
-                <input type="text" name="old_phone" class="phone">
-                <h3>
                     Новый номер телефона
                 </h3>
                 <input type="text" name="new_phone" class="phone">
