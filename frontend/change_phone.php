@@ -7,10 +7,6 @@
             </h1>
             <form id="change_phone_form">
                 <h3>
-                    Старый номер телефона
-                </h3>
-                <input type="text" name="old_phone" class="phone">
-                <h3>
                     Новый номер телефона
                 </h3>
                 <input type="text" name="new_phone" class="phone">
@@ -36,6 +32,7 @@
         });
         $("#change_phone_window .close").click(function () {
             $("#change_phone_window").hide();
+            $("#profile_window").show();
         });
         $("#change_phone_window").click(function (e) {
             if (e.target == this)

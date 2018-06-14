@@ -7,13 +7,9 @@
             </h1>
             <form id="change_email_form">
                 <h3>
-                    Старая почта
-                </h3>
-                <input type="text" name="old_email">
-                <h3>
                     Новая почта
                 </h3>
-                <input type="text" name="new_email">
+                <input type="email" name="new_email">
                 <h3>
                 </h3>
                 <input type="submit" id="submit_new_email">
@@ -35,6 +31,7 @@
         });
         $("#change_email_window .close").click(function () {
             $("#change_email_window").hide();
+            $("#profile_window").show();
         });
         $("#change_email_window").click(function (e) {
             if (e.target == this)

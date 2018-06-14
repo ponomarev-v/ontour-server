@@ -35,6 +35,7 @@
         });
         $("#change_password_window .close").click(function () {
             $("#change_password_window").hide();
+            $("#profile_window").show();
         });
         $("#change_password_window").click(function (e) {
             if (e.target == this)
