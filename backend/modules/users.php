@@ -44,9 +44,10 @@ class Users
                 'score'     => 0,
                 'name'      => $data['login'],
             );
+
             $db->insert('user', $user_data);
             $new_id = $db->getInsertId();
-            print_r($new_id);
+            print_r($db->getLastError());
 
             return $new_id;
         } else {
