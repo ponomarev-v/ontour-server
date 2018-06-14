@@ -23,7 +23,6 @@ class Users
 
     public static function RegisgterUser($data)
     {
-        print_r($data);
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
@@ -45,6 +44,7 @@ class Users
                 'score'     => 0,
                 'name'      => $data['login'],
             );
+            print_r($user_data);
             $db->insert('user', $user_data);
             $new_id = $db->getInsertId();
             return $new_id;
