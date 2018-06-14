@@ -73,6 +73,10 @@ class Users
         // Подключиться к базу
         // получить информацию по ID
         // вернуть ее
+        $db = Core::DB();
+        $res = $db -> where('id', $userid);
+        return $res;
+
     }
 
     public static function UpdateLastActive($userid, $time)
