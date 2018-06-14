@@ -57,9 +57,4 @@ $(document).ready(function() {
         $("#btn_change_phone").show();
         $("#profile_window").hide();
     });
-
-    $("#btn_change_login").click(function () {
-        $("#btn_change_login").show();
-        $("#profile_window").hide();
-    });
 });
