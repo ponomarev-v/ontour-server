@@ -32,7 +32,7 @@ class Users
             $user_data = array(
                 'login'     => $data['login'],
                 'password'  => md5($data['password']),
-                'phone'     => $data['phone'],
+                'phone'     => Utils::FormatPhone($data['phone']),
                 'email'     => $data['email'],
                 'role'      => self::ROLE_USER,
                 'date_reg'  => time(),
@@ -47,9 +47,10 @@ class Users
 
             $db->insert('user', $user_data);
             $new_id = $db->getInsertId();
-            print_r($db->getLastError());
-
-            return $new_id;
+            if($new_id > 0)
+                return $new_id;
+            else
+                throw new Exception('Непредвиденная ошибка при регистрации пользователя');
         } else {
             throw new Exception('Пользователь '.$data['login'].' уже существует');
         }
