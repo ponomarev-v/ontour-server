@@ -41,4 +41,9 @@ $(document).ready(function() {
         $("#profile_window").hide();
         $("#change_email_window").show();
     });
+
+    $("#submit_new_email").click(function () {
+        $("#profile_window").show();
+        $("#change_email_window").hide();
+    });
 });

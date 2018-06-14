@@ -41,4 +41,9 @@ $(document).ready(function() {
         $("#profile_window").hide();
         $("#change_password_window").show();
     });
+
+    $("#submit_new_password").click(function () {
+        $("#profile_window").show();
+        $("#change_password_window").hide();
+    });
 });

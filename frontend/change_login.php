@@ -16,7 +16,7 @@
                 <input type="text" name="new_login">
                 <h3>
                 </h3>
-                <input type="submit">
+                <input type="submit" id="submit_new_login">
             </form>
         </div>
     </div>

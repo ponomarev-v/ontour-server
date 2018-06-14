@@ -16,7 +16,7 @@
                 <input type="text" name="new_phone" id="phone">
                 <h3>
                 </h3>
-                <input type="submit">
+                <input type="submit" id="submit_new_phone">
             </form>
         </div>
     </div>

@@ -41,4 +41,9 @@ $(document).ready(function() {
         $("#profile_window").hide();
         $("#change_phone_window").show();
     });
+
+    $("#submit_new_phone").click(function () {
+        $("#profile_window").show();
+        $("#change_phone_window").hide();
+    });
 });

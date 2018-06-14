@@ -41,4 +41,9 @@ $(document).ready(function() {
         $("#profile_window").hide();
         $("#change_login_window").show();
     });
+
+    $("#submit_new_login").click(function () {
+        $("#profile_window").show();
+        $("#change_login_window").hide();
+    });
 });
