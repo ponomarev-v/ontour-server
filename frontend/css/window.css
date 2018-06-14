@@ -4,6 +4,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 255; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -19,7 +20,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 40%;
 }
 
 /* The Close Button */

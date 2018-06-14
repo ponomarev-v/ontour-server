@@ -5,22 +5,15 @@
             <h1>
                 Профиль
             </h1>
-            <form id="profile_form"><br>
-                Имя<br>
-                <input type="text" class="name"><br>
-                Фамилия<br>
-                <input type="text" class="surname"><br>
-                Отчество<br>
-                <input type="text" class="patronymic"><br>
-                Пол<br>
-                Мужской
-                <input type="radio" checked="checked" name="a" class="sex_man" onchange="t01();">
-                <input type="radio" name="a" class="sex_woman" onchange="t02();">
-                Женский<br>
-                Возраст<br>
-                <input type="number" class="name"><br>
-                Школа<br>
-                <input type="text" class="name">
+            <form id="register_form">
+                <input type="text" class="name" placeholder="Имя"><br>
+                <input type="text" class="surname" placeholder="Фамилия"><br>
+                <input type="text" class="patronymic" placeholder="Отчество"><br>
+                <input type="number" class="age" placeholder="Возраст"><br>
+                <input type="number" class="school" placeholder="Номер школы"><br>
+                <input type="password" class="password" placeholder="Пароль"><br>
+                <input type="email" class="email" placeholder="Электронная почта"><br>
+                <input type="text" class="phone" placeholder="Номер телефона">
                 <p>
                     <input type="submit" value="Сохранить">
                 </p>

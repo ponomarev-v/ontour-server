@@ -6,27 +6,10 @@
                  Регистрация ON TOUR
             </h1>
             <form id="register_form">
-                Имя:<br>
-                <input type="text" class="name"><br>
-                Фамилия:<br>
-                <input type="text" class="surname"><br>
-                Отчество:<br>
-                <input type="text" class="patronymic"><br>
-                Пол:<br>
-                Мужской
-                <input type="radio" checked="checked" name="a" class="sex_man" onchange="t01();">
-                <input type="radio" name="a" class="sex_woman" onchange="t02();">
-                Женский<br>
-                Возраст:<br>
-                <input type="number" class="age"><br>
-                Школа:<br>
-                <input type="number" class="school"><br>
-                Пароль:<br>
-                <input type="password" class="password"><br>
-                Почта:<br>
-                <input type="email" class="email"><br>
-                Номер телефона:<br>
-                <input type="text" class="phone">
+                <input type="text" class="name" placeholder="Имя"><br>
+                <input type="text" class="surname" placeholder="Фамилия"><br>
+                <input type="password" class="password" placeholder="Пароль"><br>
+                <input type="text" class="phone" placeholder="Номер телефона">
                 <p>
                     <input type="submit" value="Зарегистрироваться">
                 </p>

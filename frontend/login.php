@@ -6,22 +6,12 @@
                 Вход ON TOUR
             </h1>
             <form id="login_form">
-                <h3>
-                    Логин
-                </h3>
-                <input type="text" name="login">
-                <h3>
-                    Пароль
-                </h3>
-                <input type="password" name="password">
-                <h3>
-                </h3>
-                <div id="login_error"></div>
-                <input type="submit">
+                <input type="text" class="login" placeholder="телефон или mail"><br>
+                <input type="password" class="password" placeholder="Пароль">
+                <p>
+                    <input type="submit" value="Войти">
+                </p>
             </form>
-            <h3>
-                Если у вас нет аккаунта, Вы можете <a href=# class="btn_register">зарегистрироваться</a>
-            </h3>
         </div>
     </div>
 </div>
