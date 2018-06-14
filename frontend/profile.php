@@ -7,9 +7,9 @@
             </h1>
             <form id="profile_form">
                 <h3>
-                    Имя
+                    Логин
                 </h3>
-                <a href=# id="btn_change_login">Сменить имя</a>
+                <a href=# id="btn_change_login">Сменить логин</a>
                 <h3>
                     Телефон
                 </h3>

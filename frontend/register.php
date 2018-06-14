@@ -7,7 +7,7 @@
             </h1>
             <form id="register_form">
                 <h3>
-                    Имя
+                    Логин
                 </h3>
                 <input type="text" name="register">
                 <h3>
