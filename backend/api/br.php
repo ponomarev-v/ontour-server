@@ -5,7 +5,7 @@ namespace API {
         public function br() {
         $a = \Utils::Request('a');
         $b = \Utils::Request('b');
-        return 123;
+        return ($a + $b);
         }
     }
 }
