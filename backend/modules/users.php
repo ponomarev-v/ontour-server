@@ -44,10 +44,10 @@ class Users
                 'score'     => 0,
                 'name'      => $data['login'],
             );
-            print_r($user_data);
-
             $db->insert('user', $user_data);
             $new_id = $db->getInsertId();
+            print_r($new_id);
+
             return $new_id;
         } else {
             throw new Exception('Пользователь '.$data['login'].' уже существует');
