@@ -13,7 +13,7 @@
                 <h3>
                     Телефон
                 </h3>
-                <input type="text" name="phone" id="phone">
+                8<input type="text" name="phone" id="phone">
                 <h3>
                     Почта
                 </h3>
