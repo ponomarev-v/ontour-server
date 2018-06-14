@@ -143,12 +143,23 @@ class Utils
         }
     }
 
-    public static function FormatPhone($phone) {
+    public static function FormatPhone($phone)
+    {
         $phone = preg_replace('/[^0-9]/', '', $phone);
         if(strlen($phone) == 11 && ($phone[0] == '8' || $phone[0] == '7'))
             $phone = substr($phone, 1);
         if(strlen($phone) != 10)
             $phone = null;
         return $phone;
+    }
+
+    public static function SendSMS($phone, $message)
+    {
+        $db = Core::DB();
+        $db->insert('sms', array(
+            'phone'    => $phone,
+            'message'  => $message,
+            'date_add' => time(),
+        ));
     }
 }

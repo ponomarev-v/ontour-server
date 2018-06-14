@@ -1,7 +1,5 @@
 <?php
-define("ROOT_PATH", __DIR__);
-require_once(ROOT_PATH . '/config.php');
-require_once(ROOT_PATH . '/autoload.php');
+require_once(__DIR__ . '/autoload.php');
 
 if(isset($_SERVER['HTTP_ORIGIN'])) {
     header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
