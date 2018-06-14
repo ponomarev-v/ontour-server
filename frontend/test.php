@@ -8,13 +8,14 @@
 </head>
 <body>
 <p>Начало</p>
-<form action="">
+<form id="sum">
 <input name="login" type="login" ip="login">
 <input name="register" type="register" id="register">
-<script>
-alert('Привет, мир!');
+<script type="text/javascript">
+    alert($("#login").val())
 </script>
 <p>Конец</p>
 </form>
+<script src="js/jquery-3.3.1.js"></script>
 </body>
 </html>
