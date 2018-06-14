@@ -6,26 +6,30 @@
                  Регистрация ON TOUR
             </h1>
             <form id="register_form">
-                <h3>
-                    Логин
-                </h3>
-                <input type="text" name="login">
-                <h3>
-                    Телефон
-                </h3>
-                <input type="text" name="phone" class="phone">
-                <h3>
-                    Почта
-                </h3>
-                <input type="email" name="email">
-                <h3>
-                    Пароль
-                </h3>
-                <input type="password" name="password">
-                <h3>
-                </h3>
-                <div id="register_error"></div>
-                <input type="submit">
+                Имя:<br>
+                <input type="text" class="name"><br>
+                Фамилия:<br>
+                <input type="text" class="surname"><br>
+                Отчество:<br>
+                <input type="text" class="patronymic"><br>
+                Пол:<br>
+                Мужской
+                <input type="radio" checked="checked" name="a" class="sex_man" onchange="t01();">
+                <input type="radio" name="a" class="sex_woman" onchange="t02();">
+                Женский<br>
+                Возраст:<br>
+                <input type="number" class="age"><br>
+                Школа:<br>
+                <input type="number" class="school"><br>
+                Пароль:<br>
+                <input type="password" class="password"><br>
+                Почта:<br>
+                <input type="email" class="email"><br>
+                Номер телефона:<br>
+                <input type="text" class="phone">
+                <p>
+                    <input type="submit" value="Зарегистрироваться">
+                </p>
             </form>
         </div>
     </div>
@@ -33,7 +37,7 @@
 <script>
     $(document).ready(function() {
         $('.phone').mask('8(000)000-00-00');
-        $("#btn_register").click(function () {
+        $(".btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
         });
@@ -63,7 +67,7 @@
                         $("#menu_main").show();
                         createProfile(data);
                     } else {
-                        $("#register_error").html(data[message]);
+                        $("#register_error").html("оишбка");
                     }
                 }
             });

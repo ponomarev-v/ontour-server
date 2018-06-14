@@ -5,19 +5,25 @@
             <h1>
                 Профиль
             </h1>
-            <form id="profile_form">
-                <h3 class="phone">
-                    Телефон
-                </h3>
-                <a href=# id="btn_change_phone">Сменить телефон</a>
-                <h3 class="email">
-                    Почта
-                </h3>
-                <a href=# id="btn_change_email">Сменить почту</a>
-                <h3 class="password">
-                    Пароль
-                </h3>
-                <a href=# id="btn_change_password">Сменить пароль</a>
+            <form id="profile_form"><br>
+                Имя<br>
+                <input type="text" class="name"><br>
+                Фамилия<br>
+                <input type="text" class="surname"><br>
+                Отчество<br>
+                <input type="text" class="patronymic"><br>
+                Пол<br>
+                Мужской
+                <input type="radio" checked="checked" name="a" class="sex_man" onchange="t01();">
+                <input type="radio" name="a" class="sex_woman" onchange="t02();">
+                Женский<br>
+                Возраст<br>
+                <input type="number" class="name"><br>
+                Школа<br>
+                <input type="text" class="name">
+                <p>
+                    <input type="submit" value="Сохранить">
+                </p>
             </form>
         </div>
     </div>

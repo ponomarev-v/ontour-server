@@ -20,7 +20,7 @@
                 <input type="submit">
             </form>
             <h3>
-                Если у вас нет аккаунта, Вы можете <a href=# id="btn_register">зарегистрироваться</a>
+                Если у вас нет аккаунта, Вы можете <a href=# class="btn_register">зарегистрироваться</a>
             </h3>
         </div>
     </div>
