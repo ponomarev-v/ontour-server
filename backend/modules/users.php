@@ -17,12 +17,13 @@ class Users
             throw new \Exception("Пароль должен быть не менее 8 и не более 255 символов");
         if(!isset($data['email']) || empty($data['email']))
             throw new \Exception("Не указан email");
-        if(!isset($data['phone']) || empty($data['phone']))
+        if(!isset($data['phone']) || strlen($data['phone']) != 10)
             throw new \Exception("Не указан телефон");
     }
 
     public static function RegisgterUser($data)
     {
+        $data['phone'] = Utils::FormatPhone($data['phone']);
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
@@ -32,7 +33,7 @@ class Users
             $user_data = array(
                 'login'     => $data['login'],
                 'password'  => md5($data['password']),
-                'phone'     => Utils::FormatPhone($data['phone']),
+                'phone'     => $data['phone'],
                 'email'     => $data['email'],
                 'role'      => self::ROLE_USER,
                 'date_reg'  => time(),
