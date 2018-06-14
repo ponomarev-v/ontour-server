@@ -61,6 +61,23 @@ class Users
             ->where('login', $login)
             ->where('password', md5($password))
             ->get('user');
-        print_r($res);
+        if(sizeof($res) == 1) {
+            return $res[0]['id'];
+        } else {
+            return null;
+        }
+    }
+
+    public static function GetUserInfo($userid)
+    {
+        // Подключиться к базу
+        // получить информацию по ID
+        // вернуть ее
+    }
+
+    public static function UpdateLastActive($userid, $time)
+    {
+        // Подключиться к базу
+        // Обновляем поле date_last
     }
 }

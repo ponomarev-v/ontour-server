@@ -6,9 +6,12 @@ namespace API {
         public function Info()
         {
             if(\Utils::ArrayGet('active', $_SESSION)) {
+                $info = \Users::GetUserInfo($_SESSION['userid']);
+                \Users::UpdateLastActive($_SESSION['userid'], time());
                 return array(
                     'token' => session_id(),
                     'login' => $_SESSION['login'],
+                    'gsgsfg'=> '',
                 );
             } else {
                 throw new \Exception('Пользователь не авторизован в системе');
