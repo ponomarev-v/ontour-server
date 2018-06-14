@@ -29,32 +29,42 @@ class Users
         $db = Core::DB();
         // Ищем пользователя в базе
         $res = $db->where('login', $data['login'])->get('user');
-        if(empty($res)) {
-            $user_data = array(
-                'login'     => $data['login'],
-                'password'  => md5($data['password']),
-                'phone'     => $data['phone'],
-                'email'     => $data['email'],
-                'role'      => self::ROLE_USER,
-                'date_reg'  => time(),
-                'date_last' => time(),
-                'status'    => self::STATUS_DISABLED,
-                'rating'    => 0,
-                /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
-                /* и установка баллов для того, кто пригласил */
-                'score'     => 0,
-                'name'      => $data['login'],
-            );
-
-            $db->insert('user', $user_data);
-            $new_id = $db->getInsertId();
-            if($new_id > 0)
-                return $new_id;
-            else
-                throw new Exception('Непредвиденная ошибка при регистрации пользователя');
-        } else {
+        if(!empty($res)) {
             throw new Exception('Пользователь '.$data['login'].' уже существует');
         }
+        // Проверка по имени телефона
+        $res = $db->where('phone', $data['phone'])->get('user');
+        if(!empty($res)) {
+            throw new Exception('Пользователь с указанным телефоном уже существует');
+        }
+        // Проверка по почте
+        $res = $db->where('email', $data['email'])->get('user');
+        if(!empty($res)) {
+            throw new Exception('Пользователь с указанным email-адресом уже существует');
+        }
+
+        $user_data = array(
+            'login'     => $data['login'],
+            'password'  => md5($data['password']),
+            'phone'     => $data['phone'],
+            'email'     => $data['email'],
+            'role'      => self::ROLE_USER,
+            'date_reg'  => time(),
+            'date_last' => time(),
+            'status'    => self::STATUS_DISABLED,
+            'rating'    => 0,
+            /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
+            /* и установка баллов для того, кто пригласил */
+            'score'     => 0,
+            'name'      => $data['login'],
+        );
+
+        $db->insert('user', $user_data);
+        $new_id = $db->getInsertId();
+        if($new_id > 0)
+            return $new_id;
+        else
+            throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
     public static function CheckUserCredentials($login, $password)
