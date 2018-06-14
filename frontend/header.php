@@ -7,9 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="/js/jquery-3.3.1.js" type="text/javascript"></script><!--скрипт jquery-->
     <script src="/js/jquery.mask.js" type="text/javascript"></script><!--скрипт jquery.mask-->
-    <script src="/js/register.js" type="text/javascript"></script><!--скрипт регистрации-->
-    <script src="/js/login.js" type="text/javascript"></script><!--скрипт логина-->
-    <script src="/js/profile.js" type="text/javascript"></script><!--скрипт профиля-->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script><!--скрипт яндекс.карт-->
 </head>
 <body>
