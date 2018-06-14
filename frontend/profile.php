@@ -7,10 +7,6 @@
             </h1>
             <form id="profile_form">
                 <h3>
-                    Логин
-                </h3>
-                <a href=# id="btn_change_login">Сменить логин</a>
-                <h3>
                     Телефон
                 </h3>
                 <a href=# id="btn_change_phone">Сменить телефон</a>

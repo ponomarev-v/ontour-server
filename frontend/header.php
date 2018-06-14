@@ -11,7 +11,6 @@
     <script src="/js/login.js" type="text/javascript"></script><!--скрипт логина-->
     <script src="/js/profile.js" type="text/javascript"></script><!--скрипт профиля-->
     <script src="/js/change_password.js" type="text/javascript"></script><!--скрипт смены пароля-->
-    <script src="/js/change_login.js" type="text/javascript"></script><!--скрипт смены логина-->
     <script src="/js/change_email.js" type="text/javascript"></script><!--скрипт смены почты-->
     <script src="/js/change_phone.js" type="text/javascript"></script><!--скрипт смены телефона-->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script><!--скрипт яндекс.карт-->
