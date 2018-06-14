@@ -142,4 +142,9 @@ class Utils
             return $hash;
         }
     }
+
+    public static function FormatPhone($phone) {
+        // TODO обрезка телефона до 10-значного формата
+        return $phone;
+    }
 }
