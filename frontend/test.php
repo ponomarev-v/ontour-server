@@ -15,7 +15,22 @@
 <input type="submit">
 <script type="text/javascript">
     $("#sum").on("submit",function(){
-        alert($(this).serialize());
+        $.ajax({
+            type: "POST",
+            url: "http://ontourapi.kvantorium33.ru/?method=ab.func",
+            data: $(this).serialize(),
+            xhrFields: {withCredentials: true},
+            success: function(data)
+            {
+                data = eval("(" + data + ")");
+                if(data.result == "success") {
+                   alert(data.data)
+                    
+                } else {
+                   alert("false")
+                }
+            }
+        });
     });
 </script>
 <p>Конец</p>
