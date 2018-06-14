@@ -52,7 +52,7 @@
                         $("#change_password_error").html("");
                         $("#change_password_window").hide();
                         $("#profile_window").show();
-                        $("#profile_window".password).html(data [2]);
+                        $("#profile_window" .password).html(data [2]);
                     } else {
                         $("#change_password_error").html("Не удалось изменить пароль");
                     }
