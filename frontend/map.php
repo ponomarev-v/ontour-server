@@ -5,10 +5,11 @@
     function init() {
         var myPlacemark,
             myMap = new ymaps.Map('map', {
-                center: [55.753994, 37.622093],
+                center: [56.1365500, 40.3965800],
                 zoom: 9
             }, {
-                searchControlProvider: 'yandex#search'
+                searchControlProvider: 'yandex#search',
+                minZoom: 2
             });
 
         // Слушаем клик на карте.
