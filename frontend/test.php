@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+<p>Начало</p>
+<form action="">
+<input name="login" type="login" ip="login">
+<input name="register" type="register" id="register">
 <script>
 alert('Привет, мир!');
 </script>
+<p>Конец</p>
+</form>
 </body>
 </html>
