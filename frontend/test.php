@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-  <p></p>
+<script>
+alert('Привет, мир!');
+</script>
 </body>
 </html>
