@@ -4,9 +4,14 @@
         <li id="menu_login"><a href=# id="btn_login">Вход</a></li>
         <li id="menu_profile" style="display: none"><a href=# id="btn_profile">Личный кабинет</a></li>
         <li id="menu_logout" style="display: none"><a href=# id="btn_logout">Выход</a></li><br>
-        <li id="menu_main" style="display: none"><a href=# id="btn_logout">Меню после входа</a></li>
+        <li id="menu_main" style="display: none"><a href=#>Меню после входа</a></li>
     </ul>
 </div>
 <?php
 include "login.php";//подключение всплывающего окна логина
 include "register.php";//подключение всплывающего окна регистрации
+include "profile.php";//подключение всплывающего окна регистрации
+include "change_login.php";//подключение всплывающего окна регистрации
+include "change_password.php";//подключение всплывающего окна регистрации
+include "change_email.php";//подключение всплывающего окна регистрации
+include "change_phone.php";//подключение всплывающего окна регистрации

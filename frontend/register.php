@@ -15,6 +15,10 @@
                 </h3>
                 <input type="text" name="phone" id="phone">
                 <h3>
+                    Почта
+                </h3>
+                <input type="password" name="password">
+                <h3>
                     Пароль
                 </h3>
                 <input type="password" name="password">
