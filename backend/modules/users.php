@@ -12,11 +12,11 @@ class Users
     public static function CheckUserData($data)
     {
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
-            throw new \Exception("Пароль должен быть не менее 8 и не более 255 символов");
+            throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
         // TODO нормальная проверка email-a
         if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
-            throw new \Exception("Не указан email или он неправельно указан");
+            throw new \Exception("emal отсутствует или указан неверно");
 
         if(!isset($data['name']) || empty($data['name']))
             throw new \Exception("Не указано имя");
@@ -37,7 +37,7 @@ class Users
             throw new Exception('Пользователь с указанным телефоном уже существует');
         }
         if(!empty($res)) {
-            throw new Exception('Пользователь с указанным email-адресом уже существует');
+            throw new Exception('Пользователь с указанной почтой уже существует');
         }
 
         $user_data = array(
