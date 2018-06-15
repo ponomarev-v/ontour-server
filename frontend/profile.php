@@ -14,7 +14,7 @@
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="phone_profile">
                 <p>
-                    <div id="profile_error"></div>
+                    <input type="text" name="profile_error" style="display: none"><br>
                     <input type="submit" value="Сохранить">
                 </p>
             </form>

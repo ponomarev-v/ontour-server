@@ -11,7 +11,7 @@
                 <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required><br>
                 <p>
-                    <div id="register_error"></div>
+                    <input type="text" name="profile_error" style="display: none"><br>
                     <input type="submit" value="Зарегистрироваться">
                 </p>
             </form>
@@ -20,7 +20,6 @@
 </div>
 <script>
     $(document).ready(function () {
-
         $('#phone_register').mask('8(000)000-00-00');
         $(".btn_register").click(function () {
             $("#login_window").hide();
@@ -48,10 +47,8 @@
                     if (data.result == "success") {
                         $("#register_error").html("");
                         $("#register_window").hide();
-                        $("#menu_login").hide();
                         $("#menu_main").show();
-                        $("#main_logout").show();
-                        $("#main_profile").show();
+                        createProfile(data);
                     } else {
                         $("#register_error").html(data["message"]);
                     }
