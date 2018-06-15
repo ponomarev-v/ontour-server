@@ -3,12 +3,11 @@
         <span class="close">&times;</span>
         <div id="form" align="center">
             <h1>
-                Профиль
+                Редактирование профиля
             </h1>
             <form id="register_form">
                 <input type="text" name="name" placeholder="Имя" class="form"><br>
                 <input type="text" name="surname" placeholder="Фамилия" class="form"><br>
-                <input type="text" name="patronymic" placeholder="Отчество" class="form"><br>
                 <input type="number" name="age" placeholder="Возраст" class="form"><br>
                 <input type="text" name="school" placeholder="Учебное заведение" class="form"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form"><br>
@@ -31,7 +30,7 @@
             success: function (data) {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
-                    createProfile(data);
+
                 }
             }
         });
@@ -66,21 +65,6 @@
         $("#profile_window").click(function (e) {
             if (e.target == this)
                 $("#profile_window").hide();
-        });
-
-        $("#btn_change_email").click(function () {
-            $("#btn_change_email").show();
-            $("#profile_window").hide();
-        });
-
-        $("#btn_change_password").click(function () {
-            $("#btn_change_password").show();
-            $("#profile_window").hide();
-        });
-
-        $("#btn_change_phone").click(function () {
-            $("#btn_change_phone").show();
-            $("#profile_window").hide();
         });
     });
 </script>
