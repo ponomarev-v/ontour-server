@@ -11,7 +11,6 @@ namespace API {
                     return array(
                         'token'  => session_id(),
                         'userid' => $_SESSION['userid'],
-                        'login'  => $_SESSION['login'],
                         'name'   => $info['name'],
                         'phone'  => $info['phone'],
                         'email'  => $info['email'],
@@ -31,7 +30,7 @@ namespace API {
             $login = \Utils::Request('login');
             $password = \Utils::Request('password');
             if($id = \Users::CheckUserCredentials($login, $password)) {
-                return $this->internalLogin($login, $id);
+                return $this->internalLogin($id);
             } else {
                 throw new \Exception("Неверно указано имя пользователя или пароль");
             }
@@ -48,11 +47,11 @@ namespace API {
             $data = array(
                 'name'     => \Utils::Request('name'),
                 'password' => \Utils::Request('password'),
-                'surname'  => \Utils::Request('surname'),
+                'email'    => \Utils::Request('email'),
                 'phone'    => \Utils::Request('phone'),
             );
             if($id = \Users::RegisgterUser($data)) {
-                return $this->internalLogin($data['phone'], $id);
+                return $this->internalLogin($id);
             }
         }
 
@@ -61,10 +60,9 @@ namespace API {
          * @param $id
          * @return array
          */
-        private function internalLogin($login, $id)
+        private function internalLogin($id)
         {
             $_SESSION['active'] = true;
-            $_SESSION['login'] = $login;
             $_SESSION['userid'] = $id;
             return $this->Info();
         }

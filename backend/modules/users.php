@@ -13,10 +13,14 @@ class Users
     {
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть не менее 8 и не более 255 символов");
-        if(!isset($data['surname']) || empty($data['surname']))
-            throw new \Exception("Не указана фамилия");
+
+        // TODO нормальная проверка email-a
+        if(!isset($data['email']) || empty($data['email']))
+            throw new \Exception("Не указан email");
+
         if(!isset($data['name']) || empty($data['name']))
             throw new \Exception("Не указано имя");
+
         if(!isset($data['phone']) || strlen($data['phone']) != 10)
             throw new \Exception("Не указан телефон");
     }
@@ -32,25 +36,23 @@ class Users
         if(!empty($res)) {
             throw new Exception('Пользователь с указанным телефоном уже существует');
         }
-       // if(!empty($res)) {
-       //     throw new Exception('Пользователь с указанным email-адресом уже существует');
-       // }
+        if(!empty($res)) {
+            throw new Exception('Пользователь с указанным email-адресом уже существует');
+        }
 
         $user_data = array(
             'password'  => md5($data['password']),
             'phone'     => $data['phone'],
-            'email'     => '',
+            'email'     => $data['email'],
             'role'      => self::ROLE_USER,
             'date_reg'  => time(),
             'date_last' => time(),
-            'status'    => self::STATUS_DISABLED,
+            'status'    => self::STATUS_NEW,
             'rating'    => 0,
             /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
             /* и установка баллов для того, кто пригласил */
             'score'     => 0,
             'name'      => $data['name'],
-            'surname'   => $data['surname'],
-
         );
 
         $db->insert('user', $user_data);
@@ -61,24 +63,24 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
-    public static function CheckLogin($login){
+    public static function CheckLogin($login)
+    {
         return (stripos($login, '@') !== false) ? 1 : 0;
-     }
+    }
 
     public static function CheckUserCredentials($login, $password)
     {
         // Подключаемся к базе
         $db = Core::DB();
         // Ищем пользователя
-        if ( self::CheckLogin($login) == 1 ){
+        if($ph = Utils::FormatPhone($login)) {
             $res = $db
-                ->where('email', $login)
+                ->where('phone', $ph)
                 ->where('password', md5($password))
                 ->get('user');
-        }
-        elseif (self::CheckLogin($login) == 0 ){
+        } else {
             $res = $db
-                ->where('phone', $login)
+                ->where('email', $login)
                 ->where('password', md5($password))
                 ->get('user');
         }
