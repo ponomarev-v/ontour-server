@@ -31,13 +31,13 @@
             success: function (data) {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
-                    $("#register_form #name").value(data["name"]);
-                    $("#register_form #surname").value(data["surname"]);
-                    $("#register_form #age").value(data["age"]);
-                    $("#register_form #school").value(data["school"]);
-                    $("#register_form #password").value(data["password"]);
-                    $("#register_form #email").value(data["email"]);
-                    $("#register_form #phone").value(data["phone"]);
+                    $("#profile_form #name").value(data["name"]);
+                    $("#profile_form #surname").value(data["surname"]);
+                    $("#profile_form #age").value(data["age"]);
+                    $("#profile_form #school").value(data["school"]);
+                    $("#profile_form #password").value(data["password"]);
+                    $("#profile_form #email").value(data["email"]);
+                    $("#profile_form #phone").value(data["phone"]);
                 } else {
                     $("#profile_error").html(data["message"]);
                 }
