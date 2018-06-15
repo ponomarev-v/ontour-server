@@ -9,7 +9,7 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
-                    <input type="text" name="login_error"><br>
+                    <div id="login_error"></div>
                     <input type="submit" value="Войти">
                 </p>
             </form>
@@ -61,13 +61,11 @@
                 data: $("#login_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function(data);
-                $("#login_error").hide();
                 {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         $("#login_error").html("");
                         $("#login_window").hide();
-                        $("#menu_main").show();
                         createProfile(data);
                     } else {
                         $("#login_error").html(data["message"]);
@@ -84,7 +82,6 @@
         $("#btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
-
         });
     });
 </script>

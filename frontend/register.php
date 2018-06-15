@@ -11,7 +11,7 @@
                 <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required><br>
                 <p>
-                    <input type="text" name="profile_error"><br>
+                    <div id="register_error"></div>
                     <input type="submit" value="Зарегистрироваться">
                 </p>
             </form>
