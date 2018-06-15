@@ -6,10 +6,10 @@
                  Регистрация ON TOUR
             </h1>
             <form id="register_form">
-                <input type="text" class="name" placeholder="Имя"><br>
-                <input type="text" class="surname" placeholder="Фамилия"><br>
-                <input type="password" class="password" placeholder="Пароль"><br>
-                <input type="text" class="phone" placeholder="Номер телефона">
+                <input type="text" name="name" placeholder="Имя" class="form"><br>
+                <input type="text" name="surname" placeholder="Фамилия" class="form"><br>
+                <input type="password" name="password" placeholder="Пароль" class="form"><br>
+                <input type="text" name="phone" placeholder="Номер телефона" class="form">
                 <p>
                     <input type="submit" value="Зарегистрироваться">
                 </p>

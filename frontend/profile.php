@@ -6,14 +6,14 @@
                 Профиль
             </h1>
             <form id="register_form">
-                <input type="text" class="name" placeholder="Имя"><br>
-                <input type="text" class="surname" placeholder="Фамилия"><br>
-                <input type="text" class="patronymic" placeholder="Отчество"><br>
-                <input type="number" class="age" placeholder="Возраст"><br>
-                <input type="number" class="school" placeholder="Номер школы"><br>
-                <input type="password" class="password" placeholder="Пароль"><br>
-                <input type="email" class="email" placeholder="Электронная почта"><br>
-                <input type="text" class="phone" placeholder="Номер телефона">
+                <input type="text" name="name" placeholder="Имя" class="form"><br>
+                <input type="text" name="surname" placeholder="Фамилия" class="form"><br>
+                <input type="text" name="patronymic" placeholder="Отчество" class="form"><br>
+                <input type="number" name="age" placeholder="Возраст" class="form"><br>
+                <input type="number" name="school" placeholder="Номер школы" class="form"><br>
+                <input type="password" name="password" placeholder="Пароль" class="form"><br>
+                <input type="email" name="email" placeholder="Электронная почта" class="form"><br>
+                <input type="text" name="phone" placeholder="Номер телефона" class="form">
                 <p>
                     <input type="submit" value="Сохранить">
                 </p>

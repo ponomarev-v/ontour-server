@@ -6,8 +6,8 @@
                 Вход ON TOUR
             </h1>
             <form id="login_form">
-                <input type="text" class="login" placeholder="телефон или mail"><br>
-                <input type="password" class="password" placeholder="Пароль">
+                <input type="text" name="login" placeholder="телефон или mail" class="form"><br>
+                <input type="password" name="password" placeholder="Пароль" class="form">
                 <p>
                     <input type="submit" value="Войти">
                 </p>
