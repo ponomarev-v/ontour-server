@@ -32,9 +32,9 @@ class Users
         if(!empty($res)) {
             throw new Exception('Пользователь с указанным телефоном уже существует');
         }
-        if(!empty($res)) {
-            throw new Exception('Пользователь с указанным email-адресом уже существует');
-        }
+       // if(!empty($res)) {
+       //     throw new Exception('Пользователь с указанным email-адресом уже существует');
+       // }
 
         $user_data = array(
             'password'  => md5($data['password']),
@@ -49,7 +49,7 @@ class Users
             /* и установка баллов для того, кто пригласил */
             'score'     => 0,
             'name'      => $data['name'],
-            'surname'      => $data['surname'],
+            'surname'   => $data['surname'],
 
         );
 
