@@ -52,7 +52,7 @@ namespace API {
                 'phone'    => \Utils::Request('phone'),
             );
             if($id = \Users::RegisgterUser($data)) {
-                return $this->internalLogin($data['login'], $id);
+                return $this->internalLogin($data['phone'], $id);
             }
         }
 
