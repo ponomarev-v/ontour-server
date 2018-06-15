@@ -23,6 +23,11 @@
     }
 
     $(document).ready(function() {
+
+        $("#btn_logout").click(function () {
+            $("#logout_window").show();
+        });
+
         $("#logout_window .close").click(function () {
             $("#logout_window").hide();
         });
@@ -42,7 +47,7 @@
                 {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
-                        $("#login_window").hide();
+                        $("#logout_window").hide();
                         logOut(data);
                     } else {
                         $("#login_error").html("Неправильный логин или пароль");

@@ -85,9 +85,5 @@
             $("#register_window").show();
 
         });
-
-        $("#btn_logout").click(function () {
-            $("#logout_window").show();
-        });
     });
 </script>
