@@ -10,7 +10,7 @@
                 <input type="text" name="surname" placeholder="Фамилия" class="form"><br>
                 <input type="text" name="patronymic" placeholder="Отчество" class="form"><br>
                 <input type="number" name="age" placeholder="Возраст" class="form"><br>
-                <input type="number" name="school" placeholder="Номер школы" class="form"><br>
+                <input type="text" name="school" placeholder="Учебное заведение" class="form"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form"><br>
                 <input type="email" name="email" placeholder="Электронная почта" class="form"><br>
                 <input type="text" name="phone" placeholder="Номер телефона" class="form">
