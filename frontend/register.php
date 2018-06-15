@@ -20,6 +20,7 @@
 </div>
 <script>
     $(document).ready(function () {
+
         $('#phone_register').mask('8(000)000-00-00');
         $(".btn_register").click(function () {
             $("#login_window").hide();
@@ -47,8 +48,10 @@
                     if (data.result == "success") {
                         $("#register_error").html("");
                         $("#register_window").hide();
+                        $("#menu_login").hide();
                         $("#menu_main").show();
-                        createProfile(data);
+                        $("#main_logout").show();
+                        $("#main_profile").show();
                     } else {
                         $("#register_error").html(data["message"]);
                     }

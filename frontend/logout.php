@@ -14,14 +14,6 @@
     </div>
 </div>
 <script>
-    function logOut(user_info) {
-        $("#menu_login").show();
-        $("#menu_register").show();
-        $("#menu_logout").hide();
-        $("#menu_profile").hide();
-        $("#menu_main").hide();
-    }
-
     $(document).ready(function() {
 
         $("#btn_logout").click(function () {
@@ -48,7 +40,10 @@
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         $("#logout_window").hide();
-                        logOut(data);
+                        $("#menu_login").show();
+                        $("#menu_main").hide();
+                        $("#main_logout").hide();
+                        $("#main_profile").hide();
                     } else {
                         $("#login_error").html("Неправильный логин или пароль");
                     }
