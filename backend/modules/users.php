@@ -63,11 +63,6 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
-    public static function CheckLogin($login)
-    {
-        return (stripos($login, '@') !== false) ? 1 : 0;
-    }
-
     public static function CheckUserCredentials($login, $password)
     {
         // Подключаемся к базе
