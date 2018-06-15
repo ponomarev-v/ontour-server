@@ -8,7 +8,7 @@
             <form id="register_form">
                 <input type="text" name="name" placeholder="Имя" class="form" required><br>
                 <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
-                <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register">
+                <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required><br>
                 <p>
                     <input type="submit" value="Зарегистрироваться">
