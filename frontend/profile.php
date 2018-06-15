@@ -5,7 +5,7 @@
             <h1>
                 Редактирование профиля
             </h1>
-            <form id="register_form">
+            <form id="profile_form">
                 <input type="text"     name="name"     placeholder="Имя"               class="form"><br>
                 <input type="text"     name="surname"  placeholder="Фамилия"           class="form"><br>
                 <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
