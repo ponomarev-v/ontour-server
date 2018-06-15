@@ -15,8 +15,8 @@ class Users
             throw new \Exception("Пароль должен быть не менее 8 и не более 255 символов");
 
         // TODO нормальная проверка email-a
-        if(!isset($data['email']) || empty($data['email']))
-            throw new \Exception("Не указан email");
+        if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
+            throw new \Exception("Не указан email или он неправельно указан");
 
         if(!isset($data['name']) || empty($data['name']))
             throw new \Exception("Не указано имя");
