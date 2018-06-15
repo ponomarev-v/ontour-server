@@ -14,7 +14,7 @@
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="phone_profile">
                 <p>
-                    <input type="text" name="profile_error" style="display: none"><br>
+                    <div id="profile_error"></div><br>
                     <input type="submit" value="Сохранить">
                 </p>
             </form>
@@ -38,6 +38,8 @@
                     $("#register_form #password").value(data["password"]);
                     $("#register_form #email").value(data["email"]);
                     $("#register_form #phone").value(data["phone"]);
+                } else {
+                    $("#profile_error").html(data["message"]);
                 }
             }
         });

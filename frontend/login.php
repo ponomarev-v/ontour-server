@@ -9,7 +9,7 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
-                    <input type="text" name="login_error" style="display: none"><br>
+                    <div id="login_error"></div><br>
                     <input type="submit" value="Войти">
                 </p>
             </form>
@@ -17,14 +17,6 @@
     </div>
 </div>
 <script>
-    function createProfile(user_info) {
-        $("#menu_login").hide();
-        $("#menu_register").hide();
-        $("#menu_logout").show();
-        $("#menu_profile").show();
-        $("#menu_main").show();
-    }
-
     $(document).ready(function() {
         $('.phone').mask('8(000)000-00-00');
         $.ajax({
@@ -65,9 +57,11 @@
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         $("#login_error").html("");
-                        $("#login_window").hide();
                         $("#menu_main").show();
-                        createProfile(data);
+                        $("#menu_logout").show();
+                        $("#menu_profile").show();
+                        $("#menu_register").hide();
+                        $("#menu_login").hide();
                     } else {
                         $("#login_error").html(data["message"]);
                     }
