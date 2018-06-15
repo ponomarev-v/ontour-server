@@ -27,8 +27,6 @@ class Users
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
-        // Ищем пользователя в базе
-        $res = $db->where('login', $data['phone'])->get('user');
         // Проверка по имени телефона
         $res = $db->where('phone', $data['phone'])->get('user');
         if(!empty($res)) {
