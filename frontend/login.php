@@ -9,6 +9,7 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
+                    <input type="text" name="login_error" style="display: none"><br>
                     <input type="submit" value="Войти">
                 </p>
             </form>
@@ -68,7 +69,7 @@
                         $("#menu_main").show();
                         createProfile(data);
                     } else {
-                        $("#login_error").html("Неправильный логин или пароль");
+                        $("#login_error").html(data["message"]);
                     }
                 }
             });

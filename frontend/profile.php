@@ -14,6 +14,7 @@
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="phone_profile">
                 <p>
+                    <input type="text" name="profile_error" style="display: none"><br>
                     <input type="submit" value="Сохранить">
                 </p>
             </form>
@@ -61,7 +62,7 @@
                         $("#menu_main").show();
                         createProfile(data);
                     } else {
-                        $("#profile_error").html("Неправильный логин или пароль");
+                        $("#profile_error").html(data["message"]);
                     }
                 }
             });

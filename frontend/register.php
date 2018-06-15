@@ -11,6 +11,7 @@
                 <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required><br>
                 <p>
+                    <input type="text" name="profile_error" style="display: none"><br>
                     <input type="submit" value="Зарегистрироваться">
                 </p>
             </form>
@@ -49,7 +50,7 @@
                         $("#menu_main").show();
                         createProfile(data);
                     } else {
-                        $("#register_error").html("оишбка");
+                        $("#register_error").html(data["message"]);
                     }
                 }
             });
