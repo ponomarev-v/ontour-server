@@ -66,9 +66,6 @@ namespace API {
             $_SESSION['userid'] = $id;
             return $this->Info();
         }
-
-        public function Myfunc(){
-            return 0;
-        }
+        
     }
 }
