@@ -6,13 +6,20 @@ namespace API {
         public function Info()
         {
             if(\Utils::ArrayGet('active', $_SESSION)) {
-                $info = \Users::GetUserInfo($_SESSION['userid']);
-                \Users::UpdateLastActive($_SESSION['userid'], time());
-                return array(
-                    'token' => session_id(),
-                    'login' => $_SESSION['login'],
-                    'gsgsfg'=> '',
-                );
+                if($info = \Users::GetUserInfo($_SESSION['userid'])) {
+                    \Users::UpdateLastActive($_SESSION['userid'], time());
+                    return array(
+                        'token'  => session_id(),
+                        'userid' => $_SESSION['userid'],
+                        'name'   => $info['name'],
+                        'phone'  => $info['phone'],
+                        'email'  => $info['email'],
+                        'rating' => $info['rating'],
+                        'score'  => $info['score'],
+                    );
+                } else {
+                    throw new \Exception('Ошибка при получении информации о пользователе');
+                }
             } else {
                 throw new \Exception('Пользователь не авторизован в системе');
             }
@@ -23,7 +30,7 @@ namespace API {
             $login = \Utils::Request('login');
             $password = \Utils::Request('password');
             if($id = \Users::CheckUserCredentials($login, $password)) {
-                return $this->internalLogin($login, $id);
+                return $this->internalLogin($id);
             } else {
                 throw new \Exception("Неверно указано имя пользователя или пароль");
             }
@@ -38,13 +45,13 @@ namespace API {
         public function Register()
         {
             $data = array(
-                'login'    => \Utils::Request('login'),
+                'name'     => \Utils::Request('name'),
                 'password' => \Utils::Request('password'),
                 'email'    => \Utils::Request('email'),
                 'phone'    => \Utils::Request('phone'),
             );
             if($id = \Users::RegisgterUser($data)) {
-                return $this->internalLogin($data['login'], $id);
+                return $this->internalLogin($id);
             }
         }
 
@@ -53,10 +60,9 @@ namespace API {
          * @param $id
          * @return array
          */
-        private function internalLogin($login, $id)
+        private function internalLogin($id)
         {
             $_SESSION['active'] = true;
-            $_SESSION['login'] = $login;
             $_SESSION['userid'] = $id;
             return $this->Info();
         }

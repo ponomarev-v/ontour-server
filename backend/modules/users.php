@@ -11,45 +11,61 @@ class Users
 
     public static function CheckUserData($data)
     {
-        if(!isset($data['login']) || strlen($data['login']) < 3 || strlen($data['login']) > 255)
-            throw new \Exception("Логин должен быть не менее 3 и не более 255 символов");
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть не менее 8 и не более 255 символов");
+
+        // TODO нормальная проверка email-a
         if(!isset($data['email']) || empty($data['email']))
             throw new \Exception("Не указан email");
-        if(!isset($data['phone']) || empty($data['phone']))
+
+        if(!isset($data['name']) || empty($data['name']))
+            throw new \Exception("Не указано имя");
+
+        if(!isset($data['phone']) || strlen($data['phone']) != 10)
             throw new \Exception("Не указан телефон");
     }
 
     public static function RegisgterUser($data)
     {
+        $data['phone'] = Utils::FormatPhone($data['phone']);
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
-        // Ищем пользователя в базе
-        $res = $db->where('login', $data['login'])->get('user');
-        if(empty($res)) {
-            $user_data = array(
-                'login'     => $data['login'],
-                'password'  => md5($data['password']),
-                'phone'     => $data['phone'],
-                'email'     => $data['email'],
-                'role'      => self::ROLE_USER,
-                'date_reg'  => time(),
-                'date_last' => time(),
-                'status'    => self::STATUS_DISABLED,
-                'rating'    => 0,
-                /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
-                /* и установка баллов для того, кто пригласил */
-                'score'     => 0,
-                'name'      => $data['login'],
-            );
-            $db->insert('user', $user_data);
-            $new_id = $db->getInsertId();
-            return $new_id;
-        } else {
-            throw new Exception('Пользователь '.$data['login'].' уже существует');
+        // Проверка по имени телефона
+        $res = $db->where('phone', $data['phone'])->get('user');
+        if(!empty($res)) {
+            throw new Exception('Пользователь с указанным телефоном уже существует');
         }
+        if(!empty($res)) {
+            throw new Exception('Пользователь с указанным email-адресом уже существует');
+        }
+
+        $user_data = array(
+            'password'  => md5($data['password']),
+            'phone'     => $data['phone'],
+            'email'     => $data['email'],
+            'role'      => self::ROLE_USER,
+            'date_reg'  => time(),
+            'date_last' => time(),
+            'status'    => self::STATUS_NEW,
+            'rating'    => 0,
+            /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
+            /* и установка баллов для того, кто пригласил */
+            'score'     => 0,
+            'name'      => $data['name'],
+        );
+
+        $db->insert('user', $user_data);
+        $new_id = $db->getInsertId();
+        if($new_id > 0)
+            return $new_id;
+        else
+            throw new Exception('Непредвиденная ошибка при регистрации пользователя');
+    }
+
+    public static function CheckLogin($login)
+    {
+        return (stripos($login, '@') !== false) ? 1 : 0;
     }
 
     public static function CheckUserCredentials($login, $password)
@@ -57,10 +73,17 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         // Ищем пользователя
-        $res = $db
-            ->where('login', $login)
-            ->where('password', md5($password))
-            ->get('user');
+        if($ph = Utils::FormatPhone($login)) {
+            $res = $db
+                ->where('phone', $ph)
+                ->where('password', md5($password))
+                ->get('user');
+        } else {
+            $res = $db
+                ->where('email', $login)
+                ->where('password', md5($password))
+                ->get('user');
+        }
         if(sizeof($res) == 1) {
             return $res[0]['id'];
         } else {
@@ -70,14 +93,15 @@ class Users
 
     public static function GetUserInfo($userid)
     {
-        // Подключиться к базу
-        // получить информацию по ID
-        // вернуть ее
+        $res = Core::DB()->where('id', $userid)->getOne('user');
+        return $res;
     }
 
     public static function UpdateLastActive($userid, $time)
     {
-        // Подключиться к базу
-        // Обновляем поле date_last
+        Core::DB()->where('id', $userid)->update('user', array(
+            'date_last' => time(),
+        ));
+        return true;
     }
 }
