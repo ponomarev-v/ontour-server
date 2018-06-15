@@ -63,12 +63,10 @@ $(document).ready(function() {
             {
                 data = eval("(" + data + ")");
                 if(data.result == "success") {
-                    $("#login_error").html("");
-                    $("#login_window").hide();
-                    $("#menu_main").show();
-                    createProfile(data);
+                   
+                    
                 } else {
-                    $("#login_error").html("Неправильный логин или пароль");
+                   
                 }
             }
         });
