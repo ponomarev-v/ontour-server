@@ -9,7 +9,7 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
-                    <input type="text" name="login_error" style="display: none"><br>
+                    <input type="text" name="login_error"><br>
                     <input type="submit" value="Войти">
                 </p>
             </form>
@@ -60,7 +60,8 @@
                 url: "http://ontourapi.kvantorium33.ru/?method=user.login",
                 data: $("#login_form").serialize(),
                 xhrFields: {withCredentials: true},
-                success: function(data)
+                success: function(data);
+                $("#login_error").hide();
                 {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
