@@ -6,10 +6,10 @@
                  Регистрация ON TOUR
             </h1>
             <form id="register_form">
-                <input type="text" name="name" placeholder="Имя" class="form"><br>
-                <input type="text" name="surname" placeholder="Фамилия" class="form"><br>
-                <input type="password" name="password" placeholder="Пароль" class="form"><br>
-                <input type="text" name="phone" placeholder="Номер телефона" class="form">
+                <input type="text"     name="name"     placeholder="Имя"            class="form" required><br>
+                <input type="text"     name="surname"  placeholder="Фамилия"        class="form" required><br>
+                <input type="password" name="password" placeholder="Пароль"         class="form" required><br>
+                <input type="text"     name="phone"    placeholder="Номер телефона" class="form" required id="phone_register" >
                 <p>
                     <input type="submit" value="Зарегистрироваться">
                 </p>
@@ -19,7 +19,7 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('.phone').mask('8(000)000-00-00');
+        $('#phone_register').mask('8(000)000-00-00');
         $(".btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();

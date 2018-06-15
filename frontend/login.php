@@ -6,8 +6,8 @@
                 Вход ON TOUR
             </h1>
             <form id="login_form">
-                <input type="text" name="login" placeholder="телефон или mail" class="form"><br>
-                <input type="password" name="password" placeholder="Пароль" class="form">
+                <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
+                <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
                     <input type="submit" value="Войти">
                 </p>
@@ -38,25 +38,6 @@
                     createProfile(data);
                 }
             }
-        });
-
-        $("#btn_logout").click(function () {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
-                xhrFields: {withCredentials: true},
-                success: function(data)
-                {
-                    data = eval("(" + data + ")");
-                    if(data.result == "success") {
-                        $("#menu_logout").hide();
-                        $("#menu_profile").hide();
-                        $("#menu_register").show();
-                        $("#menu_login").show();
-                        $("#menu_main").hide();
-                    }
-                }
-            });
         });
 
         $("#btn_login").click(function () {
@@ -102,6 +83,25 @@
             $("#login_window").hide();
             $("#register_window").show();
 
+        });
+
+        $("#btn_logout").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
+                xhrFields: {withCredentials: true},
+                success: function(data)
+                {
+                    data = eval("(" + data + ")");
+                    if(data.result == "success") {
+                        $("#menu_logout").hide();
+                        $("#menu_profile").hide();
+                        $("#menu_main").hide();
+                        $("#menu_register").show();
+                        $("#menu_login").show();
+                    }
+                }
+            });
         });
     });
 </script>
