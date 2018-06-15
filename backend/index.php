@@ -41,6 +41,10 @@ try {
         'result'  => 'error',
         'message' => $e->getMessage(),
     );
+    if(Config::DEBUG) {
+        $res['dbquery'] = Core::DB()->getLastQuery();
+        $res['dberror'] = Core::DB()->getLastError();
+    }
 }
 
 echo json_encode($res);
