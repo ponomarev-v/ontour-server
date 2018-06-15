@@ -46,13 +46,13 @@ namespace API {
         public function Register()
         {
             $data = array(
-                'login'    => \Utils::Request('login'),
+                'name'     => \Utils::Request('name'),
                 'password' => \Utils::Request('password'),
-                'email'    => \Utils::Request('email'),
+                'surname'  => \Utils::Request('surname'),
                 'phone'    => \Utils::Request('phone'),
             );
             if($id = \Users::RegisgterUser($data)) {
-                return $this->internalLogin($data['login'], $id);
+                return $this->internalLogin($data['phone'], $id);
             }
         }
 

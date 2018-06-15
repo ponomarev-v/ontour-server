@@ -11,12 +11,12 @@ class Users
 
     public static function CheckUserData($data)
     {
-        if(!isset($data['login']) || strlen($data['login']) < 3 || strlen($data['login']) > 255)
-            throw new \Exception("Логин должен быть не менее 3 и не более 255 символов");
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть не менее 8 и не более 255 символов");
-        if(!isset($data['email']) || empty($data['email']))
-            throw new \Exception("Не указан email");
+        if(!isset($data['surname']) || empty($data['surname']))
+            throw new \Exception("Не указана фамилия");
+        if(!isset($data['name']) || empty($data['name']))
+            throw new \Exception("Не указано имя");
         if(!isset($data['phone']) || strlen($data['phone']) != 10)
             throw new \Exception("Не указан телефон");
     }
@@ -27,27 +27,19 @@ class Users
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
-        // Ищем пользователя в базе
-        $res = $db->where('login', $data['login'])->get('user');
-        if(!empty($res)) {
-            throw new Exception('Пользователь ' . $data['login'] . ' уже существует');
-        }
         // Проверка по имени телефона
         $res = $db->where('phone', $data['phone'])->get('user');
         if(!empty($res)) {
             throw new Exception('Пользователь с указанным телефоном уже существует');
         }
-        // Проверка по почте
-        $res = $db->where('email', $data['email'])->get('user');
-        if(!empty($res)) {
-            throw new Exception('Пользователь с указанным email-адресом уже существует');
-        }
+       // if(!empty($res)) {
+       //     throw new Exception('Пользователь с указанным email-адресом уже существует');
+       // }
 
         $user_data = array(
-            'login'     => $data['login'],
             'password'  => md5($data['password']),
             'phone'     => $data['phone'],
-            'email'     => $data['email'],
+            'email'     => '',
             'role'      => self::ROLE_USER,
             'date_reg'  => time(),
             'date_last' => time(),
@@ -56,7 +48,9 @@ class Users
             /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
             /* и установка баллов для того, кто пригласил */
             'score'     => 0,
-            'name'      => $data['login'],
+            'name'      => $data['name'],
+            'surname'   => $data['surname'],
+
         );
 
         $db->insert('user', $user_data);
@@ -67,15 +61,27 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
+    public static function CheckLogin($login){
+        return (stripos($login, '@') !== false) ? 1 : 0;
+     }
+
     public static function CheckUserCredentials($login, $password)
     {
         // Подключаемся к базе
         $db = Core::DB();
         // Ищем пользователя
-        $res = $db
-            ->where('login', $login)
-            ->where('password', md5($password))
-            ->get('user');
+        if ( self::CheckLogin($login) == 1 ){
+            $res = $db
+                ->where('email', $login)
+                ->where('password', md5($password))
+                ->get('user');
+        }
+        elseif (self::CheckLogin($login) == 0 ){
+            $res = $db
+                ->where('phone', $login)
+                ->where('password', md5($password))
+                ->get('user');
+        }
         if(sizeof($res) == 1) {
             return $res[0]['id'];
         } else {
