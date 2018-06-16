@@ -2,7 +2,7 @@ $(window).on("load",function(){
     
     var a = $("#map")[0];
     var svgDoc = a.contentDocument;
-    var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
+    var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL"]
     obj.forEach(element => {
         var regionColor = $(element,svgDoc).css("fill","#1076C8");
         var borderColor = $(element,svgDoc).css("stroke","#fff");
