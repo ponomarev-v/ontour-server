@@ -50,7 +50,7 @@ namespace API {
                 'email'    => \Utils::Request('email'),
                 'phone'    => \Utils::Request('phone'),
             );
-            if($id = \Users::RegisgterUser($data)) {
+            if($id = \Users::RegisterUser($data)) {
                 return $this->internalLogin($id);
             }
         }

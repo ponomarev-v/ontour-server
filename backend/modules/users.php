@@ -25,7 +25,7 @@ class Users
             throw new \Exception("Не указан телефон");
     }
 
-    public static function RegisgterUser($data)
+    public static function RegisterUser($data)
     {
         $data['phone'] = Utils::FormatPhone($data['phone']);
         self::CheckUserData($data);
