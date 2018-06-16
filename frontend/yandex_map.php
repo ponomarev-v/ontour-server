@@ -4,7 +4,7 @@
             <p>Ваш браузер не поддерживает svg</p>
           </object>
 		  <script src="js/main.js"></script>
-<script type="text/javascript">//скрипт для карты (не смог в отдельный js кинуть)
+<!-- <script type="text/javascript">//скрипт для карты (не смог в отдельный js кинуть)
     ymaps.ready(init);
 
     function init() {
@@ -68,4 +68,4 @@
             });
         }
     }
-</script>
+</script> -->
