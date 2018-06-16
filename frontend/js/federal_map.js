@@ -57,5 +57,9 @@ $(window).on("load",function(){
 	 $("#KC",svgDoc).css("fill","#d27387");
      $("#KC",svgDoc).css("stroke","#d27387");
      
+     $("#Central",svgDoc).click(function(){
+        var central = $("#Central",svgDoc);
+        window.location = "/central_map.php"
+     });
      
 });
