@@ -4,7 +4,7 @@ $(window).on("load",function(){
     var objCentral = ["#path96","#path94","#path92","#path46","#path50","#path60","#path68","#path54","#path62","#path4926","#path44","#path78","#path66","#path98","#path74","#path64","#path82","#path42"]
     objCentral.forEach(element => {
         var regionColor = $(element,svgCentral).css("fill","#a1e736");
-        var borderColor = $(element,svgCentral).css("stroke","#68e835");
+        var borderColor = $(element,svgCentral).css("stroke","#71a12a");
     $(element,svgCentral).hover(function(){
         var regionColor = $(element,svgCentral).css("opacity","0.7");     
         });
