@@ -8,7 +8,8 @@ $(window).on("load",function(){
     obj.forEach(element => {
         var regionColor = $(element,svgDoc).css("fill","#f1ce82");
         var borderColor = $(element,svgDoc).css("stroke","#fff");
-       
+        var $data_tooltip;
+
 
 
         $(element,svgDoc).mousemove(function(){
@@ -27,8 +28,7 @@ $(window).on("load",function(){
         $("#tooltip").text($data_tooltip)
                      .css({ 
                          "top" : eventObject.pageY,
-                        "left" : eventObject.pageX,
-                        
+                         "left" : eventObject.pageX
                      })
                      .show();
 
@@ -43,11 +43,11 @@ $(window).on("load",function(){
 
     });
     $("#Far_Eastern",svgDoc).css("fill","#f1ce82");
-	 $("#Siberia",svgDoc).css("fill","#c2cdd3");
-	 $("#Urals",svgDoc).css("fill","#8ecdef");
-	 $("#Northwestern",svgDoc).css("fill","#9eb8f9");
-	 $("#Volga",svgDoc).css("fill","#fbe230");
-	 $("#Central",svgDoc).css("fill","#a1e736");
-	 $("#KL",svgDoc).css("fill","#eea268");
-	 $("#KC",svgDoc).css("fill","#d27387");
+    $("#Siberia",svgDoc).css("fill","#c2cdd3");
+    $("#Urals",svgDoc).css("fill","#8ecdef");
+    $("#Northwestern",svgDoc).css("fill","#9eb8f9");
+    $("#Volga",svgDoc).css("fill","#fbe230");
+    $("#Central",svgDoc).css("fill","#a1e736");
+    $("#KL",svgDoc).css("fill","#eea268");
+    $("#KC",svgDoc).css("fill","#d27387");
 });
