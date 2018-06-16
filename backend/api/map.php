@@ -6,7 +6,7 @@
                     'cx' => \Utils::Request('cx'),
                     'cy' => \Utils::Request('cy'),
                     'kind' => \Utils::Request('kind'),
-                    'name' => \Utils::Request('kind'),
+                    'name' => \Utils::Request('name'),
                     'description' => \Utils::Request('description')
                 );
 
