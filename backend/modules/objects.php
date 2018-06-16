@@ -32,7 +32,7 @@ class Objects
             'kind' => $data['kind'],
             'date_add' => time(),
             'description' => $data['description'],
-            'user_id' => $_SESSION['user_id'],
+            'user_id' => $_SESSION['userid'],
             'name' => $data['name'],
         );
 
