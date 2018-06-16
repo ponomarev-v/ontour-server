@@ -3,7 +3,7 @@ $(window).on("load",function(){
     var a = $("#federal_map")[0];
     var svgDoc = a.contentDocument;
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
-    $("#Central",svgDoc).attr("a","href='/central_map.php'");
+    //$("#Central",svgDoc).attr("a","'/central_map.php'");
 	obj.forEach(element => {
         var regionColor = $(element,svgDoc).css("fill","#1076C8");
         var borderColor = $(element,svgDoc).css("stroke","#fff");
