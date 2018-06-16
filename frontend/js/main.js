@@ -10,11 +10,11 @@ $(window).on("load",function(){
 
 
         $(element,svgDoc).mousemove(function(){
-            var regionColor = $(element,svgDoc).css("fill","#0A4C82");     
+            var regionColor = $(element,svgDoc).css("opacity","0.7");     
              
         });
         $(element,svgDoc).mouseout(function(){
-            var regionColor = $(element,svgDoc).css("fill","#1076C8");
+            var regionColor = $(element,svgDoc).css("opacity","1");
             
         });
     });
