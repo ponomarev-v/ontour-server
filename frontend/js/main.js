@@ -24,8 +24,8 @@ $(window).on("load",function(){
         
         $("#tooltip").text($data_tooltip)
                      .css({ 
-                         "top" : eventObject.pageY - 25,
-                        "left" : eventObject.pageX - 25,
+                         "top" : eventObject.pageY - 5,
+                        "left" : eventObject.pageX - 5,
                         
                      })
                      .show();
