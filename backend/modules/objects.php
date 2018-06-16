@@ -11,8 +11,8 @@ class Objects
             throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
-        if(!isset($data['description']) || empty($data['description']))
-            throw new \Exception("Нет описания");
+       // if(!isset($data['description']) || empty($data['description']))
+        //    throw new \Exception("Нет описания");
 
     }
     public static function Add_obj($data)
