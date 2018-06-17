@@ -26,13 +26,17 @@ class Objects
             throw new Exception('Объект с указанными координатами уже существует');
         }
 
+        $id = (isset($_SESSION['userid'])) ? $_SESSION['userid'] : false;
+        if (!$id)
+            throw new Exception('Вы не вошли в аккаунт!');
+
         $obj_data = array(
             'cx' => $data['cx'],
             'cy' => $data['cy'],
             'kind' => $data['kind'],
             'date_add' => time(),
             'description' => $data['description'],
-            'user_id' => $_SESSION['userid'],
+            'user_id' => $id,
             'name' => $data['name'],
         );
         // Помещам данные в базу
