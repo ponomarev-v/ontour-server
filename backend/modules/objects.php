@@ -48,6 +48,10 @@ class Objects
         // Подключаемся к базе
         $db = Core::DB();
         $res = $db ->where('cx', $cx) ->where('cy', $cy) ->get('object');
-
+        if(sizeof($res) == 1) {
+            return $res;
+        } else {
+            return null;
+        }
     }
 }
