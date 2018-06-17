@@ -62,6 +62,7 @@
                         $("#menu_profile").show();
                         $("#menu_register").hide();
                         $("#menu_login").hide();
+                        $("#login_window").hide();
                     } else {
                         $("#login_error").html(data["message"]);
                     }
