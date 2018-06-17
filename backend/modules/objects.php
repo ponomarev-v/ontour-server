@@ -35,13 +35,19 @@ class Objects
             'user_id' => $_SESSION['userid'],
             'name' => $data['name'],
         );
-
+        // Помещам данные в базу
         $db->insert('object', $obj_data);
         $new_id = $db->getInsertId();
         if($new_id > 0)
             return $new_id;
         else
             throw new Exception('Непредвиденная ошибка при добавлении объекта');
+
+    }
+    public static function Get_obj ($cx, $cy){
+        // Подключаемся к базе
+        $db = Core::DB();
+        $res = $db ->where('cx', $cx) ->where('cy', $cy) ->get('object');
 
     }
 }
