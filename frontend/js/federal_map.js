@@ -25,7 +25,7 @@ $(window).on("load",function(){
         
         $("#tooltip").text($data_tooltip)
                      .css({ 
-                         "top" : eventObject.pageY + 285,
+                         "top" : eventObject.pageY - 55,
                         "left" : eventObject.pageX,
                         
                      })
@@ -58,7 +58,6 @@ $(window).on("load",function(){
      $("#KC",svgDoc).css("stroke","#d27387");
      
      $("#Central",svgDoc).click(function(){
-        var central = $("#Central",svgDoc);
         window.location = "/CFD_map.php"
      });
      
