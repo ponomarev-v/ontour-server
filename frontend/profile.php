@@ -22,26 +22,32 @@
 </div>
 <script>
     $(document).ready(function() {
+
         $('#phone_profile').mask('8(000)000-00-00');
-        $.ajax({
-            type: "POST",
-            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
-            data: $("#profile_form").serialize(),
-            xhrFields: {withCredentials: true},
-            success: function (data) {
-                data = eval("(" + data + ")");
-                if (data.result == "success") {
-                    $("#name").val(data["name"]);
-                    $("#age").val(data["age"]);
-                    $("#school").val(data["school"]);
-                    $("#password").val(data["password"]);
-                    $("#email").val(data["email"]);
-                    $("#phone").val(data["phone"]);
-                } else {
-                    $("#profile_error").html(data["message"]);
+
+        $("#btn_profile").click(function () {
+            $("#profile_window").show();
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+                data: $("#profile_form").serialize(),
+                xhrFields: {withCredentials: true},
+                success: function (data) {
+                    data = eval("(" + data + ")");
+                    if (data.result == "success") {
+                        $("#name").val(data["name"]);
+                        $("#age").val(data["age"]);
+                        $("#school").val(data["school"]);
+                        $("#password").val(data["password"]);
+                        $("#email").val(data["email"]);
+                        $("#phone").val(data["phone"]);
+                    } else {
+                        $("#profile_error").html(data["message"]);
+                    }
                 }
-            }
+            });
         });
+
         $("#profile_window .close").click(function () {
             $("#profile_window").hide();
         });
