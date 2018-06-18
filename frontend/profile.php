@@ -7,7 +7,6 @@
             </h1>
             <form id="profile_form">
                 <input type="text"     name="name"     placeholder="Имя"               class="form" value=""><br>
-                <input type="text"     name="surname"  placeholder="Фамилия"           class="form" value=""><br>
                 <input type="number"   name="age"      placeholder="Возраст"           class="form" value=""><br>
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form" value=""><br>
                 <input type="password" name="password" placeholder="Пароль"            class="form" value=""><br>
@@ -27,17 +26,17 @@
         $.ajax({
             type: "POST",
             url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+            data: $("#profile_form").serialize(),
             xhrFields: {withCredentials: true},
             success: function (data) {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
-                    $("#name").attr(value(data["name"]));
-                    $("#surname").attr(value(data["surname"]));
-                    $("#age").attr(value(data["age"]));
-                    $("#school").attr(value(data["school"]));
-                    $("#password").attr(value(data["password"]));
-                    $("#email").attr(value(data["email"]));
-                    $("#phone").attr(value(data["phone"]));
+                    $("#name").val(data["name"]);
+                    $("#age").val(data["age"]);
+                    $("#school").val(data["school"]);
+                    $("#password").val(data["password"]);
+                    $("#email").val(data["email"]);
+                    $("#phone").val(data["phone"]);
                 } else {
                     $("#profile_error").html(data["message"]);
                 }
