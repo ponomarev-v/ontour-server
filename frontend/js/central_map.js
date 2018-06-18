@@ -4,13 +4,13 @@ $(window).on("load",function(){
     var objCentral = ["#path96","#path94","#path92","#path46","#path50","#path60","#path68","#path54","#path62","#path4926","#path44","#path78","#path66","#path98","#path74","#path64","#path82","#path42"]
     var objVolga = ["#path52","#path84","#path88","#path106"]
     objVolga.forEach(element => {
-        var regionColor = $(element,svgCentral).css("fill","#fbe230");
-        var borderColor = $(element,svgCentral).css("stroke","#fff");
+        $(element,svgCentral).css("fill","#fbe230");
+        $(element,svgCentral).css("stroke","#fff");
         $(element,svgCentral).hover(function(){
-            var regionOpacity = $(element,svgCentral).css("opacity","0.7");     
+            $(element,svgCentral).css("opacity","0.7");     
         });
         $(element,svgCentral).mouseout(function(){
-            regionOpacity = $(element,svgCentral).css("opacity","1");   
+            $(element,svgCentral).css("opacity","1");   
         });
     });
 
@@ -30,8 +30,8 @@ $(window).on("load",function(){
         
         $("#tooltip").text($data_tooltip_central)
                      .css({ 
-                         "top" : eventObject.pageY,
-                        "left" : eventObject.pageX,
+                         "top" : eventObject.pageY + 45,
+                        "left" : eventObject.pageX + 45,
                         
                      })
                      .show();
