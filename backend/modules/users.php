@@ -69,7 +69,6 @@ class Users
         $db = Core::DB();
         if (isset($data['phone'])){
             $res = $db->where('phone', $data['phone'])->get('user');
-            $res = false;
             if (isset($res))
                 throw new Exception('такой телефон уже существует');
         }
