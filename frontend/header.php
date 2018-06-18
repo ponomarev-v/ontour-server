@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>ON TOUR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/style.css"><!--общие стили-->
     <link rel="stylesheet" type="text/css" href="/css/menu.css"><!--стили меню-->
     <link rel="stylesheet" type="text/css" href="/css/window.css"><!--стили всплывающих окон-->
