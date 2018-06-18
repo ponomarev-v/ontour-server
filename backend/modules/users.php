@@ -95,7 +95,7 @@ class Users
     public static function UpdateLastActive($userid, $time)
     {
         Core::DB()->where('id', $userid)->update('user', array(
-            'date_last' => time(),
+            'date_last' => $time,
         ));
         return true;
     }
