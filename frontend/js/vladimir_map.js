@@ -19,7 +19,7 @@ $(window).on("load",function(){
         
         $("#tooltip").text($data_tooltip_central)
                      .css({ 
-                         "top" : eventObject.pageY + 105,
+                         "top" : eventObject.pageY + 85,
                         "left" : eventObject.pageX,
                         
                      })
