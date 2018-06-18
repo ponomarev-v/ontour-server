@@ -8,7 +8,6 @@
             <form id="logout_form">
                 <p>
                     <input type="submit" value="Да, выйти">
-                    <input type="button" value="Нет, остаться">
                 </p>
             </form>
         </div>
@@ -56,6 +55,10 @@
                 }
             });
             e.preventDefault();
+        });
+
+        $("#btn_profile").click(function () {
+            $("#profile_window").show();
         });
 
         $("#btn_register").click(function () {

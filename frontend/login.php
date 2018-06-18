@@ -79,6 +79,10 @@
             e.preventDefault();
         });
 
+        $("#btn_profile").click(function () {
+            $("#profile_window").show();
+        });
+
         $("#btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
