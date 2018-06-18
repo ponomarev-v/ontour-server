@@ -25,6 +25,18 @@ namespace API {
             }
         }
 
+        public function Profile(){
+            $new_data = array(
+                'phone'     => \Utils::Request('phone'),
+                'email'     => \Utils::Request('email'),
+                'name'      => \Utils::Request('name'),
+                'age'       => \Utils::Request('age'),
+                'school'    => \Utils::Request('school'),
+                'password'  => \Utils::Request('password')
+            );
+            return \Users::ChangeProfile($new_data);
+        }
+
         public function Login()
         {
             $login = \Utils::Request('login');
