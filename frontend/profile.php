@@ -23,7 +23,7 @@
 <script>
     $(document).ready(function() {
 
-        $('#phone_profile').mask('8(000)000-00-00');
+        $('#profile_phone').mask('8(000)000-00-00');
 
         $("#btn_profile").click(function () {
             $("#profile_window").show();
@@ -43,7 +43,6 @@
                         data["phone"] = "8" + "(" + data["phone"][0] + data["phone"][1] + data["phone"][2] + ")" +
                             data["phone"][3] + data["phone"][4] + data["phone"][5] + "-" + data["phone"][6] +
                             data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
-                        $('#profile_phone').mask('8(000)000-00-00');
                         $("#profile_phone").val(data["phone"]);
                     } else {
                         $("#profile_error").html(data["message"]);
@@ -71,7 +70,6 @@
                         $("#profile_error").html("");
                         $("#profile_window").hide();
                         $("#menu_main").show();
-                        createProfile(data);
                     } else {
                         $("#profile_error").html(data["message"]);
                     }
