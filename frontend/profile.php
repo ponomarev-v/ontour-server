@@ -6,13 +6,12 @@
                 Редактирование профиля
             </h1>
             <form id="profile_form">
-                <input type="text"     name="name"     placeholder="Имя"               class="form" value=""><br>
-                <input type="text"     name="surname"  placeholder="Фамилия"           class="form" value=""><br>
-                <input type="number"   name="age"      placeholder="Возраст"           class="form" value=""><br>
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" value=""><br>
-                <input type="password" name="password" placeholder="Пароль"            class="form" value=""><br>
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form" value=""><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" value="" id="phone_profile">
+                <input type="text"     name="name"     placeholder="Имя"               class="form" id="profile_name"><br>
+                <input type="number"   name="age"      placeholder="Возраст"           class="form" id="profile_age"><br>
+                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" id="profile_school"><br>
+                <input type="password" name="password" placeholder="Пароль"            class="form" id="profile_password"><br>
+                <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
                 <p>
                     <div id="profile_error"></div><br>
                     <input type="submit" value="Сохранить">
@@ -23,26 +22,31 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('#phone_profile').mask('8(000)000-00-00');
-        $.ajax({
-            type: "POST",
-            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
-            xhrFields: {withCredentials: true},
-            success: function (data) {
-                data = eval("(" + data + ")");
-                if (data.result == "success") {
-                    $("#name").attr(value(data["name"]));
-                    $("#surname").attr(value(data["surname"]));
-                    $("#age").attr(value(data["age"]));
-                    $("#school").attr(value(data["school"]));
-                    $("#password").attr(value(data["password"]));
-                    $("#email").attr(value(data["email"]));
-                    $("#phone").attr(value(data["phone"]));
-                } else {
-                    $("#profile_error").html(data["message"]);
+
+        $("#btn_profile").click(function () {
+            $("#profile_window").show();
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+                xhrFields: {withCredentials: true},
+                success: function (data) {
+                    data = eval("(" + data + ")");
+                    if (data.result == "success") {
+                        $("#profile_name").val(data["name"]);
+                        $("#profile_age").val(data["age"]);
+                        $("#profile_school").val(data["school"]);
+                        $("#profile_password").val(data["password"]);
+                        $("#profile_email").val(data["email"]);
+                        $("#profile_phone").val(data["phone"]);
+                    } else {
+                        $("#profile_error").html(data["message"]);
+                    }
                 }
-            }
+            });
         });
+
+        $('#profile_phone').mask('8(000)000-00-00');
+
         $("#profile_window .close").click(function () {
             $("#profile_window").hide();
         });
@@ -62,18 +66,12 @@
                         $("#profile_error").html("");
                         $("#profile_window").hide();
                         $("#menu_main").show();
-                        createProfile(data);
                     } else {
                         $("#profile_error").html(data["message"]);
                     }
                 }
             });
             e.preventDefault();
-        });
-
-        $("#profile_window").click(function (e) {
-            if (e.target == this)
-                $("#profile_window").hide();
         });
     });
 </script>
