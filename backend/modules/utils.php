@@ -153,6 +153,7 @@ class Utils
         return $phone;
     }
 
+
     public static function SendSMS($phone, $message)
     {
         $db = Core::DB();
