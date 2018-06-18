@@ -36,11 +36,9 @@ namespace API {
             }
         }
 
-       /* public function UserProfile(){
-            if (isset(\Utils::Request('profile'))){
-                return \Users::GetUserInfo($_SESSION['userid']);
-            }
-        }*/
+        public function UserProfile(){
+            return (isset(\Utils::Request('profile'))) ? \Users::GetUserInfo($_SESSION['userid']) : false;
+        }
 
         public function Logout()
         {
