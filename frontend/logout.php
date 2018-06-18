@@ -8,6 +8,7 @@
             <form id="logout_form">
                 <p>
                     <input type="submit" value="Да, выйти">
+                    <input type="button" value="Нет, остаться">
                 </p>
             </form>
         </div>
