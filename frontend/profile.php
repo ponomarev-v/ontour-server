@@ -70,7 +70,6 @@
                         $("#profile_error").html("");
                         $("#profile_window").hide();
                         $("#menu_main").show();
-                        createProfile(data);
                     } else {
                         $("#profile_error").html(data["message"]);
                     }
