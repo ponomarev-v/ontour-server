@@ -61,7 +61,7 @@ namespace API {
                 'email'    => \Utils::Request('email'),
                 'phone'    => \Utils::Request('phone'),
             );
-            if($id = \Users::RegisterUser($data)) {
+            if($id = \Users::ChangeUserProfile($data)) {
                 return $this->internalLogin($id);
             }
         }
