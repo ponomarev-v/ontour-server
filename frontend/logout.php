@@ -8,7 +8,7 @@
             <form id="logout_form">
                 <p>
                     <input type="submit" value="Да, выйти">
-                    <input type="button" value="Нет, остаться" id="btn_logout_none">
+                    <input type="button" value="Нет, остаться">
                 </p>
             </form>
         </div>
@@ -27,10 +27,6 @@
 
         $("#btn_logout").click(function () {
             $("#logout_window").show();
-        });
-
-        $("#btn_logout_none").click(function () {
-            $("#logout_window").hide();
         });
 
         $("#logout_window .close").click(function () {
