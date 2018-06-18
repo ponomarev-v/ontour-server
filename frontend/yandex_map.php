@@ -1,3 +1,7 @@
 <?php
- echo "Here will ya map";
+ include "header.php";
+?>
+
+<?php 
+include "footer.php";
 ?>
