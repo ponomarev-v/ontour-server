@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/menu.css"><!--стили меню-->
     <link rel="stylesheet" type="text/css" href="/css/window.css"><!--стили всплывающих окон-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="/js/yandex_map.js" type="text/javascript"></script><!--скрипт яндекс.карт-->
     <script src="/js/jquery-3.3.1.js" type="text/javascript"></script><!--скрипт jquery-->
     <script src="/js/jquery.mask.js" type="text/javascript"></script><!--скрипт jquery.mask-->
 	
