@@ -37,7 +37,7 @@ namespace API {
         }
 
         public function UserProfile(){
-            return (isset(\Utils::Request('profile'))) ? \Users::GetUserInfo($_SESSION['userid']) : false;
+            return (\Utils::Request('profile') == 'userprofile') ? \Users::GetUserInfo($_SESSION['userid']) : false;
         }
 
         public function Logout()
