@@ -68,7 +68,7 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         $id = $_SESSION['userid'];
-        $res = $db -> where('id', $id) -> update('users', $data);
+        $res = $db -> where('id', $id) -> update('user', $data);
         return $res;
     }
 
