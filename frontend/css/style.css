@@ -28,3 +28,24 @@ body {
     padding: 50px 0px 50px 0px;
     color: green;
 }
+
+.form {
+    margin: 5px 0px 5px 0px;
+    width: 270px;
+}
+
+.submit {
+    margin: 5px 0px 5px 0px;
+    width: 270px;
+}
+
+#tooltip {
+    z-index: 9999;
+    position: absolute;
+    display: none;
+    top:0px;
+    left:0px;
+    background-color: #000;
+    padding: 5px 10px 5px 10px;
+    color: white;
+}

@@ -9,7 +9,7 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
-                    <div id="login_error"></div>
+                    <div id="login_error"></div><br>
                     <input type="submit" value="Войти">
                 </p>
             </form>
@@ -17,21 +17,21 @@
     </div>
 </div>
 <script>
-    function createProfile(user_info) {
-        $("#menu_login").hide();
-        $("#menu_register").hide();
-        $("#menu_logout").show();
-        $("#menu_profile").show();
-        $("#menu_main").show();
-    }
-
     $(document).ready(function() {
         $('.phone').mask('8(000)000-00-00');
+
+        function createProfile(user_info) {
+            $("#menu_login").hide();
+            $("#menu_register").hide();
+            $("#menu_logout").show();
+            $("#menu_profile").show();
+            $("#menu_main").show();
+        }
+
         $.ajax({
             type: "POST",
             url: "http://ontourapi.kvantorium33.ru/?method=user.info",
             xhrFields: {withCredentials: true},
-
             success: function(data)
             {
                 data = eval("(" + data + ")");
@@ -60,13 +60,17 @@
                 url: "http://ontourapi.kvantorium33.ru/?method=user.login",
                 data: $("#login_form").serialize(),
                 xhrFields: {withCredentials: true},
-                success: function(data);
+                success: function(data)
                 {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         $("#login_error").html("");
+                        $("#menu_main").show();
+                        $("#menu_logout").show();
+                        $("#menu_profile").show();
+                        $("#menu_register").hide();
+                        $("#menu_login").hide();
                         $("#login_window").hide();
-                        createProfile(data);
                     } else {
                         $("#login_error").html(data["message"]);
                     }
@@ -75,13 +79,10 @@
             e.preventDefault();
         });
 
-        $("#btn_profile").click(function () {
-            $("#profile_window").show();
-        });
-
         $("#btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
+
         });
     });
 </script>

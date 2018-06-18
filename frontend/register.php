@@ -11,7 +11,7 @@
                 <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required><br>
                 <p>
-                    <div id="register_error"></div>
+                    <div id="register_error"></div><br>
                     <input type="submit" value="Зарегистрироваться">
                 </p>
             </form>
@@ -48,7 +48,10 @@
                         $("#register_error").html("");
                         $("#register_window").hide();
                         $("#menu_main").show();
-                        createProfile(data);
+                        $("#menu_logout").show();
+                        $("#menu_profile").show();
+                        $("#menu_register").hide();
+                        $("#menu_login").hide();
                     } else {
                         $("#register_error").html(data["message"]);
                     }
