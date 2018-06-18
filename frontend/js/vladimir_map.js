@@ -1,7 +1,7 @@
 $(window).on("load",function(){
     var vladimirMap = $("#vladimir_map")[0];
     var svgVladimir = vladimirMap.contentDocument;
-    var objVladimir = ["#path4482"]
+    var objVladimir = ["#path4482","#path4502","#path4476","#path4496"]
     objVladimir.forEach(element => {
         $(element,svgVladimir).css("fill","#a1e736");
         $(element,svgVladimir).css("stroke","#71a12a");
