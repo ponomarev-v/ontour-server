@@ -63,7 +63,7 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
-    public static function ChangeUserProfile($data){
+    public static function  ChangeUserProfile($data){
         // Подключаемся к базе
         $db = Core::DB();
         $id = $_SESSION['userid'];
