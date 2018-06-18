@@ -5,13 +5,14 @@ $(window).on("load",function(){
     objVladimir.forEach(element => {
         $(element,svgVladimir).css("fill","#a1e736");
         $(element,svgVladimir).css("stroke","#71a12a");
-    });
+   
     $(element,svgVladimir).hover(function(){
         $(element,svgVladimir).css("opacity","0.7");     
         });
     $(element,svgVladimir).mouseout(function(){
         $(element,svgVladimir).css("opacity","1");   
         });
+    });
     $("[data-tooltip]",svgVladimir).mousemove(function (eventObject) {
 
         $data_tooltip_central = $(this).attr("data-tooltip");
