@@ -14,7 +14,7 @@ class Users
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
-        // TODO нормальная проверка email-a
+        // TODO нормальная проверка email-a // // Готово
         if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
             throw new \Exception("emal отсутствует или указан неверно");
 
