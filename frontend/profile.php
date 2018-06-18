@@ -6,13 +6,13 @@
                 Редактирование профиля
             </h1>
             <form id="profile_form">
-                <input type="text"     name="name"     placeholder="Имя"               class="form"><br>
-                <input type="text"     name="surname"  placeholder="Фамилия"           class="form"><br>
-                <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
-                <input type="password" name="password" placeholder="Пароль"            class="form"><br>
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="phone_profile">
+                <input type="text"     name="name"     placeholder="Имя"               class="form" value=""><br>
+                <input type="text"     name="surname"  placeholder="Фамилия"           class="form" value=""><br>
+                <input type="number"   name="age"      placeholder="Возраст"           class="form" value=""><br>
+                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" value=""><br>
+                <input type="password" name="password" placeholder="Пароль"            class="form" value=""><br>
+                <input type="email"    name="email"    placeholder="Электронная почта" class="form" value=""><br>
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" value="" id="phone_profile">
                 <p>
                     <div id="profile_error"></div><br>
                     <input type="submit" value="Сохранить">
@@ -31,13 +31,13 @@
             success: function (data) {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
-                    $("#profile_form #name").value(data["name"]);
-                    $("#profile_form #surname").value(data["surname"]);
-                    $("#profile_form #age").value(data["age"]);
-                    $("#profile_form #school").value(data["school"]);
-                    $("#profile_form #password").value(data["password"]);
-                    $("#profile_form #email").value(data["email"]);
-                    $("#profile_form #phone").value(data["phone"]);
+                    $("#name").attr(value(data["name"]));
+                    $("#surname").attr(value(data["surname"]));
+                    $("#age").attr(value(data["age"]));
+                    $("#school").attr(value(data["school"]));
+                    $("#password").attr(value(data["password"]));
+                    $("#email").attr(value(data["email"]));
+                    $("#phone").attr(value(data["phone"]));
                 } else {
                     $("#profile_error").html(data["message"]);
                 }
