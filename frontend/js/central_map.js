@@ -46,7 +46,7 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
-    $("#path96",svgCentral).click(function(){
+    $("#path4723",svgCentral).click(function(){
         window.location = 'http://ontour.kvantorium33.ru/Vladimir_map.php'
     });
 });
