@@ -68,8 +68,8 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         $id = $_SESSION['userid'];
-        $db -> where('id', $id) -> update('user', $data);
-        return true;
+        $res = $db -> where('id', $id) -> update('user', $data);
+        return $res;
     }
 
     public static function CheckUserCredentials($login, $password)
