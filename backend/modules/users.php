@@ -14,7 +14,7 @@ class Users
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
-        // TODO нормальная проверка email-a // // Готово
+        // TODO нормальная проверка email-a
         if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
             throw new \Exception("emal отсутствует или указан неверно");
 
@@ -61,6 +61,14 @@ class Users
             return $new_id;
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
+    }
+
+    public static function ChangeUserProfile($id, $data)
+    {
+        // Подключаемся к базе
+        $db = Core::DB();
+        $res = $db->where('id', $id)->update('user', $data);
+        return $res;
     }
 
     public static function CheckUserCredentials($login, $password)

@@ -25,6 +25,18 @@ namespace API {
             }
         }
 
+        public function Profile(){
+            $new_data = array(
+                'name' => \Utils::Request('name'),
+                'age' => \Utils::Request('age'),
+                'phone' => \Utils::Request('phone'),
+                'email' => \Utils::Request('email'),
+                'school' => \Utils::Request('school'),
+            );
+            $id = $_SESSION['userid'];
+            return \Users::ChangeUserProfile($id, $new_data);
+        }
+
         public function Login()
         {
             $login = \Utils::Request('login');
@@ -54,6 +66,7 @@ namespace API {
                 return $this->internalLogin($id);
             }
         }
+
 
         /**
          * @param $login

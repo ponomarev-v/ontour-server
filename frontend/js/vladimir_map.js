@@ -1,11 +1,13 @@
 $(window).on("load",function(){
     var vladimirMap = $("#vladimir_map")[0];
     var svgVladimir = vladimirMap.contentDocument;
-    var objVladimir = ["#path4482","#path4502","#path4476","#path4496","#path4468","#path4498","#path4472","#path4474","#polyline4109","#path4466","#path4470","#path4486","#path4488","#path4490","#path4500","#path4478","#path4484","#path4494","#path4492","#path4480"]
+    var objVladimir = ["#path4482","#path4502","#path4476","#path4496","#path4468","#path4498","#path4472","#path4474","#polyline4109","#path4466","#path4470","#path4486","#path4488","#path4490","#path4500","#path4478","#path4484","#path4494","#path4492","#path4480","#path4504"]
     objVladimir.forEach(element => {
         $(element,svgVladimir).css("fill","#a1e736");
         $(element,svgVladimir).css("stroke","#71a12a");
-   
+        $(element,svgVladimir).click(function(){
+            window.location = "http://ontour.kvantorium33.ru/yandex_map.php"
+        });
     $(element,svgVladimir).hover(function(){
         $(element,svgVladimir).css("opacity","0.7");     
         });
