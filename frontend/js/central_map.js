@@ -45,4 +45,7 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
+    $("#path96",svgCentral).click(function(){
+        window.location = "/Vladimir_map.php"
+    });
 });
