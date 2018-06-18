@@ -58,7 +58,6 @@ $(window).on("load",function(){
      $("#KC",svgDoc).css("stroke","#d27387");
      
      $("#Central",svgDoc).click(function(){
-        var central = $("#Central",svgDoc);
         window.location = "/CFD_map.php"
      });
      
