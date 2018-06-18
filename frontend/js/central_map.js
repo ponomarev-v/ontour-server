@@ -4,13 +4,13 @@ $(window).on("load",function(){
     var objCentral = ["#path96","#path94","#path92","#path46","#path50","#path60","#path68","#path54","#path62","#path4926","#path44","#path78","#path66","#path98","#path74","#path64","#path82","#path42"]
     var objVolga = ["#path52","#path84","#path88","#path106"]
     objVolga.forEach(element => {
-        $(element,svgCentral).css("fill","#fbe230");
-        $(element,svgCentral).css("stroke","#fff");
+        var regionColor = $(element,svgCentral).css("fill","#fbe230");
+        var borderColor = $(element,svgCentral).css("stroke","#fff");
         $(element,svgCentral).hover(function(){
-            var regionColor = $(element,svgCentral).css("opacity","0.7");     
+            var regionOpacity = $(element,svgCentral).css("opacity","0.7");     
         });
         $(element,svgCentral).mouseout(function(){
-           $(element,svgCentral).css("opacity","1");   
+            regionOpacity = $(element,svgCentral).css("opacity","1");   
         });
     });
 
