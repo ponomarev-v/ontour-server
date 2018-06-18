@@ -15,7 +15,7 @@ $(window).on("load",function(){
     });
 
     objCentral.forEach(element => {
-        var regionColor = $(element,svgCentral).css("fill","#a1e736");
+        var regionColor = $(element,svgCentral).css("fill","#fbe230");
         var borderColor = $(element,svgCentral).css("stroke","#71a12a");
     $(element,svgCentral).hover(function(){
         var regionColor = $(element,svgCentral).css("opacity","0.7");     
