@@ -6,7 +6,7 @@ $(window).on("load",function(){
     objVolga.forEach(element => {
         $(element,svgCentral).css("fill","#fbe230");
         $(element,svgCentral).css("stroke","#fff");
-        $(element,svgCentral).css("stroke-width","2");
+        $(element,svgCentral).css("stroke-width",2);
         $(element,svgCentral).hover(function(){
             $(element,svgCentral).css("opacity","0.7");     
         });
