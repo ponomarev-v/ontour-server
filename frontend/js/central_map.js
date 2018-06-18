@@ -15,13 +15,13 @@ $(window).on("load",function(){
     });
 
     objCentral.forEach(element => {
-        var regionColor = $(element,svgCentral).css("fill","#a1e736");
-        var borderColor = $(element,svgCentral).css("stroke","#71a12a");
+       $(element,svgCentral).css("fill","#a1e736");
+       $(element,svgCentral).css("stroke","#71a12a");
     $(element,svgCentral).hover(function(){
-        var regionColor = $(element,svgCentral).css("opacity","0.7");     
+        $(element,svgCentral).css("opacity","0.7");     
         });
     $(element,svgCentral).mouseout(function(){
-        var regionColor = $(element,svgCentral).css("opacity","1");   
+        $(element,svgCentral).css("opacity","1");   
         });
     });
     $("[data-tooltip]",svgCentral).mousemove(function (eventObject) {
