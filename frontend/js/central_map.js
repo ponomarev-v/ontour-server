@@ -1,11 +1,12 @@
 $(window).on("load",function(){
     var centralMap = $("#central_map")[0];
     var svgCentral = centralMap.contentDocument;
-    var objCentral = ["#path207","#path4717","#path4719","#path4733","#path4725","#path203","#path4731","#path68","#path54","#path62","#path4926","#path44","#path78","#path66","#path98","#path74","#path64","#path82","#path42"]
+    var objCentral = ["#path207","#path4717","#path4719","#path4733","#path4725","#path203","#path4731","#path4759","#path4721","#path4723","#path4739","#path4737","#path4735","#path66","#path98","#path74","#path64","#path82","#path42"]
     var objVolga = ["#path52","#path84","#path88","#path106"]
     objVolga.forEach(element => {
         $(element,svgCentral).css("fill","#fbe230");
         $(element,svgCentral).css("stroke","#fff");
+        $(element,svgCentral).css("stroke-width","2");
         $(element,svgCentral).hover(function(){
             $(element,svgCentral).css("opacity","0.7");     
         });
