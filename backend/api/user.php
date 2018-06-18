@@ -33,7 +33,8 @@ namespace API {
                 'email' => \Utils::Request('email'),
                 'school' => \Utils::Request('school'),
             );
-            return \Users::ChangeUserProfile($new_data);
+            $id = $_SESSION['userid'];
+            return \Users::ChangeUserProfile($id, $new_data);
         }
 
         public function Login()
@@ -61,12 +62,11 @@ namespace API {
                 'email'    => \Utils::Request('email'),
                 'phone'    => \Utils::Request('phone'),
             );
-            if($id = \Users::ChangeUserProfile($data)) {
+            if($id = \Users::RegisterUser($data)) {
                 return $this->internalLogin($id);
             }
         }
 
-/*                          */
 
         /**
          * @param $login
