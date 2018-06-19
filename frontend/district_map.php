@@ -4,4 +4,24 @@
         <p>Ваш браузер не поддерживает svg</p>
     </object>
 </div>
+<div class="container wrapper">
+    <div class="row">
+        <div class="col-md-3 block">
+            <p class="num_obj">0</p>
+            <p class="info">Объектов</p>
+        </div>
+        <div class="col-md-3 block">
+            <p class="num_photo">0</p>
+            <p class="info">Фотографий</p>
+        </div>
+        <div class="col-md-3 block">
+            <p class="num_events">0</p>
+            <p class="info">Событие</p>
+        </div>
+        
+    </div>
+    <div class="row">
+    <button class="button_info">Подробнее</button>
+    </div>
+</div>
 <script src="js/federal_map.js"></script>
