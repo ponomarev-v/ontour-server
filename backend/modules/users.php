@@ -68,10 +68,6 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         $data['phone'] = Utils::FormatPhone($data['phone']);
-        $res = $db->where('phone', $data['phone'])->get('user');
-        if ($res['id'] !== $id || count($res) !== 0){
-            throw new Exception('wrong phone');
-        }
         $db->where('id', $id)->update('user', $data);
         return $db->getLastError();
     }
