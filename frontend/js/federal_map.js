@@ -1,14 +1,11 @@
 $(window).on("load",function(){
     
     var a = $("#federal_map")[0];
-    var svgDoc = a.contentDocument;
-    var stringXML = new XMLSerializer().serializeToString(svgDoc.documentElement);
+    var allFederals = $("#g4548",a);
+    var svgDoc = allFederals.contentDocument;
+    
     	
-    if(stringXML.indexOf('id="path"') + 1) {
-    alert("подстрока найдена");
-    }else{
-    alert("подстрока не найдена");
-    }
+    
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
     //$("#Central",svgDoc).attr("a","'/CFD_map.php'");
 	obj.forEach(element => {
