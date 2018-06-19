@@ -1,11 +1,7 @@
 $(window).on("load",function(){
     
     var a = $("#federal_map")[0];
-    
-    var svgDoc = a.contentDocument;
-    
-    	
-    
+    var svgDoc = a.contentDocument;   
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
     //var colors = ["#a1e736","#fbe230","8ecdef","#c2cdd3","#f1ce82","#9eb8f9","#d27387","#eea268"]
     //$("#Central",svgDoc).attr("a","'/CFD_map.php'");
