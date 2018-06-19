@@ -2,12 +2,13 @@ $(window).on("load",function(){
     
     var a = $("#federal_map")[0];
     var svgDoc = a.contentDocument;
+    
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
     //$("#Central",svgDoc).attr("a","'/CFD_map.php'");
 	obj.forEach(element => {
-        var regionColor = $(element,svgDoc).css("fill","#1076C8");
-        var borderColor = $(element,svgDoc).css("stroke","#fff");
- 
+        $(element,svgDoc).css("fill","#1076C8");
+        $(element,svgDoc).css("stroke","#fff");
+        $(element,svgDoc).css("transition","0.5s");
 
         $(element,svgDoc).hover(function(){
             var regionColor = $(element,svgDoc).css("opacity","0.7");     
