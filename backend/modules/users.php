@@ -67,14 +67,8 @@ class Users
     {
         // Подключаемся к базе
         $db = Core::DB();
-        $mass = $db->where('id', $id)->get('user');
-        $res['phone'] = ($data['phone'] !== $mass['phone']) ? Utils::FormatPhone($data['phone']) : $mass['phone'];
-        $res['name'] = ($data['name'] !== $mass['name']) ? $data['name'] : $mass['name'];
-        $res['email'] = ($data['email'] !== $mass['email']) ? $data['email'] : $mass['email'];
-        $res['school'] = ($data['school'] !== $mass['school']) ? $data['school'] : $mass['school'];
-        $res['age'] = ($data['age'] !== $mass['age']) ? $data['age'] : $mass['age'];
-        $db->where('id', $id)->update('user', $res);
-        return $res;
+        $db->where('id', $id)->update('user', $data);
+        return true;
     }
 
     public static function CheckUserCredentials($login, $password)
