@@ -68,7 +68,7 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         $db->where('id', $id)->update('user', $data);
-        return true;
+        return $db->getLastError();
     }
 
     public static function CheckUserCredentials($login, $password)
