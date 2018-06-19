@@ -5,7 +5,7 @@ $(window).on("load",function(){
     objVladimir.forEach(element => {
         $(element,svgVladimir).css("fill","#a1e736");
         $(element,svgVladimir).css("stroke","#71a12a");
-        $(element,svgDoc).css("transition","0.2s");
+        $(element,svgVladimir).css("transition","0.2s");
         $(element,svgVladimir).click(function(){
             window.location = "http://ontour.kvantorium33.ru/yandex_map.php"
         });
