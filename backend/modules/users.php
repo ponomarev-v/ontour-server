@@ -67,9 +67,26 @@ class Users
     {
         // Подключаемся к базе
         $db = Core::DB();
-        $data['phone'] = Utils::FormatPhone($data['phone']);
-        $db->where('id', $id)->update('user', $data);
-        return $db->getLastError();
+        $upd = array();
+        if(isset($data['phone']) && !empty($data['phone'])) {
+            $data['phone'] = Utils::FormatPhone($data['phone']);
+            $res = $db->where('phone', $data['phone'])->where('id', $id, '!=')->get('user');
+            if(!empty($res)) {
+                throw new Exception('Указанный телефон занят другим пользователем');
+            }
+            $upd['phone'] = $data['phone'];
+        }
+        if(isset($data['name'])) {
+            $data['name'] = trim($data['name']);
+            if(empty($data['name']))
+                throw new Exception('Имя пользователя не может быть пустым');
+            $upd['name'] = $data['name'];
+        }
+        $db->where('id', $id)->update('user', $upd);
+        if($msg = $db->getLastError())
+            throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
+        else
+            return true;
     }
 
     public static function CheckUserCredentials($login, $password)
