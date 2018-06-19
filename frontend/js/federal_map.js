@@ -8,7 +8,7 @@ $(window).on("load",function(){
 	obj.forEach(element => {
         $(element,svgDoc).css("fill","#1076C8");
         $(element,svgDoc).css("stroke","#fff");
-        $(element,svgDoc).css("transition","0.5s");
+        $(element,svgDoc).css("transition","0.2s");
 
         $(element,svgDoc).hover(function(){
             var regionColor = $(element,svgDoc).css("opacity","0.7");     
