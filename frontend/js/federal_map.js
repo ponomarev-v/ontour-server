@@ -13,7 +13,7 @@ $(window).on("load",function(){
         colors.forEach(color=>{
             $(element,svgDoc).css("fill",color);
             $(element,svgDoc).css("stroke",color);
-        });
+       
         $(element,svgDoc).css("transition","0.2s");
 
         $(element,svgDoc).hover(function(){
@@ -26,6 +26,7 @@ $(window).on("load",function(){
             
         });
     });
+});
     $("[data-tooltip]",svgDoc).mousemove(function (eventObject) {
 
         $data_tooltip = $(this).attr("data-tooltip");
