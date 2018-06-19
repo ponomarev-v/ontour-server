@@ -67,8 +67,14 @@ class Users
     {
         // Подключаемся к базе
         $db = Core::DB();
-        $data['phone'] = Utils::FormatPhone($data['phone']);
-     //   $res = $db->where('phone', $data['phone'])-> get('user');
+        $data['phone'] = ($data['phone'] = '') ? null : $data['phone'];
+        if (isset($data['phone'])){
+            $data['phone'] = Utils::FormatPhone($data['phone']);
+        }
+        $data['name'] = ($data['name'] = '') ? null : $data['name'];
+        $data['age'] = ($data['age'] = '') ? null : $data['age'];
+        $data['school'] = ($data['school'] = '') ? null : $data['school'];
+        $data['email'] = ($data['email'] = '') ? null : $data['email'];
         $db->where('id', $id)->update('user', $data);
         return $db->getLastError();
     }
