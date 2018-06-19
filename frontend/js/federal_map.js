@@ -4,7 +4,7 @@ $(window).on("load",function(){
     var svgDoc = a.contentDocument;
     var stringXML = new XMLSerializer().serializeToString(svgDoc.documentElement);
     	
-    if(stringXML.indexOf('id="Central"') + 1) {
+    if(stringXML.indexOf('id="path"') + 1) {
     alert("подстрока найдена");
     }else{
     alert("подстрока не найдена");
