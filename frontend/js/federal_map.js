@@ -7,19 +7,22 @@ $(window).on("load",function(){
     	
     
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
+    var colors = ["#a1e736","#fbe230","8ecdef","#c2cdd3","#f1ce82","#9eb8f9","#d27387","#eea268"]
     //$("#Central",svgDoc).attr("a","'/CFD_map.php'");
 	obj.forEach(element => {
-        $(element,svgDoc).css("fill","#1076C8");
-        $(element,svgDoc).css("stroke","#fff");
+        colors.forEach(color=>{
+            $(element,svgDoc).css("fill",color);
+            $(element,svgDoc).css("stroke",color);
+        });
         $(element,svgDoc).css("transition","0.2s");
 
         $(element,svgDoc).hover(function(){
-            var regionColor = $(element,svgDoc).css("opacity","0.7");     
-			 var transition = $(element,svgDoc).css("transition:","3s");
+            $(element,svgDoc).css("opacity","0.7");     
+		    $(element,svgDoc).css("transition:","3s");
              
         });
         $(element,svgDoc).mouseout(function(){
-            var regionColor = $(element,svgDoc).css("opacity","1");
+            $(element,svgDoc).css("opacity","1");
             
         });
     });
@@ -44,22 +47,6 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
-	 $("#Far_Eastern",svgDoc).css("fill","#f1ce82");
-	  $("#Far_Eastern",svgDoc).css("stroke","#f1ce82");
-	 $("#Siberia",svgDoc).css("fill","#c2cdd3");
-	 $("#Siberia",svgDoc).css("stroke","#c2cdd3");
-	 $("#Urals",svgDoc).css("fill","#8ecdef");
-	  $("#Urals",svgDoc).css("stroke","#8ecdef");
-	 $("#Northwestern",svgDoc).css("fill","#9eb8f9");
-	  $("#Northwestern",svgDoc).css("stroke","#9eb8f9");
-	 $("#Volga",svgDoc).css("fill","#fbe230");
-	 $("#Volga",svgDoc).css("stroke","#fbe230");
-	 $("#Central",svgDoc).css("fill","#a1e736");
-	 $("#Central",svgDoc).css("stroke","#a1e736");
-	 $("#KL",svgDoc).css("fill","#eea268");
-	 $("#KL",svgDoc).css("stroke","#eea268");
-	 $("#KC",svgDoc).css("fill","#d27387");
-     $("#KC",svgDoc).css("stroke","#d27387");
      
      $("#Central",svgDoc).click(function(){
         window.location = "/CFD_map.php"
