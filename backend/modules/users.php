@@ -68,6 +68,12 @@ class Users
         // Подключаемся к базе
         $db = Core::DB();
         $data['phone'] = Utils::FormatPhone($data['phone']);
+        $res = $db->where('phone', $data['phone'])-> get('user');
+        if ($res['id'] !== $id)
+            throw new Exception('такой телефон уже существует');
+        $res = $db->where('email', $data['email'])-> get('user');
+        if ($res['id'] !== $id)
+            throw new Exception('такой email уже существует');
         $db->where('id', $id)->update('user', $data);
         return $db->getLastError();
     }
