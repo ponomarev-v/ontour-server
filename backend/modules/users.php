@@ -90,7 +90,7 @@ class Users
             $upd['email'] = $data['email'];
         }
         if(isset($data['age']) && !empty($data['age'])) {
-            $upd['age'] = $data['email'];
+            $upd['age'] = $data['age'];
         }
         if(isset($data['school']) && !empty($data['school'])) {
             $upd['school'] = $data['school'];
