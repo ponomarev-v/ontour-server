@@ -25,7 +25,7 @@ include_once "header.php";
         
     </div>
     <div class="row">
-    <button class="button_info"><a href="#">Подробнее</a></button>
+    <button class="button_info">Подробнее</button>
     </div>
 </div>
     <script src="js/central_map.js"></script> 
