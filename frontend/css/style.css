@@ -100,3 +100,7 @@ body {
     color: #fff;
     text-transform: uppercase;
 }
+
+.button_info:hover{
+    background-color: rgb(241, 84, 6);
+}
