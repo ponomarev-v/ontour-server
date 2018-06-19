@@ -82,6 +82,19 @@ class Users
                 throw new Exception('Имя пользователя не может быть пустым');
             $upd['name'] = $data['name'];
         }
+        if(isset($data['email']) && !empty($data['email'])) {
+            $res = $db->where('email', $data['email'])->where('id', $id, '!=')->get('user');
+            if(!empty($res)) {
+                throw new Exception('Указанный email занят другим пользователем');
+            }
+            $upd['email'] = $data['email'];
+        }
+        if(isset($data['age']) && !empty($data['age'])) {
+            $upd['age'] = $data['email'];
+        }
+        if(isset($data['school']) && !empty($data['school'])) {
+            $upd['school'] = $data['school'];
+        }
         $db->where('id', $id)->update('user', $upd);
         if($msg = $db->getLastError())
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
