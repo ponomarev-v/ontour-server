@@ -15,6 +15,8 @@
 </head>
 <body>
     <div id="header">
-        <img src="/images/logo.png" height=100px id="logo"><!--логотип-->
+        <a href="index.php" id="logo">
+            <img src="/images/logo.png" height=100px><!--логотип-->
+        </a>
         <?php include "menu.php"; ?><!--подключение меню-->
     </div>
