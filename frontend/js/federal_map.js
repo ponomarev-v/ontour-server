@@ -1,13 +1,9 @@
 $(window).on("load",function(){
     
     var a = $("#federal_map")[0];
-    var allFederals = $("#g4548",a);
-    allFederals = $("#Federals",allFederals);
-    var svgDoc = allFederals.contentDocument;
-    var list = svgDoc.childNodes;
-    for (var i = 0;i < list.length;i++){
-        alert (list[i]);
-    }
+    
+    var svgDoc = a.contentDocument;
+    
     	
     
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
