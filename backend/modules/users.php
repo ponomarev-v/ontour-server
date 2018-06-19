@@ -36,10 +36,10 @@ class Users
         if(!empty($res)) {
             throw new Exception('Пользователь с указанным телефоном уже существует');
         }
+        $res = $db->where('email', $data['email'])->get('user');
         if(!empty($res)) {
             throw new Exception('Пользователь с указанной почтой уже существует');
         }
-
         $user_data = array(
             'password'  => md5($data['password']),
             'phone'     => $data['phone'],
