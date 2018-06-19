@@ -9,7 +9,8 @@
                 <input type="text" name="name" placeholder="Имя" class="form" required><br>
                 <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
                 <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
-                <input type="password" name="password" placeholder="Пароль" class="form" required><br>
+                <input type="password" name="password" placeholder="Пароль" class="form" required id="password_register">
+                <input type="button" id="show_password_register" value="&#128065;"><br>
                 <p>
                     <div id="register_error"></div><br>
                     <input type="submit" value="Зарегистрироваться">
@@ -21,9 +22,14 @@
 <script>
     $(document).ready(function () {
         $('#phone_register').mask('8(000)000-00-00');
+
         $(".btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
+        });
+
+        $("#show_password_register").click(function () {
+            $("#password_register").attr("type", "text");
         });
 
         $("#register_window .close").click(function () {
