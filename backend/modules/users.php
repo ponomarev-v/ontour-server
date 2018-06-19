@@ -67,6 +67,7 @@ class Users
     {
         // Подключаемся к базе
         $db = Core::DB();
+        $data['phone'] = Utils::FormatPhone($data['phone']);
         $db->where('id', $id)->update('user', $data);
         return $db->getLastError();
     }
