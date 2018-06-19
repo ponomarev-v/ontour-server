@@ -2,7 +2,7 @@ $(window).on("load",function(){
     
     var a = $("#federal_map")[0];
     var svgDoc = a.contentDocument;
-    
+    alert(svgDoc[0])
     var obj = ["#Central","#Volga","#Urals","#Siberia","#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
     //$("#Central",svgDoc).attr("a","'/CFD_map.php'");
 	obj.forEach(element => {
