@@ -76,7 +76,7 @@ class Users
         $data['school'] = ($data['school'] = '') ? null : $data['school'];
         $data['email'] = ($data['email'] = '') ? null : $data['email'];
         $db->where('id', $id)->update('user', $data);
-        return $db->getLastError();
+        return $data;
     }
 
     public static function CheckUserCredentials($login, $password)
