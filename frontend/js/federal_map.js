@@ -3,8 +3,8 @@ $(window).on("load",function(){
     var a = $("#federal_map")[0];
     var svgDoc = a.contentDocument;
     var stringXML = new XMLSerializer().serializeToString(svgDoc.documentElement);
-    var our_string = "something";	
-    if(our_string.indexOf('id="perspective3854"') + 1) {
+    	
+    if(stringXML.indexOf('id="Central"') + 1) {
     alert("подстрока найдена");
     }else{
     alert("подстрока не найдена");
