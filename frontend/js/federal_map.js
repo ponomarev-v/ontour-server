@@ -10,7 +10,6 @@ $(window).on("load",function(){
 
         $(element,svgDoc).hover(function(){
             $(element,svgDoc).css("opacity","0.7");     
-			$(element,svgDoc).css("transition:","3s");
              
         });
         $(element,svgDoc).mouseout(function(){
