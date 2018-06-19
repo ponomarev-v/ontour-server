@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="index.php" id="logo">
+        <a href="http://ontour.kvantorium33.ru" id="logo">
             <img src="/images/logo.png" height=100px><!--логотип-->
         </a>
         <?php include "menu.php"; ?><!--подключение меню-->
