@@ -4,7 +4,7 @@ $(window).on("load",function(){
     var svgDoc = a.contentDocument;
     var stringXML = new XMLSerializer().serializeToString(svgDoc.documentElement);
     var our_string = "something";	
-    if(our_string.indexOf('id="Central"') + 1) {
+    if(our_string.indexOf('id="perspective3854"') + 1) {
     alert("подстрока найдена");
     }else{
     alert("подстрока не найдена");
