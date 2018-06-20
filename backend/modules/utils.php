@@ -158,9 +158,9 @@ class Utils
         $res = $db->where('id', $id)->get('user');
         if (isset($res)){
             mail($res['email'], $subject,"Уважаемый" . $res['name'] . $text);
-            return true;
+            return $res;
         }else {
-            return false;
+            return $res;
         }
     }
 
