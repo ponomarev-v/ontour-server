@@ -11,9 +11,10 @@ class Objects
             throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
-       // if(!isset($data['description']) || empty($data['description']))
-        //    throw new \Exception("Нет описания");
-
+        // проверка на существование имени и координат объекта в базе
+        $res = Core::DB()->where('name', $data['name']);
+        if (!empty($res))
+            throw new Exception('Объект с таким именем уже существует!');
     }
     public static function Add_obj($data, $id)
     {
@@ -21,11 +22,7 @@ class Objects
         // Подключаемся к базе
         $db = Core::DB();
         // Проверка по координатам
-        $res = $db -> where('cx', $data['cx']) -> where('cy', $data['cy']) -> get('object');
-        if (!empty($res)) {
-            throw new Exception('Объект с указанными координатами уже существует');
-        }
-
+        self::DataCheck($data);
         $obj_data = array(
             'cx' => $data['cx'],
             'cy' => $data['cy'],
@@ -44,7 +41,7 @@ class Objects
             throw new Exception('Непредвиденная ошибка при добавлении объекта');
 
     }
-    public static function Get_obj ($cx, $cy){
+    public static function Get_obj ($cx, $cy, $name){
         // Подключаемся к базе
         $db = Core::DB();
         if (isset($cx) && !empty($cx) && isset($cy) && !empty($cy)) {
@@ -55,6 +52,6 @@ class Objects
         }
         else
             throw new Exception('Не указаны или неправильно указаны координаты');
-        return $db->getLastError();
+        return $res;
     }
 }
