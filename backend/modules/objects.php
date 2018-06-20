@@ -48,6 +48,7 @@ class Objects
             $res = $db
                 ->where('cx', $cx)
                 ->where('cy', $cy)
+                ->where('name', $name)
                 ->get('object');
         }
         else
