@@ -47,7 +47,14 @@ class Objects
     public static function Get_obj ($cx, $cy){
         // Подключаемся к базе
         $db = Core::DB();
-        $res = $db ->where('cx', $cx) ->where('cy', $cy) ->get('object');
+        if (isset($cx) && !empty($cx) && isset($cy) && !empty($cy)) {
+            $res = $db
+                ->where('cx', $cx)
+                ->where('cy', $cy)
+                ->get('object');
+        }
+        else
+            throw new Exception('Не указаны или неправильно указаны координаты');
         return $res;
     }
 }

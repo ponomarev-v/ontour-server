@@ -13,7 +13,7 @@
                     return true;
                 }
             }
-            public static function Get(){
+            public static function Details(){
                 $cx = \Utils::Request('cx');
                 $cy = \Utils::Request('cy');
                 return \Objects::Get_obj($cx, $cy);
