@@ -51,7 +51,7 @@ class Objects
         if(sizeof($res) == 1) {
             return $res;
         } else {
-            return null;
+            return Core::DB()->getLastError();
         }
     }
 }

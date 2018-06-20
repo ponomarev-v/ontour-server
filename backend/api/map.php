@@ -16,8 +16,7 @@
             public static function Get(){
                 $cx = \Utils::Request('cx');
                 $cy = \Utils::Request('cy');
-                if ($res = \Objects::Get_obj($cx, $cy))
-                    return $res;
+                return \Objects::Get_obj($cx, $cy);
             }
         }
     }
