@@ -9,7 +9,7 @@
                     'name' => \Utils::Request('name'),
                     'description' => \Utils::Request('description')
                 );
-                if($id = \Objects::Add_obj($data)) {
+                if($id = \Objects::Add_obj($data, $_SESSION['userid'])) {
                     return true;
                 }
             }

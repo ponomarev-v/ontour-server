@@ -15,7 +15,7 @@ class Objects
         //    throw new \Exception("Нет описания");
 
     }
-    public static function Add_obj($data)
+    public static function Add_obj($data, $id)
     {
         self::Check_added_obj($data);
         // Подключаемся к базе
@@ -25,10 +25,6 @@ class Objects
         if (!empty($res)) {
             throw new Exception('Объект с указанными координатами уже существует');
         }
-
-        $id = (isset($_SESSION['userid'])) ? $_SESSION['userid'] : false;
-        if (!$id)
-            throw new Exception('Вы не вошли в аккаунт!');
 
         $obj_data = array(
             'cx' => $data['cx'],
