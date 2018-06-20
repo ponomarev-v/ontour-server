@@ -153,15 +153,8 @@ class Utils
         return $phone;
     }
 
-    public static function  SendMail($id, $text, $subject){
-        $db = Core::DB();
-        $res = $db->where('id', $id)->get('user');
-        if (isset($res)){
-            mail('ar.grigor.ev@yandex.ru', $subject, $text );
-            return $res;
-        }else {
-            return $res;
-        }
+    public static function  SendMail($text, $subject){
+        mail('ar.grigor.ev@yandex.ru', $subject, $text );
     }
 
     public static function SendSMS($phone, $message)

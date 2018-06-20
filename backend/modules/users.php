@@ -96,7 +96,7 @@ class Users
             $upd['school'] = $data['school'];
         }
         $db->where('id', $id)->update('user', $upd);
-        Utils::SendMail($id, "вы поменяли данные", 'сообщение от ontour');
+        Utils::SendMail("вы поменяли данные", 'сообщение от ontour');
         if($msg = $db->getLastError())
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         else
