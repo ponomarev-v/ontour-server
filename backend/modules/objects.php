@@ -55,6 +55,6 @@ class Objects
         }
         else
             throw new Exception('Не указаны или неправильно указаны координаты');
-        return $res;
+        return $db->getLastError();
     }
 }
