@@ -3,10 +3,10 @@ class Objects
 {
     public static function Check_added_obj($data){
         // проверка введенных пользователем данных об объекте
-      //  if(!isset($data['cx']) || empty($data['cx']) )
-      //      throw new \Exception("Некорректно введены координаты");
-      //  if(!isset($data['cy']) || empty($data['cy']) )
-      //      throw new \Exception("Некорректно введены координаты");
+        if(!isset($data['cx']) || empty($data['cx']) )
+            throw new \Exception("Некорректно введены координаты");
+        if(!isset($data['cy']) || empty($data['cy']) )
+            throw new \Exception("Некорректно введены координаты");
         if(!isset($data['name']) || empty($data['name']))
             throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
