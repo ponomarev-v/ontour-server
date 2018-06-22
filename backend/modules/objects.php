@@ -45,7 +45,7 @@ class Objects
         // Подключаемся к базе
         $db = Core::DB();
         if (isset($cx) && !empty($cx) && isset($cy) && !empty($cy)) {
-            $res = $db
+            $data = $db
                 ->where('cx', $cx)
                 ->where('cy', $cy)
                 ->where('name', $name)
@@ -53,6 +53,6 @@ class Objects
         }
         else
             throw new Exception('Не указаны или неправильно указаны координаты');
-        return $res;
+        return $data;
     }
 }
