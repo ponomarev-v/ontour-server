@@ -52,7 +52,7 @@ class Objects
                 ->get('object');
         }
         else
-            throw new Exception('Не указаны или неправильно указаны координаты');
+            throw new Exception('Не указаны или неправильно указаны координаты и имя');
         return $data;
     }
 }
