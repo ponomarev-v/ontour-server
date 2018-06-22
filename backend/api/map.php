@@ -14,9 +14,10 @@
                 }
             }
             public static function Details(){
-                $cx = \Utils::Request('cx');
-                $cy = \Utils::Request('cy');
-                return \Objects::Get_obj($cx, $cy);
+                $cx   = \Utils::Request('cx');
+                $cy   = \Utils::Request('cy');
+                $name = \Utils::Request('name');
+                return \Objects::Get_obj($cx, $cy, $name );
             }
         }
     }
