@@ -88,7 +88,7 @@ switch(town){
     case 'Kolcygino':
     x = 56.293901;
     y = 39.376042;
-    break
+    break;
 
     case 'Petyshki':
     x = 55.930967;
@@ -111,19 +111,10 @@ switch(town){
     break;
 }
 
-
-
-
 function init() {
     myMap = new ymaps.Map("map", {
         center: [x, y],
         zoom: 12
     });
-
-//    myPlacemark = new ymaps.Placemark([x, y], {
-//        hintContent: '',
-//        balloonContent: ''
-//    });
-
     myMap.geoObjects.add(myPlacemark);
 }
