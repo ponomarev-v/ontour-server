@@ -64,6 +64,11 @@ switch(town){
     y = 42.691194;
     break;
 
+    case 'Vazniki':
+    x = 56.247021;
+    y = 42.158862;
+    break;
+
     default:
     x = 55.755814;
     y = 37.617635;

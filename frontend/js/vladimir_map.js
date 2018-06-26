@@ -69,4 +69,7 @@ $(window).on("load",function(){
     $("#path4492",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Gorohovec";
     });
+    $("#path4494",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Vazniki";
+    });
 });
