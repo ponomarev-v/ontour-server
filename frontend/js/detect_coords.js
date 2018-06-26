@@ -6,8 +6,8 @@ $(document).ready(function(){
           3: 'Таймаут соединения'
         };
 
-        if(window.location != "http://localhost/district_map.php" & errors[error.code] == "Нет прав доступа к геоданным" ){
-            window.location = "http://localhost/district_map.php"
+        if(window.location != "http://ontour.kvantorium33.ru/district_map.php" & errors[error.code] == "Нет прав доступа к геоданным" ){
+            window.location = "http://ontour.kvantorium33.ru/district_map.php"
         }
         
         //alert("Ошибка: " + errors[error.code]);
