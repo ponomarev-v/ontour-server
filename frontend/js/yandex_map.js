@@ -44,6 +44,7 @@ switch(town){
     case 'Radyznyi':
     x = 55.996052;
     y = 40.332281;
+    break;
     case 'Sobinka':
     x = 55.993837;
     y = 40.017943;
