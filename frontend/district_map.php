@@ -1,3 +1,4 @@
+<?php include "header.php" ?>
 <div id="tooltip"></div>
 <div align="center">
     <object type="image/svg+xml" data="images/district_map.svg" id="federal_map" width="70%">
@@ -24,5 +25,7 @@
     <button class="button_info">Подробнее</button>
     </div>
 </div>
+
 <script src="js/detect_coords.js"></script>
 <script src="js/federal_map.js"></script>
+<?php include "footer.php" ?>

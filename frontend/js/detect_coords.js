@@ -1,11 +1,16 @@
 $(document).ready(function(){
     function displayError(error) {
         var errors = {
-          1: 'Нет прав доступа',
+          1: 'Нет прав доступа к геоданным',
           2: 'Местоположение невозможно определить',
           3: 'Таймаут соединения'
         };
-        alert("Ошибка: " + errors[error.code]);
+
+        if(window.location != "http://localhost/district_map.php" & errors[error.code] == "Нет прав доступа к геоданным" ){
+            window.location = "http://localhost/district_map.php"
+        }
+        
+        //alert("Ошибка: " + errors[error.code]);
       }
       var country,city,state;
       function displayPosition(position) {
@@ -38,18 +43,20 @@ $(document).ready(function(){
         
       }
      
-     
-      if (navigator.geolocation) {
-        var timeoutVal = 10 * 1000 * 1000;
-        navigator.geolocation.getCurrentPosition(
-          displayPosition,
-          displayError, {
-            enableHighAccuracy: true,
-            timeout: timeoutVal,
-            maximumAge: 0
+   
+        if (navigator.geolocation) {
+            var timeoutVal = 10 * 1000 * 1000;
+            navigator.geolocation.getCurrentPosition(
+              displayPosition,
+              displayError, {
+                enableHighAccuracy: true,
+                timeout: timeoutVal,
+                maximumAge: 0
+              }
+            );
+          } else {
+            alert("Geolocation не поддерживается данным браузером");
           }
-        );
-      } else {
-        alert("Geolocation не поддерживается данным браузером");
-      }
+     
+      
 });
