@@ -43,9 +43,7 @@
         });
 
         $("#register_form").submit(function (e) {
-            if ($("#password_register") != $("#password_register_repeat"))
-                alert("Пароли не совпадают");
-            else
+            if ($("#password_register") == $("#password_register_repeat"))
                 $.ajax({
                     type: "POST",
                     url: "http://ontourapi.kvantorium33.ru/?method=user.register",
@@ -66,6 +64,8 @@
                         }
                     }
                 });
+            else
+                alert("Пароли не совпадают");
             e.preventDefault();
         });
     });
