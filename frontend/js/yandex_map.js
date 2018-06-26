@@ -51,7 +51,7 @@ switch(town){
 
     case 'Selevanovo':
     x = 55.870031;
-    y = 55.870031;
+    y = 41.772074;
     break;
 
     case 'Myrom':
@@ -80,8 +80,8 @@ function init() {
     });
 
     myPlacemark = new ymaps.Placemark([x, y], {
-        hintContent: 'Москва!',
-        balloonContent: 'Столица России'
+        hintContent: '',
+        balloonContent: ''
     });
 
     myMap.geoObjects.add(myPlacemark);
