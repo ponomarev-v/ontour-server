@@ -10,7 +10,6 @@
                 <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
                 <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required id="password_register">
-                <input type="password" placeholder="Повтор пароля" class="form" required id="password_register_repeat">
                 <input type="button" id="show_password_register" value="&#128065;"><br>
                 <p>
                     <div id="register_error"></div><br>
