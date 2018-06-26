@@ -40,6 +40,6 @@ $(window).on("load",function(){
     });
    
     $("#path4498",svgVladimir).click(function(){
-        window.location = "http://localhost/yandex_map.php?data=Vladimir";
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Vladimir";
     });
 });
