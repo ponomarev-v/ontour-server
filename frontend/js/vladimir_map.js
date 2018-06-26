@@ -100,4 +100,7 @@ $(window).on("load",function(){
     $("#polyline4109",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kirzach";
     });
+    $("#path4466",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Aleksandrov";
+    });
 });

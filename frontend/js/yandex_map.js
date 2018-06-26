@@ -100,7 +100,10 @@ switch(town){
     y = 38.872025;
     break;
 
-
+    case 'Aleksandrov':
+    x = 56.397774;
+    y = 38.727621;
+    break;
 
     default:
     x = 55.755814;
