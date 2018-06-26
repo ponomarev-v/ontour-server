@@ -42,4 +42,31 @@ $(window).on("load",function(){
     $("#path4498",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Vladimir";
     });
+    $("#path4476",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Sydogda";
+    });
+    $("#path4488",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kameskovo";
+    });
+    $("#path4486",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Syzdal";
+    });
+    $("#path4490",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kovrov";
+    });
+    $("#path4496",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Radyznyi";
+    });
+    $("#path4468",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Sobinka";
+    });
+    $("#path4480",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Selevanovo";
+    });
+    $("#path4478",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Myrom";
+    });
+    $("#path4492",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Gorohovec";
+    });
 });
