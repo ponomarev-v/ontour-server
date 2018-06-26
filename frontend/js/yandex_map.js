@@ -50,8 +50,8 @@ switch(town){
     break;
 
     case 'Selevanovo':
-    x = 56.151973;
-    y = 38.854247;
+    x = 55.870031;
+    y = 55.870031;
     break;
 
     case 'Myrom':
