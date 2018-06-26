@@ -120,10 +120,10 @@ function init() {
         zoom: 12
     });
 
-    myPlacemark = new ymaps.Placemark([x, y], {
-        hintContent: '',
-        balloonContent: ''
-    });
+//    myPlacemark = new ymaps.Placemark([x, y], {
+//        hintContent: '',
+//        balloonContent: ''
+//    });
 
     myMap.geoObjects.add(myPlacemark);
 }
