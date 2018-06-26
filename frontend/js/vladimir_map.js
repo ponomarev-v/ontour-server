@@ -54,6 +54,9 @@ $(window).on("load",function(){
     $("#path4490",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kovrov";
     });
+    $("#path4500",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kovrov";
+    });
     $("#path4496",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Radyznyi";
     });
@@ -66,10 +69,20 @@ $(window).on("load",function(){
     $("#path4478",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Myrom";
     });
+    $("#path4504",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Myrom";
+    });
+
     $("#path4492",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Gorohovec";
     });
     $("#path4494",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Vazniki";
+    });
+    $("#path4482",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Gys-Xrystalnyi";
+    });
+    $("#path4502",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Gys-Xrystalnyi";
     });
 });

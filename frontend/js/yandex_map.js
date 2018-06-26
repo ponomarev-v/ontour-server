@@ -69,6 +69,11 @@ switch(town){
     y = 42.158862;
     break;
 
+    case 'Gys-Xrystalnyi':
+    x = 55.619818;
+    y = 40.657902;
+    break;
+
     default:
     x = 55.755814;
     y = 37.617635;
