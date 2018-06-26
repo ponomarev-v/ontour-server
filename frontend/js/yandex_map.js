@@ -46,7 +46,7 @@ switch(town){
     y = 40.332281;
     case 'Sobinka':
     x = 55.993837;
-    y = 40.332281;
+    y = 40.017943;
     break;
 
     case 'Selevanovo':
