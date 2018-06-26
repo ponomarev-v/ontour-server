@@ -74,6 +74,11 @@ switch(town){
     y = 40.657902;
     break;
 
+    case 'Melenki':
+    x = 55.338715;
+    y = 41.634030;
+    break;
+
     default:
     x = 55.755814;
     y = 37.617635;

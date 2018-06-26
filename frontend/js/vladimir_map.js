@@ -85,4 +85,7 @@ $(window).on("load",function(){
     $("#path4502",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Gys-Xrystalnyi";
     });
+    $("#path4484",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Melenki";
+    });
 });
