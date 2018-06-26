@@ -80,6 +80,28 @@ switch(town){
     y = 41.634030;
     break;
 
+    case 'Yuriev-Polskiy':
+    x = 56.499250;
+    y = 39.680814;
+    break;
+
+    case 'Kolcygino':
+    x = 56.293901;
+    y = 39.376042;
+    break
+
+    case 'Petyshki':
+    x = 55.930967;
+    y = 39.459900;
+    break;
+
+    case 'Kirzach':
+    x = 56.161694;
+    y = 38.872025;
+    break;
+
+
+
     default:
     x = 55.755814;
     y = 37.617635;

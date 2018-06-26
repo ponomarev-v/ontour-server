@@ -88,4 +88,16 @@ $(window).on("load",function(){
     $("#path4484",svgVladimir).click(function(){
         window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Melenki";
     });
+    $("#path4470",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Yuriev-Polskiy";
+    });
+    $("#path4474",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kolcygino";
+    });
+    $("#path4472",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Petyshki";
+    });
+    $("#polyline4109",svgVladimir).click(function(){
+        window.location = "http://ontour.kvantorium33.ru/yandex_map.php?data=Kirzach";
+    });
 });
