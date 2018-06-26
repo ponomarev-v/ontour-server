@@ -43,29 +43,26 @@
         });
 
         $("#register_form").submit(function (e) {
-            if ($("#password_register") == $("#password_register_repeat"))
-                $.ajax({
-                    type: "POST",
-                    url: "http://ontourapi.kvantorium33.ru/?method=user.register",
-                    data: $("#register_form").serialize(),
-                    xhrFields: {withCredentials: true},
-                    success: function (data) {
-                        data = eval("(" + data + ")");
-                        if (data.result == "success") {
-                            $("#register_error").html("");
-                            $("#register_window").hide();
-                            $("#menu_main").show();
-                            $("#menu_logout").show();
-                            $("#menu_profile").show();
-                            $("#menu_register").hide();
-                            $("#menu_login").hide();
-                        } else {
-                            $("#register_error").html(data["message"]);
-                        }
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.register",
+                data: $("#register_form").serialize(),
+                xhrFields: {withCredentials: true},
+                success: function (data) {
+                    data = eval("(" + data + ")");
+                    if (data.result == "success") {
+                        $("#register_error").html("");
+                        $("#register_window").hide();
+                        $("#menu_main").show();
+                        $("#menu_logout").show();
+                        $("#menu_profile").show();
+                        $("#menu_register").hide();
+                        $("#menu_login").hide();
+                    } else {
+                        $("#register_error").html(data["message"]);
                     }
-                });
-            else
-                alert("Пароли не совпадают");
+                }
+            });
             e.preventDefault();
         });
     });
