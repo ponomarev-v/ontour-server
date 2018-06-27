@@ -37,6 +37,9 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
+
+    count_obj("#path96",svgCentral);
+
     $("#path96",svgCentral).click(function(){
         window.location = "/Vladimir_map.php"
     });

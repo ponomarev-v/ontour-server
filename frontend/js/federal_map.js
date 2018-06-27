@@ -1,3 +1,5 @@
+
+
 $(window).on("load",function(){
     
     var a = $("#federal_map")[0];
@@ -17,6 +19,9 @@ $(window).on("load",function(){
             
         });
     });
+
+    count_obj("#Central",svgDoc);
+
     $("[data-tooltip]",svgDoc).mousemove(function (eventObject) {
 
         $data_tooltip = $(this).attr("data-tooltip");

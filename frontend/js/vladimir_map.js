@@ -39,5 +39,6 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
+    count_obj("#path4498",svgVladimir);
    
 });

@@ -28,6 +28,7 @@ include_once "header.php";
     <button class="button_info">Подробнее</button>
     </div>
 </div>
+    <script src="js/count_obj.js"></script>
     <script src="js/central_map.js"></script> 
     <?php
 include_once "footer.php";
