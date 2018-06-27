@@ -139,7 +139,7 @@ function init() {
                 delete objects.result
                 for(key in objects){
                     var myPlacemark = new ymaps.Placemark([objects[key]['cx'], objects[key]['cy']], {
-                        hintContent: 'Содержимое всплывающей подсказки',
+                        hintContent: "'"+objects[key]['cx']['name']+"'",
                         balloonContent: 'Содержимое балуна'
                     });
                     myMap.geoObjects.add(myPlacemark);
