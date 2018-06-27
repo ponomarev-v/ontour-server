@@ -38,6 +38,6 @@ $(window).on("load",function(){
                      });
     });
     $("#path96",svgCentral).click(function(){
-        window.location = "http://ontour.kvantorium33.ru/Vladimir_map.php"
+        window.location = "/Vladimir_map.php"
     });
 });
