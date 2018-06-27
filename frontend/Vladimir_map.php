@@ -13,7 +13,7 @@ include_once "header.php";
         </div>
         <div class="col-md-3 block">
             <p class="num_photo">0</p>
-            <p class="info">Фотографий</p>
+            <p class="info">Заданий</p>
         </div>
         <div class="col-md-3 block">
             <p class="num_events">0</p>
