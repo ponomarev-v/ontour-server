@@ -19,5 +19,8 @@
                 $name = \Utils::Request('name');
                 return \Objects::Get_obj($cx, $cy, $name );
             }
+            public static function GetObjs(){
+                return \Objects::GetAllObj();
+            }
         }
     }
