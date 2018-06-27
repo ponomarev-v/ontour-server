@@ -59,9 +59,6 @@ class Objects
         $db = Core::DB();
         $cols = Array("cx","cy","name","description");
         $data = $db->get("object",null,$cols);
-        if($db->count > 0){
-            return $data;
-        } else 
-            throw new Exception("В базе данных не имеется объектов"); 
+        
     }
 }
