@@ -26,6 +26,6 @@
     </div>
 </div>
 
-<script src="js/detect_coords.js"></script>
+
 <script src="js/federal_map.js"></script>
 <?php include "footer.php" ?>
