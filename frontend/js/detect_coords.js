@@ -6,9 +6,16 @@ $(document).ready(function(){
           3: 'Таймаут соединения'
         };
 
-        if(window.location != "http://ontour.kvantorium33.ru/district_map.php" & errors[error.code] == "Нет прав доступа к геоданным" ){
+        if(window.location == "http://localhost/"){//only for debug
+          if(window.location != "http://localhost/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
+            window.location = "http://localhost/district_map.php"
+          }
+        } else{
+
+        if(window.location != "http://ontour.kvantorium33.ru/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
             window.location = "http://ontour.kvantorium33.ru/district_map.php"
         }
+      }
         
         //alert("Ошибка: " + errors[error.code]);
       }
