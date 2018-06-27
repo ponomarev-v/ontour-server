@@ -59,6 +59,6 @@ class Objects
         $db = Core::DB();
         $cols = Array("cx","cy","name","description");
         $data = $db->get("object",null,$cols);
-        
+        return $data;
     }
 }
