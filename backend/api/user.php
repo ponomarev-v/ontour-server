@@ -12,6 +12,8 @@ namespace API {
                         'token'  => session_id(),
                         'userid' => $_SESSION['userid'],
                         'name'   => $info['name'],
+                        'age'    => $info['age'],
+                        'school' => $info['school'],
                         'phone'  => $info['phone'],
                         'email'  => $info['email'],
                         'rating' => $info['rating'],
