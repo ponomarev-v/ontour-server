@@ -55,4 +55,14 @@ class Objects
             throw new Exception('Не указаны или неправильно указаны координаты и имя');
         return $data;
     }
+    public static function GetAllObj(){
+        $db = Core::DB();
+        $cols = Array("cx","cy","name","description");
+        $users = $db->get("object",null,$cols);
+        if($db->count > 0){
+            foreach($users as $user){
+                print_r($user);
+            }
+        }
+    }
 }
