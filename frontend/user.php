@@ -240,6 +240,7 @@
                     data = eval("(" + data + ")");
                     if (data.result == "success") {
                         Register(data);
+                        createProfile(data);
                     } else {
                         $("#register_error").html(data["message"]);
                     }
