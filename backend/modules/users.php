@@ -41,7 +41,7 @@ class Users
             throw new Exception('Пользователь с указанной почтой уже существует');
         }
         $user_data = array(
-            'password'  => password_hash($data['password'],PASSWORD_DEFAULT),
+            'password'  => md5($data['password']),
             'phone'     => $data['phone'],
             'email'     => $data['email'],
             'role'      => self::ROLE_USER,
@@ -110,12 +110,12 @@ class Users
         if($ph = Utils::FormatPhone($login)) {
             $res = $db
                 ->where('phone', $ph)
-                ->where('password', password_hash($password,PASSWORD_DEFAULT))
+                ->where('password', md5($password))
                 ->get('user');
         } else {
             $res = $db
                 ->where('email', $login)
-                ->where('password', password_hash($password,PASSWORD_DEFAULT))
+                ->where('password', md5($password))
                 ->get('user');
         }
         if(sizeof($res) == 1) {
