@@ -121,6 +121,7 @@ switch(town){
 
 
 
+
 function init() {
     myMap = new ymaps.Map("map", {
         center: [x, y],
@@ -147,5 +148,7 @@ function init() {
             }
         }
     });
-    
+   
+    func();
+   
 }
