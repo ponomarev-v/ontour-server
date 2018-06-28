@@ -150,7 +150,7 @@
         $("#menu_register").hide();
     }
 
-    function userInfo(data) {
+    function userInfo(user_info) {
         $("#profile_name").val(data["name"]);
         $("#profile_age").val(data["age"]);
         $("#profile_school").val(data["school"]);
@@ -163,11 +163,14 @@
         $("#profile_phone").val(data["phone"]);
     }
 
-    function clearPassword(data) {
+    function clearPassword(user_info) {
         $("#old_password").val("");
         $("#new_password").val("");
         $("#new_password_repeat").val("");
     }
+
+
+
 
     $(document).ready(function() {
         $('#phone_register').mask('8(000)000-00-00');
@@ -294,7 +297,7 @@
             {
                 data = eval("(" + data + ")");
                 if(data.result == "success") {
-                    createProfile(data);
+                    userInfo(data);
                 }
             }
         });
