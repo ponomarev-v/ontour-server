@@ -84,6 +84,7 @@
 
 <script>
     function logOut(user_info) {
+        $("#logout_error").html("");
         $("#menu_login").show();
         $("#menu_register").show();
         $("#menu_logout").hide();
@@ -110,20 +111,34 @@
 
     function Register(user_info) {
         $("#register_error").html("");
-        $("#register_window").hide();
         $("#menu_main").show();
         $("#menu_logout").show();
         $("#menu_profile").show();
         $("#menu_register").hide();
         $("#menu_login").hide();
+        $("#register_window").hide();
     }
 
     function createProfile(user_info) {
-        $("#menu_login").hide();
-        $("#menu_register").hide();
+        $("#createProfile_error").html("");
         $("#menu_logout").show();
         $("#menu_profile").show();
         $("#menu_main").show();
+        $("#menu_login").hide();
+        $("#menu_register").hide();
+    }
+
+    function userInfo(user_info) {
+        $("#profile_name").val(data["name"]);
+        $("#profile_age").val(data["age"]);
+        $("#profile_school").val(data["school"]);
+        $("#profile_password").val(data["password"]);
+        $("#profile_email").val(data["email"]);
+        data["phone"] = "8" + "(" + data["phone"][0] + data["phone"][1] + data["phone"][2] + ")" +
+            data["phone"][3] + data["phone"][4] + data["phone"][5] + "-" + data["phone"][6] +
+            data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
+        $('#profile_phone').mask('8(000)000-00-00');
+        $("#profile_phone").val(data["phone"]);
     }
 
     $(document).ready(function() {
@@ -204,12 +219,9 @@
         $("#btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
-
         });
 
         $('.phone').mask('8(000)000-00-00');
-
-
 
         $.ajax({
             type: "POST",
@@ -271,16 +283,7 @@
                 success: function (data) {
                     data = eval("(" + data + ")");
                     if (data.result == "success") {
-                        $("#profile_name").val(data["name"]);
-                        $("#profile_age").val(data["age"]);
-                        $("#profile_school").val(data["school"]);
-                        $("#profile_password").val(data["password"]);
-                        $("#profile_email").val(data["email"]);
-                        data["phone"] = "8" + "(" + data["phone"][0] + data["phone"][1] + data["phone"][2] + ")" +
-                            data["phone"][3] + data["phone"][4] + data["phone"][5] + "-" + data["phone"][6] +
-                            data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
-                        $('#profile_phone').mask('8(000)000-00-00');
-                        $("#profile_phone").val(data["phone"]);
+                        userInfo(data);
                     } else {
                         $("#profile_error").html(data["message"]);
                     }
