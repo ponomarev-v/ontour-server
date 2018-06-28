@@ -150,7 +150,7 @@
         $("#menu_register").hide();
     }
 
-    function userInfo(user_info) {
+    function userInfo(data) {
         $("#profile_name").val(data["name"]);
         $("#profile_age").val(data["age"]);
         $("#profile_school").val(data["school"]);
