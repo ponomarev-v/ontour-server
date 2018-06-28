@@ -150,7 +150,10 @@
         });
 
         $("#show_password_register").click(function () {
-            $("#password_register").attr("type", "text");
+            if ($("#password_register").attr("type") == "text")
+                $("#password_register").attr("type", "password");
+            else
+                $("#password_register").attr("type", "text");
         });
 
         $("#register_window .close").click(function () {
