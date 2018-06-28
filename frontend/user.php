@@ -150,7 +150,7 @@
         $("#menu_register").hide();
     }
 
-    function userInfo(data) {
+    function userInfo(user_info) {
         $("#profile_name").val(data["name"]);
         $("#profile_age").val(data["age"]);
         $("#profile_school").val(data["school"]);
@@ -288,7 +288,7 @@
             {
                 data = eval("(" + data + ")");
                 if(data.result == "success") {
-                    userInfo(data);
+                    createProfile(data);
                 }
             }
         });
