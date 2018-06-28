@@ -327,6 +327,7 @@
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
                         logIn(data);
+                        createProfile(data);
                     } else {
                         $("#login_error").html(data["message"]);
                     }
