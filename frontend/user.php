@@ -90,9 +90,9 @@
                 Смена пароля
             </h1>
             <form id="change_password_form">
-                <input type="text" placeholder="Старый пароль" class="form" required><br>
-                <input type="text" placeholder="Новый пароль" class="form" required name="password"><br>
-                <input type="text" placeholder="Повтор пароля" class="form" required><br>
+                <input type="text" placeholder="Старый пароль" class="form" required id="old_password"><br>
+                <input type="text" placeholder="Новый пароль" class="form" required id="new_password" name="password"><br>
+                <input type="text" placeholder="Повтор пароля" class="form" required id="new_password_repeat"><br>
                 <p>
                 <div id="change_password_error"></div>
                 <br>
@@ -161,6 +161,12 @@
             data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
         $('#profile_phone').mask('8(000)000-00-00');
         $("#profile_phone").val(data["phone"]);
+    }
+
+    function clearPassword(data) {
+        $("#old_password").val("");
+        $("#new_password").val("");
+        $("#new_password_repeat").val("");
     }
 
     $(document).ready(function() {
