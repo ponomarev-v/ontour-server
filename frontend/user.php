@@ -173,6 +173,15 @@
             $("#change_password_window").show();
         });
 
+        $("#change_password_window .close").click(function () {
+            $("#change_password_window").hide();
+        });
+
+        $("#register_window").click(function (e) {
+            if (e.target == this)
+                $("#register_window").hide();
+        });
+
         $("#change_password_form").submit(function (e) {
             $.ajax({
                 type: "POST",
