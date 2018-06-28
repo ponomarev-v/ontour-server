@@ -288,7 +288,7 @@
             {
                 data = eval("(" + data + ")");
                 if(data.result == "success") {
-                    createProfile(data);
+                    userInfo(data);
                 }
             }
         });
