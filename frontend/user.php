@@ -48,6 +48,9 @@
                 <input type="password" name="password" placeholder="Пароль"            class="form" id="profile_password"><br>
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
+                <ul class="menu">
+                    <li id="menu_register"><a href=# class="btn_change_password">Сменить пароль</a></li>
+                </ul>
                 <p>
                 <div id="profile_error"></div><br>
                 <input type="submit" value="Сохранить">
@@ -79,7 +82,26 @@
     </div>
 </div>
 
-
+<div id="change_password_window" class="modal"><!--окно регистрации-->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="form" align="center">
+            <h1>
+                Регистрация ON TOUR
+            </h1>
+            <form id="change_password_form">
+                <input type="text" placeholder="Старый пароль" class="form" required><br>
+                <input type="text" placeholder="Новый пароль" class="form" required name="password"><br>
+                <input type="text" placeholder="Повтор пароля" class="form" required><br>
+                <p>
+                <div id="change_password_error"></div>
+                <br>
+                <input type="submit" value="Сменить пароль">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 <script>
@@ -143,6 +165,13 @@
 
     $(document).ready(function() {
         $('#phone_register').mask('8(000)000-00-00');
+        $('.phone').mask('8(000)000-00-00');
+        $('#profile_phone').mask('8(000)000-00-00');
+
+        $("#btn_change_password").click(function () {
+            $("#profile_window").hide();
+            $("#change_password_window").show();
+        });
 
         $(".btn_register").click(function () {
             $("#login_window").hide();
@@ -224,8 +253,6 @@
             $("#register_window").show();
         });
 
-        $('.phone').mask('8(000)000-00-00');
-
         $.ajax({
             type: "POST",
             url: "http://ontourapi.kvantorium33.ru/?method=user.info",
@@ -293,8 +320,6 @@
                 }
             });
         });
-
-        $('#profile_phone').mask('8(000)000-00-00');
 
         $("#profile_window .close").click(function () {
             $("#profile_window").hide();
