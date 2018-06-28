@@ -87,7 +87,7 @@
         <span class="close">&times;</span>
         <div id="form" align="center">
             <h1>
-                Регистрация ON TOUR
+                Смена пароля
             </h1>
             <form id="change_password_form">
                 <input type="text" placeholder="Старый пароль" class="form" required><br>
