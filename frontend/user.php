@@ -173,6 +173,24 @@
             $("#change_password_window").show();
         });
 
+        $("#change_password_form").submit(function (e) {
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.profile",
+                data: $("#change_password_form").serialize(),
+                xhrFields: {withCredentials: true},
+                success: function (data) {
+                    data = eval("(" + data + ")");
+                    if (data.result == "success") {
+                        Profile(data);
+                    } else {
+                        $("#change_password_error").html(data["message"]);
+                    }
+                }
+            });
+            e.preventDefault();
+        });
+
         $(".btn_register").click(function () {
             $("#login_window").hide();
             $("#register_window").show();
