@@ -16,17 +16,200 @@
         </div>
     </div>
 </div>
+
+<div id="logout_window" class="modal"><!--окно логина-->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="form" align="center">
+            <h1>
+                Вы точно хотите выйти?
+            </h1>
+            <form id="logout_form">
+                <p>
+                    <input type="submit" value="Да, выйти">
+                    <input type="button" value="Нет, остаться" id="btn_logout_none">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="profile_window" class="modal"><!--окно профиля-->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="form" align="center">
+            <h1>
+                Редактирование профиля
+            </h1>
+            <form id="profile_form">
+                <input type="text"     name="name"     placeholder="Имя"               class="form" id="profile_name"><br>
+                <input type="number"   name="age"      placeholder="Возраст"           class="form" id="profile_age"><br>
+                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" id="profile_school"><br>
+                <input type="password" name="password" placeholder="Пароль"            class="form" id="profile_password"><br>
+                <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
+                <p>
+                <div id="profile_error"></div><br>
+                <input type="submit" value="Сохранить">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="register_window" class="modal"><!--окно регистрации-->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="form" align="center">
+            <h1>
+                Регистрация ON TOUR
+            </h1>
+            <form id="register_form">
+                <input type="text" name="name" placeholder="Имя" class="form" required><br>
+                <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
+                <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
+                <input type="password" name="password" placeholder="Пароль" class="form" required id="password_register">
+                <input type="button" id="show_password_register" value="&#128065;"><br>
+                <p>
+                <div id="register_error"></div><br>
+                <input type="submit" value="Зарегистрироваться">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
 <script>
+    function logOut(user_info) {
+        $("#menu_login").show();
+        $("#menu_register").show();
+        $("#menu_logout").hide();
+        $("#menu_profile").hide();
+        $("#menu_main").hide();
+        $("#logout_window").hide();
+    }
+
+    function logIn(user_info) {
+        $("#login_error").html("");
+        $("#menu_main").show();
+        $("#menu_logout").show();
+        $("#menu_profile").show();
+        $("#menu_register").hide();
+        $("#menu_login").hide();
+        $("#login_window").hide();
+    }
+
+    function Profile(user_info) {
+        $("#profile_error").html("");
+        $("#profile_window").hide();
+        $("#menu_main").show();
+    }
+
+    function Register(user_info) {
+        $("#register_error").html("");
+        $("#register_window").hide();
+        $("#menu_main").show();
+        $("#menu_logout").show();
+        $("#menu_profile").show();
+        $("#menu_register").hide();
+        $("#menu_login").hide();
+    }
+
+    function createProfile(user_info) {
+        $("#menu_login").hide();
+        $("#menu_register").hide();
+        $("#menu_logout").show();
+        $("#menu_profile").show();
+        $("#menu_main").show();
+    }
+
     $(document).ready(function() {
+        $('#phone_register').mask('8(000)000-00-00');
+
+        $(".btn_register").click(function () {
+            $("#login_window").hide();
+            $("#register_window").show();
+        });
+
+        $("#show_password_register").click(function () {
+            $("#password_register").attr("type", "text");
+        });
+
+        $("#register_window .close").click(function () {
+            $("#register_window").hide();
+        });
+
+        $("#register_window").click(function (e) {
+            if (e.target == this)
+                $("#register_window").hide();
+        });
+
+        $("#register_form").submit(function (e) {
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.register",
+                data: $("#register_form").serialize(),
+                xhrFields: {withCredentials: true},
+                success: function (data) {
+                    data = eval("(" + data + ")");
+                    if (data.result == "success") {
+                        Register(data);
+                    } else {
+                        $("#register_error").html(data["message"]);
+                    }
+                }
+            });
+            e.preventDefault();
+        });
+
+        $("#btn_logout").click(function () {
+            $("#logout_window").show();
+        });
+
+        $("#btn_logout_none").click(function () {
+            $("#logout_window").hide();
+        });
+
+        $("#logout_window .close").click(function () {
+            $("#logout_window").hide();
+        });
+
+        $("#logout_window").click(function (e) {
+            if(e.target == this)
+                $("#logout_window").hide();
+        });
+
+        $("#logout_form").submit(function(e) {
+            $.ajax({
+                type: "POST",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
+                data: $("#logout_form").serialize(),
+                xhrFields: {withCredentials: true},
+                success: function(data)
+                {
+                    data = eval("(" + data + ")");
+                    if(data.result == "success") {
+                        logOut(data);
+                    } else {
+                        $("#login_error").html("Неправильный логин или пароль");
+                    }
+                }
+            });
+            e.preventDefault();
+        });
+
+        $("#btn_register").click(function () {
+            $("#login_window").hide();
+            $("#register_window").show();
+
+        });
+
         $('.phone').mask('8(000)000-00-00');
 
-        function createProfile(user_info) {
-            $("#menu_login").hide();
-            $("#menu_register").hide();
-            $("#menu_logout").show();
-            $("#menu_profile").show();
-            $("#menu_main").show();
-        }
+
 
         $.ajax({
             type: "POST",
@@ -64,13 +247,7 @@
                 {
                     data = eval("(" + data + ")");
                     if(data.result == "success") {
-                        $("#login_error").html("");
-                        $("#menu_main").show();
-                        $("#menu_logout").show();
-                        $("#menu_profile").show();
-                        $("#menu_register").hide();
-                        $("#menu_login").hide();
-                        $("#login_window").hide();
+                        logIn(data);
                     } else {
                         $("#login_error").html(data["message"]);
                     }
@@ -84,104 +261,6 @@
             $("#register_window").show();
 
         });
-    });
-</script>
-<div id="logout_window" class="modal"><!--окно логина-->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="form" align="center">
-            <h1>
-                Вы точно хотите выйти?
-            </h1>
-            <form id="logout_form">
-                <p>
-                    <input type="submit" value="Да, выйти">
-                    <input type="button" value="Нет, остаться" id="btn_logout_none">
-                </p>
-            </form>
-        </div>
-    </div>
-</div>
-<script>
-    function logOut(user_info) {
-        $("#menu_login").show();
-        $("#menu_register").show();
-        $("#menu_logout").hide();
-        $("#menu_profile").hide();
-        $("#menu_main").hide();
-    }
-
-    $(document).ready(function() {
-
-        $("#btn_logout").click(function () {
-            $("#logout_window").show();
-        });
-
-        $("#btn_logout_none").click(function () {
-            $("#logout_window").hide();
-        });
-
-        $("#logout_window .close").click(function () {
-            $("#logout_window").hide();
-        });
-
-        $("#logout_window").click(function (e) {
-            if(e.target == this)
-                $("#logout_window").hide();
-        });
-
-        $("#logout_form").submit(function(e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
-                data: $("#logout_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function(data)
-                {
-                    data = eval("(" + data + ")");
-                    if(data.result == "success") {
-                        $("#logout_window").hide();
-                        logOut(data);
-                    } else {
-                        $("#login_error").html("Неправильный логин или пароль");
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-
-        $("#btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-
-        });
-
-    });
-</script>
-<div id="profile_window" class="modal"><!--окно профиля-->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="form" align="center">
-            <h1>
-                Редактирование профиля
-            </h1>
-            <form id="profile_form">
-                <input type="text"     name="name"     placeholder="Имя"               class="form" id="profile_name"><br>
-                <input type="number"   name="age"      placeholder="Возраст"           class="form" id="profile_age"><br>
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" id="profile_school"><br>
-                <input type="password" name="password" placeholder="Пароль"            class="form" id="profile_password"><br>
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
-                <p>
-                <div id="profile_error"></div><br>
-                <input type="submit" value="Сохранить">
-                </p>
-            </form>
-        </div>
-    </div>
-</div>
-<script>
-    $(document).ready(function() {
 
         $("#btn_profile").click(function () {
             $("#profile_window").show();
@@ -227,79 +306,9 @@
                 success: function (data) {
                     data = eval("(" + data + ")");
                     if (data.result == "success") {
-                        $("#profile_error").html("");
-                        $("#profile_window").hide();
-                        $("#menu_main").show();
+                        Profile(data);
                     } else {
                         $("#profile_error").html(data["message"]);
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-    });
-</script>
-<div id="register_window" class="modal"><!--окно регистрации-->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="form" align="center">
-            <h1>
-                Регистрация ON TOUR
-            </h1>
-            <form id="register_form">
-                <input type="text" name="name" placeholder="Имя" class="form" required><br>
-                <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
-                <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
-                <input type="password" name="password" placeholder="Пароль" class="form" required id="password_register">
-                <input type="button" id="show_password_register" value="&#128065;"><br>
-                <p>
-                <div id="register_error"></div><br>
-                <input type="submit" value="Зарегистрироваться">
-                </p>
-            </form>
-        </div>
-    </div>
-</div>
-<script>
-    $(document).ready(function () {
-        $('#phone_register').mask('8(000)000-00-00');
-
-        $(".btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-        });
-
-        $("#show_password_register").click(function () {
-            $("#password_register").attr("type", "text");
-        });
-
-        $("#register_window .close").click(function () {
-            $("#register_window").hide();
-        });
-
-        $("#register_window").click(function (e) {
-            if (e.target == this)
-                $("#register_window").hide();
-        });
-
-        $("#register_form").submit(function (e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.register",
-                data: $("#register_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function (data) {
-                    data = eval("(" + data + ")");
-                    if (data.result == "success") {
-                        $("#register_error").html("");
-                        $("#register_window").hide();
-                        $("#menu_main").show();
-                        $("#menu_logout").show();
-                        $("#menu_profile").show();
-                        $("#menu_register").hide();
-                        $("#menu_login").hide();
-                    } else {
-                        $("#register_error").html(data["message"]);
                     }
                 }
             });
