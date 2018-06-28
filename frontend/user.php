@@ -49,7 +49,7 @@
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
                 <ul class="menu">
-                    <li id="menu_register"><a href=# class="btn_change_password">Сменить пароль</a></li>
+                    <li id="btn_change_password"><a href=#>Сменить пароль</a></li>
                 </ul>
                 <p>
                 <div id="profile_error"></div><br>
