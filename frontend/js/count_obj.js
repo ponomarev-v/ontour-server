@@ -16,6 +16,7 @@ $.ajax({
         data = eval("(" + data + ")");
         if (data.result == "success") {
             json_string = JSON.stringify(data);
+            alert(json_string)
             objects = JSON.parse(json_string)
             delete objects.result
             var counter = Object.size(objects);
