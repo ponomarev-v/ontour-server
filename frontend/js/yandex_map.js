@@ -153,7 +153,7 @@ function init() {
         autoReverseGeocode: true
     }).then(function (result) {
         // Выведем результат геокодирования.
-        console.log(result.geoObjects.get(0).properties.get('metaDataProperty'));
+        console.log(result.geoObjects.get(0).properties.get('text'));
     });
 
     function getAddress(coords) {
