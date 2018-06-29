@@ -22,7 +22,7 @@ class Objects
         // Подключаемся к базе
         $db = Core::DB();
         // Проверка по координатам
-        self::DataCheck($data);
+        // self::DataCheck($data);
         $obj_data = array(
             'cx' => $data['cx'],
             'cy' => $data['cy'],
