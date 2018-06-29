@@ -7,8 +7,8 @@ class Objects
             throw new \Exception("Некорректно введены координаты");
         if(!isset($data['cy']) || empty($data['cy']) )
             throw new \Exception("Некорректно введены координаты");
-        if(!isset($data['name']) || empty($data['name']))
-            throw new \Exception("Не указано имя");
+        // if(!isset($data['name']) || empty($data['name']))
+        //     throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
         // проверка на существование имени и координат объекта в базе
