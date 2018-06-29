@@ -11,6 +11,8 @@ class Objects
             throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
+        if(!isset($data['obl']) || empty($data['obl']))
+            throw new \Exception("Не указана область");
         // проверка на существование имени и координат объекта в базе
       //  $res = Core::DB()->where('name', $data['name']);
       //  if (!empty($res))
@@ -24,13 +26,14 @@ class Objects
         // Проверка по координатам
         //self::DataCheck($data);
         $obj_data = array(
-            'cx' => $data['cx'],
-            'cy' => $data['cy'],
-            'kind' => $data['kind'],
-            'date_add' => time(),
+            'cx'          => $data['cx'],
+            'cy'          => $data['cy'],
+            'kind'        => $data['kind'],
+            'date_add'    => time(),
             'description' => $data['description'],
-            'user_id' => $id,
-            'name' => $data['name'],
+            'user_id'     => $id,
+            'name'        => $data['name'],
+            'obl'         => $data['obl']
         );
         // Помещам данные в базу
         $db->insert('object', $obj_data);
