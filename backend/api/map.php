@@ -22,5 +22,12 @@
             public static function GetObjs(){
                 return \Objects::GetAllObj();
             }
+            public static function Delete(){
+                $cx   = \Utils::Request('cx');
+                $cy   = \Utils::Request('cy');
+                $del = \Utils::Request('delete');
+                if ($del == 1)
+                    return \Objects::Delete_obj($cx, $cy);
+            }
         }
     }

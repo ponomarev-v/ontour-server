@@ -61,4 +61,7 @@ class Objects
         $data = $db->get("object",null,$cols);
         return $data;
     }
+    public static function Delete_obj($cx, $cy){
+        return Core::DB()->where('cx', $cx)->where('cy', $cy)->delete('objects');
+    }
 }
