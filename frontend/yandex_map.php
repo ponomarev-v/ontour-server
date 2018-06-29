@@ -11,6 +11,8 @@ include "header.php";
         <input type="button" value="Submit" id="btn_add">
         </form>
     </div>
+    <script src="js/count_obj.js"></script>
+    <script src="js/functions.js"></script>
     <script src="js/yandex_map.js"></script>
     <script src="js/add_obj.js"></script>
 <?php
