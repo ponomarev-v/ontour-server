@@ -135,7 +135,6 @@ function init() {
             data = eval("(" + data + ")");
             if (data.result == "success") {
                 json_string = JSON.stringify(data);
-               //alert(json_string);
                 objects = JSON.parse(json_string)
                 delete objects.result
                 for(key in objects){
@@ -148,7 +147,61 @@ function init() {
             }
         }
     });
-   
-    func();
+    
+    myMap.events.add('click', function (e) {
+        var coords = e.get('coords');
+    
+
+        if (myPlacemark) {
+            myPlacemark.geometry.setCoordinates(coords);
+        }
+        else {
+            myPlacemark = createPlacemark(coords);
+            myMap.geoObjects.add(myPlacemark);
+            myPlacemark.events.add('dragend', function () {
+                getAddress(myPlacemark.geometry.getCoordinates());
+            });
+        }
+        getAddress(coords);
+    });
+    function createPlacemark(coords) {
+        return new ymaps.Placemark(coords, {
+            iconCaption: 'поиск...'
+        }, {
+           
+            draggable: true
+        });
+    }
+    function getAddress(coords) {
+                        myPlacemark.properties.set('iconCaption', 'поиск...');
+                        ymaps.geocode(coords).then(function (res) {
+                            var firstGeoObject = res.geoObjects.get(0);
+        
+                           myPlacemark.properties
+                                .set({
+                                   iconCaption: [
+                                        
+                                     firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
+                                        
+                                        firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
+                                    ].filter(Boolean).join(', '),
+                                   
+                                    balloonContent: "<script>function btn_subbmit(){alert('Hi')}</script>" +
+                                    "<div align='center'>" +
+                                    "   <h3>" + firstGeoObject.getAddressLine() + "</h3>" +
+                                    "   <form id='form_addobj'>" +
+                                    "       Название<br>" +
+                                    "       <input type='text' name='name'><br>" +
+                                    "       Описание<br>" +
+                                    "       <textarea name='description'></textarea><br>" +
+                                    "       <input type='button' id='btn' value='Отправить'  onClick='btn_subbmit()'>" +
+                                    "   </form>" +
+                                    "</div>",
+                                });
+                                window.coords = coords
+                        });
+                       
+                    }
+                    
    
 }

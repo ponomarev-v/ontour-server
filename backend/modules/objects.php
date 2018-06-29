@@ -12,9 +12,9 @@ class Objects
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
         // проверка на существование имени и координат объекта в базе
-        $res = Core::DB()->where('name', $data['name']);
-        if (!empty($res))
-            throw new Exception('Объект с таким именем уже существует!');
+      //  $res = Core::DB()->where('name', $data['name']);
+      //  if (!empty($res))
+      //      throw new Exception('Объект с таким именем уже существует!');
     }
     public static function Add_obj($data, $id)
     {
