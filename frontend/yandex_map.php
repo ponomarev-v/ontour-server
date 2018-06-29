@@ -21,7 +21,7 @@ include "header.php";
         // alert($("#form_addobj").serialize())
         $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=map.add&"+tmp+"&kind=0"+"&"+$("#form_addobj").serialize(),
+                url: "http://ontourapi.kvantorium33.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
                     data = eval("(" + data + ")");
