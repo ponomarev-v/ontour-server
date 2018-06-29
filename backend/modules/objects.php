@@ -18,7 +18,7 @@ class Objects
     }
     public static function Add_obj($data, $id)
     {
-        self::Check_added_obj($data);
+        // self::Check_added_obj($data);
         // Подключаемся к базе
         $db = Core::DB();
         // Проверка по координатам
