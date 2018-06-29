@@ -7,8 +7,8 @@ class Objects
             throw new \Exception("Некорректно введены координаты");
         if(!isset($data['cy']) || empty($data['cy']) )
             throw new \Exception("Некорректно введены координаты");
-        // if(!isset($data['name']) || empty($data['name']))
-        //     throw new \Exception("Не указано имя");
+        if(!isset($data['name']) || empty($data['name']))
+            throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
         // проверка на существование имени и координат объекта в базе
@@ -18,11 +18,11 @@ class Objects
     }
     public static function Add_obj($data, $id)
     {
-        // self::Check_added_obj($data);
+        self::Check_added_obj($data);
         // Подключаемся к базе
         $db = Core::DB();
         // Проверка по координатам
-        // self::DataCheck($data);
+        //self::DataCheck($data);
         $obj_data = array(
             'cx' => $data['cx'],
             'cy' => $data['cy'],
