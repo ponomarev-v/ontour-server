@@ -105,6 +105,9 @@
 
 
 <script>
+
+    //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
+
     function logOut(user_info) {
         $("#logout_error").html("");
         $("#menu_login").show();
@@ -169,27 +172,11 @@
         $("#new_password_repeat").val("");
     }
 
-
-
+    //КОНЕЦ
 
     $(document).ready(function() {
-        $('#phone_register').mask('8(000)000-00-00');
-        $('.phone').mask('8(000)000-00-00');
-        $('#profile_phone').mask('8(000)000-00-00');
 
-        $("#btn_change_password").click(function () {
-            $("#profile_window").hide();
-            $("#change_password_window").show();
-        });
-
-        $("#change_password_window .close").click(function () {
-            $("#change_password_window").hide();
-        });
-
-        $("#register_window").click(function (e) {
-            if (e.target == this)
-                $("#register_window").hide();
-        });
+        //AJAX ЗАПРОСЫ
 
         $("#change_password_form").submit(function (e) {
             $.ajax({
@@ -209,27 +196,6 @@
             e.preventDefault();
         });
 
-        $(".btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-        });
-
-        $("#show_password_register").click(function () {
-            if ($("#password_register").attr("type") == "text")
-                $("#password_register").attr("type", "password");
-            else
-                $("#password_register").attr("type", "text");
-        });
-
-        $("#register_window .close").click(function () {
-            $("#register_window").hide();
-        });
-
-        $("#register_window").click(function (e) {
-            if (e.target == this)
-                $("#register_window").hide();
-        });
-
         $("#register_form").submit(function (e) {
             $.ajax({
                 type: "POST",
@@ -246,23 +212,6 @@
                 }
             });
             e.preventDefault();
-        });
-
-        $("#btn_logout").click(function () {
-            $("#logout_window").show();
-        });
-
-        $("#btn_logout_none").click(function () {
-            $("#logout_window").hide();
-        });
-
-        $("#logout_window .close").click(function () {
-            $("#logout_window").hide();
-        });
-
-        $("#logout_window").click(function (e) {
-            if(e.target == this)
-                $("#logout_window").hide();
         });
 
         $("#logout_form").submit(function(e) {
@@ -284,37 +233,6 @@
             e.preventDefault();
         });
 
-        $("#btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
-            xhrFields: {withCredentials: true},
-            success: function(data)
-            {
-                data = eval("(" + data + ")");
-                if(data.result == "success") {
-                    userInfo(data);
-                }
-            }
-        });
-
-        $("#btn_login").click(function () {
-            $("#login_window").show();
-        });
-
-        $("#login_window .close").click(function () {
-            $("#login_window").hide();
-        });
-
-        $("#login_window").click(function (e) {
-            if(e.target == this)
-                $("#login_window").hide();
-        });
-
         $("#login_form").submit(function(e) {
             $.ajax({
                 type: "POST",
@@ -334,12 +252,6 @@
             e.preventDefault();
         });
 
-        $("#btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-
-        });
-
         $("#btn_profile").click(function () {
             $("#profile_window").show();
             $.ajax({
@@ -357,13 +269,6 @@
             });
         });
 
-        $("#profile_window .close").click(function () {
-            $("#profile_window").hide();
-        });
-        $("#profile_window").click(function (e) {
-            if (e.target == this)
-                $("#profile_window").hide();
-        });
         $("#profile_form").submit(function (e) {
             $.ajax({
                 type: "POST",
@@ -381,5 +286,128 @@
             });
             e.preventDefault();
         });
+
+        $.ajax({
+            type: "POST",
+            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+            xhrFields: {withCredentials: true},
+            success: function(data)
+            {
+                data = eval("(" + data + ")");
+                if(data.result == "success") {
+                    createProfile(data);
+                }
+            }
+        });
+
+        //КОНЕЦ
+
+        //ОБРАБОТКА ЗАКРЫТИЙ ОКОН ЧЕРЕЗ КРЕСТИК
+
+        $("#change_password_window .close").click(function () {
+            $("#change_password_window").hide();
+        });
+
+        $("#register_window .close").click(function () {
+            $("#register_window").hide();
+        });
+
+        $("#logout_window .close").click(function () {
+            $("#logout_window").hide();
+        });
+
+        $("#login_window .close").click(function () {
+            $("#login_window").hide();
+        });
+
+        $("#profile_window .close").click(function () {
+            $("#profile_window").hide();
+        });
+
+        //КОНЕЦ
+
+        //ОБРАБОТКА ЗАКРЫТИЙ ОКОН
+
+        $("#register_window").click(function (e) {
+            if (e.target == this)
+                $("#register_window").hide();
+        });
+
+        $("#register_window").click(function (e) {
+            if (e.target == this)
+                $("#register_window").hide();
+        });
+
+        $("#profile_window").click(function (e) {
+            if (e.target == this)
+                $("#profile_window").hide();
+        });
+
+        $("#logout_window").click(function (e) {
+            if(e.target == this)
+                $("#logout_window").hide();
+        });
+
+        $("#login_window").click(function (e) {
+            if(e.target == this)
+                $("#login_window").hide();
+        });
+
+        //КОНЕЦ
+
+        //МАСКА ДЛЯ ТЕЛЕФОНОВ
+
+        $('#phone_register').mask('8(000)000-00-00');
+        $('.phone').mask('8(000)000-00-00');
+        $('#profile_phone').mask('8(000)000-00-00');
+
+        //КОНЕЦ
+
+        //ОБРАБОТКА РАЗЛИЧНЫХ КНОПОК
+
+        $("#btn_change_password").click(function () {
+            $("#profile_window").hide();
+            $("#change_password_window").show();
+        });
+
+        $(".btn_register").click(function () {
+            $("#login_window").hide();
+            $("#register_window").show();
+        });
+
+        $("#btn_logout").click(function () {
+            $("#logout_window").show();
+        });
+
+        $("#btn_logout_none").click(function () {
+            $("#logout_window").hide();
+        });
+
+        $("#btn_register").click(function () {
+            $("#login_window").hide();
+            $("#register_window").show();
+        });
+
+        $("#btn_login").click(function () {
+            $("#login_window").show();
+        });
+
+        $("#btn_register").click(function () {
+            $("#login_window").hide();
+            $("#register_window").show();
+        });
+
+        //КОНЕЦ
+
+        //КНОПКА ПОКАЗА ПАРОЛЯ
+
+        $("#show_password_register").click(function () {
+            if ($("#password_register").attr("type") == "text")
+                $("#password_register").attr("type", "password");
+            else
+                $("#password_register").attr("type", "text");
+        });
+
+        //КОНЕЦ
     });
 </script>
