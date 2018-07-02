@@ -67,5 +67,9 @@ class Objects
     public static function Delete_obj($cx, $cy){
         return Core::DB()->where('cx', $cx)->where('cy', $cy)->delete('objects');
     }
-
+    public static function Find_obj($str)
+    {
+        $db = Core::DB();
+        return $db->where('name', $str)->get('object');
+    }
 }
