@@ -71,6 +71,6 @@ class Objects
     {
         $db = Core::DB();
         $res = $db->where('name', $str)->get('object');
-        return $db->getLastError();
+        return $res;
     }
 }
