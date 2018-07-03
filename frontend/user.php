@@ -46,7 +46,7 @@
                 <input type="text"     name="name"     placeholder="Имя"               class="form" id="profile_name"><br>
                 <input type="number"   name="age"      placeholder="Возраст"           class="form" id="profile_age"><br>
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form" id="profile_school"><br>
-                <input type="password" name="password" placeholder="Пароль"            class="form" id="profile_password"><br>
+                <input type="password" placeholder="Пароль"            class="form" id="profile_password"><br>
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
                 <ul class="menu">
@@ -91,8 +91,7 @@
                 Смена пароля
             </h1>
             <form id="change_password_form">
-                <input type="text" placeholder="Старый пароль" class="form" required id="old_password" name="old_password">
-                <br>
+                <input type="text" placeholder="Старый пароль" class="form" required id="old_password" name="old_password"><br>
                 <input type="text" placeholder="Новый пароль" class="form" required id="new_password" name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required id="new_password_repeat"><br>
                 <p>
