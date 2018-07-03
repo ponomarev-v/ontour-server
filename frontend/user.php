@@ -188,10 +188,8 @@
                     data = eval("(" + data + ")");
                     if (data.result == "success") {
                         Profile(data);
-                        clearPassword(data);
                     } else {
                         $("#change_password_error").html(data["message"]);
-                        clearPassword(data);
                     }
                 }
             });
