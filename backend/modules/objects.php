@@ -72,6 +72,6 @@ class Objects
         $db = Core::DB();
         $str.='%';
         $res = $db->rawQuery("SELECT * FROM object WHERE name LIKE '$str'");
-        return $res[1];
+        return $res[0];
     }
 }
