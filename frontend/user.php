@@ -129,7 +129,7 @@
     }
 
     function Profile(user_info) {
-        $("#change_password_error").html("");
+        $("#profile_error").html("");
         $("#profile_window").hide();
         $("#menu_main").show();
     }
