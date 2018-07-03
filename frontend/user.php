@@ -108,7 +108,7 @@
 
     //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
 
-    function logOut(user_info) {
+    function logOut(data) {
         $("#logout_error").html("");
         $("#menu_login").show();
         $("#menu_register").show();
@@ -118,7 +118,7 @@
         $("#logout_window").hide();
     }
 
-    function logIn(user_info) {
+    function logIn(data) {
         $("#login_error").html("");
         $("#menu_main").show();
         $("#menu_logout").show();
@@ -128,13 +128,13 @@
         $("#login_window").hide();
     }
 
-    function Profile(user_info) {
+    function Profile(data) {
         $("#profile_error").html("");
         $("#profile_window").hide();
         $("#menu_main").show();
     }
 
-    function Register(user_info) {
+    function Register(data) {
         $("#register_error").html("");
         $("#menu_main").show();
         $("#menu_logout").show();
@@ -144,7 +144,7 @@
         $("#register_window").hide();
     }
 
-    function createProfile(user_info) {
+    function createProfile(data) {
         $("#createProfile_error").html("");
         $("#menu_logout").show();
         $("#menu_profile").show();
@@ -166,7 +166,8 @@
         $("#profile_phone").val(data["phone"]);
     }
 
-    function clearPassword(user_info) {
+    function clearPassword(data) {
+        $("#change_password_error").html("");
         $("#old_password").val("");
         $("#new_password").val("");
         $("#new_password_repeat").val("");
@@ -187,12 +188,11 @@
                 success: function (data) {
                     data = eval("(" + data + ")");
                     if (data.result == "success") {
-                        $("#change_password_error").html("");
                         Profile(data);
                         clearPassword(data);
                     } else {
-                        $("#change_password_error").html(data["message"]);
                         clearPassword(data);
+                        $("#change_password_error").html(data["message"]);
                     }
                 }
             });
