@@ -91,7 +91,8 @@
                 Смена пароля
             </h1>
             <form id="change_password_form">
-                <input type="text" placeholder="Старый пароль" class="form" required id="old_password" name="old_password"><br>
+                <input type="text" placeholder="Старый пароль" class="form" required id="old_password" name="old_password">
+                <br>
                 <input type="text" placeholder="Новый пароль" class="form" required id="new_password" name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required id="new_password_repeat"><br>
                 <p>
