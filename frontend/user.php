@@ -91,8 +91,9 @@
                 Смена пароля
             </h1>
             <form id="change_password_form">
-                <input type="text" placeholder="Старый пароль" class="form" required id="old_password"><br>
-                <input type="text" placeholder="Новый пароль" class="form" required id="new_password" name="password"><br>
+                <input type="text" placeholder="Старый пароль" class="form" required id="old_password" name="old_password">
+                <br>
+                <input type="text" placeholder="Новый пароль" class="form" required id="new_password" name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required id="new_password_repeat"><br>
                 <p>
                 <div id="change_password_error"></div>
@@ -192,7 +193,7 @@
         $("#change_password_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.profile",
+                url: "http://ontourapi.kvantorium33.ru/?method=user.change_password",
                 data: $("#change_password_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
