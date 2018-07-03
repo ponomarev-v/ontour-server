@@ -10,6 +10,7 @@
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
                 <div id="login_error"></div><br>
+                <input type="button" value="Забыли пароль" id="btn_forgot_password">
                 <input type="submit" value="Войти">
                 </p>
             </form>
@@ -103,6 +104,16 @@
     </div>
 </div>
 
+<div id="forgot_password_window" class="modal"><!--окно регистрации-->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="form" align="center">
+            <h1>
+                Зайдите на свою дибильную почту и перейдите там по ссылке
+            </h1>
+        </div>
+    </div>
+</div>
 
 <script>
 
@@ -326,6 +337,10 @@
             $("#change_password_window").hide();
         });
 
+        $("#change_password_window .close").click(function () {
+            $("#change_password_window").hide();
+        });
+
         $("#register_window .close").click(function () {
             $("#register_window").hide();
         });
@@ -342,6 +357,10 @@
             $("#profile_window").hide();
         });
 
+        $("#forgot_password_window .close").click(function () {
+            $("#profile_window").hide();
+        });
+
         //КОНЕЦ
 
         //ОБРАБОТКА ЗАКРЫТИЙ ОКОН
@@ -351,7 +370,7 @@
                 $("#register_window").hide();
         });
 
-        $("#register_window").click(function (e) {
+        $("#forgot_password_window").click(function (e) {
             if (e.target == this)
                 $("#register_window").hide();
         });
@@ -410,9 +429,8 @@
             $("#login_window").show();
         });
 
-        $("#btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
+        $("#btn_forgot_password").click(function () {
+            $("#forgot_password_window").show();
         });
 
         //КОНЕЦ
