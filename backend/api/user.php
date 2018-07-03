@@ -39,6 +39,13 @@ namespace API {
             return \Users::ChangeUserProfile($id, $new_data);
         }
 
+        public function Change_Password(){
+            $pass_old = \Utils::Request('password_o');
+            $pass_new = \Utils::Request('password_n');
+            $id = $_SESSION['userid'];
+            return \Users::ChangePass($id, $pass_old, $pass_new);
+        }
+
         public function Login()
         {
             $login = \Utils::Request('login');
