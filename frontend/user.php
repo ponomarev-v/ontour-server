@@ -154,6 +154,7 @@
     }
 
     function userInfo(data) {
+        $("#profile_error").html("");
         $("#profile_name").val(data["name"]);
         $("#profile_age").val(data["age"]);
         $("#profile_school").val(data["school"]);
