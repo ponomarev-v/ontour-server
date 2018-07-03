@@ -62,7 +62,13 @@ class Users
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
-
+    public static function ChangePass($id, $pass_old, $pass_new){
+        if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
+            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        if(!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
+            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        Core::DB()->where('id', $id)->where('password', md5($pass_old))->update('user', md5($pass_new));
+    }
     public static function ChangeUserProfile($id, $data)
     {
         // Подключаемся к базе
