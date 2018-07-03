@@ -70,7 +70,7 @@ class Objects
     public static function Find_obj($str)
     {
         $db = Core::DB();
-        $res = $db->query($str);
-        return $res;
+        $res = $db->rawQuery('SELECT * FROM object WHERE name LIKE $str%');
+        return $db->getLastError();
     }
 }
