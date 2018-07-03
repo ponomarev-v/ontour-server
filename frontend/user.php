@@ -337,10 +337,6 @@
             $("#change_password_window").hide();
         });
 
-        $("#change_password_window .close").click(function () {
-            $("#change_password_window").hide();
-        });
-
         $("#register_window .close").click(function () {
             $("#register_window").hide();
         });
@@ -358,7 +354,7 @@
         });
 
         $("#forgot_password_window .close").click(function () {
-            $("#profile_window").hide();
+            $("#forgot_password_window").hide();
         });
 
         //КОНЕЦ
@@ -372,7 +368,12 @@
 
         $("#forgot_password_window").click(function (e) {
             if (e.target == this)
-                $("#register_window").hide();
+                $("#forgot_password_window").hide();
+        });
+
+        $("#change_password_window").click(function (e) {
+            if (e.target == this)
+                $("#change_password_window").hide();
         });
 
         $("#profile_window").click(function (e) {
