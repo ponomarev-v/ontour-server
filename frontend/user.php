@@ -187,6 +187,7 @@
                 success: function (data) {
                     data = eval("(" + data + ")");
                     if (data.result == "success") {
+                        $("#change_password_error").html("");
                         Profile(data);
                         clearPassword(data);
                     } else {
