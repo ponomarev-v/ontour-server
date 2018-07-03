@@ -40,8 +40,8 @@ namespace API {
         }
 
         public function Change_Password(){
-            $pass_old = \Utils::Request('password_o');
-            $pass_new = \Utils::Request('password_n');
+            $pass_old = \Utils::Request('old_password');
+            $pass_new = \Utils::Request('new_password');
             $id = $_SESSION['userid'];
             return \Users::ChangePass($id, $pass_old, $pass_new);
         }
