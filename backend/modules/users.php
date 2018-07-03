@@ -67,8 +67,8 @@ class Users
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
         if(!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
-        Core::DB()->where('id', $id)->where('password', md5($pass_old))->update('user', md5($pass_new));
-        return Core::DB()->getLastError();
+        Core::DB() -> where('id', $id) -> where('password', md5($pass_old)) -> update('user', md5($pass_new));
+        return Core::DB() -> getLastError();
     }
     public static function ChangeUserProfile($id, $data)
     {
