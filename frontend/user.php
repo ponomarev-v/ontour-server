@@ -432,11 +432,8 @@
 
         $("#btn_forgot_password").click(function () {
             $("#forgot_password_window").show();
+            $("#login_window").hide();
         });
-
-        //КОНЕЦ
-
-        //КНОПКА ПОКАЗА ПАРОЛЯ
 
         $("#show_password_register").click(function () {
             if ($("#password_register").attr("type") == "text")
