@@ -60,7 +60,7 @@ class Objects
     }
     public static function GetAllObj(){
         $db = Core::DB();
-        $cols = Array("cx","cy","name","description","obl");
+        $cols = Array("cx","cy","name","description","reg");
         $data = $db->get("object",null,$cols);
         return $data;
     }
