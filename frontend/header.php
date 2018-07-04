@@ -14,9 +14,15 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
 </head>
 <body>
+    <div class="header_f">
+    <ul class="top_menu">
+        <li><a href="#" class="btn_register">Регистрация</a></li>
+        <li><a href="#" id="btn_login">Вход</a></li>
+    </ul>
+    </div>
     <div id="header">
         <a href="/district_map.php" id="logo">
-            <img src="/images/free_horizontal_on_white_by_logaster (3).png" height=120px><!--логотип-->
+            <img src="/images/free_horizontal_on_white_by_logaster (3).png" height=80px><!--логотип-->
         </a>
         <?php include "menu.php"; ?><!--подключение меню-->
     </div>
