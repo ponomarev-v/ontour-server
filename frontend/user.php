@@ -192,7 +192,7 @@
         $("#change_password_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.change_password",
+                url: "http://api.turneon.ru/?method=user.change_password",
                 data: $("#change_password_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
@@ -210,7 +210,7 @@
         $("#register_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.register",
+                url: "http://api.turneon.ru/?method=user.register",
                 data: $("#register_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
@@ -228,7 +228,7 @@
         $("#logout_form").submit(function(e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
+                url: "http://api.turneon.ru/?method=user.logout",
                 data: $("#logout_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function(data)
@@ -247,7 +247,7 @@
         $("#login_form").submit(function(e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.login",
+                url: "http://api.turneon.ru/?method=user.login",
                 data: $("#login_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function(data)
@@ -267,7 +267,7 @@
             $("#profile_window").show();
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+                url: "http://api.turneon.ru/?method=user.info",
                 xhrFields: {withCredentials: true},
                 success: function (data) {
                     data = eval("(" + data + ")");
@@ -283,7 +283,7 @@
         $("#profile_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.profile",
+                url: "http://api.turneon.ru/?method=user.profile",
                 data: $("#profile_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
@@ -300,7 +300,7 @@
 
         $.ajax({
             type: "POST",
-            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+            url: "http://api.turneon.ru/?method=user.info",
             xhrFields: {withCredentials: true},
             success: function(data)
             {
