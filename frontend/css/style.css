@@ -18,25 +18,25 @@ body {
     z-index: 99;
 }
 
-.header_f{
+.header_up{
     height:25px;
     border-bottom: 1px solid #f3f3f3;
    
 }
 
-.top_menu{
+.menu_up{
     margin: 0;
     padding: 0;
     float: right;
 }
 
-.top_menu li{
+.menu_up li{
     margin-top: 5px;
     display: inline-block;
     padding: 0px 15px;
 }
 
-.top_menu li a{
+.menu_up li a{
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     color: #1396e2;
@@ -44,7 +44,7 @@ body {
     font-size: 12px;
 }
 
-.top_menu li a:hover{
+.menu_up li a:hover{
         color: #073855;
 
 }
@@ -54,7 +54,7 @@ body {
     height: inherit;
 }
 
-#menu {
+#menu_down {
     float: right;
     margin-top: 18px;
 }
