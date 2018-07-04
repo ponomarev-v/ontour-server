@@ -15,15 +15,11 @@
 </head>
 <body>
     <div class="header_f">
-    <ul class="top_menu">
-        <li><a href="#" class="btn_register">Регистрация</a></li>
-        <li><a href="#" id="btn_login">Вход</a></li>
-        <li id="menu_logout" style="display: none"><a href=# id="btn_logout">Выход</a></li>
-    </ul>
+        <?php include "menu_up.php"; ?><!--подключение меню-->
     </div>
     <div id="header">
         <a href="/district_map.php" id="logo">
             <img src="/images/free_horizontal_on_white_by_logaster (11).png" height=80px><!--логотип-->
         </a>
-        <?php include "menu.php"; ?><!--подключение меню-->
+        <?php include "menu_down.php"; ?><!--подключение меню-->
     </div>
