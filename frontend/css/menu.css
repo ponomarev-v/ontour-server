@@ -10,17 +10,17 @@ ul:after {
     clear: both;
     float: none;
 }
-ul.menu > li {
+ul.menu_down > li {
     float: left;
     position: relative;
 }
-ul.menu > li > a {
+ul.menu_down > li > a {
     display: block;
     padding: 10px;
     color: #3B9E3E;
     text-decoration: none;
 }
-ul.menu > li > a:hover {
+ul.menu_down > li > a:hover {
     background-color: #3B9E3E;
     color: white;
 }
@@ -46,6 +46,6 @@ ul.submenu > li > a:hover {
     text-decoration: underline;
 }
 
-ul.menu > li:hover > ul.submenu {
+ul.menu_down > li:hover > ul.submenu {
     display: block;
 }
