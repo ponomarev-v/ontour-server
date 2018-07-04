@@ -19,8 +19,12 @@ $.ajax({
            
             objects = JSON.parse(json_string)
             delete objects.result
-            var counter = Object.size(objects);
-            
+            var counter = 0
+            for(key in objects){
+                    if(objects[key]['obl'] == "Владимир"){
+                        counter+=1;
+                    }
+                }
             $(id,svg).mousemove(function(){
                 $(".num_obj").text(counter)
             })
