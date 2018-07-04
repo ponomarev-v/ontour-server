@@ -33,7 +33,7 @@ class Objects
             'description' => $data['description'],
             'user_id'     => $id,
             'name'        => $data['name'],
-            'obl'         => $data['obl']
+            'reg'         => $data['reg']
         );
         // Помещам данные в базу
         $db->insert('object', $obj_data);

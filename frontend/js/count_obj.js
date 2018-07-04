@@ -16,12 +16,13 @@ $.ajax({
         data = eval("(" + data + ")");
         if (data.result == "success") {
             json_string = JSON.stringify(data);
-           
             objects = JSON.parse(json_string)
             delete objects.result
             var counter = 0
+            
             for(key in objects){
-                    if(objects[key]['obl'] == "Владимир"){
+                    
+                    if(objects[key]["reg"] == "Владимир") {
                         counter+=1;
                     }
                 }
