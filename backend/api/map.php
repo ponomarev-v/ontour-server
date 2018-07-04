@@ -33,10 +33,10 @@
                 if ($del == 1)
                     return \Objects::Delete_obj($cx, $cy);
             }
-            public static function Find_Target(){
-                $str = \Utils::Request('find');
-                return \Objects::Find_obj($str);
-            }
+            // public static function Find_Target(){
+            //     $str = \Utils::Request('find');
+            //     return \Objects::Find_obj($str);
+            // }
 
         }
     }
