@@ -77,14 +77,19 @@ class Users
         if (isset($res) && !empty($res)){
             if ($pass_old == $res['password']){
                 $upd = array(
-                    'password' => $pass_new
+                    'password' => $pass_new,
+                    'phone'    => $res['phone'],
+                    'email'    => $res['email'],
+                    'name'     => $res['name'],
+                    'school'   => $res['school'],
+
                 );
             }
             else
                 throw new Exception('Неверно введен старый пароль');
         }
         $db -> where('id', $id)
-            ->update('user', $upd);
+            -> update('user', $upd);
 
         return Core::DB() -> getLastError();
     }
