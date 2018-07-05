@@ -9,6 +9,11 @@ body {
     z-index: 0;
 }
 
+.header {
+    height: 120px;
+    width: 100%;
+}
+
 .header_up {
     height:25px;
     border-bottom: 1px solid #f3f3f3;
@@ -23,7 +28,7 @@ body {
     z-index: 99;
 }
 
-#logo {
+.logo {
     float: left;
     height: inherit;
 }
