@@ -1,113 +1,104 @@
-<div id="login_window" class="modal"><!--окно логина-->
+<div id="window_login" class="modal"><!--окно логина-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="form_window" align="center">
+        <div class="form_window">
             <h1>
                 Вход ON TOUR
             </h1>
-            <form id="login_form">
+            <form>
+                <input type="hidden" name="method" value="user.login"><br>
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
-                <p>
-                <div id="login_error"></div><br>
+                <div class="error"></div><br>
                 <input type="button" value="Забыли пароль" id="btn_forgot_password">
                 <input type="submit" value="Войти">
-                </p>
             </form>
         </div>
     </div>
 </div>
 
-<div id="logout_window" class="modal"><!--окно выхода-->
+<div id="window_logout" class="modal"><!--окно выхода-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="form_window" align="center">
+        <div class="form_window">
             <h1>
                 Вы точно хотите выйти?
             </h1>
-            <form id="logout_form">
-                <p>
-                    <input type="submit" value="Да, выйти">
-                    <input type="button" value="Нет, остаться" id="btn_logout_none">
-                </p>
+            <form>
+                <input type="submit" value="Да, выйти">
+                <input type="button" value="Нет, остаться" id="btn_logout_none">
             </form>
         </div>
     </div>
 </div>
 
-<div id="profile_window" class="modal"><!--окно профиля-->
+<div id="window_profile" class="modal"><!--окно профиля-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="form_window" align="center">
+        <div class="form_window">
             <h1>
                 Редактирование профиля
             </h1>
-            <form id="profile_form">
-                <input type="text"     name="name"     placeholder="Имя"               class="form" id="profile_name"><br>
-                <input type="number"   name="age"      placeholder="Возраст"           class="form" id="profile_age"><br>
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" id="profile_school"><br>
-                <input type="password" placeholder="Пароль"            class="form" id="profile_password"><br>
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
+            <form>
+                <input type="text"     name="name"     placeholder="Имя"               class="form"><br>
+                <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
+                <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
+                <input type="password" placeholder="Пароль"            class="form"><br>
+                <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone">
                 <ul class="menu">
                     <li id="btn_change_password"><a href=#>Сменить пароль</a></li>
                 </ul>
-                <p>
-                <div id="profile_error"></div><br>
+                <div class="error"></div><br>
                 <input type="submit" value="Сохранить">
-                </p>
             </form>
         </div>
     </div>
 </div>
 
-<div id="register_window" class="modal"><!--окно регистрации-->
+<div id="window_register" class="modal"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="form_window" align="center">
+        <div class="form_window">
             <h1>
                 Регистрация ON TOUR
             </h1>
-            <form id="register_form">
+            <form>
+                <input type="hidden" name="method" value="user.register"><br>
                 <input type="text" name="name" placeholder="Имя" class="form" required><br>
                 <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
-                <input type="text" name="phone" placeholder="Номер телефона" class="form" required id="phone_register"><br>
-                <input type="password" name="password" placeholder="Пароль" class="form" required id="password_register">
+                <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required><br>
+                <input type="password" name="password" placeholder="Пароль" class="form" required>
                 <input type="button" id="show_password_register" value="&#128065;"><br>
-                <p>
-                <div id="register_error"></div><br>
+                <div class="error"></div><br>
                 <input type="submit" value="Зарегистрироваться">
-                </p>
             </form>
         </div>
     </div>
 </div>
 
-<div id="change_password_window" class="modal"><!--окно регистрации-->
+<div id="window_change_password" class="modal"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="form_window" align="center">
+        <div class="form_window">
             <h1>
                 Смена пароля
             </h1>
-            <form id="change_password_form">
-                <input type="text" placeholder="Старый пароль" class="form" required id="old_password" name="old_password"><br>
-                <input type="text" placeholder="Новый пароль" class="form" required id="new_password" name="new_password"><br>
-                <input type="text" placeholder="Повтор пароля" class="form" required id="new_password_repeat"><br>
-                <p>
-                <div id="change_password_error"></div>
-                <br>
+            <form>
+                <input type="text" placeholder="Старый пароль" class="form" required name="old_password"><br>
+                <input type="text" placeholder="Новый пароль" class="form" required name="new_password"><br>
+                <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat"><br>
+                <div class="error"></div><br>
                 <input type="submit" value="Сменить пароль">
-                </p>
             </form>
         </div>
     </div>
 </div>
 
-<div id="forgot_password_window" class="modal"><!--окно регистрации-->
+<div id="window_forgot_password" class="modal"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="form_window" align="center">
+        <div class="form_window">
             <h1>
                 Зайдите на свою дибильную почту и перейдите там по ссылке
             </h1>
@@ -117,43 +108,62 @@
 
 <script>
 
+    function load_user_info(user_info) {
+        if(user_info && 'token' in user_info && user_info.token) {
+            $("#menu_register").addClass("hidden");
+            $("#menu_login").addClass("hidden");
+            $("#menu_logout").removeClass("hidden");
+            $("#window_profile form [name='name']").val(data["name"]);
+            $("#profile_age").val(data["age"]);
+            $("#profile_school").val(data["school"]);
+            $("#profile_password").val(data["password"]);
+            $("#profile_email").val(data["email"]);
+            // проверить длину строки телефона
+            ph = "8" + "(" + data["phone"][0] + data["phone"][1] + data["phone"][2] + ")" +
+                data["phone"][3] + data["phone"][4] + data["phone"][5] + "-" + data["phone"][6] +
+                data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
+            $("#profile_phone").val(ph);
+
+        } else {
+            $("#menu_register").removeClass("hidden");
+            $("#menu_login").removeClass("hidden");
+            $("#menu_logout").addClass("hidden");
+        }
+    }
+    
+    $(document).ready(function() {
+        exec_ajax_request({method: "user.info"}, function(data)
+        {
+            data = eval("(" + data + ")");
+            if(data.result == "success") {
+                load_user_info(data);
+            }
+        }, null);
+
+        register_ajax_form("#window_login form", function (data) {
+            data = eval("(" + data + ")");
+            if (data.result == "success") {
+                load_user_info(data);
+            } else {
+                $("#window_login .error").html(data["message"]);
+            }
+        }, null);
+
+        register_ajax_form("#window_register form", function (data) {
+            data = eval("(" + data + ")");
+            if (data.result == "success") {
+                load_user_info(data);
+            } else {
+                $("#window_register .error").html(data["message"]);
+            }
+        }, null);
+    });
+
     //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
+/*
 
-    function logOut(user_info) {
-        $("#logout_error").html("");
-        $("#menu_login").show();
-        $("#menu_register").show();
-        $("#menu_logout").hide();
-        $("#menu_profile").hide();
-        $("#menu_main").hide();
-        $("#logout_window").hide();
-    }
 
-    function logIn(user_info) {
-        $("#login_error").html("");
-        $("#menu_main").show();
-        $("#menu_logout").show();
-        $("#menu_profile").show();
-        $("#menu_register").hide();
-        $("#menu_login").hide();
-        $("#login_window").hide();
-    }
 
-    function Profile(user_info) {
-        $("#profile_error").html("");
-        $("#profile_window").hide();
-        $("#menu_main").show();
-    }
-
-    function Register(user_info) {
-        $("#register_error").html("");
-        $("#menu_main").show();
-        $("#menu_logout").show();
-        $("#menu_profile").show();
-        $("#menu_register").hide();
-        $("#menu_login").hide();
-        $("#register_window").hide();
-    }
 
     function createProfile(user_info) {
         $("#createProfile_error").html("");
@@ -315,63 +325,11 @@
 
         //ОБРАБОТКА ЗАКРЫТИЙ ОКОН ЧЕРЕЗ КРЕСТИК
 
-        $("#change_password_window .close").click(function () {
-            $("#change_password_window").hide();
-        });
 
-        $("#register_window .close").click(function () {
-            $("#register_window").hide();
-        });
-
-        $("#logout_window .close").click(function () {
-            $("#logout_window").hide();
-        });
-
-        $("#login_window .close").click(function () {
-            $("#login_window").hide();
-        });
-
-        $("#profile_window .close").click(function () {
-            $("#profile_window").hide();
-        });
-
-        $("#forgot_password_window .close").click(function () {
-            $("#forgot_password_window").hide();
-        });
 
         //КОНЕЦ
 
         //ОБРАБОТКА ЗАКРЫТИЙ ОКОН
-
-        $("#register_window").click(function (e) {
-            if (e.target == this)
-                $("#register_window").hide();
-        });
-
-        $("#forgot_password_window").click(function (e) {
-            if (e.target == this)
-                $("#forgot_password_window").hide();
-        });
-
-        $("#change_password_window").click(function (e) {
-            if (e.target == this)
-                $("#change_password_window").hide();
-        });
-
-        $("#profile_window").click(function (e) {
-            if (e.target == this)
-                $("#profile_window").hide();
-        });
-
-        $("#logout_window").click(function (e) {
-            if(e.target == this)
-                $("#logout_window").hide();
-        });
-
-        $("#login_window").click(function (e) {
-            if(e.target == this)
-                $("#login_window").hide();
-        });
 
         //КОНЕЦ
 
@@ -426,4 +384,5 @@
 
         //КОНЕЦ
     });
+    */
 </script>
