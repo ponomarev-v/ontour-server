@@ -1,4 +1,4 @@
-<div class="container wrapper" style="margin-top:-140px; height: 100px">
+<div class="container wrapper" style="margin-top:-140px;">
     <div class="row">
         <div class="col-md-3 block">
             <p class="num_obj">0</p>
