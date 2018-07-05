@@ -10,18 +10,12 @@
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
                 <div id="login_error"></div><br>
-
-
                 <div class="menu"><!--меню сверху страницы-->
                     <ul class="menu_up">
-                        <li id="menu_register"><a href=# class="btn_register">Войти</a></li>
+                        <li id="menu_register"><a href=# id="btn_login">Войти</a></li>
                         <li id="menu_login"><a href=# id="btn_forgot_password">Забыли пароль</a></li>
                     </ul>
                 </div>
-
-
-                <input type="button" value="Забыли пароль" id="btn_forgot_password">
-                <input type="submit" value="Войти">
                 </p>
             </form>
         </div>
@@ -254,23 +248,24 @@
             e.preventDefault();
         });
 
-        $("#login_form").submit(function(e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.login",
-                data: $("#login_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function(data)
-                {
-                    data = eval("(" + data + ")");
-                    if(data.result == "success") {
-                        logIn(data);
-                    } else {
-                        $("#login_error").html(data["message"]);
+        $("#btn_login").click(function () {
+            $("#login_form").submit(function(e) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://ontourapi.kvantorium.ru/?method=user.login",
+                    data: $("#login_form").serialize(),
+                    xhrFields: {withCredentials: true},
+                    success: function(data) {
+                        data = eval("(" + data + ")");
+                        if(data.result == "success") {
+                            logIn(data);
+                        } else {
+                            $("#login_error").html(data["message"]);
+                        }
                     }
-                }
+                });
+                e.preventDefault();
             });
-            e.preventDefault();
         });
 
         $("#btn_profile").click(function () {
