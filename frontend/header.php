@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>TURNEON</title>
+    <title>ON TOUR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css"><!--общие стили-->
     <link rel="stylesheet" href="/css/menu.css"><!--стили меню-->
@@ -14,12 +14,9 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
 </head>
 <body>
-    <div class="header_up">
-        <?php include "menu_up.php"; ?><!--подключение меню-->
-    </div>
-    <div id="header_down">
+    <div id="header">
         <a href="/district_map.php" id="logo">
-            <img src="/images/free_horizontal_on_white_by_logaster (11).png" height=80px><!--логотип-->
+            <img src="/images/free_horizontal_on_white_by_logaster (3).png" height=120px><!--логотип-->
         </a>
-        <?php include "menu_down.php"; ?><!--подключение меню-->
+        <?php include "menu.php"; ?><!--подключение меню-->
     </div>

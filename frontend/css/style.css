@@ -11,42 +11,8 @@ body {
 
 #header {
     width: 100%;
-    height: 80px;
-    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-}
-
-.header_up{
-    height:25px;
-    border-bottom: 1px solid #f3f3f3;
-   
-}
-
-.menu_up{
-    margin: 0;
-    padding: 0;
-    float: right;
-}
-
-.menu_up li{
-    margin-top: 5px;
-    display: inline-block;
-    padding: 0px 15px;
-}
-
-.menu_up li a{
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    color: #1396e2;
-    transition: 0.2s;
-    font-size: 12px;
-}
-
-.menu_up li a:hover{
-        color: #073855;
-
+    height: 100px;
+    z-index: 1;
 }
 
 #logo {
@@ -54,9 +20,8 @@ body {
     height: inherit;
 }
 
-#menu_down {
+#menu {
     float: right;
-    margin-top: 18px;
 }
 
 #form {

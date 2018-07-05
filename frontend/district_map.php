@@ -5,7 +5,7 @@
         <p>Ваш браузер не поддерживает svg</p>
     </object>
 </div>
-<!--<div class="container wrapper">
+<div class="container wrapper">
     <div class="row">
         <div class="col-md-3 block">
             <p class="num_obj">0</p>
@@ -24,7 +24,7 @@
     <div class="row">
     <button class="button_info">Подробнее</button>
     </div>
-</div>-->
+</div>
 
 <script src="js/count_obj.js"></script>
 <script src="js/federal_map.js"></script>
