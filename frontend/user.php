@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div id="logout_window" class="modal"><!--окно логина-->
+<div id="logout_window" class="modal"><!--окно выхода-->
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="form_window" align="center">
