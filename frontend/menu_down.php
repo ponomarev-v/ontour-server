@@ -9,6 +9,5 @@
         <li id="menu_main" style="display: none"><a href=#>Меню после входа</a></li>
     </ul>
 </div>
-<?php
-include "user.php";//подключение всплывающего окна выхода
+<?php include "user.php";//подключение всплывающего окна выхода
 
