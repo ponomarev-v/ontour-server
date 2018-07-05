@@ -141,6 +141,14 @@
             }
         }, null);
 
+        exec_ajax_request({method: "user.logout"}, function(data)
+        {
+            data = eval("(" + data + ")");
+            if(data.result == "success") {
+                user_logout(data);
+            }
+        }, null);
+
         register_ajax_form("#window_login form", function (data) {
             data = eval("(" + data + ")");
             if (data.result == "success") {
