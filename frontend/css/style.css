@@ -10,8 +10,9 @@ body {
 }
 
 .header {
+    height: 120px;
     width: 100%;
-    background-color: white;
+    background-color: ;
 }
 
 .header_up {
@@ -125,9 +126,4 @@ body {
 
 .center{
     text-align: center;
-}
-
-.row_container_wrapper {
-    height: 50px;
-    width: 100px;
 }
