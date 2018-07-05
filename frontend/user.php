@@ -1,7 +1,7 @@
 <div id="login_window" class="modal"><!--окно логина-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="form" align="center">
+        <div class="form_window" align="center">
             <h1>
                 Вход ON TOUR
             </h1>
@@ -21,7 +21,7 @@
 <div id="logout_window" class="modal"><!--окно логина-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="form" align="center">
+        <div class="form_window" align="center">
             <h1>
                 Вы точно хотите выйти?
             </h1>
@@ -38,7 +38,7 @@
 <div id="profile_window" class="modal"><!--окно профиля-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="form" align="center">
+        <div class="form_window" align="center">
             <h1>
                 Редактирование профиля
             </h1>
@@ -64,7 +64,7 @@
 <div id="register_window" class="modal"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="form" align="center">
+        <div class="form_window" align="center">
             <h1>
                 Регистрация ON TOUR
             </h1>
@@ -86,7 +86,7 @@
 <div id="change_password_window" class="modal"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="form" align="center">
+        <div class="form_window" align="center">
             <h1>
                 Смена пароля
             </h1>
@@ -107,7 +107,7 @@
 <div id="forgot_password_window" class="modal"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="form" align="center">
+        <div class="form_window" align="center">
             <h1>
                 Зайдите на свою дибильную почту и перейдите там по ссылке
             </h1>
