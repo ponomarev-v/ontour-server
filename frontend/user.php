@@ -10,6 +10,17 @@
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <p>
                 <div id="login_error"></div><br>
+
+
+                <div class="menu"><!--меню сверху страницы-->
+                    <ul class="menu_up">
+                        <li id="menu_register"><a href=# class="btn_register">Регистрация</a></li>
+                        <li id="menu_login"><a href=# id="btn_login">Вход</a></li>
+                        <li id="menu_logout" style="display: none"><a href=# id="btn_logout">Выход</a></li>
+                    </ul>
+                </div>
+
+
                 <input type="button" value="Забыли пароль" id="btn_forgot_password">
                 <input type="submit" value="Войти">
                 </p>
@@ -192,7 +203,7 @@
         $("#change_password_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.change_password",
+                url: "http://ontourapi.kvantorium.ru/?method=user.change_password",
                 data: $("#change_password_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
@@ -210,7 +221,7 @@
         $("#register_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.register",
+                url: "http://ontourapi.kvantorium.ru/?method=user.register",
                 data: $("#register_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
@@ -228,7 +239,7 @@
         $("#logout_form").submit(function(e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.logout",
+                url: "http://ontourapi.kvantorium.ru/?method=user.logout",
                 data: $("#logout_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function(data)
@@ -247,7 +258,7 @@
         $("#login_form").submit(function(e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.login",
+                url: "http://ontourapi.kvantorium.ru/?method=user.login",
                 data: $("#login_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function(data)
@@ -267,7 +278,7 @@
             $("#profile_window").show();
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+                url: "http://ontourapi.kvantorium.ru/?method=user.info",
                 xhrFields: {withCredentials: true},
                 success: function (data) {
                     data = eval("(" + data + ")");
@@ -283,7 +294,7 @@
         $("#profile_form").submit(function (e) {
             $.ajax({
                 type: "POST",
-                url: "http://ontourapi.kvantorium33.ru/?method=user.profile",
+                url: "http://ontourapi.kvantorium.ru/?method=user.profile",
                 data: $("#profile_form").serialize(),
                 xhrFields: {withCredentials: true},
                 success: function (data) {
@@ -300,7 +311,7 @@
 
         $.ajax({
             type: "POST",
-            url: "http://ontourapi.kvantorium33.ru/?method=user.info",
+            url: "http://ontourapi.kvantorium.ru/?method=user.info",
             xhrFields: {withCredentials: true},
             success: function(data)
             {
