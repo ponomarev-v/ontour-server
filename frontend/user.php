@@ -25,6 +25,7 @@
                 Вы точно хотите выйти?
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.logout"><br>
                 <input type="submit" value="Да, выйти">
                 <input type="button" value="Нет, остаться" id="btn_logout_none">
             </form>
