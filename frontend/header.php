@@ -18,7 +18,7 @@
     </div>
     <div class="header_down">
         <a href="district_map.php" class="logo">
-            <img src="images/free_horizontal_on_white_by_logaster (3).png" height=100%><!--логотип-->
+            <img src="images/logo.png" height=100%><!--логотип-->
         </a>
         <?php include "menu_down.php"; ?><!--подключение меню-->
     </div>
