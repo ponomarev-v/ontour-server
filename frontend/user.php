@@ -48,7 +48,7 @@
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form" id="profile_school"><br>
                 <input type="password" placeholder="Пароль"            class="form" id="profile_password"><br>
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form" id="profile_email"><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone">
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form" id="profile_phone"><br>
                 <ul class="menu">
                     <li id="btn_change_password"><a href=#>Сменить пароль</a></li>
                 </ul>
