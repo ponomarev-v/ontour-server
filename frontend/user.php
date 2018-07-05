@@ -15,7 +15,7 @@
                 <div class="menu"><!--меню сверху страницы-->
                     <ul class="menu_up">
                         <li id="menu_register"><a href=# class="btn_register">Войти</a></li>
-                        <li id="menu_login"><a href=# id="btn_login">Забыли пароль</a></li>
+                        <li id="menu_login"><a href=# id="btn_forgot_password">Забыли пароль</a></li>
                     </ul>
                 </div>
 
