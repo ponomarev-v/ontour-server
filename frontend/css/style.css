@@ -10,14 +10,13 @@ body {
 }
 
 .header {
-    height: 106px;
     width: 100%;
     background-color: white;
 }
 
 .header_up {
     height:25px;
-    border-bottom: 1px solid #adadad;
+    border-bottom: 1px solid #f3f3f3;
 }
 
 .header_down {
