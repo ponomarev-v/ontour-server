@@ -131,6 +131,17 @@
             $("#menu_logout").addClass("hidden");
         }
     }
+
+    function user_logout(user_info) {
+        $("#menu_register").removeClass("hidden");
+        $("#menu_login").removeClass("hidden");
+        $("#menu_logout").addClass("hidden");
+    } else {
+        $("#menu_register").removeClass("hidden");
+        $("#menu_login").removeClass("hidden");
+        $("#menu_logout").addClass("hidden");
+    }
+    }
     
     $(document).ready(function() {
         exec_ajax_request({method: "user.info"}, function(data)
