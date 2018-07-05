@@ -13,13 +13,13 @@
 </head>
 <body>
 <div class="header">
-    <a href="district_map.php" class="logo">
-        <img src="images/free_horizontal_on_white_by_logaster (3).png" height=100%><!--логотип-->
-    </a>
     <div class="header_up">
         <?php include "menu_up.php"; ?><!--подключение меню-->
     </div>
     <div class="header_down">
+        <a href="district_map.php" class="logo">
+            <img src="images/free_horizontal_on_white_by_logaster (3).png" height=100%><!--логотип-->
+        </a>
         <?php include "menu_down.php"; ?><!--подключение меню-->
     </div>
 </div>
