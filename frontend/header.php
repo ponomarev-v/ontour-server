@@ -12,7 +12,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
     <style>
         body {
-            background: url(images/back1.png);
+            background: url(images/back1.jpg);
         }
     </style>
 </head>
