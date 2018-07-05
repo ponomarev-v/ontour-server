@@ -10,17 +10,17 @@ ul:after {
     clear: both;
     float: none;
 }
-ul.menu > li {
+ul.menu_down > li {
     float: left;
     position: relative;
 }
-ul.menu > li > a {
+ul.menu_down > li > a {
     display: block;
     padding: 10px;
     color: green;
     text-decoration: none;
 }
-ul.menu > li > a:hover {
+ul.menu_down > li > a:hover {
     background-color: green;
     color: white;
 }
@@ -46,6 +46,38 @@ ul.submenu > li > a:hover {
     text-decoration: underline;
 }
 
-ul.menu > li:hover > ul.submenu {
+ul.menu_down > li:hover > ul.submenu {
     display: block;
+}
+
+/*
+
+
+
+
+
+*/
+
+.menu_up {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.menu_up li {
+    margin-top: 5px;
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+.menu_up li a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #1396e2;
+    transition: 0.2s;
+    font-size: 12px;
+}
+
+.menu_up li a:hover {
+    color: #073855;
 }
