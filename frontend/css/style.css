@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font: 14px 'Verdana';
+    background-image: url(http://turneon.ru/images/back.png);
 }
 
 #map {
