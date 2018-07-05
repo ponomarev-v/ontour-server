@@ -12,7 +12,6 @@
             <p class="num_events">0</p>
             <p class="info">Событие</p>
         </div>
-
     </div>
     <div class="row">
         <button class="button_info">Подробнее</button>
