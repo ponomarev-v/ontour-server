@@ -25,7 +25,6 @@
                 Вы точно хотите выйти?
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.logout"><br>
                 <input type="submit" value="Да, выйти">
                 <input type="button" value="Нет, остаться" id="btn_logout_none">
             </form>
@@ -131,17 +130,6 @@
             $("#menu_logout").addClass("hidden");
         }
     }
-
-    function user_logout(user_info) {
-        $("#menu_register").removeClass("hidden");
-        $("#menu_login").removeClass("hidden");
-        $("#menu_logout").addClass("hidden");
-    } else {
-        $("#menu_register").removeClass("hidden");
-        $("#menu_login").removeClass("hidden");
-        $("#menu_logout").addClass("hidden");
-    }
-    }
     
     $(document).ready(function() {
         exec_ajax_request({method: "user.info"}, function(data)
@@ -149,14 +137,6 @@
             data = eval("(" + data + ")");
             if(data.result == "success") {
                 load_user_info(data);
-            }
-        }, null);
-
-        exec_ajax_request({method: "user.logout"}, function(data)
-        {
-            data = eval("(" + data + ")");
-            if(data.result == "success") {
-                user_logout(data);
             }
         }, null);
 
