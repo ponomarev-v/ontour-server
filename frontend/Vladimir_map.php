@@ -21,9 +21,9 @@ include_once "header.php";
         </div>
         
     </div>
-        <!--<div class="row">
-        <button class="button_info">Подробнее</button>
-        </div>-->
+    <div class="row">
+    <button class="button_info">Подробнее</button>
+    </div>
 </div>
     <script src="js/count_obj.js"></script>
     <script src="js/vladimir_map.js"></script> 

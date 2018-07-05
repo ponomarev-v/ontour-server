@@ -21,9 +21,9 @@
         </div>
         
     </div>
-    <!--<div class="row">
+    <div class="row">
     <button class="button_info">Подробнее</button>
-    </div>-->
+    </div>
 </div>
 
 <script src="js/count_obj.js"></script>
