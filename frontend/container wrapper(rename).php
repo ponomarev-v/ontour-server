@@ -6,13 +6,12 @@
         </div>
         <div class="col-md-3 block">
             <p class="num_photo">0</p>
-            <p class="info">Задаsний</p>
+            <p class="info">Заданий</p>
         </div>
         <div class="col-md-3 block">
             <p class="num_events">0</p>
             <p class="info">Событие</p>
         </div>
-
     </div>
     <div class="row">
         <button class="button_info">Подробнее</button>
