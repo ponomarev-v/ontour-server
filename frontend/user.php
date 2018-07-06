@@ -10,8 +10,8 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <div class="error"></div><br>
-                <input type="button" value="Забыли пароль" id="btn_forgot_password">
-                <input type="submit" value="Войти">
+                <input type="button" class="button" value="Забыли пароль" id="btn_forgot_password">
+                <input type="submit" class="button" value="Войти">
             </form>
         </div>
     </div>
@@ -26,8 +26,8 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.logout"><br>
-                <input type="submit" value="Да, выйти">
-                <input type="button" value="Нет, остаться" id="btn_logout_none">
+                <input type="submit" value="Да, выйти" class="button">
+                <input type="button" value="Нет, остаться" id="btn_logout_none" class="button">
             </form>
         </div>
     </div>
@@ -51,7 +51,7 @@
                     <li id="btn_change_password" class="button"><a href=# class="window_btn" window-id="window_change_password">Сменить пароль</a></li>
                 </ul>
                 <div class="error"></div><br>
-                <input type="submit" value="Сохранить">
+                <input type="submit" class="button" value="Сохранить">
             </form>
         </div>
     </div>
@@ -70,9 +70,9 @@
                 <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
                 <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required>
-                <input type="button" id="show_password_register" value="&#128065;"><br>
+                <input type="button" class="button" id="show_password_register" value="&#128065;"><br>
                 <div class="error"></div><br>
-                <input type="submit" value="Зарегистрироваться">
+                <input type="submit" class="button" value="Зарегистрироваться">
             </form>
         </div>
     </div>
@@ -91,7 +91,7 @@
                 <input type="text" placeholder="Новый пароль" class="form" required name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat"><br>
                 <div class="error"></div><br>
-                <input type="submit" value="Сменить пароль">
+                <input type="submit" class="button" value="Сменить пароль">
             </form>
         </div>
     </div>
@@ -215,6 +215,17 @@
                 $("#window_change_password .error").html(data["message"]);
             }
         }, null);
+
+        $("#show_password_register").click(function () {
+            if ($("#window_register form [name='password']").attr("type") == "text")
+                $("#window_register form [name='password']").attr("type", "password");
+            else
+                $("#window_register form [name='password']").attr("type", "text");
+        });
+
+        $("#btn_logout_none").click(function () {
+            close_active_window();
+        });
     });
 
     //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
