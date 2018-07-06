@@ -28,7 +28,6 @@ namespace API {
         }
 
         public function CheckUserRules(){
-            return
         }
 
         public function Profile(){
