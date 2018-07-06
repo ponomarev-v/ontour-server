@@ -129,6 +129,7 @@
             $("#menu_register").removeClass("hidden");
             $("#menu_login").removeClass("hidden");
             $("#menu_logout").addClass("hidden");
+            $("#menu_profile").addClass("hidden");
         }
     }
     
@@ -182,6 +183,7 @@
         register_ajax_form("#window_logout form", function (data) {
             close_active_window();
             update_user_info();
+            $("#menu_profile").addClass("hidden");
         }, null);
 
         register_ajax_form("#window_register form", function (data) {
