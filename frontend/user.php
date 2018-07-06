@@ -25,6 +25,7 @@
                 Вы точно хотите выйти?
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.logout"><br>
                 <input type="submit" value="Да, выйти">
                 <input type="button" value="Нет, остаться" id="btn_logout_none">
             </form>
@@ -40,6 +41,7 @@
                 Редактирование профиля
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.profile"><br>
                 <input type="text"     name="name"     placeholder="Имя"               class="form"><br>
                 <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
@@ -85,6 +87,7 @@
                 Смена пароля
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.change_password"><br>
                 <input type="text" placeholder="Старый пароль" class="form" required name="old_password"><br>
                 <input type="text" placeholder="Новый пароль" class="form" required name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat"><br>
@@ -131,7 +134,6 @@
     }
 
     function logout_user(user_info) {
-        alert("TbI PIDR")
     }
 
     $(document).ready(function() {
@@ -170,12 +172,7 @@
         }, null);
     });
 
-    //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
 /*
-
-
-
-
     function createProfile(user_info) {
         $("#createProfile_error").html("");
         $("#menu_logout").show();
