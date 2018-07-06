@@ -129,13 +129,25 @@
             $("#menu_logout").addClass("hidden");
         }
     }
-    
+
+    function logout_user(user_info) {
+        alert("TbI PIDR")
+    }
+
     $(document).ready(function() {
         exec_ajax_request({method: "user.info"}, function(data)
         {
             data = eval("(" + data + ")");
             if(data.result == "success") {
                 load_user_info(data);
+            }
+        }, null);
+
+        exec_ajax_request({method: "user.logout"}, function(data)
+        {
+            data = eval("(" + data + ")");
+            if(data.result == "success") {
+                logout_user(data);
             }
         }, null);
 
