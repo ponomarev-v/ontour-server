@@ -37,3 +37,15 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.form_window {
+    align: "center";
+}
+
+.button {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #1396e2;
+    transition: 0.2s;
+    font-size: 12px;
+}
