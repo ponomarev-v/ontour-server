@@ -46,9 +46,9 @@
                 <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone">
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone"><br>
                 <ul class="menu">
-                    <li id="btn_change_password"><a href=#>Сменить пароль</a></li>
+                    <li id="btn_change_password" class="button"><a href=# class="window_btn" window-id="window_change_password">Сменить пароль</a></li>
                 </ul>
                 <div class="error"></div><br>
                 <input type="submit" value="Сохранить">
@@ -152,7 +152,19 @@
             if(data.result == "success") {
                 load_user_info(data);
             } else {
-                load_user_info(null);
+                //load_user_info(null);
+            }
+        }, null);
+    }
+
+    function change_password_user_info() {
+        exec_ajax_request({method: "user.change_password"}, function(data)
+        {
+            data = eval("(" + data + ")");
+            if(data.result == "success") {
+                close_active_window();
+            } else {
+                $("#window_password .error").html(data["message"]);
             }
         }, null);
     }
@@ -176,7 +188,7 @@
                 close_active_window();
                 change_user_info(data);
             } else {
-                $("#window_login .error").html(data["message"]);
+                $("#window_profile .error").html(data["message"]);
             }
         }, null);
 
@@ -192,6 +204,15 @@
                 load_user_info(data);
             } else {
                 $("#window_register .error").html(data["message"]);
+            }
+        }, null);
+
+        register_ajax_form("#window_change_password form", function (data) {
+            data = eval("(" + data + ")");
+            if (data.result == "success") {
+                change_password_user_info(data);
+            } else {
+                $("#window_change_password .error").html(data["message"]);
             }
         }, null);
     });
