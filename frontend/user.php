@@ -25,6 +25,7 @@
                 Вы точно хотите выйти?
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.logout"><br>
                 <input type="submit" value="Да, выйти">
                 <input type="button" value="Нет, остаться" id="btn_logout_none">
             </form>
@@ -40,6 +41,7 @@
                 Редактирование профиля
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.profile"><br>
                 <input type="text"     name="name"     placeholder="Имя"               class="form"><br>
                 <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
@@ -85,6 +87,7 @@
                 Смена пароля
             </h1>
             <form>
+                <input type="hidden" name="method" value="user.change_password"><br>
                 <input type="text" placeholder="Старый пароль" class="form" required name="old_password"><br>
                 <input type="text" placeholder="Новый пароль" class="form" required name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat"><br>
@@ -113,16 +116,15 @@
             $("#menu_register").addClass("hidden");
             $("#menu_login").addClass("hidden");
             $("#menu_logout").removeClass("hidden");
-            $("#window_profile form [name='name']").val(data["name"]);
-            $("#profile_age").val(data["age"]);
-            $("#profile_school").val(data["school"]);
-            $("#profile_password").val(data["password"]);
-            $("#profile_email").val(data["email"]);
+            $("#window_profile form [name='name']").val(user_info["name"]);
+            $("#window_profile form [name='age']").val(user_info["age"]);
+            $("#window_profile form [name='school']").val(user_info["school"]);
+            $("#window_profile form [name='email']").val(user_info["email"]);
             // проверить длину строки телефона
-            ph = "8" + "(" + data["phone"][0] + data["phone"][1] + data["phone"][2] + ")" +
-                data["phone"][3] + data["phone"][4] + data["phone"][5] + "-" + data["phone"][6] +
-                data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
-            $("#profile_phone").val(ph);
+            ph = "8" + "(" + user_info["phone"][0] + user_info["phone"][1] + user_info["phone"][2] + ")" +
+                user_info["phone"][3] + user_info["phone"][4] + user_info["phone"][5] + "-" + user_info["phone"][6] +
+                user_info["phone"][7] + "-" + user_info["phone"][8] + user_info["phone"][9];
+            $("#window_profile form [name='phone']").val(ph);
 
         } else {
             $("#menu_register").removeClass("hidden");
