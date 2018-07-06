@@ -8,6 +8,7 @@ Object.size = function(obj) {
 };
 
 function count_obj(id,svg){
+    /*
 $.ajax({
     type:"POST",
     url:"http://ontourapi.kvantorium33.ru/?method=map.GetObjs",
@@ -16,9 +17,9 @@ $.ajax({
         data = eval("(" + data + ")");
         if (data.result == "success") {
             json_string = JSON.stringify(data);
-            objects = JSON.parse(json_string)
-            delete objects.result
-            var counter = 0
+            objects = JSON.parse(json_string);
+            delete objects.result;
+            var counter = 0;
             
             for(key in objects){
                     
@@ -27,12 +28,13 @@ $.ajax({
                     }
                 }
             $(id,svg).mousemove(function(){
-                $(".num_obj").text(counter)
-            })
+                $(".num_obj").text(counter);
+            });
             $(id,svg).mouseout(function(){
-                $(".num_obj").text("0")
-            })
+                $(".num_obj").text("0");
+            });
         }
     }
 });
+*/
 }
