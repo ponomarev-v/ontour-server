@@ -25,6 +25,18 @@ class Users
             throw new \Exception("Не указан телефон");
     }
 
+    public static function CheckUsersRules($id){
+        $res = Core::DB()->where('id', $id);
+        if (isset($res) && !empty($res)){
+            if($res['role'] == 'admin')
+                return true;
+            else
+                throw new Exception('У вас недостаточно прав');
+        }
+        else
+            throw new Exception('Ошибка подключения к БД');
+    }
+
     public static function RegisterUser($data)
     {
         $data['phone'] = Utils::FormatPhone($data['phone']);

@@ -27,6 +27,10 @@ namespace API {
             }
         }
 
+        public function CheckUserRules(){
+            return \Users::CheckUsersRules($_SESSION['userid']);
+        }
+
         public function Profile(){
             $new_data = array(
                 'name' => \Utils::Request('name'),
