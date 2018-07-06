@@ -41,12 +41,10 @@ function exec_ajax_request(data, handler, error) {
         success: handler,
         error: error
     });
-    e.preventDefault();
 }
 
 $(document).ready(function() {
     $(".close").click(close_active_window);
-    $('.phone').mask('8(000)000-00-00');
     $(".window_btn").click(function () {
         win = $(this).attr('window-id');
         if(win) {
