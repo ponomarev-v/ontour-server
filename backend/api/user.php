@@ -27,6 +27,10 @@ namespace API {
             }
         }
 
+        public function CheckUserRules(){
+            return
+        }
+
         public function Profile(){
             $new_data = array(
                 'name' => \Utils::Request('name'),
@@ -37,13 +41,6 @@ namespace API {
             );
             $id = $_SESSION['userid'];
             return \Users::ChangeUserProfile($id, $new_data);
-        }
-
-        public function Change_Password(){
-            $pass_old = \Utils::Request('old_password');
-            $pass_new = \Utils::Request('new_password');
-            $id = $_SESSION['userid'];
-            return \Users::ChangePass($id, $pass_old, $pass_new);
         }
 
         public function Login()
