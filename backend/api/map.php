@@ -8,7 +8,7 @@
                     'kind'        => \Utils::Request('kind'),
                     'name'        => \Utils::Request('name'),
                     'description' => \Utils::Request('description'),
-                    'reg'         => \Utils::Request('reg')
+                    'obl'         => \Utils::Request('obl')
                 );
                 if($id = \Objects::Add_obj($data, $_SESSION['userid'])) {
                     return true;

@@ -63,10 +63,35 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
-    public static function CheckUsersRules($id){
+    public static function ChangePass($id, $pass_old, $pass_new){
         $db = Core::DB();
-        $res = $db -> where('id', $id);
+        if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
+            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        if(!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
+            throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
+        $pass_new = md5($pass_new);
+        $pass_old = md5($pass_old);
+
+        $res = $db -> where('id', $id);
+        if (isset($res) && !empty($res)){
+            if ($pass_old == $res['password']){
+                $upd = array(
+                    'password' => $pass_new,
+                    'phone'    => $res['phone'],
+                    'email'    => $res['email'],
+                    'name'     => $res['name'],
+                    'school'   => $res['school'],
+
+                );
+            }
+            else
+                throw new Exception('Неверно введен старый пароль');
+        }
+        $db -> where('id', $id)
+            -> update('user', $upd);
+
+        return Core::DB() -> getLastError();
     }
 
     public static function ChangeUserProfile($id, $data)
