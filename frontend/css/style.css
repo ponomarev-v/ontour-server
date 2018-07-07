@@ -126,3 +126,9 @@ body {
 .hidden {
     display: none !important;
 }
+
+
+.map_header {
+    text-align: center;
+    color: #1396e2;
+}
