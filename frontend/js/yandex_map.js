@@ -125,7 +125,8 @@ function init() {
     
 
         if (myPlacemark) {
-            myPlacemark.geometry.setCoordinates(coords);
+            myMap.geoObjects.remove(myPlacemark);
+            myPlacemark = 0;
         }
         else {
             myPlacemark = createPlacemark(coords);
