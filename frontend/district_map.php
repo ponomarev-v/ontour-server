@@ -10,5 +10,4 @@
     </div>
     <script src="js/count_obj.js"></script>
     <script src="js/federal_map.js"></script>
-<?php include "container wrapper.php" ?>
 <?php include "footer.php" ?>

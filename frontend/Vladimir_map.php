@@ -10,5 +10,4 @@
     </div>
     <script src="js/count_obj.js"></script>
     <script src="js/vladimir_map.js"></script>
-<?php include "container wrapper.php" ?>
 <?php include_once "footer.php"; ?>
