@@ -9,10 +9,10 @@
                 <input type="hidden" name="method" value="user.login"><br>
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
-                <div class="error"></div><br>
                 <input type="button" class="button" value="Забыли пароль" id="btn_forgot_password">
                 <input type="submit" class="button" value="Войти">
             </form>
+            <div class="error"></div>
         </div>
     </div>
 </div>
@@ -29,6 +29,7 @@
                 <input type="submit" value="Да, выйти" class="button">
                 <input type="button" value="Нет, остаться" id="btn_logout_none" class="button">
             </form>
+            <div class="error"></div>
         </div>
     </div>
 </div>
@@ -48,9 +49,9 @@
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone"><br>
                 <input type="button" value="Сменить пароль" id="btn_change_password" class="button"><br>
-                <div class="error"></div><br>
                 <input type="submit" class="button" value="Сохранить">
             </form>
+            <div class="error"></div>
         </div>
     </div>
 </div>
@@ -69,9 +70,9 @@
                 <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required>
                 <input type="button" class="button" id="show_password_register" value="&#128065;"><br>
-                <div class="error"></div><br>
                 <input type="submit" class="button" value="Зарегистрироваться">
             </form>
+            <div class="error"></div>
         </div>
     </div>
 </div>
@@ -88,9 +89,9 @@
                 <input type="text" placeholder="Старый пароль" class="form" required name="old_password"><br>
                 <input type="text" placeholder="Новый пароль" class="form" required name="new_password"><br>
                 <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat"><br>
-                <div class="error"></div><br>
                 <input type="submit" class="button" value="Сменить пароль">
             </form>
+            <div class="error"></div>
         </div>
     </div>
 </div>
