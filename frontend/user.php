@@ -48,7 +48,7 @@
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone"><br>
-                <input type="button" value="Сменить пароль" id="btn_change_password" class="button"><br>
+                <input type="button" value="Сменить пароль" id="btn_change_password"   class="button window_btn" window-id="window_change_password"><br>
                 <input type="submit" class="button" value="Сохранить">
             </form>
             <div class="error"></div>
