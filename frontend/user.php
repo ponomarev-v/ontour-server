@@ -202,6 +202,7 @@
             data = eval("(" + data + ")");
             if (data.result == "success") {
                 load_user_info(data);
+                close_active_window();
             } else {
                 $("#window_register .error").html(data["message"]);
             }
