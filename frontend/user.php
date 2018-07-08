@@ -1,4 +1,4 @@
-<div id="window_login" class="modal"><!--окно логина-->
+<div id="window_login" class="modal window_with_password"><!--окно логина-->
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="form_window">
@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<div id="window_register" class="modal"><!--окно регистрации-->
+<div id="window_register" class="modal window_with_password"><!--окно регистрации-->
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="form_window">

@@ -49,3 +49,7 @@
     transition: 0.2s;
     font-size: 12px;
 }
+
+.window_with_password .form[name="password"] {
+    width: 238px !important;
+}
