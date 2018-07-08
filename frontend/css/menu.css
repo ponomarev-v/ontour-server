@@ -28,9 +28,11 @@ ul.menu_down > li {
 }
 ul.menu_down > li > a {
     display: block;
-    padding: 10px;
+    padding: 28px;
+    height: 80px;
     color: green;
     text-decoration: none;
+    font-size: 20px;
 }
 ul.menu_down > li > a:hover {
     background-color: green;
