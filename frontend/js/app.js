@@ -21,6 +21,8 @@ function show_window(id) {
             registered_windows.push(id);
         }
         active_window = id;
+        if ($("form [name='password']").attr("type") == "text")
+            $("form [name='password']").attr("type", "password");
         $(id).show();
     }
 }

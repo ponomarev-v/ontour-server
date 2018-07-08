@@ -9,7 +9,7 @@
                 <input type="hidden" name="method" value="user.login"><br>
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
-                <input type="button" class="button" id="show_password_login" value="&#128065;"><br>
+                <input type="button" class="show_password button" value="&#128065;"><br>
                 <input type="button" class="button" value="Забыли пароль" id="btn_forgot_password">
                 <input type="submit" class="button" value="Войти">
             </form>
@@ -70,7 +70,7 @@
                 <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
                 <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required><br>
                 <input type="password" name="password" placeholder="Пароль" class="form" required>
-                <input type="button" class="button" id="show_password_register" value="&#128065;"><br>
+                <input type="button" class="show_password button" value="&#128065;"><br>
                 <input type="submit" class="button" value="Зарегистрироваться">
             </form>
             <div class="error"></div>
@@ -216,18 +216,12 @@
             }
         }, null);
 
-        $("#show_password_register").click(function () {
-            if ($("#window_register form [name='password']").attr("type") == "text")
-                $("#window_register form [name='password']").attr("type", "password");
-            else
-                $("#window_register form [name='password']").attr("type", "text");
-        });
 
-        $("#show_password_login").click(function () {
-            if ($("#window_login form [name='password']").attr("type") == "text")
-                $("#window_login form [name='password']").attr("type", "password");
+        $(".show_password").click(function () {
+            if ($("form [name='password']").attr("type") == "text")
+                $("form [name='password']").attr("type", "password");
             else
-                $("#window_login form [name='password']").attr("type", "text");
+                $("form [name='password']").attr("type", "text");
         });
 
         $("#btn_logout_none").click(function () {
