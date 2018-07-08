@@ -9,6 +9,7 @@
                 <input type="hidden" name="method" value="user.login"><br>
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
+                <input type="button" class="button" id="show_password_login" value="&#128065;"><br>
                 <input type="button" class="button" value="Забыли пароль" id="btn_forgot_password">
                 <input type="submit" class="button" value="Войти">
             </form>
@@ -48,7 +49,7 @@
                 <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
                 <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
                 <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone"><br>
-                <input type="button" value="Сменить пароль" id="btn_change_password"   class="button window_btn" window-id="window_change_password"><br>
+                <input type="button" value="Сменить пароль" id="btn_change_password"   class="button window_btn" window-id="window_change_password">
                 <input type="submit" class="button" value="Сохранить">
             </form>
             <div class="error"></div>
@@ -220,6 +221,13 @@
                 $("#window_register form [name='password']").attr("type", "password");
             else
                 $("#window_register form [name='password']").attr("type", "text");
+        });
+
+        $("#show_password_login").click(function () {
+            if ($("#window_login form [name='password']").attr("type") == "text")
+                $("#window_login form [name='password']").attr("type", "password");
+            else
+                $("#window_login form [name='password']").attr("type", "text");
         });
 
         $("#btn_logout_none").click(function () {
