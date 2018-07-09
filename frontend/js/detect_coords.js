@@ -21,7 +21,7 @@ $(document).ready(function(){
       }
         
         
-        //alert(errors[error.code]);
+        alert(errors[error.code]);
       }
       var country,city,state;
       function displayPosition(position) {
