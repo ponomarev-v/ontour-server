@@ -27,13 +27,11 @@
             }
 
             public static function Delete(){
-
                 $cx   = \Utils::Request('cx');
                 $cy   = \Utils::Request('cy');
                 $del = \Utils::Request('delete');
-                if ($del == 1)
-                    return \Objects::Delete_obj($cx, $cy);
-
+                if ($del == 1){
+                    return \Objects::Delete_obj($cx, $cy);}
             }
             public static function Find_Target(){
                 $str = \Utils::Request('find');
@@ -42,3 +40,4 @@
 
         }
     }
+    //Test
