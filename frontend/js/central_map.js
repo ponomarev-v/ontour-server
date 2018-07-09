@@ -1,7 +1,7 @@
 $(window).on("load",function(){
     var centralMap = $("#central_map")[0];
     var svgCentral = centralMap.contentDocument;
-    var objCentral = ["#path68000","#path96","#path94","#path92","#path46","#path50","#path60","#path68","#path54","#path62","#path4926","#path44","#path78","#path66","#path98","#path74","#path64","#path82","#path42"]
+    var objCentral = ["#path68000","#path96","#path94","#path92","#path46","#path50","#path60","#path68","#path54","#path62","#path4926","#path44","#path78","#path66","#path98","#path74","#path64","#path82","#path42"];
     
    
     objCentral.forEach(element => {
