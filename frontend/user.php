@@ -39,7 +39,7 @@
     </div>
 </div>
 
-<div id="window_profile" class="modal"><!--окно профиля-->
+<div id="window_settings" class="modal"><!--окно профиля-->
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="form_window">
