@@ -11,7 +11,8 @@
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <input type="button" class="show_password button" value="&#128065;"><br>
                 <input type="button" class="button" value="Забыли пароль" id="btn_forgot_password">
-                <input type="submit" class="button" value="Войти">
+                <input type="submit" class="button" value="Войти"><br><br>
+                <input type="button" id="menu_register" class="button window_btn" window-id="window_register" value="Регистрация" id="btn_forgot_password">
             </form>
             <div class="error"></div>
         </div>
