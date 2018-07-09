@@ -10,7 +10,7 @@ $(document).ready(function(){
           if(window.location != "http://localhost/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
             window.location = "http://localhost/district_map.php"
           }
-        }if(window.location == "http://ontour.kvantorium33.ru"){
+        }if(window.location == "http://ontour.kvantorium33.ru/"){
           if(window.location != "http://ontour.kvantorium33.ru/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
             window.location = "http://ontour.kvantorium33.ru/district_map.php"
           }
