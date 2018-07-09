@@ -36,6 +36,8 @@ ul.menu_down > li > a {
 }
 ul.menu_down > li > a:hover {
     color: lightgreen;
+
+
 }
 ul.submenu {
     display: none;
