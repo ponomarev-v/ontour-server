@@ -35,8 +35,7 @@ ul.menu_down > li > a {
     font-size: 20px;
 }
 ul.menu_down > li > a:hover {
-    background-color: green;
-    color: white;
+    color: lightgreen;
 }
 ul.submenu {
     display: none;

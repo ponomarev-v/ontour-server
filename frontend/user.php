@@ -10,10 +10,13 @@
                 <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
                 <input type="button" class="show_password button" value="&#128065;"><br>
-                <input type="button" class="button" value="Забыли пароль" id="btn_forgot_password">
-                <input type="submit" class="button" value="Войти"><br><br>
-                <input type="button" id="menu_register" class="button window_btn" window-id="window_register" value="Регистрация" id="btn_forgot_password">
-            </form>
+                <input type="submit" class="button" value="Войти"><br>
+                <a id="btn_forgot_password" class="window_btn" href="#" window-id="window_forgot_password">Забыли пароль?</a>
+            </form><br>
+                Еще нет аккаунта?&#8195;&#8195;
+            <ul class="menu_down">
+                <li id="menu_register" class="button"><a href=# class="window_btn" window-id="window_register">Зарегистрироваться</a></li>
+            </ul>
             <div class="error"></div>
         </div>
     </div>
