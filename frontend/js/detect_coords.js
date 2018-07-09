@@ -5,23 +5,21 @@ $(document).ready(function(){
           2: 'Местоположение невозможно определить',
           3: 'Таймаут соединения'
         };
-
+        
         if(window.location == "http://localhost/"){//only for debug
           if(window.location != "http://localhost/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
             window.location = "http://localhost/district_map.php"
           }
-        } else if(window.location == "http://ontour.kvantorium33.ru"){
+        }if(window.location == "http://ontour.kvantorium33.ru/"){
           if(window.location != "http://ontour.kvantorium33.ru/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
             window.location = "http://ontour.kvantorium33.ru/district_map.php"
           }
-      } else if(window.location=="http://turneon.ru/"){
+      } if(window.location=="http://turneon.ru/"){
         if(window.location != "http://turneon.ru/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
           window.location = "http://turneon.ru/district_map.php"
         }
       }
         
-        
-        //alert(errors[error.code]);
       }
       var country,city,state;
       function displayPosition(position) {
