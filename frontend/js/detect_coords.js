@@ -5,7 +5,7 @@ $(document).ready(function(){
           2: 'Местоположение невозможно определить',
           3: 'Таймаут соединения'
         };
-
+        
         if(window.location == "http://localhost/"){//only for debug
           if(window.location != "http://localhost/district_map.php" && errors[error.code] == "Нет прав доступа к геоданным" ){
             window.location = "http://localhost/district_map.php"
