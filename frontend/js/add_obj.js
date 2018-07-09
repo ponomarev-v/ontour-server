@@ -1,12 +1,12 @@
-function btn_subbmit(){                   
-    x = window.coords[0]
+function btn_subbmit(){
+    x = window.coords[0];
     
-    y  = window.coords[1]
-    tmp = "cx="+x+"&"+"cy="+y
-    obl = "Владимир"
+    y  = window.coords[1];
+    tmp = "cx="+x+"&"+"cy="+y;
+    obl = "Владимир";
     // alert(tmp)
     // alert($("#form_addobj").serialize())
-    alert(window.firstGeoObject.getAddressLine())
+    alert(window.firstGeoObject.getAddressLine());
     if(window.firstGeoObject.getAddressLine().search("Владимир") != 0 && window.firstGeoObject.getAddressLine().search("Владимирская") != 0){
         $.ajax({
             type: "POST",
@@ -15,15 +15,15 @@ function btn_subbmit(){
             success: function (data) {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
-                    alert("success")
-                    showAllObj()
+                    alert("success");
+                    showAllObj();
                 } else {
-                    alert("error add obj")
+                    alert("error add obj");
                 }
             }
         });
     } else{
-        alert("Пока что можно добавлять лишь во владимирской области")
+        alert("Пока что можно добавлять лишь во владимирской области");
     }
     
     
