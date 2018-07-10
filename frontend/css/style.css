@@ -136,12 +136,15 @@ body {
 }
 
 .search {
-    position: absolute;
-    font-size: 20px;
-    margin: auto;
+
 }
 
-.search[type="submit"] {
-    left: calc(178px + 270px);
-    width: auto;
+.search_form {
+    height: 80px;
+    vertical-align: middle;
+    padding: 29.5px;
+    position: absolute;
+    z-index: 150;
+    width: 293px;
+    left: 178px;
 }
