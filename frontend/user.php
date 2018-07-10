@@ -136,6 +136,10 @@
             $("#menu_profile").addClass("hidden");
         }
     }
+
+    function show_target_info() {
+        alert("пидр");
+    }
     
     function update_user_info() {
         exec_ajax_request({method: "user.info"}, function(data)
@@ -157,6 +161,17 @@
                 load_user_info(data);
             } else {
                 //load_user_info(null);
+            }
+        }, null);
+    }
+
+    function find_target_info() {
+        exec_ajax_request({method: "user.find_target"}, function(data)
+        {
+            data = eval("(" + data + ")");
+            if(data.result == "success") {
+                show_target_info(data);
+            } else {
             }
         }, null);
     }
@@ -220,6 +235,23 @@
                 $("#window_change_password .error").html(data["message"]);
             }
         }, null);
+
+
+
+
+
+        register_ajax_form("#window_find_target form", function (data) {
+            data = eval("(" + data + ")");
+            if (data.result == "success") {
+                find_target_info(data);
+            } else {
+                $("#window_find_target .error").html(data["message"]);
+            }
+        }, null);
+
+
+
+
 
 
         $(".show_password").click(function () {

@@ -1,4 +1,5 @@
-<form class="search_form">
-    <input type="search" class="search" name="q" placeholder="Поиск по сайту">
+<form class="search_form" id="window_find_target">
+    <input type="hidden" name="method" value="user.find_target">
+    <input type="search" class="search" name="find" placeholder="Поиск по сайту">
     <input type="submit" class="search" value="Найти">
 </form>
