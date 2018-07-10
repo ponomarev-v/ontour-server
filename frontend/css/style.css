@@ -40,8 +40,13 @@ body {
 }
 
 .form {
-    margin: 5px 0px 5px 0px;
-    width: 270px;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+    display: block;
+    font: inherit;
 }
 
 .submit {
@@ -128,15 +133,10 @@ body {
     display: none !important;
 }
 
-
 .map_header {
     text-align: center;
     color: #1396e2;
     font-size: 25px;
-}
-
-.search {
-
 }
 
 .search_form {

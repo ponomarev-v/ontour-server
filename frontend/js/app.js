@@ -1,6 +1,6 @@
 var active_window = null;
 var registered_windows = new Array();
-var api_url = "http://ontourapi.kvantorium33.ru";
+var api_url = "http://api.turneon.ru";
 
 function close_active_window() {
     if(active_window)

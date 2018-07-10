@@ -39,7 +39,7 @@
 }
 
 .form_window {
-    text-align: center
+    text-align: center;
 }
 
 .button {
@@ -48,8 +48,4 @@
     color: #1396e2;
     transition: 0.2s;
     font-size: 12px;
-}
-
-.window_with_password .form[name="password"] {
-    width: 238px !important;
 }

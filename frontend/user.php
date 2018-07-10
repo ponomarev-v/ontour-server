@@ -6,13 +6,13 @@
                 Вход ON TOUR
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.login"><br>
-                <input type="text"     name="login"    placeholder="телефон или mail" class="form" required><br>
+                <input type="hidden" name="method" value="user.login">
+                <input type="text"     name="login"    placeholder="телефон или mail" class="form" required>
                 <input type="password" name="password" placeholder="Пароль"           class="form" required>
-                <input type="button" class="show_password button" value="&#128065;"><br>
-                <input type="submit" class="button" value="Войти"><br>
+                <input type="button" class="show_password button" value="&#128065;">
+                <input type="submit" class="button" value="Войти">
                 <a id="btn_forgot_password" class="window_btn" href="#" window-id="window_forgot_password">Забыли пароль?</a>
-            </form><br>
+            </form>
                 Еще нет аккаунта?&#8195;&#8195;
             <ul class="menu_down">
                 <li id="menu_register" class="button"><a href=# class="window_btn" window-id="window_register">Зарегистрироваться</a></li>
@@ -30,7 +30,7 @@
                 Вы точно хотите выйти?
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.logout"><br>
+                <input type="hidden" name="method" value="user.logout">
                 <input type="submit" value="Да, выйти" class="button">
                 <input type="button" value="Нет, остаться" id="btn_logout_none" class="button">
             </form>
@@ -47,12 +47,12 @@
                 Редактирование профиля
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.profile"><br>
-                <input type="text"     name="name"     placeholder="Имя"               class="form"><br>
-                <input type="number"   name="age"      placeholder="Возраст"           class="form"><br>
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form"><br>
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form"><br>
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone"><br>
+                <input type="hidden" name="method" value="user.profile">
+                <input type="text"     name="name"     placeholder="Имя"               class="form">
+                <input type="number"   name="age"      placeholder="Возраст"           class="form">
+                <input type="text"     name="school"   placeholder="Учебное заведение" class="form">
+                <input type="email"    name="email"    placeholder="Электронная почта" class="form">
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone">
                 <input type="button" value="Сменить пароль" id="btn_change_password"   class="button window_btn" window-id="window_change_password">
                 <input type="submit" class="button" value="Сохранить">
             </form>
@@ -69,12 +69,12 @@
                 Регистрация ON TOUR
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.register"><br>
-                <input type="text" name="name" placeholder="Имя" class="form" required><br>
-                <input type="text" name="email" placeholder="Электронная почта" class="form" required><br>
-                <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required><br>
+                <input type="hidden" name="method" value="user.register">
+                <input type="text" name="name" placeholder="Имя" class="form" required>
+                <input type="text" name="email" placeholder="Электронная почта" class="form" required>
+                <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required>
                 <input type="password" name="password" placeholder="Пароль" class="form" required>
-                <input type="button" class="show_password button" value="&#128065;"><br>
+                <input type="button" class="show_password button" value="&#128065;">
                 <input type="submit" class="button" value="Зарегистрироваться">
             </form>
             <div class="error"></div>
@@ -90,10 +90,10 @@
                 Смена пароля
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.change_password"><br>
-                <input type="text" placeholder="Старый пароль" class="form" required name="old_password"><br>
-                <input type="text" placeholder="Новый пароль" class="form" required name="new_password"><br>
-                <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat"><br>
+                <input type="hidden" name="method" value="user.change_password">
+                <input type="text" placeholder="Старый пароль" class="form" required name="old_password">
+                <input type="text" placeholder="Новый пароль" class="form" required name="new_password">
+                <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat">
                 <input type="submit" class="button" value="Сменить пароль">
             </form>
             <div class="error"></div>
