@@ -13,14 +13,10 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
 </head>
 <body>
-<div class="header">
-    <!--<div class="header_up">-->
-        <!--<?php include "menu_up.php"; ?><!--подключение меню-->
-    <!--</div>-->
     <div class="header_down">
         <a href="district_map.php" class="logo">
             <img src="images/logo.png" height=100%><!--логотип-->
         </a>
+        <?php include "search.php"; ?><!--подключение строки поиска-->
         <?php include "menu_down.php"; ?><!--подключение меню-->
     </div>
-</div>

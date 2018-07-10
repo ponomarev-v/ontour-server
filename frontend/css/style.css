@@ -134,3 +134,14 @@ body {
     color: #1396e2;
     font-size: 25px;
 }
+
+.search {
+    position: absolute;
+    font-size: 20px;
+    margin: auto;
+}
+
+.search[type="submit"] {
+    left: calc(178px + 270px);
+    width: auto;
+}
