@@ -6,7 +6,7 @@
         <li id="menu_show_map"      class="button"><a href="yandex_map.php"   class="window_btn" window-id="window_show_map">Просмотр карты</a></li>
 
 
-        <li id="menu_login" class="button hidden"><a href=# class="window_btn" window-id="window_login">Вход</a></li>
+        <li id="menu_login" class="button hidden"><a href="#" class="window_btn" window-id="window_login">Вход</a></li>
         <li id="menu_profile" class="button hidden"><a href="#" class="window_btn" window-id="window_profile">Профиль</a>
             <ul class="submenu">
                 <li class="button"><a href="#" class="window_btn" window-id="window_profile">Личный кабинет</a></li>

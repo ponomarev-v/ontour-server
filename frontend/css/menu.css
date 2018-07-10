@@ -1,5 +1,6 @@
 .menu {
     float: right;
+    padding-right: 10px;
 }
 
 /*
@@ -28,14 +29,18 @@ ul.menu_down > li {
 }
 ul.menu_down > li > a {
     display: block;
-    padding: 28px;
-    height: 80px;
+    padding: 15px;
+    height: 50px;
     color: green;
     text-decoration: none;
     font-size: 20px;
 }
 ul.menu_down > li > a:hover {
     color: lightgreen;
+    border: 2px solid lightgreen;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 ul.submenu {
@@ -53,8 +58,8 @@ ul.submenu > li {
 ul.submenu > li > a {
     font-size: 20px;
     display: block;
-    padding: 28px;
-    height: 80px;
+    padding: 15px;
+    height: 50px;
     color: green;
     text-decoration: none;
 }
