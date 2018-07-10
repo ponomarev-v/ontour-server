@@ -29,9 +29,9 @@ class Users
         $res = Core::DB()->where('id', $id);
         if (isset($res) && !empty($res)){
             if($res['role'] == 'admin')
-                return true;
+                return self::ROLE_ADMIN;
             else
-                throw new Exception('У вас недостаточно прав');
+                return self::ROLE_USER;
         }
         else
             throw new Exception('Ошибка подключения к БД');

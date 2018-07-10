@@ -70,7 +70,11 @@ class Objects
     public static function Find_obj($str)
     {
         $db = Core::DB();
-        $str.='%';
+        if (isset($str) && !empty($str))
+            $str.='%';
+        else
+            throw new Exception('Некорректно введенные данные');
+        // делаем запрос в бд и проверяем выдаем вссе совпадения
         $res = $db->rawQuery("SELECT * FROM object WHERE name LIKE '$str'");
         return $res;
     }

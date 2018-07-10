@@ -3,8 +3,8 @@
 class Config
 {
     const DEBUG = true;
-    const DB_LOGIN = "ontour_work";
-    const DB_PASSWORD = "ON_Tour_40_work";
+    const DB_LOGIN = "turneon";
+    const DB_PASSWORD = "42chakal_POMOGITE";
     const DB_HOST = "localhost";
-    const DB_NAME = "ontour";
+    const DB_NAME = "turneon";
 }
