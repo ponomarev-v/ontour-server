@@ -7,8 +7,8 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.login">
-                <input type="text"     name="login"    placeholder="телефон или mail" class="form" required>
-                <input type="password" name="password" placeholder="Пароль"           class="form" required>
+                <input type="text"     name="login"    placeholder="телефон или mail" class="form" required autocomplete="off">
+                <input type="password" name="password" placeholder="Пароль"           class="form" required autocomplete="off">
                 <input type="button" class="show_password button" value="&#128065;">
                 <input type="submit" class="button" value="Войти">
                 <a id="btn_forgot_password" class="window_btn" href="#" window-id="window_forgot_password">Забыли пароль?</a>
@@ -48,11 +48,10 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.profile">
-                <input type="text"     name="name"     placeholder="Имя"               class="form">
-                <input type="number"   name="age"      placeholder="Возраст"           class="form">
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form">
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form">
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone">
+                <input type="number"   name="age"      placeholder="Возраст"           class="form" required autocomplete="off">
+                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" required autocomplete="off">
+                <input type="email"    name="email"    placeholder="Электронная почта" class="form" required autocomplete="off">
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone" required autocomplete="off">
                 <input type="button" value="Сменить пароль" id="btn_change_password"   class="button window_btn" window-id="window_change_password">
                 <input type="submit" class="button" value="Сохранить">
             </form>
@@ -70,10 +69,10 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.register">
-                <input type="text" name="name" placeholder="Имя" class="form" required>
-                <input type="text" name="email" placeholder="Электронная почта" class="form" required>
-                <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required>
-                <input type="password" name="password" placeholder="Пароль" class="form" required>
+                <input type="text" name="name" placeholder="Имя" class="form" required required autocomplete="off">
+                <input type="text" name="email" placeholder="Электронная почта" class="form" required required autocomplete="off">
+                <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required required autocomplete="off">
+                <input type="password" name="password" placeholder="Пароль" class="form" required required autocomplete="off">
                 <input type="button" class="show_password button" value="&#128065;">
                 <input type="submit" class="button" value="Зарегистрироваться">
             </form>
@@ -91,9 +90,9 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.change_password">
-                <input type="text" placeholder="Старый пароль" class="form" required name="old_password">
-                <input type="text" placeholder="Новый пароль" class="form" required name="new_password">
-                <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat">
+                <input type="text" placeholder="Старый пароль" class="form" required name="old_password" required autocomplete="off">
+                <input type="text" placeholder="Новый пароль" class="form" required name="new_password" required autocomplete="off">
+                <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat" required autocomplete="off">
                 <input type="submit" class="button" value="Сменить пароль">
             </form>
             <div class="error"></div>

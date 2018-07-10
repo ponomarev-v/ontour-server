@@ -43,10 +43,14 @@ body {
     height: 50px;
     width: 100%;
     padding: 0 10px;
-    border: 1px solid #bbb;
+    border: 2px solid #bbb;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
     box-sizing: border-box;
     display: block;
     font: inherit;
+    margin-bottom: 5px;
 }
 
 .submit {
@@ -153,4 +157,15 @@ input:-webkit-autofill {
     -webkit-box-shadow: inset 0 0 0 50px white !important; /* Цвет фона */
     -webkit-text-fill-color: black !important; /* цвет текста */
     color: black !important; /* цвет текста */
+}
+
+input {
+    outline:none;
+}
+
+input:focus {
+    border-bottom: 2px solid green;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
