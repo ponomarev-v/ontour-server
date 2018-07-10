@@ -138,7 +138,7 @@
     }
 
     function show_target_info() {
-        alert("пидр");
+        alert("удачно");
     }
     
     function update_user_info() {
@@ -166,7 +166,7 @@
     }
 
     function find_target_info() {
-        exec_ajax_request({method: "user.find_target"}, function(data)
+        exec_ajax_request({method: "map.find_target"}, function(data)
         {
             data = eval("(" + data + ")");
             if(data.result == "success") {
