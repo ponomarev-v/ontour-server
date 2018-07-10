@@ -26,6 +26,13 @@
                 return \Objects::GetAllObj();
             }
 
+            public static function Get(){
+                $zoom = \Utils::Request('zoom');
+                $cx   = \Utils::Request('cx');
+                $cy   = \Utils::Request('cy');
+                return \Objects::Get();
+            }
+
             public static function Delete(){
                 $cx   = \Utils::Request('cx');
                 $cy   = \Utils::Request('cy');
@@ -40,4 +47,3 @@
 
         }
     }
-    //fjdfn
