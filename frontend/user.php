@@ -114,7 +114,7 @@
 <script>
 
     function load_user_info(user_info) {
-        if(user_info && 'token' in user_info && user_info.token) {
+        if (user_info && 'token' in user_info && user_info.token) {
             $("#menu_register").addClass("hidden");
             $("#menu_login").addClass("hidden");
             $("#menu_logout").removeClass("hidden");
@@ -136,15 +136,10 @@
         }
     }
 
-    function show_target_info() {
-        alert("удачно");
-    }
-    
     function update_user_info() {
-        exec_ajax_request({method: "user.info"}, function(data)
-        {
+        exec_ajax_request({method: "user.info"}, function (data) {
             data = eval("(" + data + ")");
-            if(data.result == "success") {
+            if (data.result == "success") {
                 load_user_info(data);
             } else {
                 load_user_info(null);
@@ -153,10 +148,9 @@
     }
 
     function change_user_info() {
-        exec_ajax_request({method: "user.profile"}, function(data)
-        {
+        exec_ajax_request({method: "user.profile"}, function (data) {
             data = eval("(" + data + ")");
-            if(data.result == "success") {
+            if (data.result == "success") {
                 load_user_info(data);
             } else {
                 //load_user_info(null);
@@ -164,30 +158,18 @@
         }, null);
     }
 
-    function find_target_info() {
-        exec_ajax_request({method: "map.find_target"}, function(data)
-        {
-            data = eval("(" + data + ")");
-            if(data.result == "success") {
-                show_target_info(data);
-            } else {
-            }
-        }, null);
-    }
-
     function change_password_user_info() {
-        exec_ajax_request({method: "user.change_password"}, function(data)
-        {
+        exec_ajax_request({method: "user.change_password"}, function (data) {
             data = eval("(" + data + ")");
-            if(data.result == "success") {
+            if (data.result == "success") {
                 close_active_window();
             } else {
                 $("#window_password .error").html(data["message"]);
             }
         }, null);
     }
-    
-    $(document).ready(function() {
+
+    $(document).ready(function () {
         update_user_info();
 
         register_ajax_form("#window_login form", function (data) {
@@ -234,24 +216,6 @@
                 $("#window_change_password .error").html(data["message"]);
             }
         }, null);
-
-
-
-
-
-        register_ajax_form("#window_find_target form", function (data) {
-            data = eval("(" + data + ")");
-            if (data.result == "success") {
-                find_target_info(data);
-            } else {
-                $("#window_find_target .error").html(data["message"]);
-            }
-        }, null);
-
-
-
-
-
 
         $(".show_password").click(function () {
             if ($("form [name='password']").attr("type") == "text")
