@@ -74,4 +74,8 @@ class Objects
         $res = $db->rawQuery("SELECT * FROM object WHERE name LIKE '$str'");
         return $res;
     }
+    public static function Get(){
+        return ;
+    }
+
 }
