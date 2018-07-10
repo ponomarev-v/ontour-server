@@ -120,15 +120,15 @@
             $("#menu_login").addClass("hidden");
             $("#menu_logout").removeClass("hidden");
             $("#menu_profile").removeClass("hidden");
-            $("#window_profile form [name='name']").val(user_info["name"]);
-            $("#window_profile form [name='age']").val(user_info["age"]);
-            $("#window_profile form [name='school']").val(user_info["school"]);
-            $("#window_profile form [name='email']").val(user_info["email"]);
+            $("#window_settings form [name='name']").val(user_info["name"]);
+            $("#window_settings form [name='age']").val(user_info["age"]);
+            $("#window_settings form [name='school']").val(user_info["school"]);
+            $("#window_settings form [name='email']").val(user_info["email"]);
             // проверить длину строки телефона
             ph = "8" + "(" + user_info["phone"][0] + user_info["phone"][1] + user_info["phone"][2] + ")" +
                 user_info["phone"][3] + user_info["phone"][4] + user_info["phone"][5] + "-" + user_info["phone"][6] +
                 user_info["phone"][7] + "-" + user_info["phone"][8] + user_info["phone"][9];
-            $("#window_profile form [name='phone']").val(ph);
+            $("#window_settings form [name='phone']").val(ph);
         } else {
             $("#menu_register").removeClass("hidden");
             $("#menu_login").removeClass("hidden");
@@ -186,13 +186,13 @@
             }
         }, null);
 
-        register_ajax_form("#window_profile form", function (data) {
+        register_ajax_form("#window_settings form", function (data) {
             data = eval("(" + data + ")");
             if (data.result == "success") {
                 close_active_window();
                 change_user_info(data);
             } else {
-                $("#window_profile .error").html(data["message"]);
+                $("#window_settings .error").html(data["message"]);
             }
         }, null);
 
