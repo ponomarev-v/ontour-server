@@ -51,7 +51,6 @@ ul.submenu {
     left: 0;
     z-index: 150;
     background-color: white;
-    border: solid;
 }
 ul.submenu > li {
     display: block;
