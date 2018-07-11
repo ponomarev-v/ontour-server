@@ -228,6 +228,10 @@
         $("#btn_change_password").click(function () {
             update_user_info();
         });
+
+        $("#window_settings .close").click(function () {
+            update_user_info();
+        });
     });
 
 
