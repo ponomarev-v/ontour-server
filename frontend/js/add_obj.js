@@ -6,11 +6,10 @@ function btn_subbmit(){
     obl = "Владимир";
     // alert(tmp)
     // alert($("#form_addobj").serialize())
-    alert(window.firstGeoObject.getAddressLine());
-   
+    alert("http://api.turneon.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&obl="+obl)
         $.ajax({
             type: "POST",
-            url: "http://api.turneon.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&reg="+obl,
+            url: "http://api.turneon.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&obl="+obl,
             xhrFields: {withCredentials: true},
             success: function (data) {
                 data = eval("(" + data + ")");
