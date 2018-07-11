@@ -18,7 +18,7 @@ function btn_subbmit(){
                         url: "../yandex_map.php",  
                         cache: false,  
                         success: function(html){  
-                            $("#mp").html(html);  
+                            $("#map").html(html);  
                     }  });
                    
                 } else {
