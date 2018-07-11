@@ -10,7 +10,7 @@ function btn_subbmit(){
    
         $.ajax({
             type: "POST",
-            url: "http://ontourapi.kvantorium33.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&obl="+obl,
+            url: "http://turneon.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&obl="+obl,
             xhrFields: {withCredentials: true},
             success: function (data) {
                 data = eval("(" + data + ")");
