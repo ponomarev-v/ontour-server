@@ -10,7 +10,7 @@ namespace API {
         public function sendSMS(){
             $number =  \Utils::Request('number');
             $sms =  \Utils::Request('sms');
-            return \Utils::SendSMS($number,$sms);
+            \Utils::SendSMS($number,$sms);
         }
 
         public function Info()
