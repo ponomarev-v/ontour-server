@@ -9,8 +9,7 @@
         <li id="menu_login" class="button hidden"><a href="#" class="window_btn" window-id="window_login">Вход</a></li>
         <li id="menu_profile" class="button hidden"><a href="#" class="window_btn" window-id="window_profile">Профиль</a>
             <ul class="submenu">
-                <li class="button"><a href="#" class="window_btn" window-id="window_profile">Личный кабинет</a></li>
-                <li class="button"><a href="#" class="window_btn" window-id="window_settings">Настройки</a></li>
+                <li class="button"><a href="#" class="window_btn" window-id="window_settings">Личный кабинет</a></li>
                 <li class="button"><a href="#" class="window_btn" window-id="window_logout">Выйти</a></li>
             </ul>
         </li>

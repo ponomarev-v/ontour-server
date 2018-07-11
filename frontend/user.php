@@ -227,6 +227,10 @@
         $("#btn_logout_none").click(function () {
             close_active_window();
         });
+
+        $("#btn_change_password").click(function () {
+            update_user_info();
+        });
     });
 
     //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
