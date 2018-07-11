@@ -3,6 +3,9 @@
 namespace API {
     class User
     {
+        public function Location(){
+            return $_SERVER['GEOIP_CITY'];
+        }
         public function Info()
         {
             if(\Utils::ArrayGet('active', $_SESSION)) {
