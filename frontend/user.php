@@ -11,12 +11,9 @@
                 <input type="password" name="password" placeholder="Пароль"           class="form" required autocomplete="off">
                 <input type="button" class="show_password button" value="&#128065;">
                 <input type="submit" class="button" value="Войти">
-                <a id="btn_forgot_password" class="window_btn" href="#" window-id="window_forgot_password">Забыли пароль?</a>
             </form>
-                Еще нет аккаунта?&#8195;&#8195;
-            <ul class="menu_down">
-                <li id="menu_register" class="button"><a href=# class="window_btn" window-id="window_register">Зарегистрироваться</a></li>
-            </ul>
+            <a id="btn_forgot_password" class="window_btn button" href="#" window-id="window_forgot_password">Забыли пароль?</a><br><br>
+            Еще нет аккаунта?&#8195;&#8195;<a id="btn_forgot_password" class="window_btn button" href="#" window-id="window_forgot_password">Зарегистрироваться</a>
             <div class="error"></div>
         </div>
     </div>
