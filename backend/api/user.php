@@ -7,10 +7,6 @@ namespace API {
             return $_SERVER['GEOIP_REGION_NAME'];
         }
 
-        public function sendSMS(){
-            
-            return \Utils::SendSMS("9157671047","hi");
-        }
 
         public function Info()
         {
