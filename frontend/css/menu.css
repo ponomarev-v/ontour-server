@@ -47,12 +47,13 @@ ul.submenu {
     display: none;
     position: absolute;
     width: 116.34px;
-    top: 52px;
+    top: 50px;
     left: 0;
     z-index: 150;
 }
 ul.submenu > li {
     display: block;
+    background-color: white;
 }
 ul.submenu > li > a {
     font-size: 20px;
