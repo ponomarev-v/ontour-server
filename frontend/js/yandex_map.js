@@ -129,8 +129,7 @@ function init () {
             clusterDisableClickZoom: true
         });
 
-    objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-    objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+    
     myMap.geoObjects.add(objectManager);
     var json_res_start;
     $.ajax({
@@ -165,6 +164,35 @@ function init () {
                 }
             }
         });
+
+        function onObjectEvent (e) {
+            var objectId = e.get('objectId');
+            if (e.get('type') == 'mouseenter') {
+                // Метод setObjectOptions позволяет задавать опции объекта "на лету".
+                objectManager.objects.setObjectOptions(objectId, {
+                    preset: 'islands#yellowIcon'
+                });
+            } else {
+                objectManager.objects.setObjectOptions(objectId, {
+                    preset: 'islands#blueIcon'
+                });
+            }
+        }
+    
+        function onClusterEvent (e) {
+            var objectId = e.get('objectId');
+            if (e.get('type') == 'mouseenter') {
+                objectManager.clusters.setClusterOptions(objectId, {
+                    preset: 'islands#yellowClusterIcons'
+                });
+            } else {
+                objectManager.clusters.setClusterOptions(objectId, {
+                    preset: 'islands#blueClusterIcons'
+                });
+            }
+        }
+        objectManager.objects.events.add(['mouseenter', 'mouseleave'], onObjectEvent);
+    objectManager.clusters.events.add(['mouseenter', 'mouseleave'], onClusterEvent);
     window.manager = objectManager
 
     myMap.events.add('click', function (e) {
