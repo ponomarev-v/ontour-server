@@ -37,6 +37,12 @@
                 $("#window_show_target .target .target_item .description").html(data[index]["description"]);
                 $("#window_show_target .target .target_item").attr("class", index);
             }
+            if (data["0"]) {
+            } else {
+                $("#window_show_target .target").append("<div class='target_item' style='border-bottom: solid 1px lightgreen'></div>");
+                $("#window_show_target .target .target_item").append("<h3 class='name'></h3>");
+                $("#window_show_target .target .target_item .name").html("Ничего не найдено");
+            }
         });
     }
 
