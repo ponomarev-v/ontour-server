@@ -11,7 +11,7 @@ class Objects
             throw new \Exception("Не указано имя");
         if(!isset($data['kind']) || empty($data['kind']))
             throw new \Exception("Не указан тип");
-        if(!isset($data['obl']) || empty($data['obl']))
+        if(!isset($data['reg']) || empty($data['reg']))
             throw new \Exception("Не указана область");
         // проверка на существование имени и координат объекта в базе
       //  $res = Core::DB()->where('name', $data['name']);
