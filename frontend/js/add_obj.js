@@ -10,7 +10,7 @@ function btn_subbmit(){
    
         $.ajax({
             type: "POST",
-            url: "http://api.turneon.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&obl="+obl,
+            url: "http://api.turneon.ru/?method=map.add&"+tmp+"&kind=1"+"&"+$("#form_addobj").serialize()+"&reg="+obl,
             xhrFields: {withCredentials: true},
             success: function (data) {
                 data = eval("(" + data + ")");
