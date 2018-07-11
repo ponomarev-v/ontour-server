@@ -15,10 +15,10 @@ function btn_subbmit(){
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
                     $.ajax({  
-                        url: "../yandex_map.php",  
+                        url: "yandex_map.js",  
                         cache: false,  
                         success: function(html){  
-                            $(document).body.html(html);  
+                            $("#map").html(html);  
                     }  });
                    
                 } else {
