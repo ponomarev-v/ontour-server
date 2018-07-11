@@ -8,8 +8,8 @@ namespace API {
         }
 
         public function sendSMS($number,$sms){
-            $number = "9157671047";
-            $sms = "hi";
+            $number =  \Utils::Request('number');
+            $sms =  \Utils::Request('sms');
             return \Utils::SendSMS($number,$sms);
         }
 
