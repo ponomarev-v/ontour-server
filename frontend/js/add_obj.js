@@ -14,8 +14,13 @@ function btn_subbmit(){
             success: function (data) {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
-                    alert("success");
-                    showAllObj();
+                    $.ajax({  
+                        url: "../yandex_map.php",  
+                        cache: false,  
+                        success: function(html){  
+                            
+                    }  });
+                   
                 } else {
                     alert("error add obj");
                 }

@@ -113,7 +113,7 @@ switch(town){
 
 
 
-var myPlacemark;
+var myPlacemark,objectManager;
 function init () {
     var myMap = new ymaps.Map('map', {
             center: [x, y],
@@ -165,9 +165,8 @@ function init () {
                 }
             }
         });
+    window.manager = objectManager
 
-
-    window.objectManager = objectManager;
     myMap.events.add('click', function (e) {
         var coords = e.get('coords');
     
