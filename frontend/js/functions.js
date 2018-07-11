@@ -1,7 +1,7 @@
 function showAllObj(){
     $.ajax({
         type:"POST",
-        url:"http://ontourapi.kvantorium33.ru/?method=map.GetObjs",
+        url:"http://api.turneon.ru/?method=map.GetObjs",
         xhrFields: {withCredentials: true},
         success: function (data) {
             data = eval("(" + data + ")");
