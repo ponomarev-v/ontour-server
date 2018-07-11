@@ -12,6 +12,8 @@ include "footer.php";/*подключение ног сайта*/
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
                     if(data.data == "Vladimir"){
+                        window.location = "/Vladimir_map.php"
+                    } else {
                         window.location = "/district_map.php"
                     }
                 }
