@@ -10,9 +10,8 @@
                     'description' => \Utils::Request('description'),
                     'reg'         => \Utils::Request('reg')
                 );
-                if($id = \Objects::Add_obj($data, $_SESSION['userid'])) {
+                if($id = \Objects::Add_obj($data, $_SESSION['userid']))
                     return true;
-                }
             }
 
             public static function Details(){
