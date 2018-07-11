@@ -1,5 +1,5 @@
 <?php
-include_once "header.php";
+require_once "header.php";
 ?>
     <div id="map"></div>
     <div class="form_add" style="display:none;">

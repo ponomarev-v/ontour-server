@@ -15,7 +15,7 @@ function btn_subbmit(){
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
                     $.ajax({  
-                        url: "yandex_map.js",  
+                        url: "../yandex_map.php",  
                         cache: false,  
                         success: function(html){  
                             $("#map").html(html);  
