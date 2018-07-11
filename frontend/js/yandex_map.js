@@ -113,13 +113,61 @@ switch(town){
 
 
 
+var myPlacemark;
+function init () {
+    var myMap = new ymaps.Map('map', {
+            center: [x, y],
+            zoom: 10
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+        objectManager = new ymaps.ObjectManager({
+            // Чтобы метки начали кластеризоваться, выставляем опцию.
+            clusterize: true,
+            // ObjectManager принимает те же опции, что и кластеризатор.
+            gridSize: 32,
+            clusterDisableClickZoom: true
+        });
 
-function init() {
-    myMap = new ymaps.Map("map", {
-        center: [x, y],
-        zoom: 12
-    }),
-    
+    objectManager.objects.options.set('preset', 'islands#greenDotIcon');
+    objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+    myMap.geoObjects.add(objectManager);
+    var json_res_start;
+    $.ajax({
+            type:"POST",
+            url:"http://api.turneon.ru/?method=map.GetObjs",
+            xhrFields: {withCredentials: true},
+            success: function (data) {
+                data = eval("(" + data + ")");
+                if (data.result == "success") {
+                    json_string = JSON.stringify(data);
+                    objects = JSON.parse(json_string)
+                    delete objects.result
+                    json_res_start = '{"type": "FeatureCollection","features": ['
+                    json_res_end = "]}"
+                    
+                   // alert(json_res)
+                    for(key in objects){
+                        
+                        cx = objects[key]['cx']
+                        cy = objects[key]['cy']
+                        id = objects[key]['id']
+                        balloonHeader = objects[key]['name']
+                        balloonContent = objects[key]['description']
+                        obj = {"type":"Future","id":id,"geometry":{"type":"Point","coordinates":[cx,cy]},"properties":{"balloonContentHeader": balloonHeader, "balloonContentBody": balloonContent}}
+                        json_res_start +=JSON.stringify(obj)+","
+                        //alert(JSON.stringify(obj))
+                    }
+                    
+                    json_res_start = json_res_start.substring(0, json_res_start.length - 1)+json_res_end
+                    json = JSON.parse(json_res_start)
+                    objectManager.add(json)
+                }
+            }
+        });
+
+
+    window.objectManager = objectManager;
     myMap.events.add('click', function (e) {
         var coords = e.get('coords');
     
@@ -145,38 +193,35 @@ function init() {
             draggable: true
         });
     }
-
-
     function getAddress(coords) {
-                        myPlacemark.properties.set('iconCaption', 'поиск...');
-                        ymaps.geocode(coords).then(function (res) {
-                            var firstGeoObject = res.geoObjects.get(0);
-                            window.firstGeoObject = firstGeoObject;
-                           myPlacemark.properties
-                                .set({
-                                   iconCaption: [
-                                        
-                                     firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
-                                        
-                                        firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
-                                    ].filter(Boolean).join(', '),
-                                   
-                                    balloonContent: "<script>function btn_subbmit(){alert('Hi')}</script>" +
-                                    "<div align='center'>" +
-                                    "   <h3>" + firstGeoObject.getAddressLine() + "</h3>" +
-                                    "   <form id='form_addobj'>" +
-                                    "       Название<br>" +
-                                    "       <input type='text' name='name'><br>" +
-                                    "       Описание<br>" +
-                                    "       <textarea name='description'></textarea><br>" +
-                                    "       <input type='button' id='btn' value='Отправить'  onClick='btn_subbmit()'>" +
-                                    "   </form>" +
-                                    "</div>",
-                                });
-                                window.coords = coords
-                        });
-                       
-                    }
-                    showAllObj();   
-   
+        myPlacemark.properties.set('iconCaption', 'поиск...');
+        ymaps.geocode(coords).then(function (res) {
+            var firstGeoObject = res.geoObjects.get(0);
+            window.firstGeoObject = firstGeoObject;
+           myPlacemark.properties
+                .set({
+                   iconCaption: [
+                        
+                     firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
+                        
+                        firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
+                    ].filter(Boolean).join(', '),
+                   
+                    balloonContent: "<script>function btn_subbmit(){alert('Hi')}</script>" +
+                    "<div align='center'>" +
+                    "   <h3>" + firstGeoObject.getAddressLine() + "</h3>" +
+                    "   <form id='form_addobj'>" +
+                    "       Название<br>" +
+                    "       <input type='text' name='name' id='name'><br>" +
+                    "       Описание<br>" +
+                    "       <textarea name='description' id='description'></textarea><br>" +
+                    "       <input type='button' id='btn' value='Отправить'  onClick='btn_subbmit()'>" +
+                    "   </form>" +
+                    "</div>",
+                });
+                window.coords = coords
+        });
+       
+    }
+
 }
