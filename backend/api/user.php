@@ -6,6 +6,13 @@ namespace API {
         public function Location(){
             return $_SERVER['GEOIP_REGION_NAME'];
         }
+
+        public function sendSMS($number,$sms){
+            $number = "9157671047";
+            $sms = "hi";
+            return \Utils::SendSMS($number,$sms);
+        }
+
         public function Info()
         {
             if(\Utils::ArrayGet('active', $_SESSION)) {
