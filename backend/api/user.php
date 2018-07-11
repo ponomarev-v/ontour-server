@@ -7,7 +7,7 @@ namespace API {
             return $_SERVER['GEOIP_REGION_NAME'];
         }
 
-        public function sendSMS($number,$sms){
+        public function sendSMS(){
             $number =  \Utils::Request('number');
             $sms =  \Utils::Request('sms');
             return \Utils::SendSMS($number,$sms);
