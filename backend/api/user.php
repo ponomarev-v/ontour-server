@@ -4,7 +4,7 @@ namespace API {
     class User
     {
         public function Location(){
-            return $_SERVER['GEOIP_CITY'];
+            return $_SERVER['GEOIP_REGION_NAME'];
         }
         public function Info()
         {
