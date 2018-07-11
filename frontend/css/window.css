@@ -49,3 +49,16 @@
     transition: 0.2s;
     font-size: 12px;
 }
+
+.button[class="show_password button"] {
+    height: 40px!important;
+    width: 40px!important;
+    font-size: x-large;!important;
+    border: 0;!important;
+    background-color: white;!important;
+}
+
+.form[name="password"] {
+    width: calc(100% - 50px)!important;
+    margin-right: 0px!important;
+}
