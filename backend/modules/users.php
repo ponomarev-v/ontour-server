@@ -103,10 +103,11 @@ class Users
         } else {
             if ($pass_old == $res['password'] && $pass_new != $res['password'])
             {
-                if($pass_new != $res['password']) {
-                    $upd = array(
-                        'password' => $pass_new,
-                    );
+                if($pass_new != $res['password'])
+                {
+                    $upd = $res;
+                    $upd = [
+                        'password' => $pass_new];
                     $db->where('id', $id)->update('user', $upd);
                 }
                 else
