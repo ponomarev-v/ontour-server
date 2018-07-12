@@ -81,13 +81,6 @@ class Users
 //смена пароля
 //TODO починить
 //ssdsds
-    /**
-     * @param $id
-     * @param $pass_old
-     * @param $pass_new
-     * @return string
-     * @throws Exception
-     */
     public static function ChangePass($id, $pass_old, $pass_new)
     {
         $db = Core::DB();
