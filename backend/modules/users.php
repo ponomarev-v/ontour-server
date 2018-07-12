@@ -107,7 +107,7 @@ class Users
                 return $db->getLastError();
             }
             else
-                throw new \Exception("Неправельный старый пароль");
+                throw new \Exception("Неправильный старый пароль");
         }
         return true;
     }
