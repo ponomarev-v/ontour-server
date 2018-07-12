@@ -36,9 +36,10 @@ class Users
         else
             throw new Exception('Ошибка подключения к БД');
     }
-
+//регестрация юзера
     public static function RegisterUser($data)
     {
+        //формат номера телефона
         $data['phone'] = Utils::FormatPhone($data['phone']);
         self::CheckUserData($data);
         // Подключаемся к базе
@@ -144,19 +145,21 @@ class Users
         else
             return true;
     }
-
+//проверка по login и password
     public static function CheckUserCredentials($login, $password)
     {
         // Подключаемся к базе
         $db = Core::DB();
         // Ищем пользователя
         if($ph = Utils::FormatPhone($login)) {
+            // через phone
             $res = $db
                 ->where('phone', $ph)
                 ->where('password', md5($password))
                 ->get('user');
         } else {
             $res = $db
+                // через email
                 ->where('email', $login)
                 ->where('password', md5($password))
                 ->get('user');
@@ -170,6 +173,7 @@ class Users
 
     public static function GetUserInfo($userid)
     {
+        // здесь мы подкллючаемся к бд и достаем инфу по пользователю по id.
         $res = Core::DB()->where('id', $userid)->getOne('user');
         return $res;
     }

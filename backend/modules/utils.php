@@ -143,6 +143,7 @@ class Utils
         }
     }
 
+    // удаляем лишнее у номера телефона
     public static function FormatPhone($phone)
     {
         $phone = preg_replace('/[^0-9]/', '', $phone);

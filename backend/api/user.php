@@ -57,6 +57,7 @@ namespace API {
 
         public function Login()
         {
+            // Сюда приходят данные с сайта
             $login = \Utils::Request('login');
             $password = \Utils::Request('password');
             if($id = \Users::CheckUserCredentials($login, $password)) {
@@ -91,6 +92,7 @@ namespace API {
          * @param $id
          * @return array
          */
+        //активация сессии и присуждение id
         private function internalLogin($id)
         {
             $_SESSION['active'] = true;
