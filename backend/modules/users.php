@@ -109,7 +109,7 @@ class Users
                 throw new \Exception("Неправильный старый пароль");
         }*/
         $arr = array('old' => $pass_old, 'new' => $res['password']);
-        return $res['password'];
+        return $res['name'];
     }
 //проверка данных на обновление userdata
     public static function ChangeUserProfile($id, $data)
