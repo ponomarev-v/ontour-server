@@ -82,26 +82,28 @@ class Users
 //TODO починить
     public static function ChangePass($id, $pass_old, $pass_new){
         $db = Core::DB();
-        if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
-            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        //if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
+        //    throw new \Exception("Пароль должен быть от 8 до 255 символов");
         if(!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
         $pass_new = md5($pass_new);
-        $pass_old = md5($pass_old);
+        //$pass_old = md5($pass_old);
 
         $res = $db -> where('id', $id) -> get('user');
-        if (isset($res) && !empty($res)){
+        /*if (isset($res) && !empty($res)){
             if ($pass_old == $res['password']){
                 $upd = array(
                     'password' => $pass_new,
                 );
             }
             else
-                //throw new Exception('Неверно введен старый пароль');
-                return Core::DB() -> getLastError();
-        }
-        $db -> where('id', $id)
+                throw new Exception('Неверно введен старый пароль');
+        }*/
+            $upd = array(
+            'password' => $pass_new,
+            );
+            $db -> where('id', $id)
             -> update('user', $upd);
 
         return Core::DB() -> getLastError();
