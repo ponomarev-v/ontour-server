@@ -96,7 +96,7 @@ class Users
         else {
             if ($pass_old == $res[0]['password'])
             {
-                if($pass_new != $res['password']) {
+                if($pass_new != $res[0]['password']) {
                     $upd = array(
                         'password' => $pass_new
                     );
