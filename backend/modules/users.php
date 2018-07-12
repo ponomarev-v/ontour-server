@@ -101,11 +101,18 @@ class Users
         if (empty($res)) {
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
         } else {
-            if ($pass_old == $res['password'] && $pass_new != $res['password']) {
-                $upd = array(
-                    'password' => $pass_new,
-                );
-                $db -> where('id', $id)-> update('user', $upd);
+            if ($pass_old == $res['password'] && $pass_new != $res['password'])
+            {
+                if($pass_new != $res['password']) {
+                    $upd = array(
+                        'password' => $pass_new,
+                    );
+                    $db->where('id', $id)->update('user', $upd);
+                }
+                else
+                {
+                    throw new \Exception("ну ты понял");
+                }
 
                 return Core::DB() -> getLastError();
             } else {
