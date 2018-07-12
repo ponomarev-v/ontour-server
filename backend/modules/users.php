@@ -88,11 +88,8 @@ class Users
 
         if (!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
-
-        $pass_new = md5($pass_new);
-        $pass_old = md5($pass_old);
-
         $res = $db->where('id', $id)->get('user');
+        $pass_old = md5($pass_old);
         if (!isset($res) || empty($res))
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
         else {
@@ -100,7 +97,7 @@ class Users
             {
                 if($pass_new != $res['password']) {
                     $upd = array(
-                        'password' => $pass_new,
+                        'password' => md5($pass_new)
                     );
                     $db->where('id', $id)->update('user', $upd);
                 }
