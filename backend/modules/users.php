@@ -133,9 +133,9 @@ class Users
             'password' => $pass_new,
             );
         */
-        $db -> where('id', $id)-> update('user', $upd);
+      //  $db -> where('id', $id)-> update('user', $upd);
 
-        return Core::DB() -> getLastError();
+       // return Core::DB() -> getLastError();
     }*/
 //проверка данных на обновление userdata
     public static function ChangeUserProfile($id, $data)
