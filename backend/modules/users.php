@@ -118,7 +118,7 @@ class Users
                 return Core::DB() -> getLastError();
             }
             else {
-                throw new \Exception("У вас уже такой пароль",$res);
+                throw new \Exception("У вас уже такой пароль",'$res');
             }
         }
     }
