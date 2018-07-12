@@ -90,7 +90,7 @@ class Users
         $pass_new = md5($pass_new);
         $pass_old = md5($pass_old);
 
-        $res = $db -> where('id', $id);
+        $res = $db -> where('id', $id) -> get('user');
         if (isset($res) && !empty($res)){
             if ($pass_old == $res['password']){
                 $upd = array(
