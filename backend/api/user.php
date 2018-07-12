@@ -48,12 +48,14 @@ namespace API {
             return \Users::ChangeUserProfile($id, $new_data);
         }
         //поменять password
+        /*
         public function Change_Password(){
             $pass_old = \Utils::Request('old_password');
             $pass_new = \Utils::Request('new_password');
             $id = $_SESSION['userid'];
             return \Users::ChangePass($id, $pass_old, $pass_new);
         }
+        */
         //логин....
         public function Login()
         {
