@@ -81,6 +81,13 @@ class Users
 //смена пароля
 //TODO починить
 //ssdsds
+    /**
+     * @param $id
+     * @param $pass_old
+     * @param $pass_new
+     * @return string
+     * @throws Exception
+     */
     public static function ChangePass($id, $pass_old, $pass_new)
     {
         $db = Core::DB();
@@ -99,7 +106,7 @@ class Users
         //$pass_old = md5($pass_old);
 
         $res = $db->where('id', $id)->get('user');
-        if (true) {
+        if (empty($res)) {
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
         } else {
             if ($pass_old == $res['password'])
@@ -118,7 +125,7 @@ class Users
                 return Core::DB() -> getLastError();
             }
             else {
-                throw new \Exception("У вас уже такой пароль");
+                throw new \Exception("У вас уже такой пароль",$res);
             }
         }
     }
