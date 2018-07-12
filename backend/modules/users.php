@@ -99,7 +99,7 @@ class Users
         //$pass_old = md5($pass_old);
 
         $res = $db->where('id', $id)->get('user');
-        if ($res == null) {
+        if (true) {
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
         } else {
             if ($pass_old == $res['password'])
