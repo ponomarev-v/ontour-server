@@ -102,7 +102,7 @@
         <span class="close">&times;</span>
         <div class="form_window">
             <h1>
-                Зайдите на свою дибильную почту и перейдите там по ссылке
+                Будет доработано
             </h1>
         </div>
     </div>
