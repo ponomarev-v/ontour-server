@@ -102,7 +102,7 @@ class Users
         if (empty($res)) {
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
         } else {
-            if ($pass_old == $res['password'] && $pass_new != $res['password'])
+            if ($pass_old == $res['password'])
             {
                 if($pass_new != $res['password']) {
                     $upd = array(
@@ -116,7 +116,8 @@ class Users
                 }
 
                 return Core::DB() -> getLastError();
-            } else {
+            }
+            else {
                 throw new \Exception("У вас уже такой пароль");
             }
         }
