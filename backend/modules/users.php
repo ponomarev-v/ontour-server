@@ -98,7 +98,8 @@ class Users
                 );
             }
             else
-                throw new Exception('Неверно введен старый пароль');
+                //throw new Exception('Неверно введен старый пароль');
+                return Core::DB() -> getLastError();
         }
         $db -> where('id', $id)
             -> update('user', $upd);
