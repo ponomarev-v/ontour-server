@@ -8,7 +8,7 @@ class Users
     const STATUS_NEW = 0;
     const STATUS_APPROVED = 1;
     const STATUS_DISABLED = 2;
-
+//проверка веденных данных
     public static function CheckUserData($data)
     {
         //проверяем размер пароля
@@ -78,7 +78,8 @@ class Users
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
-
+//смена пароля
+//TODO починить
     public static function ChangePass($id, $pass_old, $pass_new){
         $db = Core::DB();
         if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
@@ -177,14 +178,14 @@ class Users
             return null;
         }
     }
-
+//возращаем инфо о юзере
     public static function GetUserInfo($userid)
     {
         // здесь мы подкллючаемся к бд и достаем инфу по пользователю по id.
         $res = Core::DB()->where('id', $userid)->getOne('user');
         return $res;
     }
-
+//когда юзер был в сети
     public static function UpdateLastActive($userid, $time)
     {
         Core::DB()->where('id', $userid)->update('user', array(

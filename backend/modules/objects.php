@@ -1,7 +1,9 @@
 <?php
 class Objects
 {
-    public static function Check_added_obj($data){
+    //проверка всего
+    public static function Check_added_obj($data)
+    {
         // проверка введенных пользователем данных об объекте
         if(!isset($data['cx']) || empty($data['cx']) )
             throw new \Exception("Некорректно введены координаты");
@@ -13,11 +15,13 @@ class Objects
             throw new \Exception("Не указан тип");
         if(!isset($data['reg']) || empty($data['reg']))
             throw new \Exception("Не указана область");
+        //код ниже крашит
         // проверка на существование имени и координат объекта в базе
       //  $res = Core::DB()->where('name', $data['name']);
       //  if (!empty($res))
       //      throw new Exception('Объект с таким именем уже существует!');
     }
+    //добавить обьект
     public static function Add_obj($data, $id)
     {
         self::Check_added_obj($data);
@@ -44,9 +48,12 @@ class Objects
             throw new Exception('Непредвиденная ошибка при добавлении объекта');
 
     }
-    public static function Get_obj ($cx, $cy, $name){
+    //возращает обьект
+    public static function Get_obj ($cx, $cy, $name)
+    {
         // Подключаемся к базе
         $db = Core::DB();
+        // проверка коорднат
         if (isset($cx) && !empty($cx) && isset($cy) && !empty($cy)) {
             $data = $db
                 ->where('cx', $cx)
@@ -58,15 +65,19 @@ class Objects
             throw new Exception('Не указаны или неправильно указаны координаты и имя');
         return $data;
     }
-    public static function GetAllObj(){
+    //Возращает все обьекты
+    public static function GetAllObj()
+    {
         $db = Core::DB();
         $cols = Array("id","cx","cy","name","description","reg");
         $data = $db->get("object",null,$cols);
         return $data;
     }
+    //удаление обьекта
     public static function Delete_obj($cx, $cy){
         return Core::DB()->where('cx', $cx)->where('cy', $cy)->delete('objects');
     }
+    //найти обьект
     public static function Find_obj($str)
     {
         $db = Core::DB();
@@ -78,6 +89,7 @@ class Objects
         $res = $db->rawQuery("SELECT * FROM object WHERE name LIKE '$str'");
         return $res;
     }
+    //метод для ненужного метода
     public static function Get(){
         return ;
     }
