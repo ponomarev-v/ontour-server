@@ -6,6 +6,8 @@ namespace API {
         public function Location(){
             return $_SERVER['GEOIP_REGION_NAME'];
         }
+
+
         public function Info()
         {
             if(\Utils::ArrayGet('active', $_SESSION)) {
