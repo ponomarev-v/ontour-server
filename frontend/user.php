@@ -13,7 +13,7 @@
                 <input type="submit" class="button" value="Войти">
             </form>
             <a id="btn_forgot_password" class="window_btn button" href="#" window-id="window_forgot_password">Забыли пароль?</a><br><br>
-            Еще нет аккаунта?&#8195;&#8195;<a id="btn_forgot_password" class="window_btn button" href="#" window-id="window_forgot_password">Зарегистрироваться</a>
+            Еще нет аккаунта?&#8195;&#8195;<a id="btn_register" class="window_btn button" href="#" window-id="window_register">Зарегистрироваться</a>
             <div class="error"></div>
         </div>
     </div>
