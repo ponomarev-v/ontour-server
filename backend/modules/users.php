@@ -90,7 +90,7 @@ class Users
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
         $res = $db->where('id', $id)->get('user');
         $pass_old = md5($pass_old);
-        if (!isset($res) || empty($res))
+        /*if (!isset($res) || empty($res))
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
         else {
             if ($pass_old == $res['password'])
@@ -107,7 +107,8 @@ class Users
             }
             else
                 throw new \Exception("Неправильный старый пароль");
-        }
+        }*/
+        return $pass_old;
     }
 //проверка данных на обновление userdata
     public static function ChangeUserProfile($id, $data)
