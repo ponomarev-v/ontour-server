@@ -1,6 +1,7 @@
 <?php
     namespace API{
         class Map{
+            //добавление обьекта
             public static function Add(){
                 $data = array(
                     'cx'          => \Utils::Request('cx'),
@@ -13,7 +14,7 @@
                 if($id = \Objects::Add_obj($data, $_SESSION['userid']))
                     return true;
             }
-
+            //дичь какая-то хз зачем ну надо
             public static function Details(){
                 $cx   = \Utils::Request('cx');
                 $cy   = \Utils::Request('cy');

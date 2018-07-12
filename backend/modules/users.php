@@ -11,20 +11,23 @@ class Users
 
     public static function CheckUserData($data)
     {
+        //проверяем размер пароля
         if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
         // TODO нормальная проверка email-a
+        //костыльная проверка по email
         if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
             throw new \Exception("emal отсутствует или указан неверно");
-
+        //проверка на имя
         if(!isset($data['name']) || empty($data['name']))
             throw new \Exception("Не указано имя");
+        //проверка на номер телефона
 
         if(!isset($data['phone']) || strlen($data['phone']) != 10)
             throw new \Exception("Не указан телефон");
     }
-
+//возращаем роль юзера
     public static function CheckUsersRules($id){
         $res = Core::DB()->where('id', $id);
         if (isset($res) && !empty($res)){
@@ -106,13 +109,14 @@ class Users
 
         return Core::DB() -> getLastError();
     }
-
+//проверка данных на обновление userdata
     public static function ChangeUserProfile($id, $data)
     {
         // Подключаемся к базе
         $db = Core::DB();
         $upd = array();
-        if(isset($data['phone']) && !empty($data['phone'])) {
+        if(isset($data['phone']) && !empty($data['phone']))
+        {
             $data['phone'] = Utils::FormatPhone($data['phone']);
             $res = $db->where('phone', $data['phone'])->where('id', $id, '!=')->get('user');
             if(!empty($res)) {
@@ -120,13 +124,15 @@ class Users
             }
             $upd['phone'] = $data['phone'];
         }
-        if(isset($data['name'])) {
+        if(isset($data['name']))
+        {
             $data['name'] = trim($data['name']);
             if(empty($data['name']))
                 throw new Exception('Имя пользователя не может быть пустым');
             $upd['name'] = $data['name'];
         }
-        if(isset($data['email']) && !empty($data['email'])) {
+        if(isset($data['email']) && !empty($data['email']))
+        {
             $res = $db->where('email', $data['email'])->where('id', $id, '!=')->get('user');
             if(!empty($res)) {
                 throw new Exception('Указанный email занят другим пользователем');
@@ -139,6 +145,7 @@ class Users
         if(isset($data['school']) && !empty($data['school'])) {
             $upd['school'] = $data['school'];
         }
+        //сам update
         $db->where('id', $id)->update('user', $upd);
         if($msg = $db->getLastError())
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));

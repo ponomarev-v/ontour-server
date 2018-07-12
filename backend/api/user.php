@@ -31,11 +31,11 @@ namespace API {
                 throw new \Exception('Пользователь не авторизован в системе');
             }
         }
-
+        //права юзера
         public function CheckUserRules(){
             return \Users::CheckUsersRules($_SESSION['userid']);
         }
-
+        //изменение профиля user
         public function Profile(){
             $new_data = array(
                 'name' => \Utils::Request('name'),
@@ -47,14 +47,14 @@ namespace API {
             $id = $_SESSION['userid'];
             return \Users::ChangeUserProfile($id, $new_data);
         }
-
+        //поменять password
         public function Change_Password(){
             $pass_old = \Utils::Request('old_password');
             $pass_new = \Utils::Request('new_password');
             $id = $_SESSION['userid'];
             return \Users::ChangePass($id, $pass_old, $pass_new);
         }
-
+        //логин....
         public function Login()
         {
             // Сюда приходят данные с сайта
