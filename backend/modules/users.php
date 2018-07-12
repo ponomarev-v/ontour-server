@@ -80,17 +80,45 @@ class Users
     }
 //смена пароля
 //TODO починить
-    public static function ChangePass($id, $pass_old, $pass_new){
+    public static function ChangePass($id, pass_old, $pass_new){
         $db = Core::DB();
-        //if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
-        //    throw new \Exception("Пароль должен быть от 8 до 255 символов");
-        if(!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
+        if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
+        {
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        }
+        else
+        {
+            $pass_old = md5($pass_old);
+        }
 
-        $pass_new = md5($pass_new);
+        if(!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
+        {
+            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        }
+        else
+        {
+            $pass_new = md5($pass_new);
+        }
+        //$pass_new = md5($pass_new);
         //$pass_old = md5($pass_old);
 
         $res = $db -> where('id', $id) -> get('user');
+        if (empty($res))
+        {
+            throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
+        }
+        else
+        {
+            if ($pass_old == $res['password'] && $pass_new != $res['password']){
+                $upd = array(
+                    'password' => $pass_new,
+                );
+            }
+            else
+            {
+                throw new \Exception("У вас уже такой пароль");
+            }
+        }
         /*if (isset($res) && !empty($res)){
             if ($pass_old == $res['password']){
                 $upd = array(
@@ -100,11 +128,12 @@ class Users
             else
                 throw new Exception('Неверно введен старый пароль');
         }*/
+        /*
             $upd = array(
             'password' => $pass_new,
             );
-            $db -> where('id', $id)
-            -> update('user', $upd);
+        */
+        $db -> where('id', $id)-> update('user', $upd);
 
         return Core::DB() -> getLastError();
     }
