@@ -80,7 +80,7 @@ class Users
     }
 //смена пароля
 //TODO починить
-    public static function ChangePass($id, pass_old, $pass_new){
+   /* public static function ChangePass($id, pass_old, $pass_new){
         $db = Core::DB();
         if(!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
         {
@@ -136,7 +136,7 @@ class Users
         $db -> where('id', $id)-> update('user', $upd);
 
         return Core::DB() -> getLastError();
-    }
+    }*/
 //проверка данных на обновление userdata
     public static function ChangeUserProfile($id, $data)
     {
