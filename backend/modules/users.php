@@ -80,22 +80,28 @@ class Users
     }
 //смена пароля
 //TODO починить
+//ssdsds
     public static function ChangePass($id, $pass_old, $pass_new)
     {
         $db = Core::DB();
-        if (!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
+        if (!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255) {
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
+        } else {
+            $pass_old = md5($pass_old);
+        }
 
-        if (!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
+        if (!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255) {
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
-
-        $pass_new = md5($pass_new);
-        $pass_old = md5($pass_old);
+        } else {
+            $pass_new = md5($pass_new);
+        }
+        //$pass_new = md5($pass_new);
+        //$pass_old = md5($pass_old);
 
         $res = $db->where('id', $id)->get('user');
-        if (!isset($res) || empty($res))
+        if (empty($res)) {
             throw new \Exception("Ошибка получение данных БД о пользователе или пользователь не существует");
-        else {
+        } else {
             if ($pass_old == $res['password'])
             {
                 if($pass_new != $res['password']) {
@@ -105,11 +111,15 @@ class Users
                     $db->where('id', $id)->update('user', $upd);
                 }
                 else
-                    throw new \Exception("Старый пароль совпадает с новым");
-                return $db->getLastError();
+                {
+                    throw new \Exception("ну ты понял");
+                }
+
+                return Core::DB() -> getLastError();
             }
-            else
+            else {
                 throw new \Exception("У вас уже такой пароль");
+            }
         }
     }
 //проверка данных на обновление userdata
@@ -174,11 +184,11 @@ class Users
                 ->where('password', md5($password))
                 ->get('user');
         }
-        if(sizeof($res) == 1)
+        if(sizeof($res) == 1) {
             return $res[0]['id'];
-        else
+        } else {
             return null;
-
+        }
     }
 //возращаем инфо о юзере
     public static function GetUserInfo($userid)
