@@ -84,10 +84,10 @@ class Users
     {
         $db = Core::DB();
         if (!isset($pass_old) || strlen($pass_old) < 8 || strlen($pass_old) > 255)
-            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+            throw new \Exception("Неправильный старый пароль, он должен быть от 8 до 255 символов");
 
         if (!isset($pass_new) || strlen($pass_new) < 8 || strlen($pass_new) > 255)
-            throw new \Exception("Пароль должен быть от 8 до 255 символов");
+            throw new \Exception("Неправильный новый пароль, он должен быть от 8 до 255 символов");
         $res = $db->where('id', $id)->get('user');
         $pass_old = md5($pass_old);
         $pass_new = md5($pass_new);
@@ -107,7 +107,7 @@ class Users
                 return $db->getLastError();
             }
             else
-                throw new \Exception("Неправильный старый пароль");
+                throw new \Exception("Неправельный старый пароль");
         }
         return true;
     }
