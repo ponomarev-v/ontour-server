@@ -234,9 +234,9 @@
 
         $("input.form").attr("autocomplete", "off");
         $("input.form").attr("spellcheck", "false");
-        $("#window_login input.form").attr("required");
-        $("#window_logout input.form").attr("required");
-        $("#window_register input.form").attr("required");
-        $("#window_change_password input.form").attr("required");
+        $("#window_login input.form").attr("required", "true");
+        $("#window_logout input.form").attr("required", "true");
+        $("#window_register input.form").attr("required", "true");
+        $("#window_change_password input.form").attr("required", "true");
     });
 </script>
