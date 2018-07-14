@@ -109,7 +109,6 @@
 </div>
 
 <script>
-
     function load_user_info(user_info) {
         if (user_info && 'token' in user_info && user_info.token) {
             $("#menu_register").addClass("hidden");
