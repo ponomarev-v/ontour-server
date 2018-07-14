@@ -1,15 +1,7 @@
-.menu {
+.menu_header {
     float: right;
     padding-right: 10px;
 }
-
-/*
-
-
-
-
-
-*/
 
 ul {
     display: block;
@@ -23,11 +15,11 @@ ul:after {
     clear: both;
     float: none;
 }
-ul.menu_down > li {
+ul.menu > li {
     float: left;
     position: relative;
 }
-ul.menu_down > li > a {
+ul.menu > li > a {
     display: block;
     padding: 15px;
     height: 50px;
@@ -35,7 +27,7 @@ ul.menu_down > li > a {
     text-decoration: none;
     font-size: 20px;
 }
-ul.menu_down > li > a:hover {
+ul.menu > li > a:hover {
     color: lightgreen;
     border: 2px solid lightgreen;
     border-top: 0px;
@@ -67,36 +59,6 @@ ul.submenu > li > a:hover {
     text-decoration: underline;
 }
 
-ul.menu_down > li:hover > ul.submenu {
+ul.menu > li:hover > ul.submenu {
     display: block;
-}
-
-/*
-
-
-
-*/
-
-.menu_up {
-    margin: 0;
-    padding: 0;
-    float: right;
-}
-
-.menu_up li {
-    margin-top: 5px;
-    display: inline-block;
-    padding: 0px 15px;
-}
-
-.menu_up li a {
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    color: #1396e2;
-    transition: 0.2s;
-    font-size: 12px;
-}
-
-.menu_up li a:hover {
-    color: #073855;
 }

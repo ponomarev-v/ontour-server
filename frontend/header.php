@@ -18,5 +18,5 @@
             <img src="images/logo.png" height=100%><!--логотип-->
         </a>
         <?php include "search.php"; ?><!--подключение строки поиска-->
-        <?php include "menu_down.php"; ?><!--подключение меню-->
+        <?php include "menu.php"; ?><!--подключение меню-->
     </div>

@@ -1,5 +1,5 @@
-<div class="menu"><!--меню сверху страницы-->
-    <ul class="menu_down">
+<div class="menu_header"><!--меню сверху страницы-->
+    <ul class="menu">
         <li id="menu_main"          class="button"><a href="#"                class="window_btn" window-id="window_main">Главная</a></li>
         <li id="menu_app"           class="button"><a href="#"                class="window_btn" window-id="window_app">Приложение</a></li>
         <li id="menu_select_region" class="button"><a href="district_map.php" class="window_btn" window-id="window_select_region">Выбор региона</a></li>
