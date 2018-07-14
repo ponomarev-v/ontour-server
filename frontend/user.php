@@ -7,8 +7,8 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.login">
-                <input type="text"     name="login"    placeholder="телефон или mail" class="form" required autocomplete="off">
-                <input type="password" name="password" placeholder="Пароль"           class="form" required autocomplete="off">
+                <input type="text"     name="login"    placeholder="телефон или mail" class="form">
+                <input type="password" name="password" placeholder="Пароль"           class="form">
                 <input type="button" class="show_password button" value="&#128065;">
                 <input type="submit" class="button" value="Войти">
             </form>
@@ -29,7 +29,7 @@
             <form>
                 <input type="hidden" name="method" value="user.logout">
                 <input type="submit" value="Да, выйти" class="button">
-                <input type="button" value="Нет, остаться" id="btn_logout_none" class="button">
+                <input type="button" value="Нет, остаться" class="button" id="btn_logout_none">
             </form>
             <div class="error"></div>
         </div>
@@ -45,12 +45,12 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.profile">
-                <input type="number"   name="age"      placeholder="Возраст"           class="form" required autocomplete="off">
-                <input type="text"     name="school"   placeholder="Учебное заведение" class="form" required autocomplete="off">
-                <input type="email"    name="email"    placeholder="Электронная почта" class="form" required autocomplete="off">
-                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone" required autocomplete="off">
-                <input type="button" value="Сменить пароль" id="btn_change_password"   class="button window_btn" window-id="window_change_password">
-                <input type="submit" class="button" value="Сохранить">
+                <input type="number" name="age"    placeholder="Возраст"           class="form">
+                <input type="text"   name="school" placeholder="Учебное заведение" class="form">
+                <input type="email"  name="email"  placeholder="Электронная почта" class="form">
+                <input type="text"   name="phone"  placeholder="Номер телефона"    class="form phone">
+                <input type="button" value="Сменить пароль" id="btn_change_password" class="button window_btn" window-id="window_change_password">
+                <input type="submit" value="Сохранить" class="button">
             </form>
             <div class="error"></div>
         </div>
@@ -66,10 +66,10 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.register">
-                <input type="text" name="name" placeholder="Имя" class="form" required required autocomplete="off">
-                <input type="text" name="email" placeholder="Электронная почта" class="form" required required autocomplete="off">
-                <input type="text" name="phone" placeholder="Номер телефона" class="form phone" required required autocomplete="off">
-                <input type="password" name="password" placeholder="Пароль" class="form" required required autocomplete="off">
+                <input type="text"     name="name"     placeholder="Имя"               class="form">
+                <input type="text"     name="email"    placeholder="Электронная почта" class="form">
+                <input type="text"     name="phone"    placeholder="Номер телефона"    class="form phone">
+                <input type="password" name="password" placeholder="Пароль"            class="form">
                 <input type="button" class="show_password button" value="&#128065;">
                 <input type="submit" class="button" value="Зарегистрироваться">
             </form>
@@ -86,10 +86,10 @@
                 Смена пароля
             </h1>
             <form>
-                <input type="hidden" name="method" value="user.change_password">
-                <input type="text" placeholder="Старый пароль" class="form" required name="old_password" required autocomplete="off">
-                <input type="text" placeholder="Новый пароль" class="form" required name="new_password" required autocomplete="off">
-                <input type="text" placeholder="Повтор пароля" class="form" required name="new_password_repeat" required autocomplete="off">
+                <input type="hidden" name="method"  value="user.change_password">
+                <input type="text" class="form" placeholder="Старый пароль" name="old_password">
+                <input type="text" class="form" placeholder="Новый пароль"  name="new_password">
+                <input type="text" class="form" placeholder="Повтор пароля" name="new_password_repeat">
                 <input type="submit" class="button" value="Сменить пароль">
             </form>
             <div class="error"></div>
@@ -232,233 +232,12 @@
         $("#window_settings .close").click(function () {
             update_user_info();
         });
+
+        $("input.form").attr("autocomplete", "off");
+        $("input.form").attr("spellcheck", "false");
+        $("#window_login input.form").attr("required");
+        $("#window_logout input.form").attr("required");
+        $("#window_register input.form").attr("required");
+        $("#window_change_password input.form").attr("required");
     });
-
-
-    //ТУТ ФУНКЦИИ, СВЯЗАННЫЕ С ДЕЙСТВИЯМИ В ОКНАХ
-/*
-
-
-
-
-    function createProfile(user_info) {
-        $("#createProfile_error").html("");
-        $("#menu_logout").show();
-        $("#menu_profile").show();
-        $("#menu_main").show();
-        $("#menu_login").hide();
-        $("#menu_register").hide();
-    }
-
-    function userInfo(data) {
-        $("#profile_name").val(data["name"]);
-        $("#profile_age").val(data["age"]);
-        $("#profile_school").val(data["school"]);
-        $("#profile_password").val(data["password"]);
-        $("#profile_email").val(data["email"]);
-        data["phone"] = "8" + "(" + data["phone"][0] + data["phone"][1] + data["phone"][2] + ")" +
-            data["phone"][3] + data["phone"][4] + data["phone"][5] + "-" + data["phone"][6] +
-            data["phone"][7] + "-" + data["phone"][8] + data["phone"][9];
-        $('#profile_phone').mask('8(000)000-00-00');
-        $("#profile_phone").val(data["phone"]);
-    }
-
-    function clearPassword(user_info) {
-        $("#old_password").val("");
-        $("#new_password").val("");
-        $("#new_password_repeat").val("");
-    }
-
-    //КОНЕЦ
-
-    $(document).ready(function() {
-
-        //AJAX ЗАПРОСЫ
-
-        $("#change_password_form").submit(function (e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.change_password",
-                data: $("#change_password_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function (data) {
-                    data = eval("(" + data + ")");
-                    if (data.result == "success") {
-                        Profile(data);
-                    } else {
-                        $("#change_password_error").html(data["message"]);
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-
-        $("#register_form").submit(function (e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.register",
-                data: $("#register_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function (data) {
-                    data = eval("(" + data + ")");
-                    if (data.result == "success") {
-                        Register(data);
-                    } else {
-                        $("#register_error").html(data["message"]);
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-
-        $("#logout_form").submit(function(e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.logout",
-                data: $("#logout_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function(data)
-                {
-                    data = eval("(" + data + ")");
-                    if(data.result == "success") {
-                        logOut(data);
-                    } else {
-                        $("#login_error").html("Неправильный логин или пароль");
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-
-        $("#login_form").submit(function(e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.login",
-                data: $("#login_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function(data)
-                {
-                    data = eval("(" + data + ")");
-                    if(data.result == "success") {
-                        logIn(data);
-                    } else {
-                        $("#login_error").html(data["message"]);
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-
-        $("#btn_profile").click(function () {
-            $("#profile_window").show();
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.info",
-                xhrFields: {withCredentials: true},
-                success: function (data) {
-                    data = eval("(" + data + ")");
-                    if (data.result == "success") {
-                        userInfo(data);
-                    } else {
-                        $("#profile_error").html(data["message"]);
-                    }
-                }
-            });
-        });
-
-        $("#profile_form").submit(function (e) {
-            $.ajax({
-                type: "POST",
-                url: "http://ontourapi.kvantorium.ru/?method=user.profile",
-                data: $("#profile_form").serialize(),
-                xhrFields: {withCredentials: true},
-                success: function (data) {
-                    data = eval("(" + data + ")");
-                    if (data.result == "success") {
-                        Profile(data);
-                    } else {
-                        $("#profile_error").html(data["message"]);
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "http://ontourapi.kvantorium.ru/?method=user.info",
-            xhrFields: {withCredentials: true},
-            success: function(data)
-            {
-                data = eval("(" + data + ")");
-                if(data.result == "success") {
-                    createProfile(data);
-                }
-            }
-        });
-
-        //КОНЕЦ
-
-        //ОБРАБОТКА ЗАКРЫТИЙ ОКОН ЧЕРЕЗ КРЕСТИК
-
-
-
-        //КОНЕЦ
-
-        //ОБРАБОТКА ЗАКРЫТИЙ ОКОН
-
-        //КОНЕЦ
-
-        //МАСКА ДЛЯ ТЕЛЕФОНОВ
-
-        $('#phone_register').mask('8(000)000-00-00');
-        $('.phone').mask('8(000)000-00-00');
-        $('#profile_phone').mask('8(000)000-00-00');
-
-        //КОНЕЦ
-
-        //ОБРАБОТКА РАЗЛИЧНЫХ КНОПОК
-
-        $("#btn_change_password").click(function () {
-            $("#profile_window").hide();
-            $("#change_password_window").show();
-        });
-
-        $(".btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-        });
-
-        $("#btn_logout").click(function () {
-            $("#logout_window").show();
-        });
-
-        $("#btn_logout_none").click(function () {
-            $("#logout_window").hide();
-        });
-
-        $("#btn_register").click(function () {
-            $("#login_window").hide();
-            $("#register_window").show();
-        });
-
-        $("#btn_login").click(function () {
-            $("#login_window").show();
-        });
-
-        $("#btn_forgot_password").click(function () {
-            $("#forgot_password_window").show();
-            $("#login_window").hide();
-        });
-
-        $("#show_password_register").click(function () {
-            if ($("#password_register").attr("type") == "text")
-                $("#password_register").attr("type", "password");
-            else
-                $("#password_register").attr("type", "text");
-        });
-
-        //КОНЕЦ
-    });
-    */
 </script>
