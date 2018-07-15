@@ -15,7 +15,7 @@
 <body>
     <div class="header_down">
         <a href="district_map.php" class="logo">
-            <img src="images/logo.png" height=100%><!--логотип-->
+            <img src="images/logo.svg" height="100%">
         </a>
         <?php include "search.php"; ?><!--подключение строки поиска-->
         <?php include "menu.php"; ?><!--подключение меню-->
