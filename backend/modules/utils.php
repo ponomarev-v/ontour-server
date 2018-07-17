@@ -2,7 +2,7 @@
 
 class Utils
 {
-    //узнаем ip user
+    //узнаем ip user вроде не врет
     public static function GetIp()
     {
         $client  = @$_SERVER['HTTP_CLIENT_IP'];
@@ -14,7 +14,7 @@ class Utils
         else $ip = $remote;
         return $ip;
     }
-    //ты ему ip а он о том где юзер живет
+    //ты ему ip а он о том где юзер живет там город и тд
     public static function UserRegion($ip)
     {
         $url ="http://ipgeobase.ru:7020/geo?ip=$ip";
