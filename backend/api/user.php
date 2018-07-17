@@ -27,7 +27,7 @@ namespace API {
             if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
             elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
             else $ip = $remote;
-//            $url ="http://ipgeobase.ru:7020/geo?ip="+$ip;
+            $url ="http://ipgeobase.ru:7020/geo?ip="+'$ip';
             //$sXML = download_page($url);
             $xml = simplexml_load_file($url);
             $json = json_encode($xml);
