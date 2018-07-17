@@ -17,7 +17,7 @@ namespace API {
             return $ip;
             $xml = new XMLWriter();
             $xml = simplexml_load_file($url);
-            print_r($xml);
+            print($xml);
         }
 
         public function Info()
