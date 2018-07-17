@@ -4,6 +4,7 @@ namespace API {
     class User
     {
         public function Location(){
+            $url ="http://ipgeobase.ru:7020/geo?ip=185.119.56.185";
             //return $_SERVER['GEOIP_REGION_NAME'];
             $client  = @$_SERVER['HTTP_CLIENT_IP'];
             $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -14,6 +15,9 @@ namespace API {
             else $ip = $remote;
 
             return $ip;
+            $xml = new XMLWriter();
+            $xml = simplexml_load_file($url);
+            print_r($xml);
         }
 
         public function Info()
