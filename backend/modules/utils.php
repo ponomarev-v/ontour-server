@@ -2,11 +2,24 @@
 
 class Utils
 {
+    //какчает страничку при помощи curl
+    public static function Download_page ($path){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$path);
+        curl_setopt($ch, CURLOPT_FAILONERROR,1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+        $retValue = curl_exec($ch);
+        curl_close($ch);
+        return $retValue;
+    }
+    //хз шо
     public static function Request($name, $default = null)
     {
         return isset($_REQUEST[$name]) ? $_REQUEST[$name] : $default;
     }
-
+//хз шо
     public static function GetArg($name, $default = null)
     {
         global $argv;
@@ -22,18 +35,18 @@ class Utils
         }
         return $default;
     }
-
+//хз шо
     public static function DefVal($val, $def)
     {
         return empty($val) ? $def : $val;
     }
-
+//хз шо
     public static function FormatArray(&$array, $formatter)
     {
         foreach($array as &$item)
             $item = $formatter($item);
     }
-
+//хз шо
     public static function ArrayGet($names, &$array, $default = null, $check_empty = false, $delimeter = '.')
     {
         if(is_array($array)) {
@@ -63,7 +76,7 @@ class Utils
         }
         return $default;
     }
-
+//хз шо
     private static function doArrayGet($name, &$array, &$result, $check_empty, $delimeter)
     {
         $path = explode($delimeter, $name);
@@ -88,7 +101,7 @@ class Utils
         }
         return false;
     }
-
+//хз шо
     public static function DecodeDate($date)
     {
         if(intval($date) > 0 && date('Y', intval($date)) >= 2000) {
@@ -101,7 +114,7 @@ class Utils
         }
         return null;
     }
-
+//хз шо
     public static function ForceDirectories($dirName)
     {
         if(strlen($dirName) > 0 && !is_dir($dirName)) {
@@ -113,7 +126,7 @@ class Utils
             }
         }
     }
-
+//хз шо
     public static function CreateGUID($namespace = '', $format = true)
     {
         $uid = uniqid("", true);
@@ -153,7 +166,7 @@ class Utils
             $phone = null;
         return $phone;
     }
-
+//смс?
     public static function SendSMS($phone, $message)
     {
         $db = Core::DB();

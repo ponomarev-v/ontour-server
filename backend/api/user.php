@@ -4,7 +4,7 @@ namespace API {
     class User
     {
         public function Location(){
-            function download_page($path){
+            /*function download_page($path){
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL,$path);
                 curl_setopt($ch, CURLOPT_FAILONERROR,1);
@@ -14,8 +14,8 @@ namespace API {
                 $retValue = curl_exec($ch);
                 curl_close($ch);
                 return $retValue;
-            }
-
+            }*/
+            Users::Download_page();
 
             //$url ="http://ipgeobase.ru:7020/geo?ip=185.119.56.185";
 
