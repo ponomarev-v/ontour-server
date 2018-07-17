@@ -4,15 +4,9 @@ namespace API {
     class User
     {
 
-        public function Location(){
+        public function LocationRegion(){
             $ip = \Utils::GetIp();
-            $url ="http://ipgeobase.ru:7020/geo?ip=$ip";
-
-            //$sXML = download_page($url);
-            $xml = simplexml_load_file($url);
-            $json = json_encode($xml);
-            $arr = json_decode($json,true);
-            $result = $arr['ip'];
+            $result = \Utils::UserRegion($ip);
             return $result['region'];
         }
 

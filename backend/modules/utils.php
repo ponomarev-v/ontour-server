@@ -14,6 +14,16 @@ class Utils
         else $ip = $remote;
         return $ip;
     }
+    //ты ему ip а он о том где юзер живет
+    public static function UserRegion($ip)
+    {
+        $url ="http://ipgeobase.ru:7020/geo?ip=$ip";
+        $xml = simplexml_load_file($url);
+        $json = json_encode($xml);
+        $arr = json_decode($json,true);
+        $result = $arr['ip'];
+        return $result;
+    }
     //хз шо
     public static function Request($name, $default = null)
     {
