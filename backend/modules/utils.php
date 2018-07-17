@@ -3,7 +3,7 @@
 class Utils
 {
     //узнаем ip user
-    public static function GetIp($UserIp)
+    public static function GetIp()
     {
         $client  = @$_SERVER['HTTP_CLIENT_IP'];
         $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
