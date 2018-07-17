@@ -12,7 +12,7 @@ class Utils
         if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
         elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
         else $ip = $remote;
-        return $UserIp;
+        return $ip;
     }
     //хз шо
     public static function Request($name, $default = null)
