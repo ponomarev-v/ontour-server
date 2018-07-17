@@ -15,7 +15,8 @@ namespace API {
             $json = json_encode($xml);
             $arr = json_decode($json,true);
             $result = $arr['ip'];
-            return $result['region'];
+            //return $result['region'];
+            return $ip;
         }
 
         public function Info()
