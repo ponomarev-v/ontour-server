@@ -14,10 +14,9 @@ namespace API {
             elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
             else $ip = $remote;
 
-            return $ip;
             $xml = new XMLWriter();
             $xml = simplexml_load_file($url);
-            print($xml);
+            return $xml;
         }
 
         public function Info()
