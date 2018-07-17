@@ -7,7 +7,12 @@ namespace API {
         public function LocationRegion(){
             $ip = \Utils::GetIp();
             $result = \Utils::UserRegion($ip);
-            return $result['region'];
+            if($result != null){
+                throw new \Exception('Ошибка при получении региона пользователя');
+            }
+            else {
+                return $result['region'];
+            }
         }
 
         public function Info()
