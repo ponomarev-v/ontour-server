@@ -13,10 +13,11 @@ namespace API {
             if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
             elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
             else $ip = $remote;
-
-            $xml = new XMLWriter();
             $xml = simplexml_load_file($url);
-            return $xml;
+            foreach ($xml->info as $info) {
+                return $info->name;
+            }
+           // return $xml;
         }
 
         public function Info()
