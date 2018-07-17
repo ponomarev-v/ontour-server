@@ -13,7 +13,7 @@ namespace API {
             elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
             else $ip = $remote;
 
-            echo $ip;
+            return $ip;
         }
 
         public function Info()
