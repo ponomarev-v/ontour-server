@@ -3,7 +3,7 @@
 namespace API {
     class User
     {
-
+        //возращает регион юзера при помощи запроса на http://ipgeobase.ru. хорошо говорит места по России но на европу кажись врет.
         public function LocationRegion(){
             $ip = \Utils::GetIp();
             $result = \Utils::UserRegion($ip);
