@@ -28,11 +28,10 @@ namespace API {
             elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
             else $ip = $remote;
             $sXML = download_page($url);
-            $xml = simplexml_load_file($url);
+            $xml = simplexml_load_file(&$sXML);
             $json = json_encode($xml);
             $arr = json_decode($json,true);
-            $result = $json['region'];
-            return $result;
+            return $arr['region'];
         }
 
         public function Info()
