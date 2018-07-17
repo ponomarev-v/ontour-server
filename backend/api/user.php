@@ -32,7 +32,7 @@ namespace API {
             $xml = simplexml_load_file($url);
             $json = json_encode($xml);
             $arr = json_decode($json,true);
-            $result = $arr['ip']
+            $result = $arr['ip'];
             return $result;
         }
 
