@@ -4,7 +4,21 @@ namespace API {
     class User
     {
         public function Location(){
+            function download_page($path){
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL,$path);
+                curl_setopt($ch, CURLOPT_FAILONERROR,1);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+                $retValue = curl_exec($ch);
+                curl_close($ch);
+                return $retValue;
+            }
+
+
             $url ="http://ipgeobase.ru:7020/geo?ip=185.119.56.185";
+
             //return $_SERVER['GEOIP_REGION_NAME'];
             $client  = @$_SERVER['HTTP_CLIENT_IP'];
             $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -13,11 +27,11 @@ namespace API {
             if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
             elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
             else $ip = $remote;
+            $sXML = download_page($url);
             $xml = simplexml_load_file($url);
-            foreach ($xml->info as $info) {
-                return $info->name;
-            }
-           // return $xml;
+            $json = json_encode($xml);
+            $arr = json_decode($json,true);
+            return $arr;
         }
 
         public function Info()
