@@ -3,10 +3,8 @@
 namespace API {
     class User
     {
-        public function Location(){
-            //$url ="http://ipgeobase.ru:7020/geo?ip=185.119.56.185";
 
-            //return $_SERVER['GEOIP_REGION_NAME'];sd
+        public function Location(){
             $ip = \Utils::GetIp();
             $url ="http://ipgeobase.ru:7020/geo?ip=$ip";
 
@@ -15,8 +13,7 @@ namespace API {
             $json = json_encode($xml);
             $arr = json_decode($json,true);
             $result = $arr['ip'];
-            //return $result['region'];
-            return $ip;
+            return $result['region'];
         }
 
         public function Info()
