@@ -6,7 +6,7 @@ namespace API {
         public function Location(){
             //$url ="http://ipgeobase.ru:7020/geo?ip=185.119.56.185";
 
-            //return $_SERVER['GEOIP_REGION_NAME'];
+            //return $_SERVER['GEOIP_REGION_NAME'];sd
             $ip = \Utils::GetIp($UserIp);
             $url ="http://ipgeobase.ru:7020/geo?ip=$ip";
 
