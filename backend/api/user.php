@@ -5,7 +5,7 @@ namespace API {
     {
         public function Location(){
             //return $_SERVER['GEOIP_REGION_NAME'];
-            return $_SERVER['GEOIP_LATITUDE'];
+            return $_SERVER['GEOIP_REGION'];
         }
 
         public function Info()
