@@ -7,7 +7,7 @@ namespace API {
             //$url ="http://ipgeobase.ru:7020/geo?ip=185.119.56.185";
 
             //return $_SERVER['GEOIP_REGION_NAME'];sd
-            $ip = \Utils::GetIp($UserIp);
+            $ip = \Utils::GetIp();
             $url ="http://ipgeobase.ru:7020/geo?ip=$ip";
 
             //$sXML = download_page($url);
