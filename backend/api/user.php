@@ -32,7 +32,7 @@ namespace API {
             $xml = simplexml_load_file($url);
             $json = json_encode($xml);
             $arr = json_decode($json,true);
-            return $arr[5];
+            return $arr;
         }
 
         public function Info()
