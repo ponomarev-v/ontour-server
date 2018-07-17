@@ -31,7 +31,7 @@ namespace API {
             $xml = simplexml_load_file($sXML);
             $json = json_encode($xml);
             $arr = json_decode($json,true);
-            return $arr[region];
+            return $arr;
         }
 
         public function Info()
