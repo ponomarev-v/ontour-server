@@ -4,7 +4,7 @@ class Utils
 {
     public static function generateRandomString()
     {
-        $length = 16
+        $length = 16;
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
