@@ -12,11 +12,15 @@ class Users
     public static function CheckUserData($data)
     {
         //проверяем размер пароля
-        if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
+        if(!isset($data['password']))
+            throw new \Exception("Ведите пароль");
+        if(strlen($data['password'])< 8|| strlen($data['password']) > 255)
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
+       // if(!isset($data['password']) || strlen($data['password']) < 8 || strlen($data['password']) > 255)
+       //    throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
         //нормальная проверка email
-        if(filter_var($data['email'],FILTER_VALIDATE_EMAIL)== false)
+        if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
             throw new \Exception("emal отсутствует или указан неверно");
 
         //проверка на имя
