@@ -7,7 +7,7 @@ class Utils
 
     public static function FindBd($obj,$find,$NeedTable)
     {
-        if (empty($NeedTable))
+        if ($NeedTable == null)
         {
             $NowTable = "user";
         }
