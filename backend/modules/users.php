@@ -84,16 +84,14 @@ class Users
     }
 
     //потверджение email*
-    public static function CreateEmailVerification($userid)
+    public static function CreateEmailVerification($user)
     {
         $db = Core::DB();
-        $res = $db->where('id',$userid)->get('user');
-        $nemeses = Utils::generateRandomString();
-        Core::DB()->where('id', $userid)->update('user', array(
-            'activate_code' => $nemeses,
-        ));
+        $res = $db->where('id',$user)->get('user');
+        $nemeses['activate_code'] = Utils::generateRandomString();
+        Core::DB()->where('id', $user)->update('user', $nemeses);
         $need = array(
-          'id' => $userid,
+          'id' => $user,
           'pass' => $res['password'],
           'key' =>  $nemeses,
         );
