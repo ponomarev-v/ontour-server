@@ -2,6 +2,18 @@
 
 class Utils
 {
+    //утилита БД которая говорит есть такое или нет
+    public static function FindBd($find,$obj)
+    {
+        $db = Core::DB();
+        $result = $db->where($find, $obj])->get('user');
+        if(!empty($result )) {
+            return true;
+        }else{
+            return false;
+        }
+        throw new Exception('Непредвиденная ошибка при проверке данных данных.'.(Config::DEBUG ? ' '.$msg : ''));
+    }
     //получаем полную дату как люди в массив
     public static function GetNormalTime($time)
     {

@@ -6,7 +6,7 @@ namespace API {
         //функция для дебагинга
         public  function TestFunc()
         {
-            return \Utils::GetNormalTime(time());
+            return \Utils::FindBd('5');
         }
         public function GeoIpLocation()
         {
