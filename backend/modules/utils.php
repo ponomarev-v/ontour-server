@@ -5,10 +5,9 @@ class Utils
     //получаем полную дату как люди в массив
     public static function GetNormalTime($time)
     {
-        $result['day'] = date("d.m.Y", $time);
         $result['time'] = date("H:i", $time);
+        $result['day'] = date("d.m.Y", $time);
         return $result;
-
     }
     //узнаем ip user вроде не врет
     public static function GetIp()
