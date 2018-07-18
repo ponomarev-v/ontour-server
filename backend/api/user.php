@@ -3,6 +3,7 @@
 namespace API {
     class User
     {
+        //функция для дебагинга
         public  function TestFunc()
         {
             return \Utils::GetNormalTime(time());

@@ -2,7 +2,7 @@
 
 class Utils
 {
-    //получаем полную дату как люди
+    //получаем полную дату как люди в массив
     public static function GetNormalTime($time)
     {
         $result['day'] = date("d.m.Y", $time);
