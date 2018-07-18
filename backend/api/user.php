@@ -6,7 +6,7 @@ namespace API {
         //функция для дебагинга
         public  function TestFunc()
         {
-            return \Utils::FindBd('5','id');
+            return \Utils::FindBd('57','id');
         }
         public function GeoIpLocation()
         {
