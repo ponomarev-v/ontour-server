@@ -1,4 +1,6 @@
 <?php
+//время по мск
+date_default_timezone_set("Europe/Moscow");
 require_once(__DIR__ . '/autoload.php');
 
 if(isset($_SERVER['HTTP_ORIGIN'])) {
