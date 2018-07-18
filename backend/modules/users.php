@@ -8,6 +8,7 @@ class Users
     const STATUS_NEW = 0;
     const STATUS_APPROVED = 1;
     const STATUS_DISABLED = 2;
+
 //проверка веденных данных
     public static function CheckUserData($data)
     {
@@ -80,6 +81,26 @@ class Users
             return $new_id;
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
+    }
+    //потверджение email
+    public static function CreateEmailVerification($userid)
+    {
+        $db = Core::DB();
+        $res = $db->where('id',$userid)->get('user');
+        $newkeyuser = Utils::generateRandomString();
+        Core::DB()->where('id', $userid)->update('user', array(
+            'activate_code' => $newkeyuser,
+        ));
+        $need = array(
+          'id' => $userid,
+          'pass' => $res['password'],
+          'key' =>  $newkeyuser,
+        );
+        $link = 'http://api.turneon.ru/?method=user.EmailVerification&id=' . $need['id'] . '&pass=' . $need['pass'] . '&key=' . $need['key'];
+        if(filter_var($res['email'],FILTER_VALIDATE_EMAIL)== false)
+            throw new \Exception("email error");
+        mail($res['email'],"Код активации",$link);
+
     }
 //смена пароля
 //TODO починить
