@@ -3,6 +3,10 @@
 namespace API {
     class User
     {
+        public  function TestFunc()
+        {
+            return \Utils::UserRegion(time());
+        }
         public function GeoIpLocation()
         {
             return $_SERVER['GEOIP_REGION_NAME'];
