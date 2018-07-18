@@ -62,3 +62,27 @@ ul.submenu > li > a:hover {
 ul.menu > li:hover > ul.submenu {
     display: block;
 }
+
+@media handheld {
+    ul.menu > li > a {
+        display: block;
+        padding: 4px;
+        height: 20px;
+        color: green;
+        text-decoration: none;
+    }
+    ul.submenu {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 150;
+    }
+    ul.submenu > li > a {
+        display: block;
+        padding: 4px;
+        height: 20px;
+        color: green;
+        text-decoration: none;
+    }
+}
