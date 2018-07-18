@@ -3,7 +3,7 @@
 namespace API {
     class User
     {
-        //функция для дебагинга
+        //функция для дебагингааааа
         public  function TestFunc()
         {
             $find = array(
