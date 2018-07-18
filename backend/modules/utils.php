@@ -4,7 +4,7 @@ class Utils
 {
     //утилита БД которая говорит есть такое или нет
     //кароче tabel это таблица obj это столбец find то что мы ищем
-
+    //если нет указаной table ставит user
     public static function FindBd($obj,$find,$NeedTable)
     {
         if ($NeedTable == null)
