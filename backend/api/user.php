@@ -7,9 +7,9 @@ namespace API {
         public  function TestFunc()
         {
             $new_data = array(
-                'obj' => \Utils::Request('obj'),
-                'find'=> \Utils::Request('find'),
-                'table'=>\Utils::Request('table'),
+                'obj' => (string) \Utils::Request('obj'),
+                'find'=> (string) \Utils::Request('find'),
+                'table'=>(string) \Utils::Request('table'),
             );
            /* $find = array(
                 "obj" => "id",
