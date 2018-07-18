@@ -17,7 +17,7 @@ namespace API {
             ); */
             $obj = \Utils::Request('obj');
             $find = \Utils::Request('find');
-            $table =\Utils::Request('table')
+            $table =\Utils::Request('table');
             $res = \Utils::FindBd($obj,$find,$table);
             return $res;
         }
