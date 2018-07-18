@@ -3,10 +3,10 @@
 class Utils
 {
     //утилита БД которая говорит есть такое или нет
-    public static function FindBd($find)
+    public static function FindBd($obj,$find)
     {
         $db = Core::DB();
-        $result = $db->where($find['obj'], $find['find'])->get('user');
+        $result = $db->where($obj, $find)->get('user');
         if(!empty($result)) {
             return true;
         }else{

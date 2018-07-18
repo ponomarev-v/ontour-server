@@ -6,11 +6,11 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            $find = array(
+           /* $find = array(
                 "obj" => "id",
                 "find" => "42",
-            );
-            $res = \Utils::FindBd($find);
+            ); */
+            $res = \Utils::FindBd('id','57');
             return $res;
         }
         public function GeoIpLocation()
