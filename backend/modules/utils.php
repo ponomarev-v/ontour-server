@@ -9,14 +9,14 @@ class Utils
     {
         if (empty($NeedTable))
         {
-            $NowTabel = "user";
+            $NowTable = "user";
         }
         else
         {
-            $NowTabel = $tabel;
+            $NowTable = $NeedTable;
         }
         $db = Core::DB();
-        $result = $db->where($obj, $find)->get($NowTabel);
+        $result = $db->where($obj, $find)->get($NowTable);
         if(!empty($result)) {
             return true;
         }else{
