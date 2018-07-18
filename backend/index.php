@@ -1,5 +1,5 @@
 <?php
-//время по мск вкл
+//время по мск вкл кажись на все последущие влияет
 date_default_timezone_set("Europe/Moscow");
 require_once(__DIR__ . '/autoload.php');
 
