@@ -16,9 +16,12 @@ class Users
             throw new \Exception("Пароль должен быть от 8 до 255 символов");
 
         // TODO нормальная проверка email-a
-        //костыльная проверка по email
-        if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
+        //нормальная проверка email
+        if(filter_var($data['email'],FILTER_VALIDATE_EMAIL)== false)
             throw new \Exception("emal отсутствует или указан неверно");
+        //костыльная проверка по email
+        //if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
+        //    throw new \Exception("emal отсутствует или указан неверно");
         //проверка на имя
         if(!isset($data['name']) || empty($data['name']))
             throw new \Exception("Не указано имя");
