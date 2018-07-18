@@ -6,7 +6,7 @@ include "footer.php";/*подключение ног сайта*/
 <script>
      $.ajax({
             type: "POST",
-            url: "http://api.turneon.ru/?method=user.location",
+            url: "http://api.turneon.ru/?method=user.GeoIpLocation",
             xhrFields: {withCredentials: true},
             success: function (data) {
                 data = eval("(" + data + ")");
