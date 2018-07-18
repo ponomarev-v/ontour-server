@@ -19,7 +19,7 @@ class Users
         //нормальная проверка email
         if(filter_var($data['email'],FILTER_VALIDATE_EMAIL)== false)
             throw new \Exception("emal отсутствует или указан неверно");
-        //костыльная проверка по email
+        //костыльная проверка по email&
         //if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
         //    throw new \Exception("emal отсутствует или указан неверно");
         //проверка на имя
