@@ -6,20 +6,8 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            /*$new_data = array(
-                'obj' => (string) \Utils::Request('obj'
-                'find'=> (int) \Utils::Request('find'),
-                'table'=>(string) \Utils::Request('table'),
-            );
-            $find = array(
-                "obj" => "id",
-                "find" => "42",
-            ); */
-            $obj = \Utils::Request('obj');
-            $find = \Utils::Request('find');
-            $table =\Utils::Request('table');
-            $res = \Utils::FindBd($obj,$find,$table);
-            return $res;
+            mail("markov2002@bk.ru", "My Subject", "Line 1\nLine 2\nLine 3");
+            return "и че?";
         }
         public function GeoIpLocation()
         {
