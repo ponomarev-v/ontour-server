@@ -89,7 +89,7 @@ class Users
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $nemeses['activate_code'] = Utils::generateRandomString();
-        $db->where('id', $user)->insert('user', $nemeses);
+        $db->insert('user', $nemeses);
         $need = array(
           'id' => $user,
           'pass' => $res['password'],
