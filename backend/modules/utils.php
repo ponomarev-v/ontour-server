@@ -2,6 +2,14 @@
 
 class Utils
 {
+    //получаем полную дату как люди
+    public static function GetNormalTime($time)
+    {
+        $result['day'] = date("d.m.Y", $time);
+        $result['time'] = date("H:i", $time);
+        return $result;
+
+    }
     //узнаем ip user вроде не врет
     public static function GetIp()
     {
