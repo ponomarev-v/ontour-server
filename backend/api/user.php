@@ -15,7 +15,8 @@ namespace API {
                 "obj" => "id",
                 "find" => "42",
             ); */
-            $res = \Utils::FindBd(\Utils::Request('obj',\Utils::Request('find'),(string) \Utils::Request('table'));
+            $obj =
+            $res = \Utils::FindBd(\Utils::Request('obj'),\Utils::Reqsuest('find'),(string) \Utils::Request('table'));
             return $res;
         }
         public function GeoIpLocation()
