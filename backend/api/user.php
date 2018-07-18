@@ -5,7 +5,7 @@ namespace API {
     {
         public  function TestFunc()
         {
-            return \Utils::UserRegion(time());
+            return \Utils::GetNormalTime(time());
         }
         public function GeoIpLocation()
         {
