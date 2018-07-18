@@ -19,7 +19,7 @@ class Users
         // TODO нормальная проверка email-a
         //нормальная проверка email
         if(filter_var($data['email'],FILTER_VALIDATE_EMAIL)== false)
-            throw new \Exception("emal отсутствует или указан неверно");
+            throw new \Exception("email отсутствует или указан неверно");
         //костыльная проверка по email&
         //if(!isset($data['email']) || empty($data['email']) || stripos($data['email'], '@') == false)
         //    throw new \Exception("emal отсутствует или указан неверно");
@@ -88,17 +88,17 @@ class Users
     {
         $db = Core::DB();
         $res = $db->where('id',$userid)->get('user');
-        $newkeyuser = Utils::generateRandomString();
+        $nemeses = Utils::generateRandomString();
         Core::DB()->where('id', $userid)->update('user', array(
-            'activate_code' => $newkeyuser,
+            'activate_code' => $nemeses,
         ));
         $need = array(
           'id' => $userid,
           'pass' => $res['password'],
-          'key' =>  $newkeyuser,
+          'key' =>  $nemeses,
         );
         $link = 'http://api.turneon.ru/?method=user.EmailVerification&id=' . $need['id'] . '&pass=' . $need['pass'] . '&key=' . $need['key'];
-        if(filter_var($res['email'],FILTER_VALIDATE_EMAIL)== false)
+        if(filter_var($res['email'],FILTER_VALIDATE_EMAIL) == false)
             throw new \Exception("email error");
         mail($res['email'],"Код активации",$link);
         return 'ok';
