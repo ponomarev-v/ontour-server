@@ -8,7 +8,7 @@ namespace API {
         {
             $new_data = array(
                 'obj' => (string) \Utils::Request('obj'),
-                'find'=> (string) \Utils::Request('find'),
+                'find'=> (int) \Utils::Request('find'),
                 'table'=>(string) \Utils::Request('table'),
             );
            /* $find = array(
