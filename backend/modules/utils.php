@@ -3,10 +3,20 @@
 class Utils
 {
     //утилита БД которая говорит есть такое или нет
-    public static function FindBd($obj,$find)
+    //кароче tabel это таблица obj это столбец find то что мы ищем
+
+    public static function FindBd($obj,$find,$NeedTable)
     {
+        if (empty($NeedTable))
+        {
+            $NowTabel = "user";
+        }
+        else
+        {
+            $NowTabel = $tabel;
+        }
         $db = Core::DB();
-        $result = $db->where($obj, $find)->get('user');
+        $result = $db->where($obj, $find)->get($NowTabel);
         if(!empty($result)) {
             return true;
         }else{
