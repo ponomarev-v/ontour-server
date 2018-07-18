@@ -6,8 +6,8 @@ class Utils
     public static function FindBd($find,$obj)
     {
         $db = Core::DB();
-        $result = $db->where($find, $obj)->get('user');
-        if(!empty($result )) {
+        $result = $db->where('$find', '$obj')->get('user');
+        if(!empty($result)) {
             return true;
         }else{
             return false;
