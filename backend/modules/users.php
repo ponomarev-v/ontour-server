@@ -82,7 +82,7 @@ class Users
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
-    /*
+
     //потверджение email*
     public static function CreateEmailVerification($userid)
     {
@@ -102,7 +102,7 @@ class Users
             throw new \Exception("email error");
         mail($res['email'],"Код активации",$link);
         return 'ok';
-    } */
+    }
 //смена пароля
 //TODO починить
     public static function ChangePass($id, $pass_old, $pass_new)

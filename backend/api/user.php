@@ -6,7 +6,7 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            //return \Utils::CreateEmailVerification(80);
+            return \Users::CreateEmailVerification(80);
         }
         public function GeoIpLocation()
         {
