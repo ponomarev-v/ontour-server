@@ -8,7 +8,7 @@ namespace API {
         {
            // $str = "markov2002@bk.ru";
             //mail($str,"Код активации",'тетстстеттпт');
-            return \Users::CreateCodeVerification(80);
+            return \Users::CreateCodeVerification('80');
         }
         public function GeoIpLocation()
         {
