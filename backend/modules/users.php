@@ -82,6 +82,7 @@ class Users
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
+    // код потверждения юзера при вызове функции генерит новый код и записавает в бд
     public static function CreateCodeVerification($user)
     {
         $db = Core::DB();
@@ -91,7 +92,7 @@ class Users
             'activate_code' => Utils::generateRandomString(),
         ));
         $res = $db->where('id',$user)->get('user');
-        return $res;
+        return 'done';
 
     }
 
