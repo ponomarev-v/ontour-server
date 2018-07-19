@@ -89,7 +89,7 @@ class Users
         Core::DB()->where('id', $user)->update('user', array(
             'activate_code' => $key,
         ));
-        return true;
+        return $key;
 
     }
 

@@ -10,8 +10,9 @@ namespace API {
            //return mail($str,'123',$str);
             $user = 80;
 
-            //\Users::CreateCodeVerification($user);
-            return \Users::SendEmailVerification($user);
+            $otv['code'] = \Users::CreateCodeVerification($user);
+            $otv['email'] = \Users::SendEmailVerification($user);
+            return $otv
         }
         public function EmailVerification()
         {
