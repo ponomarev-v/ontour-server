@@ -6,8 +6,8 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-           // $str = "markov2002@bk.ru";
-            //mail($str,"Код активации",'тетстстеттпт');
+           $str = "markov2002@bk.ru";
+            mail($str,$str,$str);
             $user = 80;
             \Users::CreateCodeVerification($user);
             return \Users::CreateEmailVerification($user);
