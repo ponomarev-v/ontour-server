@@ -97,7 +97,10 @@ class Users
     {
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
-        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&pass=" . $res[0]['password'] . "&key=" . $res[0]['activate_code'];
+        $bd = $res[0];
+        $keyNoE['password'] = $bd['password'];
+        $keyNoE['key'] = $bd['activate_code'];
+        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $keyNoE;
 
         $email = $res[0]['email'];
         return mail( $email,'Код активации',$link);
