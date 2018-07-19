@@ -88,7 +88,7 @@ class Users
         Core::DB()->where('id', $user)->update('user', array(
             'activate_code' => Utils::generateRandomString(),
         ));
-        return Core::DB()->where('id',$user)->get('user');
+        return true;
 
     }
 
@@ -97,14 +97,7 @@ class Users
     {
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
-        $nemeses['activate_code'] = Utils::generateRandomString();
-        $db->insert('user', $nemeses);
-        $need = array(
-          'id' => $user,
-          'pass' => $res['password'],
-          'key' =>  $nemeses,
-        );
-        $link = 'http://api.turneon.ru/?method=user.EmailVerification&id=' . $need['id'] . '&pass=' . $need['pass'] . '&key=' . $need['key'];
+        $link = 'http://api.turneon.ru/?method=user.EmailVerification&id=' . $user . '&pass=' . $res['password'] . '&key=' . $res['\'activate_code'];
         //if(filter_var($res['email'],FILTER_VALIDATE_EMAIL) == false)
         //{
           //  throw new \Exception("email error");
