@@ -107,7 +107,7 @@ class Users
         $email = $bd['email'];
         return mail( $email,'Код активации',$link);
     }
-    //функция для проверки почты
+    //функция для проверки почты..
     public static function EmailVerification($id , $KeyGet)
     {
         $db = Core::DB();
