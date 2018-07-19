@@ -6,11 +6,11 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-           $str = "markov2002@bk.ru";
-           return mail($str,'123',$str);
-            //$user = 80;
+          // $str = "markov2002@bk.ru";
+           //return mail($str,'123',$str);
+            $user = 80;
             //\Users::CreateCodeVerification($user);
-            //return \Users::CreateEmailVerification($user);
+            return \Users::CreateEmailVerification($user);
         }
         public function GeoIpLocation()
         {
