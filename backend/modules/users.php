@@ -106,7 +106,7 @@ class Users
 
         $email = $res['email'];
         //return mail( $email,'Код активации','13456y');
-        return $res['email'];
+        return $res;
     }
 //смена пароля
 //TODO починить
