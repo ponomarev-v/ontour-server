@@ -77,8 +77,11 @@ class Users
 
         $db->insert('user', $user_data);
         $new_id = $db->getInsertId();
-        if($new_id > 0)
+        if($new_id > 0) {
+            //генерит код при регестрации
+            Users::CreateCodeVerification($new_id);
             return $new_id;
+        }
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
@@ -93,7 +96,7 @@ class Users
 
     }
 
-    //отправка email с паролем в md5
+    //отправка email с паролем и ключом
     public static function SendEmailVerification($user)
     {
         $db = Core::DB();
@@ -118,10 +121,12 @@ class Users
         $Locality = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
         if($KeyGet == $Locality)
         {
+            //тута допишу потом
             return true;
         }
         else
         {
+            //тута тоже потом
             return false;
         }
     }
