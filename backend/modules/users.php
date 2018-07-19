@@ -101,7 +101,8 @@ class Users
         $bd = $res[0];
         $keyNoE['password'] = $bd['password'];
         $keyNoE['key'] = $bd['activate_code'];
-        $key = encrypt("$keyNoE",$bd['password']);
+        //$key = encrypt("$keyNoE",$bd['password']);
+        return hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
         $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
         $email = $bd['email'];
         return mail( $email,'Код активации',$link);
