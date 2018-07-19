@@ -12,7 +12,7 @@ namespace API {
 
             $otv['code'] = \Users::CreateCodeVerification($user);
             $otv['email'] = \Users::SendEmailVerification($user);
-            return $otv
+            return $otv;
         }
         public function EmailVerification()
         {
