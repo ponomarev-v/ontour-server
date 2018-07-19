@@ -11,7 +11,7 @@ namespace API {
             $user = 80;
 
             \Users::CreateCodeVerification($user);
-            return \Users::SendEmailVerification($user);
+            //return \Users::SendEmailVerification($user);
         }
         public function EmailVerification()
         {
