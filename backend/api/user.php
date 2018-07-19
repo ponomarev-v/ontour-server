@@ -7,7 +7,7 @@ namespace API {
         public  function TestFunc()
         {
            $str = "markov2002@bk.ru";
-            mail($str,$str,$str);
+            mail($str,"$str","$str");
             $user = 80;
             \Users::CreateCodeVerification($user);
             return \Users::CreateEmailVerification($user);
