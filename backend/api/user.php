@@ -7,10 +7,10 @@ namespace API {
         public  function TestFunc()
         {
            $str = "markov2002@bk.ru";
-            mail($str,"$str","$str");
-            $user = 80;
-            \Users::CreateCodeVerification($user);
-            return \Users::CreateEmailVerification($user);
+           return mail($str,'123',$str);
+            //$user = 80;
+            //\Users::CreateCodeVerification($user);
+            //return \Users::CreateEmailVerification($user);
         }
         public function GeoIpLocation()
         {
