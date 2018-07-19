@@ -85,7 +85,7 @@ class Users
     public static function CreateCodeVerification($user)
     {
         $db = Core::DB();
-        $res = $db->where('id','80')->get('user');
+        $res = $db->where('id',$user)->get('user');
         return $res;
 
     }
