@@ -102,7 +102,7 @@ class Users
         //{
           //  throw new \Exception("email error");
         //}
-        mail($res['email'] , 'Код активации', "$link");
+        mail($res['email'] , 'Код активации', "xccxc");
         return $res;
     }
 //смена пароля
