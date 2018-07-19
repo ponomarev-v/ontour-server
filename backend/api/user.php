@@ -6,7 +6,7 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            //mail('',"Код активации",'тетстстеттпт');
+            //mail('',"Код активации",'тетстстеттпт');df
             return \Users::CreateEmailVerification(80);
         }
         public function GeoIpLocation()
