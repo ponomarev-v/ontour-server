@@ -88,7 +88,7 @@ class Users
         $res = $db->where('id',$user)->get('user');
         $res['activate_code'] = Utils::generateRandomString();
         $db->where('id', $user)->update('user', $res);
-        $res = $db->where('id',$user)->get('user');
+        $res = $db->where('id',(int)$user)->get('user');
         return $res;
 
     }
