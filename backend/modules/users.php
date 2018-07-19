@@ -101,7 +101,7 @@ class Users
           //  throw new \Exception("email error");
         //}
         mail($res['email'],"Код активации",$link);
-        return 'ok';
+        return $res;
     }
 //смена пароля
 //TODO починить
