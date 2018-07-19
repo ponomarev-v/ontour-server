@@ -85,8 +85,9 @@ class Users
     // код потверждения юзера при вызове функции генерит новый код и записавает в бд
     public static function CreateCodeVerification($user)
     {
+        $key = \Utils::generateRandomString();
         Core::DB()->where('id', $user)->update('user', array(
-            'activate_code' => Utils::generateRandomString(),
+            'activate_code' => $key,
         ));
         return true;
 
