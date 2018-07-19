@@ -97,7 +97,7 @@ class Users
     {
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
-        //$link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&pass=" . $res['password'] . "&key=" . $res['\'activate_code'];
+        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&pass=" . $res['password'] . "&key=" . $res['\'activate_code'];
         //if(filter_var($res['email'],FILTER_VALIDATE_EMAIL) == false)
         //{
           //  throw new \Exception("email error");
@@ -105,7 +105,7 @@ class Users
         //че за хрень
 
         $email = $res[0]['email'];
-        return mail( $email,'Код активации','13456y');
+        return mail( $email,'Код активации',$link);
     }
 //смена пароля
 //TODO починить
