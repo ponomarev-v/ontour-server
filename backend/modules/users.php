@@ -82,6 +82,15 @@ class Users
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
+    public static function CreateCodeVerification($user)
+    {
+        $db = Core::DB();
+        $res = $db->where('id',$user)->get('user');
+        $res['activate_code'] = Utils::generateRandomString();
+        $db->where("id", $user)->update('user',$res);
+        return $res;
+
+    }
 
     //потверджение email*
     public static function CreateEmailVerification($user)
