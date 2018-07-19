@@ -97,7 +97,7 @@ class Users
     {
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
-        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&pass=" . $res['password'] . "&key=" . $res['\'activate_code'];
+        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&pass=" . $res[0]['password'] . "&key=" . $res[0]['activate_code'];
         //if(filter_var($res['email'],FILTER_VALIDATE_EMAIL) == false)
         //{
           //  throw new \Exception("email error");
