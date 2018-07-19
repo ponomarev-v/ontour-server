@@ -9,7 +9,8 @@ namespace API {
           // $str = "markov2002@bk.ru";
            //return mail($str,'123',$str);
             $user = 80;
-            //\Users::CreateCodeVerification($user);
+
+            Users::CreateCodeVerification($user);
             return \Users::SendEmailVerification($user);
         }
         public function EmailVerification()
