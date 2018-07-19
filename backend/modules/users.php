@@ -115,7 +115,7 @@ class Users
         $bd = $res[0];
         $keyNoE['password'] = $bd['password'];
         $keyNoE['key'] = $bd['activate_code'];
-        $Locality = sha1("$keyNoE");
+        $Locality = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
         if($KeyGet == $Locality)
         {
             return true;
