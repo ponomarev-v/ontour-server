@@ -96,10 +96,10 @@ class Users
           'key' =>  $nemeses,
         );
         $link = 'http://api.turneon.ru/?method=user.EmailVerification&id=' . $need['id'] . '&pass=' . $need['pass'] . '&key=' . $need['key'];
-        if(filter_var($res['email'],FILTER_VALIDATE_EMAIL) == false)
-        {
-            throw new \Exception("email error");
-        }
+        //if(filter_var($res['email'],FILTER_VALIDATE_EMAIL) == false)
+        //{
+          //  throw new \Exception("email error");
+        //}
         mail($res['email'],"Код активации",$link);
         return 'ok';
     }
