@@ -102,6 +102,8 @@ class Users
         //{
           //  throw new \Exception("email error");
         //}
+        //че за хрень
+
         $email = $res['email'];
         return mail($email,'Код активации','13456y');
     }
