@@ -100,7 +100,8 @@ class Users
         $bd = $res[0];
         $keyNoE['password'] = $bd['password'];
         $keyNoE['key'] = $bd['activate_code'];
-        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . md5($keyNoE);
+        $key = md5($keyNoE);
+        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
 
         $email = $res[0]['email'];
         return mail( $email,'Код активации',$link);
