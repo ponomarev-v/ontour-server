@@ -15,21 +15,8 @@ namespace API {
         public function EmailVerification()
         {
             $id = \Utils::Request('id');
-            $Getter = \Utils::Request('key');
-            $db = Core::DB();
-            $res = $db->where('id',$id)->get('user');
-            $bd = $res[0];
-            $keyNoE['password'] = $bd['password'];
-            $keyNoE['key'] = $bd['activate_code'];
-            $Locality = sha1("$keyNoE");
-            if($Getter == $Locality)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            $KeyGet = \Utils::Request('key');
+            return \Users::EmailVerification($id,$KeyGet);
 
         }
 

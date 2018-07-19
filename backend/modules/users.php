@@ -106,6 +106,25 @@ class Users
         return mail( $email,'Код активации',$link);
     }
     //функция для проверки почты
+    public static function EmailVerification($id,$KeyGet)
+    {
+        $db = Core::DB();
+        $id = \Utils::Request('id');
+        $KeyGet = \Utils::Request('key');
+        $res = $db->where('id',$id)->get('user');
+        $bd = $res[0];
+        $keyNoE['password'] = $bd['password'];
+        $keyNoE['key'] = $bd['activate_code'];
+        $Locality = sha1("$keyNoE");
+        if($KeyGet == $Locality)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 //смена пароля
 //TODO починить
     public static function ChangePass($id, $pass_old, $pass_new)
