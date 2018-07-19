@@ -103,7 +103,7 @@ class Users
           //  throw new \Exception("email error");
         //}
         $email = $res['email'];
-        return mail($email , 'Код активации', '13456y');
+        return mail($email,'Код активации','13456y');
     }
 //смена пароля
 //TODO починить
