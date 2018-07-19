@@ -98,8 +98,9 @@ class Users
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $bd = $res[0];
-        return $keyNoE['password'] = $bd['password'];
+        $keyNoE['password'] = $bd['password'];
         $keyNoE['key'] = $bd['activate_code'];
+        return $keyNoE;
        $key = sha1($keyNoE);
         $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
 
