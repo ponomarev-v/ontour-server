@@ -107,11 +107,9 @@ class Users
         return mail( $email,'Код активации',$link);
     }
     //функция для проверки почты
-    public static function EmailVerification($id,$KeyGet)
+    public static function EmailVerification($id , $KeyGet)
     {
         $db = Core::DB();
-        $id = \Utils::Request('id');
-        $KeyGet = \Utils::Request('key');
         $res = $db->where('id',$id)->get('user');
         $bd = $res[0];
         $keyNoE['password'] = $bd['password'];
