@@ -92,7 +92,7 @@ class Users
 
     }
 
-    //потверджение email*s
+    //отправка email с паролем в md5
     public static function SendEmailVerification($user)
     {
         $db = Core::DB();
@@ -102,10 +102,10 @@ class Users
         $keyNoE['key'] = $bd['activate_code'];
         $key = sha1("$keyNoE");
         $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
-
-        $email = $res[0]['email'];
+        $email = $bd['email'];
         return mail( $email,'Код активации',$link);
     }
+    //функция для проверки почты
 //смена пароля
 //TODO починить
     public static function ChangePass($id, $pass_old, $pass_new)

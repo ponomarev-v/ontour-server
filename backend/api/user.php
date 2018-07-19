@@ -12,6 +12,27 @@ namespace API {
             //\Users::CreateCodeVerification($user);
             return \Users::SendEmailVerification($user);
         }
+        public function EmailVerification()
+        {
+            $id = \Utils::Request('id');
+            $Getter = \Utils::Request('key');
+            $db = Core::DB();
+            $res = $db->where('id',$id)->get('user');
+            $bd = $res[0];
+            $keyNoE['password'] = $bd['password'];
+            $keyNoE['key'] = $bd['activate_code'];
+            $Locality = sha1("$keyNoE");
+            if($Getter == $Locality)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public function GeoIpLocation()
         {
             return $_SERVER['GEOIP_REGION_NAME'];
