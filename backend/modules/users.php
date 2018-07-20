@@ -89,10 +89,14 @@ class Users
     public static function CreateCodeVerification($user)
     {
         $key = \Utils::generateRandomString();
+        $db = Core::DB();
         Core::DB()->where('id', $user)->update('user', array(
             'activate_code' => $key,
+            'email-status' => 0,
         ));
-        return $key;
+        if($msg = $db->getLastError())
+            throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
+        return true;
 
     }
 
@@ -200,10 +204,17 @@ class Users
             $upd['school'] = $data['school'];
         }
         //сам update
+
         $db->where('id', $id)->update('user', $upd);
         if($msg = $db->getLastError())
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         else
+            $email = $db->where('id',$id)->get('email');
+            if($data['email'] != $email)
+            {
+                Users::CreateCodeVerification($id);
+                Users::SendEmailVerification($id);
+            }
             return true;
     }
 //проверка по login и password
@@ -232,10 +243,10 @@ class Users
 
     }
 //возращаем инфо о юзере
-    public static function GetUserInfo($userid)
+    public static function GetUserInfo($user)
     {
         // здесь мы подкллючаемся к бд и достаем инфу по пользователю по id.
-        $res = Core::DB()->where('id', $userid)->getOne('user');
+        $res = Core::DB()->where('id', $user)->getOne('user');
         return $res;
     }
 //когда юзер был в сети
