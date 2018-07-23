@@ -47,7 +47,7 @@ class Users
     public static function RegisterUser($data)
     {
         //формат номера телефона
-        $data['phone'] = Utils::FormatPhone($data['phone']);
+        $data['phone'] = \Utils::FormatPhone($data['phone']);
         self::CheckUserData($data);
         // Подключаемся к базе
         $db = Core::DB();
