@@ -43,7 +43,7 @@ class Users
         else
             throw new Exception('Ошибка подключения к БД');
     }
-//регестрация юзера
+//регестрация юзера норм рааботает
     public static function RegisterUser($data)
     {
         //формат номера телефона
