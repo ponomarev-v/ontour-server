@@ -69,6 +69,7 @@ class Users
             'date_last' => time(),
             'status'    => self::STATUS_NEW,
             'rating'    => 0,
+            'phone-activation-code' = "test"
             /* TODO Если регистрация по приглашению, то возможна установка начальных баллов */
             /* и установка баллов для того, кто пригласил */
             'score'     => 0,
