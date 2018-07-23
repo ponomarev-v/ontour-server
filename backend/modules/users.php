@@ -89,6 +89,8 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
     // код потверждения юзера при вызове функции генерит новый код и записавает в бд
+    //че не так было?
+
     public static function CreateCodeVerification($user)
     {
         $key = \Utils::generateRandomString();
