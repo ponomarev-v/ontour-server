@@ -70,6 +70,8 @@ class Users
             'status'    => self::STATUS_NEW,
             'rating'    => 0,
             'phone-activation-code' => 'test',
+            'email-status' => 0,
+            'phone-status' => 0,
             //TODO Если регистрация по приглашению, то возможна установка начальных баллов
             // и установка баллов для того, кто пригласил
             'score'     => 0,
