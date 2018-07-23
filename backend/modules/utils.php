@@ -211,6 +211,7 @@ class Utils
     // удаляем лишнее у номера телефона
     public static function FormatPhone($phone)
     {
+        $phone = trim($phone);
         $phone = preg_replace('/[^0-9]/', '', $phone);
         if(strlen($phone) == 11 && ($phone[0] == '8' || $phone[0] == '7'))
             $phone = substr($phone, 1);
