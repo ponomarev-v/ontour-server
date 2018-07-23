@@ -8,11 +8,12 @@ namespace API {
         {
           // $str = "markov2002@bk.ru";
            //return mail($str,'123',$str);
-            $user = 80;
-
-            $otv['code'] = Users::CreateCodeVerification($user);
-            $otv['email'] = \Users::SendEmailVerification($user);
-            return $otv;
+            //$user = 80;
+            $get = \Utils::Request('phone');
+           // $otv['code'] = Users::CreateCodeVerification($user);
+            //$otv['email'] = \Users::SendEmailVerification($user);
+            //return $otv;
+            return \Utils::FormatPhone($get);
         }
         public function EmailVerification()
         {

@@ -2,6 +2,7 @@
 
 class Utils
 {
+
     public static function generateRandomString()
     {
         $length = 16;
@@ -152,7 +153,7 @@ class Utils
         }
         return false;
     }
-//хз шо
+//дата
     public static function DecodeDate($date)
     {
         if(intval($date) > 0 && date('Y', intval($date)) >= 2000) {
