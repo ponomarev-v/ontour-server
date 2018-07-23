@@ -176,7 +176,7 @@ class Users
     }
 //проверка данных на обновление userdata
 
-    //Обновление юзера по нормальному?
+    //Обновление юзера по нормальному? вроде да
     public static function UpdateUserProfile($id, $data)
     {
         $db = Core::DB();
