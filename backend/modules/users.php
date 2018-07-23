@@ -79,10 +79,10 @@ class Users
         $new_id = $db->getInsertId();
         if($new_id > 0) {
             //генерит код при регестрации
-            Users::CreateCodeVerification($new_id);
-            if(!empty($data['email']))
-                Users::SendEmailVerification($new_id);
-
+            $status = Users::CreateCodeVerification($new_id);
+            if($status == true)
+                if(!empty($data['email']))
+                    Users::SendEmailVerification($new_id);
             return $new_id;
         }
         else
@@ -171,7 +171,7 @@ class Users
         return true;
     }
 //проверка данных на обновление userdata
-    public static function ChangeUserProfile($id, $data)
+  /*  public static function ChangeUserProfile($id, $data)
     {
         // Подключаемся к базе
         $db = Core::DB();
@@ -219,6 +219,62 @@ class Users
                 Users::SendEmailVerification($id);
             }
             return true;
+    } */
+    //Обновление юзера по нормальному?
+    public static function UpdateUserProfile($id, $data)
+    {
+        $db = Core::DB();
+        $upd = array();
+        //почта и мобила
+        if(!empty($data['phone']) && Utils::FindBd('phone', $data['phone']))
+            throw new Exception('Указанный телефон занят другим пользователем');
+        if(!empty($data['email']) && Utils::FindBd('phone', $data['email']))
+            throw new Exception('Указанный email занят другим пользователем');
+        if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
+            throw new \Exception("email отсутствует или указан неверно");
+        $upd['phone'] = $data['phone'];
+        $upd['email'] = $data['email'];
+        //проврка имени
+        if(!empty($data['name']))
+        {
+            $data['name'] = trim($data['name']);
+            $upd['name'] = $data['name'];
+        }
+        else
+        {
+            throw new Exception('Имя не может быть пустым');
+        }
+        if(!empty($data['age']))
+        {
+            $data['age'] = trim($data['age']);
+            $upd['age'] = $data['age'];
+        }
+        else
+        {
+            throw new Exception('Не указан возраст');
+        }
+        if(!empty($data['school']))
+        {
+            $data['school'] = trim($data['school']);
+            $upd['school'] = $data['school'];
+        }
+        else
+        {
+            throw new Exception('Не указан возраст');
+        }
+        //сам update
+        $db->where('id', $id)->update('user', $upd);
+        if($msg = $db->getLastError())
+            throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
+        if($data['email'] != $email)
+            {
+            Users::CreateCodeVerification($id);
+            Users::SendEmailVerification($id);
+        }
+        return true;
+
+
+
     }
 //проверка по login и password
     public static function CheckUserCredentials($login, $password)

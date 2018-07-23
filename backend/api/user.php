@@ -10,7 +10,7 @@ namespace API {
            //return mail($str,'123',$str);
             $user = 80;
 
-            $otv['code'] = \Users::CreateCodeVerification($user);
+            $otv['code'] = Users::CreateCodeVerification($user);
             $otv['email'] = \Users::SendEmailVerification($user);
             return $otv;
         }
@@ -75,7 +75,8 @@ namespace API {
                 'school' => \Utils::Request('school'),
             );
             $id = $_SESSION['userid'];
-            return \Users::ChangeUserProfile($id, $new_data);
+           // return \Users::ChangeUserProfile($id, $new_data);
+            return \Users::UpdateUserProfile($id, $new_data);
         }
         //поменять password
 

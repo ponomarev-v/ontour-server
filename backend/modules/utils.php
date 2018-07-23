@@ -16,18 +16,18 @@ class Utils
     //утилита БД которая говорит есть такое или нет
     //кароче tabel это таблица obj это столбец find то что мы ищем
     //если нет указаной table ставит user
-    public static function FindBd($obj,$find,$NeedTable)
+    public static function FindBd($obj,$find,$NeedTable = 'user')
     {
-        if ($NeedTable == null)
+       /* if (empty($NeedTable))
         {
             $NowTable = "user";
         }
         else
         {
             $NowTable = $NeedTable;
-        }
+        } */
         $db = Core::DB();
-        $result = $db->where($obj, $find)->get($NowTable);
+        $result = $db->where($obj, $find)->get($NeedTable);
         if(!empty($result)) {
             return true;
         }else{
