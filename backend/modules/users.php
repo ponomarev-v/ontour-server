@@ -80,6 +80,9 @@ class Users
         if($new_id > 0) {
             //генерит код при регестрации
             Users::CreateCodeVerification($new_id);
+            if(!empty($data['email']))
+                Users::SendEmailVerification($new_id);
+
             return $new_id;
         }
         else
