@@ -175,55 +175,7 @@ class Users
         return true;
     }
 //проверка данных на обновление userdata
-  /*  public static function ChangeUserProfile($id, $data)
-    {
-        // Подключаемся к базе
-        $db = Core::DB();
-        $upd = array();
-        if(isset($data['phone']) && !empty($data['phone']))
-        {
-            $data['phone'] = Utils::FormatPhone($data['phone']);
-            $res = $db->where('phone', $data['phone'])->where('id', $id, '!=')->get('user');
-            if(!empty($res)) {
-                throw new Exception('Указанный телефон занят другим пользователем');
-            }
-            $upd['phone'] = $data['phone'];
-        }
-        if(isset($data['name']))
-        {
-            $data['name'] = trim($data['name']);
-            if(empty($data['name']))
-                throw new Exception('Имя пользователя не может быть пустым');
-            $upd['name'] = $data['name'];
-        }
-        if(isset($data['email']) && !empty($data['email']))
-        {
-            $res = $db->where('email', $data['email'])->where('id', $id, '!=')->get('user');
-            if(!empty($res)) {
-                throw new Exception('Указанный email занят другим пользователем');
-            }
-            $upd['email'] = $data['email'];
-        }
-        if(isset($data['age']) && !empty($data['age'])) {
-            $upd['age'] = $data['age'];
-        }
-        if(isset($data['school']) && !empty($data['school'])) {
-            $upd['school'] = $data['school'];
-        }
-        //сам update
 
-        $db->where('id', $id)->update('user', $upd);
-        if($msg = $db->getLastError())
-            throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
-        else
-            $email = $db->where('id',$id)->get('email');
-            if($data['email'] != $email)
-            {
-                Users::CreateCodeVerification($id);
-                Users::SendEmailVerification($id);
-            }
-            return true;
-    } */
     //Обновление юзера по нормальному?
     public static function UpdateUserProfile($id, $data)
     {
