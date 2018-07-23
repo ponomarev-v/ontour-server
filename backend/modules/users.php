@@ -270,11 +270,9 @@ class Users
         $db->where('id', $id)->update('user', $upd);
         if($msg = $db->getLastError())
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
-        if($data['email'] != $email)
-            {
-            Users::CreateCodeVerification($id);
-            Users::SendEmailVerification($id);
-        }
+        Users::CreateCodeVerification($id);
+        Users::SendEmailVerification($id);
+
         return true;
 
 
