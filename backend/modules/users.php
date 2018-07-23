@@ -97,8 +97,6 @@ class Users
             'activate_code' => $key,
             'email-status' => 0,
         ));
-        if($msg = $db->getLastError())
-            throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         return true;
 
     }
