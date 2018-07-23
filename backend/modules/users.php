@@ -77,6 +77,8 @@ class Users
 
         $db->insert('user', $user_data);
         $new_id = $db->getInsertId();
+        if($msg = $db->getLastError())
+            throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         if($new_id > 0) {
             //генерит код при регестрации
             $status = Users::CreateCodeVerification($new_id);
@@ -94,7 +96,6 @@ class Users
     public static function CreateCodeVerification($user)
     {
         $key = \Utils::generateRandomString();
-        $db = Core::DB();
         Core::DB()->where('id', $user)->update('user', array(
             'activate_code' => $key,
             'email-status' => 0,

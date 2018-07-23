@@ -16,7 +16,7 @@ class Utils
     //утилита БД которая говорит есть такое или нет
     //кароче tabel это таблица obj это столбец find то что мы ищем
     //если нет указаной table ставит user
-    public static function FindBd($obj,$find,$NeedTable = 'user')
+    public static function FindBd($obj,$find)
     {
        /* if (empty($NeedTable))
         {
@@ -26,6 +26,7 @@ class Utils
         {
             $NowTable = $NeedTable;
         } */
+        $NeedTable = "user";
         $db = Core::DB();
         $result = $db->where($obj, $find)->get($NeedTable);
         if(!empty($result)) {
