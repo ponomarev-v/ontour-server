@@ -13,7 +13,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
 </head>
 <body>
-    <div class="header">
+    <div class="header_down">
         <a href="district_map.php" class="logo">
             <img src="images/logo.svg" height="100%">
         </a>
