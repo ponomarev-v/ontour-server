@@ -268,6 +268,7 @@ class Users
         $key = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
         $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
         $email = $bd['email'];
+        $headers = 'From:EmailVerification@turneon.ru' . "\r\n";
         return mail( $email,'Код активации',$link);
     }
     //функция для проверки почты..
