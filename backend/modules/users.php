@@ -269,7 +269,7 @@ class Users
         $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
         $email = $bd['email'];
         $headers = 'From:EmailVerification@turneon.ru' . "\r\n";
-        return mail( $email,'Код активации',$link);
+        return mail( $email,'Код активации',$link, $headers);
     }
     //функция для проверки почты..
     public static function EmailVerification($id , $KeyGet)
