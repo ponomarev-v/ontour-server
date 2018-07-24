@@ -197,7 +197,7 @@ class Users
             if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
                 throw new \Exception("email отсутствует или указан неверно");
         }
-        if($data['age'] > 999)
+        if($data['age'] > 120)
             throw new \Exception("Те сколько лет то?");
         $upd['phone'] = $data['phone'];
         $upd['email'] = $data['email'];
