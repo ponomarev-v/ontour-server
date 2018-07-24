@@ -146,12 +146,13 @@ class Users
                 throw new Exception('Указанный телефон занят другим пользователем');
         }
         //проверка почты
+        if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
+            throw new \Exception("email отсутствует или указан неверно");
         if($res['email'] != $data['email'])
         {
             if(!empty($data['email']) && Utils::FindBd('phone', $data['email']))
                 throw new Exception('Указанный email занят другим пользователем');
-            if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
-                throw new \Exception("email отсутствует или указан неверно");
+
         }
         //проверка возраста
         if($data['age'] > 120)
