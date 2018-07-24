@@ -183,12 +183,20 @@ class Users
         $upd = array();
         $data['phone'] = \Utils::FormatPhone($data['phone']);
         //почта и мобила
-        if(!empty($data['phone']) && Utils::FindBd('phone', $data['phone']))
-            throw new Exception('Указанный телефон занят другим пользователем');
-        if(!empty($data['email']) && Utils::FindBd('phone', $data['email']))
-            throw new Exception('Указанный email занят другим пользователем');
-        if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
-            throw new \Exception("email отсутствует или указан неверно");
+        $bd = $db->where('id',$id)->get('user');
+        $res = $bd[0];
+        if($res['phone'] != $data['phone'])
+        {
+            if(!empty($data['phone']) && Utils::FindBd('phone', $data['phone']))
+                throw new Exception('Указанный телефон занят другим пользователем');
+        }
+        if($res['email'] != $data['email'])
+        {
+            if(!empty($data['email']) && Utils::FindBd('phone', $data['email']))
+                throw new Exception('Указанный email занят другим пользователем');
+            if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
+                throw new \Exception("email отсутствует или указан неверно");
+        }
         $upd['phone'] = $data['phone'];
         $upd['email'] = $data['email'];
         //проврка имени
