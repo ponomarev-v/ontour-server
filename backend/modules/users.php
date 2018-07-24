@@ -184,12 +184,15 @@ class Users
         $data['phone'] = \Utils::FormatPhone($data['phone']);
         //почта и мобила
         $bd = $db->where('id',$id)->get('user');
+        // костыль века
         $res = $bd[0];
+        //проверка мобилы
         if($res['phone'] != $data['phone'])
         {
             if(!empty($data['phone']) && Utils::FindBd('phone', $data['phone']))
                 throw new Exception('Указанный телефон занят другим пользователем');
         }
+        //проверка почты
         if($res['email'] != $data['email'])
         {
             if(!empty($data['email']) && Utils::FindBd('phone', $data['email']))
@@ -197,6 +200,7 @@ class Users
             if(filter_var($data['email'],FILTER_VALIDATE_EMAIL) == false)
                 throw new \Exception("email отсутствует или указан неверно");
         }
+        //проверка возраста
         if($data['age'] > 120)
             throw new \Exception("Те сколько лет то?");
         $upd['phone'] = $data['phone'];
