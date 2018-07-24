@@ -93,54 +93,7 @@ class Users
         else
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
-    // код потверждения юзера при вызове функции генерит новый код и записавает в бд
-    //че не так было?
 
-    public static function CreateCodeVerification($user)
-    {
-        $key = \Utils::generateRandomString();
-        Core::DB()->where('id', $user)->update('user', array(
-            'activate_code' => $key,
-            'email-status' => 0,
-        ));
-        return true;
-
-    }
-
-    //отправка email с паролем и ключом
-    public static function SendEmailVerification($user)
-    {
-        $db = Core::DB();
-        $res = $db->where('id',$user)->get('user');
-        $bd = $res[0];
-        $keyNoE['password'] = $bd['password'];
-        $keyNoE['key'] = $bd['activate_code'];
-        //$key = encrypt("$keyNoE",$bd['password']);
-        $key = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
-        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
-        $email = $bd['email'];
-        return mail( $email,'Код активации',$link);
-    }
-    //функция для проверки почты..
-    public static function EmailVerification($id , $KeyGet)
-    {
-        $db = Core::DB();
-        $res = $db->where('id',$id)->get('user');
-        $bd = $res[0];
-        $keyNoE['password'] = $bd['password'];
-        $keyNoE['key'] = $bd['activate_code'];
-        $Locality = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
-        if($KeyGet == $Locality)
-        {
-            //тута допишу потом
-            return true;
-        }
-        else
-        {
-            //тута тоже потом
-            return false;
-        }
-    }
 //смена пароля
 //TODO починить
     public static function ChangePass($id, $pass_old, $pass_new)
@@ -237,8 +190,11 @@ class Users
         $db->where('id', $id)->update('user', $upd);
         if($msg = $db->getLastError())
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
-        Users::CreateCodeVerification($id);
-        Users::SendEmailVerification($id);
+        if($res['email'] != $data['email'])
+        {
+            Users::CreateCodeVerification($id);
+            Users::SendEmailVerification($id);
+        }
 
         return true;
 
@@ -285,4 +241,53 @@ class Users
         ));
         return true;
     }
+    // код потверждения юзера при вызове функции генерит новый код и записавает в бд
+    //че не так было?
+
+    public static function CreateCodeVerification($user)
+    {
+        $key = \Utils::generateRandomString();
+        Core::DB()->where('id', $user)->update('user', array(
+            'activate_code' => $key,
+            'email-status' => 0,
+        ));
+        return true;
+
+    }
+
+    //отправка email с паролем и ключом
+    public static function SendEmailVerification($user)
+    {
+        $db = Core::DB();
+        $res = $db->where('id',$user)->get('user');
+        $bd = $res[0];
+        $keyNoE['password'] = $bd['password'];
+        $keyNoE['key'] = $bd['activate_code'];
+        //$key = encrypt("$keyNoE",$bd['password']);
+        $key = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
+        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
+        $email = $bd['email'];
+        return mail( $email,'Код активации',$link);
+    }
+    //функция для проверки почты..
+    public static function EmailVerification($id , $KeyGet)
+    {
+        $db = Core::DB();
+        $res = $db->where('id',$id)->get('user');
+        $bd = $res[0];
+        $keyNoE['password'] = $bd['password'];
+        $keyNoE['key'] = $bd['activate_code'];
+        $Locality = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
+        if($KeyGet == $Locality)
+        {
+            //тута допишу потом
+            return true;
+        }
+        else
+        {
+            //тута тоже потом
+            return false;
+        }
+    }
+
 }
