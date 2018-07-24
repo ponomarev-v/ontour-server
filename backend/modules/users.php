@@ -181,6 +181,7 @@ class Users
     {
         $db = Core::DB();
         $upd = array();
+        $data['phone'] = \Utils::FormatPhone($data['phone']);
         //почта и мобила
         if(!empty($data['phone']) && Utils::FindBd('phone', $data['phone']))
             throw new Exception('Указанный телефон занят другим пользователем');
