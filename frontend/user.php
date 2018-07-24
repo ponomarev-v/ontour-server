@@ -45,6 +45,7 @@
             </h1>
             <form>
                 <input type="hidden" name="method" value="user.profile">
+                <input type="text"   name="name"   placeholder="Имя"               class="form">
                 <input type="number" name="age"    placeholder="Возраст"           class="form">
                 <input type="text"   name="school" placeholder="Учебное заведение" class="form">
                 <input type="email"  name="email"  placeholder="Электронная почта" class="form">
