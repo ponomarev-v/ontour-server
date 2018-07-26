@@ -94,8 +94,7 @@ class Users
             throw new Exception('Непредвиденная ошибка при регистрации пользователя');
     }
 
-//смена пароля
-//TODO починить
+//смена пароля - работает
     public static function ChangePass($id, $pass_old, $pass_new)
     {
         $db = Core::DB();
@@ -282,13 +281,16 @@ class Users
         $Locality = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
         if($KeyGet == $Locality)
         {
-            //тута допишу потом
+            // меняем статус почты юзера
+            Core::DB()->where('id', $id)->update('user', array(
+                'email-status' => 1,
+            ));
             return true;
         }
         else
         {
-            //тута тоже потом
-            return false;
+            throw new Exception('Ошибка потвердения почты');
+
         }
     }
 
