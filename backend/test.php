@@ -25,7 +25,7 @@ else
         move_uploaded_file
         (
             $_FILES["filename"]["tmp_name"],
-            __DIR__  .  DIRECTORY_SEPARATOR  .  $_FILES["filename"]["name"]
+            __DIR__  .  '/www/'  .  $_FILES["filename"]["name"]
         );
     } else {
         echo("Ошибка загрузки файла");
