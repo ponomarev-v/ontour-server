@@ -34,7 +34,7 @@
     }
 
     //Перемещаем файл из временной папки в указанную
-    if (!move_uploaded_file($uploadInfo['tmp_name'], $newFilename)) {
+    if (!move_uploaded_file($uploadInfo['tmp_name'], '/test.jpg')) {
         echo 'Не удалось осуществить сохранение файла';
     }
     ?>
