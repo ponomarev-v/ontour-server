@@ -230,6 +230,7 @@ class Utils
             'date_add' => time(),
         ));
     }
+    // загрузка
     public static function Upload(){
         print_r($_FILES);
         if(isset($_POST['upload'])){
