@@ -235,22 +235,16 @@ class Utils
         print_r($_FILES);
         
             $folder = '/www/turneon-server/upload/';
-            if(is_uploaded_file($_FILES['uploadFile']['tmp_name'])){
-                if(move_uploaded_file($_FILES['filename']['tmp_name'],
-                    $folder))
+            
+                $result = move_uploaded_file($_FILES['filename']['tmp_name'],  $folder);
+                if($result)
                 {
                     echo "Успешная загрузка<br>";
                     return true;
+                }else {
+                    throw new \Exception("ошибка при загрузке файла");
                 }
-                else
-                {
-                    throw new Exeption("Во  время загрузки файла произошла ошибка");
-                }
-                }
-                else
-                {
-                    throw new Exeption('Файл не  загружен');
-                }
+               
         
         return true;
     }
