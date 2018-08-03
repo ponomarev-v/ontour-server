@@ -244,9 +244,11 @@ class Utils
                 echo "Успешная загрузка<br>";
                 return true;
             }else {
-                throw new \Exception("ошибка при загрузке файла");
+                return new \Exception("ошибка при загрузке файла");
             }
                
+        }else {
+            return new \Exception("Не указ файл");
         }
         return true;
     }
