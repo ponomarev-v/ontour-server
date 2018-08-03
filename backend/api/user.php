@@ -10,7 +10,7 @@ namespace API {
             if($result){
                 return "succes load file";
             }else{
-                throw new \Exception('Ошибка при получении региона пользователя');
+                throw new \Exception('Ошибка при загрузке файла');
             }
         }
         public function EmailVerification()
