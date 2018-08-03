@@ -5,7 +5,7 @@
         <input type="submit" value="Загрузить"><br>
     </form>
 <script>
-print_r($_FILES);
+<?php print_r($_FILES); ?>
 $.ajax({
     type: "POST",
     url: "http://api.turneon.ru/?method=user.TestFunc",
