@@ -7,7 +7,7 @@ namespace API {
         public  function TestFunc()
         {
             $result = \Utils::Upload();
-            if(result){
+            if($result){
                 return "succes load file";
             }else{
                 throw new \Exception('Ошибка при получении региона пользователя');
