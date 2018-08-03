@@ -6,8 +6,8 @@ $apend=date('YmdHis').rand(100,1000).'.jpg';
 $uploadfile = "$uploaddir$apend"; 
 //в переменную $uploadfile будет входить папка и имя изображения
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile))
-    echo true;
+    throw new exeption('it work');
 else 
-    echo false;
+throw new exeption("it isn't work");
  
 ?>
