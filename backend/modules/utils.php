@@ -232,8 +232,10 @@ class Utils
     }
     // загрузка
     public static function Upload(){
-        print_r($_FILES);
-        
+        //print_r($_FILES);
+            if($_FILES){
+
+            
             $folder = '/www/turneon-server/upload/';
             
             $result = move_uploaded_file($_FILES["filename"]["tmp_name"],  $folder);
@@ -245,7 +247,7 @@ class Utils
                 throw new \Exception("ошибка при загрузке файла");
             }
                
-        
+        }
         return true;
     }
 }
