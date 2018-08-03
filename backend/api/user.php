@@ -6,7 +6,12 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            return \Utils::Upload();
+            $result = \Utils::Upload();
+            if(result){
+                return "succes load file";
+            }else{
+                throw new \Exception('Ошибка при получении региона пользователя');
+            }
         }
         public function EmailVerification()
         {
