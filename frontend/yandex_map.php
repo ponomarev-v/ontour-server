@@ -9,7 +9,7 @@ require_once "header.php";
         <input type="text" id="description" placeholder="Описание">
         <br>
         <input type="button" value="Submit" id="btn_add">
-        </form>
+    </form>
     </div>
     <script src="js/count_obj.js"></script>
     <script src="js/functions.js"></script>

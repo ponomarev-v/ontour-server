@@ -186,3 +186,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .footer .element a {
     display: block;
 }
+
+.content {
+    height: calc(100% - 70px);
+    width: 100%;
+}

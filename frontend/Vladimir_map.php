@@ -1,6 +1,6 @@
 <?php include_once "header.php"; ?>
 <div id="tooltip"></div>
-    <div class="center">
+    <div class="content">
         <h3 class="map_header">
             Владимирская область
         </h3>

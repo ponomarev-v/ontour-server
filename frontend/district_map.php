@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 <div id="tooltip"></div>
-    <div class="center">
+    <div class="content">
         <h3 class="map_header">
             Россия
         </h3>
