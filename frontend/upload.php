@@ -29,6 +29,6 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
    echo "Файл не загружен, вернитеcь и попробуйте еще раз";
    } 
 } else { 
-echo "файл не того формата";
+echo $_FILES['userfile'];
 } 
 ?>
