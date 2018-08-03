@@ -4,7 +4,9 @@
         <input type="file" name="filename"><br>
         <input type="submit" value="Загрузить"><br>
     </form>
+
 <script>
+function loadFile(){
 $.ajax({
     type: "POST",
     url: "http://api.turneon.ru/?method=user.TestFunc",
@@ -18,6 +20,13 @@ $.ajax({
         }
     }
 });
-
+}
 </script>
+<?php 
+
+if($_FILES){
+    echo '<script>','loadFile();','</script>';
+}
+?>
+
 <?php include "footer.php";/*подключение ног сайта*/ ?>
