@@ -5,12 +5,11 @@
 <body>
 
 <!-- Тип кодирования данных, enctype, ДОЛЖЕН БЫТЬ указан ИМЕННО так -->
-<form enctype="multipart/form-data" action="upload.php" method="POST">
-    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-    <!-- Название элемента input определяет имя в массиве $_FILES -->
-    Отправить этот файл: <input name="userfile" type="file" />
-    <input type="submit" value="Отправить файл" />
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Send these files:<br>
+    <input name="userfile[]" type="file"><br>
+    <input name="userfile[]" type="file"><br>
+    <input type="submit" value="Отправить файлы ">
 </form>
 
 </body>
