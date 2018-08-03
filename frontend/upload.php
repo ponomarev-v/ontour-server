@@ -2,7 +2,7 @@
 // В PHP 4.1.0 и более ранних версиях следует использовать $HTTP_POST_FILES
 // вместо $_FILES.
 
-$uploaddir = '/var/www/uploads/';
+$uploaddir = '/www/turneon-server/test';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
 echo '<pre>';
