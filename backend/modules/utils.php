@@ -236,14 +236,14 @@ class Utils
         
             $folder = '/www/turneon-server/upload/';
             
-                $result = move_uploaded_file($_FILES['filename']['tmp_name'],  $folder);
-                if($result)
-                {
-                    echo "Успешная загрузка<br>";
-                    return true;
-                }else {
-                    throw new \Exception("ошибка при загрузке файла");
-                }
+            $result = move_uploaded_file($_FILES["filename"]["tmp_name"],  $folder);
+            if($result)
+            {
+                echo "Успешная загрузка<br>";
+                return true;
+            }else {
+                throw new \Exception("ошибка при загрузке файла");
+            }
                
         
         return true;
