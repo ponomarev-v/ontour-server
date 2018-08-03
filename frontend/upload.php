@@ -1,21 +1,33 @@
+<html>
+<head>Загрузка  файлов на сервер</head>
+<body>
+<form  enctype="multipart/form-data" action=""  method="post">
+    <input  type="hidden" name="MAX_FILE_SIZE" value="300000"  />
+    <input  type="file" name="uploadFile"/>
+    <input  type="submit" name="upload" value="Загрузить"/>
+</form>
 <?php
+print_r($_FILES);
 
-// Каталог, в который мы будем принимать файл:
-$uploaddir = './files/';
-$uploadfile = $uploaddir.basename($_FILES['uploadfile']['name']);
-
-// Копируем файл из каталога для временного хранения файлов:
-if (copy($_FILES['uploadfile']['tmp_name'], $uploadfile))
-{
-    echo "<h3>Файл успешно загружен на сервер</h3>";
+if(isset($_POST['upload'])){
+    $folder = '/www/turneon-server/upload';
+    $uploadedFile = $folder.basename($_FILES['uploadFile']['name']);
+    if(is_uploaded_file($_FILES['uploadFile']['tmp_name'])){
+        if(move_uploaded_file($_FILES['uploadFile']['tmp_name'],
+            $uploadedFile))
+        {
+            echo "Файл загружен";
+  }
+        else
+        {
+            echo "Во  время загрузки файла произошла ошибка";
+  }
+    }
+    else
+    {
+        echo 'Файл не  загружен';
+    }
 }
-else { echo "<h3>Ошибка! Не удалось загрузить файл на сервер!</h3>"; exit; }
-
-// Выводим информацию о загруженном файле:
-echo "<h3>Информация о загруженном на сервер файле: </h3>";
-echo "<p><b>Оригинальное имя загруженного файла: ".$_FILES['uploadfile']['name']."</b></p>";
-echo "<p><b>Mime-тип загруженного файла: ".$_FILES['uploadfile']['type']."</b></p>";
-echo "<p><b>Размер загруженного файла в байтах: ".$_FILES['uploadfile']['size']."</b></p>";
-echo "<p><b>Временное имя файла: ".$_FILES['uploadfile']['tmp_name']."</b></p>";
-
 ?>
+</body>
+</html>
