@@ -25,7 +25,7 @@ $.ajax({
 <?php 
 
 if($_FILES){
-    print_r($_FILES);
+    echo $_FILES["filename"]["tmp_name"];
    
 }
 ?>
