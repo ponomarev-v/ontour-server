@@ -240,16 +240,16 @@ class Utils
                 if(move_uploaded_file($_FILES['uploadFile']['tmp_name'],
                     $uploadedFile))
                 {
-                    echo "Файл загружен";
+                    throw new Exeption("Файл загружен");
                 }
                 else
                 {
-                    echo "Во  время загрузки файла произошла ошибка";
+                    throw new Exeption("Во  время загрузки файла произошла ошибка");
                 }
                 }
                 else
                 {
-                echo 'Файл не  загружен';
+                    throw new Exeption('Файл не  загружен');
                 }
         }
         return true;
