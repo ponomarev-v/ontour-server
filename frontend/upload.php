@@ -1,12 +1,20 @@
 <?php
-$uploaddir = 'images/';
-// это папка, в которую будет загружаться картинка
-$apend=date('YmdHis').rand(100,1000).'.jpg'; 
-// это имя, которое будет присвоенно изображению 
-$uploadfile = "$uploaddir$apend"; 
-//в переменную $uploadfile будет входить папка и имя изображения
-if (isset($_FILES['userfile']))
-    throw new exeption('it work');
-else 
-    throw new exeption("it isn't work");
+// В PHP 4.1.0 и более ранних версиях следует использовать $HTTP_POST_FILES
+// вместо $_FILES.
+
+$uploaddir = '/var/www/uploads/';
+$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+
+echo '<pre>';
+if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+    echo "Файл корректен и был успешно загружен.\n";
+} else {
+    echo "Возможная атака с помощью файловой загрузки!\n";
+}
+
+echo 'Некоторая отладочная информация:';
+print_r($_FILES);
+
+print "</pre>";
+
 ?>
