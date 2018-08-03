@@ -6,7 +6,7 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-
+            return \Utils::Upload();
         }
         public function EmailVerification()
         {

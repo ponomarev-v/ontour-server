@@ -230,4 +230,27 @@ class Utils
             'date_add' => time(),
         ));
     }
+    public static function Upload(){
+        print_r($_FILES);
+        if(isset($_POST['upload'])){
+            $folder = '/www/turneon-server/upload/';
+            $uploadedFile = $folder.basename($_FILES['uploadFile']['name']);
+            if(is_uploaded_file($_FILES['uploadFile']['tmp_name'])){
+                if(move_uploaded_file($_FILES['uploadFile']['tmp_name'],
+                    $uploadedFile))
+                {
+                    echo "Файл загружен";
+                }
+                else
+                {
+                    echo "Во  время загрузки файла произошла ошибка";
+                }
+                }
+                else
+                {
+                echo 'Файл не  загружен';
+                }
+        }
+        return true;
+    }
 }
