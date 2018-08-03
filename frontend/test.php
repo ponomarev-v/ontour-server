@@ -1,16 +1,10 @@
 <html>
-<head>
-    <title>Загрузка файлов на сервер</title>
-</head>
+<head>Загрузка  файлов на сервер</head>
 <body>
-
-<!-- Тип кодирования данных, enctype, ДОЛЖЕН БЫТЬ указан ИМЕННО так -->
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Send these files:<br>
-    <input name="userfile[]" type="file"><br>
-    <input name="userfile[]" type="file"><br>
-    <input type="submit" value="Отправить файлы ">
+<form  enctype="multipart/form-data" action=""  method="post">
+    <input  type="hidden" name="MAX_FILE_SIZE" value="300000"  />
+    <input  type="file" name="uploadFile"/>
+    <input  type="submit" name="upload" value="Загрузить"/>
 </form>
-
 </body>
 </html>
