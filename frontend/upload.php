@@ -8,7 +8,7 @@ $uploadfile = "$uploaddir$apend";
 
 // В данной строке самое важное - проверяем загружается ли изображение (а может вредоносный код?)
 // И проходит ли изображение по весу. В нашем случае до 512 Кб
-if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] == 'image/jpeg' || $_FILES['userfile']['type'] == 'image/png') && ($_FILES['userfile']['size'] != 0 and $_FILES['userfile']['size']<=512000)) 
+if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] == 'image/jpeg' || $_FILES['userfile']['type'] == 'image/png')) 
 { 
 // Указываем максимальный вес загружаемого файла. Сейчас до 512 Кб 
   if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) 
