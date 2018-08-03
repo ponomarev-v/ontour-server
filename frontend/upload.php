@@ -28,7 +28,10 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
    } else {
    echo "Файл не загружен, вернитеcь и попробуйте еще раз";
    } 
-} else { 
-echo $_FILES['userfile'];
+} else {
+  if (isset($_FILES['userfile'])) 
+    echo файл существует но не того формата;
+  else 
+    echo файл не существует;
 } 
 ?>
