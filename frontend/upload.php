@@ -25,6 +25,7 @@ $.ajax({
 <?php 
 
 if($_FILES){
+    print_r($_FILES);
     echo '<script>','loadFile();','</script>';
 }
 ?>
