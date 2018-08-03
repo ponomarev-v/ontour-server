@@ -233,7 +233,7 @@ class Utils
     // загрузка
     public static function Upload(){
         print_r($_FILES);
-        if(isset($_POST['upload'])){
+        
             $folder = '/www/turneon-server/upload/';
             if(is_uploaded_file($_FILES['uploadFile']['tmp_name'])){
                 if(move_uploaded_file($_FILES['uploadFile']['tmp_name'],
@@ -251,7 +251,7 @@ class Utils
                 {
                     throw new Exeption('Файл не  загружен');
                 }
-        }
+        
         return true;
     }
 }

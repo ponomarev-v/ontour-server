@@ -1,13 +1,11 @@
-<html>
-<head>Загрузка  файлов на сервер</head>
-<body>
+<?php include "header.php";/*подключение головы сайта*/ ?>
 <input type="hidden" name="MAX_FILE_SIZE" value="30000">
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
         <input type="file" name="filename"><br>
         <input type="submit" value="Загрузить"><br>
     </form>
 <script>
-//print_r($_FILES);
+print_r($_FILES);
 $.ajax({
     type: "POST",
     url: "http://api.turneon.ru/?method=user.TestFunc",
@@ -23,5 +21,4 @@ $.ajax({
 });
 
 </script>
-</body>
-</html>
+<?php include "footer.php";/*подключение ног сайта*/ ?>
