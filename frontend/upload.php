@@ -26,8 +26,11 @@ $.ajax({
 
 if($_FILES){
     print_r($_FILES);
-    echo '<script>','loadFile();','</script>';
+   
 }
 ?>
+<script>
+loadFile();
+</script>
 
 <?php include "footer.php";/*подключение ног сайта*/ ?>
