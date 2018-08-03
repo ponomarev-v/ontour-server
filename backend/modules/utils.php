@@ -236,7 +236,7 @@ class Utils
         
             $folder = '/www/turneon-server/upload/';
             if(is_uploaded_file($_FILES['uploadFile']['tmp_name'])){
-                if(move_uploaded_file($_FILES['uploadFile']['tmp_name'],
+                if(move_uploaded_file($_FILES['filename']['tmp_name'],
                     $folder))
                 {
                     echo "Успешная загрузка<br>";
