@@ -236,7 +236,7 @@ class Utils
             if($_FILES){
 
             
-            $folder = '/www/turneon-server/upload/';
+            $folder = 'www/turneon-server/upload/';
             
             $result = move_uploaded_file($_FILES["filename"]["tmp_name"],  $folder);
             if($result)
