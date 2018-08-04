@@ -231,9 +231,16 @@ class Utils
         ));
     }
     // загрузка
-    public static function Upload($filename,$tmp_name){
+    public static function UploadPicObjMap($filename,$tmp_name){
         $uploaddir = '/www/turneon-server/upload/';
-        $uploadfile = $uploaddir . basename($filename);
-        move_uploaded_file($tmp_name, $uploadfile);
+        $filenameKey = \Utils::generateRandomString();
+        $db = Core::DB();
+        $result = $db->where('name', $filenameKey)->get('Picturesobjects');
+        if(!empty($result)) {
+            $uploadfile = $uploaddir . basename($filenameKey);
+            move_uploaded_file($tmp_name, $uploadfile);
+        }else{
+            return false;
+        }
     } 
 }

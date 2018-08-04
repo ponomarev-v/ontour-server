@@ -8,7 +8,7 @@ namespace API {
         {
             $filename = \Utils::Request('filename');
             $tmp_name =  \Utils::Request('tmp_name');
-            \Utils::Upload($filename,$tmp_name);
+            \Utils::UploadPicObjMap($filename,$tmp_name);
 
         }
         public function EmailVerification()
