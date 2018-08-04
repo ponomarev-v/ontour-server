@@ -7,7 +7,7 @@ namespace API {
         public  function TestFunc()
         {
             return uniqid();
-            \Utils::UploadPicObjMap($filename,$tmp_name);
+           // \Utils::UploadPicObjMap($filename,$tmp_name);
 
         }
         public function EmailVerification()
