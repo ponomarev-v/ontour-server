@@ -231,7 +231,7 @@ class Utils
         ));
     }
     // загрузка
-    public static function UploadPicObjMap($filename,$tmp_name){
+    public static function UploadPicObjMap(){
         do{ $newname = \Utils::generateRandomString();
             $NeedTable = "Picturesobjects";
             $obj = "name";
