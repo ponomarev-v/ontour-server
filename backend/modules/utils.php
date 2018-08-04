@@ -232,24 +232,19 @@ class Utils
     }
     // загрузка
     public static function Upload(){
-        //print_r($_FILES);
-            if($_FILES){
+        $uploaddir = '/www/turneon-server/upload/';
+        $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
-            
-            $folder = 'www/turneon-server/upload/';
-            
-            $result = move_uploaded_file($_FILES["filename"]["tmp_name"],  $folder);
-            if($result)
-            {
-                echo "Успешная загрузка<br>";
-                return true;
-            }else {
-                return false;
-            }
-               
-        }else {
-            return false;
+        echo '<pre>';
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+            echo "Файл корректен и был успешно загружен.\n";
+        } else {
+            echo "Возможная атака с помощью файловой загрузки!\n";
         }
-        return false;
+
+        echo 'Некоторая отладочная информация:';
+        print_r($_FILES);
+
+        print "</pre>";
     }
 }
