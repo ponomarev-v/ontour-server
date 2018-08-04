@@ -232,9 +232,7 @@ class Utils
     }
     // загрузка
     public static function UploadPicObjMap($filename,$tmp_name){
-        do
-        {
-            $newname = \Utils::generateRandomString();
+        do{ $newname = \Utils::generateRandomString();
             $NeedTable = "Picturesobjects";
             $obj = "name";
             $find = $newname;
@@ -243,9 +241,8 @@ class Utils
             if(!empty($result)) {
                 $status = "done";
             }else{
-                $status = "not done";
-        }
-        while($status != "done");
+                $status = "not done";}
+        }while ($status != "done");
 
         $uploaddir = '/www/turneon-server/upload/';
         $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
@@ -261,5 +258,4 @@ class Utils
         print_r($_FILES);
 
         print "</pre>";
-    }
 }
