@@ -233,10 +233,10 @@ class Utils
     // загрузка
     public static function Upload($filename,$tmp_name){
         $uploaddir = '/www/turneon-server/upload/';
-        $uploadfile = $uploaddir . basename($filename);
+        //$uploadfile = $uploaddir . basename($filename);
 
         echo '<pre>';
-        if (move_uploaded_file($tmp_name, $uploadfile)) {
+        if (move_uploaded_file($tmp_name, $uploaddir)) {
             echo "Файл корректен и был успешно загружен.\n";
         } else {
             echo "Возможная атака с помощью файловой загрузки!\n";
