@@ -243,7 +243,7 @@ class Utils
         }
 
         echo 'Некоторая отладочная информация:';
-        print_r($file);
+        
 
         print "</pre>";
     }
