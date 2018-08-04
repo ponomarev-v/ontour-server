@@ -4,8 +4,10 @@ namespace API {
     class User
     {
         //функция для дебагингааааа
-        public  function TestFunc($filename,$tmp_name)
+        public  function TestFunc()
         {
+            $filename = \Utils::Request('filename');
+            $tmp_name =  \Utils::Request('tmp_name');
             \Utils::Upload($filename,$tmp_name);
 
         }
