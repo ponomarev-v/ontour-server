@@ -4,9 +4,9 @@ namespace API {
     class User
     {
         //функция для дебагингааааа
-        public  function TestFunc()
+        public  function TestFunc($file)
         {
-            \Utils::Upload();
+            \Utils::Upload($file);
 
         }
         public function EmailVerification()
