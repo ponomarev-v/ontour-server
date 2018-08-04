@@ -231,31 +231,36 @@ class Utils
         ));
     }
     // загрузка
-    public static function UploadPicObjMap(){
-        do{ $newname = \Utils::generateRandomString();
+    public static function UploadPicObjMap()
+    {
+        do {
+            $newname = \Utils::generateRandomString();
             $NeedTable = "Picturesobjects";
             $obj = "name";
             $find = $newname;
             $db = Core::DB();
             $result = $db->where($obj, $find)->get($NeedTable);
-            if(!empty($result)) {
+            if (!empty($result)) {
                 $status = "done";
-            }else{
-                $status = "not done";}
-        }while ($status != "done");
+            } else {
+                $status = "not done";
+            }
+        } while ($status != "done");
 
         $uploaddir = '/www/turneon-server/upload/';
         $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-            if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-                echo "Файл корректен и был успешно загружен.\n";\
-               rename($uploadfile, $uploaddir .$newname . $_FILES['userfile']['type']);
-            } else {
-                echo "Возможная атака с помощью файловой загрузки!\n";
-            }
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+            echo "Файл корректен и был успешно загружен.\n";
+            \
+                rename($uploadfile, $uploaddir . $newname . $_FILES['userfile']['type']);
+        } else {
+            echo "Возможная атака с помощью файловой загрузки!\n";
+        }
         echo '<pre>';
 
         echo 'Некоторая отладочная информация:';
         print_r($_FILES);
 
         print "</pre>";
+    }
 }
