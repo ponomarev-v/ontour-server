@@ -9,7 +9,7 @@
 function loadFile(){
 $.ajax({
     type: "POST",
-    url: "http://api.turneon.ru/?method=user.TestFunc&filename="+<?php echo $_FILES['filename']['name'] ?>+"&tmp_name="+<?php echo $_FILES['filename']['tmp_name']?>,
+    url: "http://api.turneon.ru/?method=user.TestFunc&filename="<?php echo $_FILES['filename']['name'] ?>"&tmp_name="<?php echo $_FILES['filename']['tmp_name']?>,
     xhrFields: {withCredentials: true},
     success: function (data) {
         data = eval("(" + data + ")");
