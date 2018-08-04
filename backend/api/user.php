@@ -6,12 +6,8 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            $result = \Utils::Upload();
-            if($result){
-                return "succes load file";
-            }else{
-                throw new \Exception('Ошибка при загрузке файла');
-            }
+            Utils::Upload();
+
         }
         public function EmailVerification()
         {
