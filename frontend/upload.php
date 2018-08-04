@@ -11,9 +11,15 @@
 if($_FILES){
     $uploaddir = '/www/turneon-server/upload/';
     $uploadfile = $uploaddir . basename($_FILES['filename']['name']);
-    if(move_uploaded_file($_FILES['filename']['tmp_name'],$uploadfile )){
-        echo "Успешная загрузка";
-    }
+    if(!is_uploaded_file($_FILES['filename']['tmp_name'])){
+        if(move_uploaded_file($_FILES['filename']['tmp_name'],$uploadfile )){
+            echo "Успешная загрузка";
+        } else {
+            echo "Не удалось загрузить файл";
+        }
+} else {
+    echo "Файл уже загружен";
+}
    
 }
 ?>
