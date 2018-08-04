@@ -251,7 +251,6 @@ class Utils
         $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
         if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
             echo "Файл корректен и был успешно загружен.\n";
-            \
                 rename($uploadfile, $uploaddir . $newname . $_FILES['userfile']['type']);
         } else {
             echo "Возможная атака с помощью файловой загрузки!\n";
