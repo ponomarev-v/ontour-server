@@ -235,9 +235,5 @@ class Utils
         $uploaddir = '/www/turneon-server/upload/';
         $uploadfile = $uploaddir . basename($filename);
         move_uploaded_file($tmp_name, $uploadfile);
-   
-        
-
-        
     } 
 }

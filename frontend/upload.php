@@ -5,32 +5,17 @@
         <input type="submit" value="Загрузить"><br>
     </form>
 
-<script>
-function loadFile(){
-$.ajax({
-    type: "POST",
-    url: "http://api.turneon.ru/?method=user.TestFunc&filename=<?php echo $_FILES['filename']['name'] ?>&tmp_name=<?php echo $_FILES['filename']['tmp_name']?>",
-    xhrFields: {withCredentials: true},
-    success: function (data) {
-        data = eval("(" + data + ")");
-        if (data.result == "success") {
-           alert("success load file");
-        } else {
-            alert("error load file");
-        }
-    }
-});
-}
-</script>
+
 <?php 
 
 if($_FILES){
-    echo $_FILES["filename"]["tmp_name"];
+    $uploaddir = '/www/turneon-server/upload/';
+    $uploadfile = $uploaddir . basename($_FILES['filename']['name']);
+    if(move_uploaded_file($_FILES['filename']['tmp_name'],$uploadfile )){
+        echo "Успешная загрузка";
+    }
    
 }
 ?>
-<script>
-loadFile();
-</script>
 
 <?php include "footer.php";/*подключение ног сайта*/ ?>
