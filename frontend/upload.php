@@ -1,7 +1,7 @@
 <?php include "header.php";/*подключение головы сайта*/ ?>
 <input type="hidden" name="MAX_FILE_SIZE" value="30000">
     <form action="" method="post" enctype="multipart/form-data">
-        <input type="file" name="filename"><br>
+        <input type="file" name="filename" accept="image/jpeg,image/png"><br>
         <input type="submit" value="Загрузить"><br>
     </form>
 
