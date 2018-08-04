@@ -239,7 +239,9 @@ class Utils
         if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
             echo "Файл корректен и был успешно загружен.\n";
                 $typefile =  end(explode("/", $_FILES['userfile']['type']));
-                rename($uploadfile,  $uploaddir . uniqid('pic-') . "." . $typefile);
+                $filenamenew = uniqid('pic-') . "." . $typefile;
+                rename($uploadfile,  $uploaddir . $filenamenew);
+
         } else {
             echo "Возможная атака с помощью файловой загрузки!\n";
         }
