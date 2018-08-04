@@ -234,7 +234,7 @@ class Utils
     public static function Upload($filename,$tmp_name){
         $uploaddir = '/www/turneon-server/upload/';
         $uploadfile = $uploaddir . basename($filename);
-        echo $uploadfile;
+        echo $filename;
         echo '<pre>';
         if (move_uploaded_file($tmp_name, $uploadfile)) {
             echo "Файл корректен и был успешно загружен.\n";
