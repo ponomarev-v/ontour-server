@@ -271,8 +271,10 @@ class Users
         return mail( $email,'Код активации',$link, $headers);
     }
     //функция для проверки почты..
-    public static function EmailVerification($id , $KeyGet)
+    public static function EmailVerification()
     {
+        $id = $_GET['id'];
+        $KeyGet = $_GET['key'];
         $db = Core::DB();
         $res = $db->where('id',$id)->get('user');
         $bd = $res[0];
