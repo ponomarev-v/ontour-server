@@ -10,8 +10,6 @@
         echo $_GET['blog'];
     }
 
-    $context = stream_context_create($opts);
-    echo $context;
     ?>
     <!--<form>-->
         <input type="submit" value="Назад" class="button">
