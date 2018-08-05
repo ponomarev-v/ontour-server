@@ -11,7 +11,9 @@ namespace API {
         }
         public function EmailVerification()
         {
-            return \Users::EmailVerification();
+            $id = \Utils::Request('id');
+            $KeyGet = \Utils::Request('key');
+            return \Users::EmailVerification($id,$KeyGet);
 
         }
 

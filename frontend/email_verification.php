@@ -2,7 +2,7 @@
 <head>
 </head>
 <body>
-Ваша Почта подтверждена http://api.turneon.ru/?method=user.EmailVerification
+Ваша Почта подтверждена http://api.turneon.ru/?method=user.EmailVerification?id=88&key=deed96bde1e494cec05472053776106aa38c7b20
 <a href="index.php">
     <?php
     // массив для переменных, которые будут переданы с запросом
