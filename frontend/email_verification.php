@@ -15,7 +15,7 @@
         CURLOPT_URL => 'http://api.turneon.ru/?method=user.EmailVerification',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => $paramsArray)
+        CURLOPT_POSTFIELDS => $paramsArray
     ));
     $response = curl_exec($myCurl);
     curl_close($myCurl);
