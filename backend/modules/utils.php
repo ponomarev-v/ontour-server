@@ -239,9 +239,10 @@ class Utils
         if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
             echo "Файл корректен и был успешно загружен.\n";
                 $typefile =  end(explode("/", $_FILES['userfile']['type']));
-                $filenamenew = uniqid('pic-') . "." . $typefile;
-                rename($uploadfile,  $uploaddir . $filenamenew);
-            $db->insert('Picturesobjects', array('name' => $filenamenew, 'description'=> "test"));
+                $filenamenew = uniqid('pic-');
+                $result = $filenamenew . "." . $typefile;
+                rename($uploadfile,  $uploaddir . $result);
+            $db->insert('Picturesobjects', array('name' => $filenamenew, 'formatfile'=>$typefile , 'description'=> "test"));
             if($msg = $db->getLastError())
                 throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         } else {
