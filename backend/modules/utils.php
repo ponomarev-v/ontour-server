@@ -233,7 +233,7 @@ class Utils
     // загрузка
     public static function UploadPicObjMap()
     {
-
+        $db = Core::DB();
         $uploaddir = '/www/turneon-server/upload/';
         $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
         if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
@@ -241,6 +241,7 @@ class Utils
                 $typefile =  end(explode("/", $_FILES['userfile']['type']));
                 $filenamenew = uniqid('pic-') . "." . $typefile;
                 rename($uploadfile,  $uploaddir . $filenamenew);
+            $db->insert('Picturesobjects', array('name' => $filenamenew, 'description'=> "test"));
 
         } else {
             echo "Возможная атака с помощью файловой загрузки!\n";
