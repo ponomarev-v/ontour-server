@@ -242,7 +242,8 @@ class Utils
                 $filenamenew = uniqid('pic-') . "." . $typefile;
                 rename($uploadfile,  $uploaddir . $filenamenew);
             $db->insert('Picturesobjects', array('name' => $filenamenew, 'description'=> "test"));
-
+            if($msg = $db->getLastError())
+                throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         } else {
             echo "Возможная атака с помощью файловой загрузки!\n";
         }
