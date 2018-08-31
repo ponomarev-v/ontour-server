@@ -22,12 +22,11 @@ $(window).on("load",function(){
         
         $("#tooltip").text($data_tooltip_central)
                      .css({ 
-                         "top" : eventObject.pageY + 80,
-                        "left" : eventObject.pageX  + 0,
+                         "top" : eventObject.pageY + 35,
+                        "left" : eventObject.pageX,
                         
                      })
                      .show();
-
     }).mouseout(function () {
 
         $("#tooltip").hide()
