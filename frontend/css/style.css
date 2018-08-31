@@ -125,8 +125,16 @@ body {
 }
 
  #central_map{
-    
+    visibility: hidden;
 } 
+
+#federal_map {
+ visibility: hidden;
+}
+
+#vladimir_map {
+    visibility: hidden; 
+}
 
 .center{
     text-align: center;

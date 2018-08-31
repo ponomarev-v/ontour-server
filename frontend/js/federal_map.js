@@ -63,5 +63,5 @@ $(window).on("load",function(){
      $("#Central",svgDoc).click(function(){
         window.location = "/CFD_map.php"
      });
-     
+     $("#federal_map").css("visibility","visible")
 });

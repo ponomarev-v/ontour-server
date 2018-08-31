@@ -40,5 +40,5 @@ $(window).on("load",function(){
                      });
     });
     count_obj("#path4498",svgVladimir);
-   
+    $("#vladimir_map").css("visibility","visible")
 });
