@@ -155,11 +155,6 @@
         }, null);
     }
 
-    function change_password_user_info() {
-        close_active_window();
-        }, null);
-    }
-
     $(document).ready(function () {
         update_user_info();
 
@@ -202,7 +197,7 @@
         register_ajax_form("#window_change_password form", function (data) {
             data = eval("(" + data + ")");
             if (data.result == "success") {
-                change_password_user_info(data);
+                close_active_window();
             } else {
                 $("#window_change_password .error").html(data["message"]);
             }
