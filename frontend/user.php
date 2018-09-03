@@ -156,13 +156,7 @@
     }
 
     function change_password_user_info() {
-        exec_ajax_request({method: "user.change_password"}, function (data) {
-            data = eval("(" + data + ")");
-            if (data.result == "success") {
-                close_active_window();
-            } else {
-                $("#window_password .error").html(data["message"]);
-            }
+        close_active_window();
         }, null);
     }
 
