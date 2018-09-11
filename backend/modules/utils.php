@@ -255,4 +255,14 @@ class Utils
 
         print "</pre>";
     }
+    // работа с регионами пока только get
+    public static function Region($reg, $act = 'get'){
+        $db = Core::DB();
+        if ($act == 'get') {
+            $res = $db -> where('reg',$reg)->get('map');
+            return res[0]['addr'];
+        } else {
+            return false;
+        }
+    }
 }
