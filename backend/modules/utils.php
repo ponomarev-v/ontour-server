@@ -255,13 +255,27 @@ class Utils
 
         print "</pre>";
     }
-    // работа с регионами пока только get
-    public static function Region($reg, $act = 'get'){
+    // работа с регионами
+    public static function Region($reg, $act = 'get', $name = null, $addr = null){
         $db = Core::DB();
         if ($act == 'get') {
             $res = $db -> where('reg',$reg)->get('map');
             return res[0]['addr'];
-        } else {
+        } elseif ($act == 'create'){
+            if (isset($name) && !empty($name) && isset($reg) && !empty($name) && isset($addr) && !empty($addr)){
+                $data = array(
+                    'reg' = $reg,
+                    'addr' = $addr,
+                    'name' = $name
+                );
+                $db -> insert('map', $data);
+                return $db -> GetLastError();
+            }
+            else {
+                throw new \Exception ('Некорректно введены данные');
+            }
+        }
+        else {
             return false;
         }
     }
