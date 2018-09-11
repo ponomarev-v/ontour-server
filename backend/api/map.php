@@ -1,16 +1,6 @@
 <?php
     namespace API{
         class Map{
-
-            //действия с регионами ссервера act - действие, reg - регион
-            public static function reg(){
-                $act = \Utils::Request('act');
-                $reg = \Utils::Request('reg');
-                if (!isset($act) || empty($act){
-                    return \Utils::Region($reg);
-                }
-                return \Utils::Region($reg, $act);
-            }       
             //добавление обьекта
             public static function Add(){
                 $data = array(
