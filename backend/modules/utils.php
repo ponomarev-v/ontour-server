@@ -255,7 +255,7 @@ class Utils
 
         print "</pre>";
     }
-    //эта функция осуществляет поиск в базе данных
+    //эта функция осуществляет поиск в базе данных TabName - имя таблицы, ColName - имя столбца, query - запрос (просто первые символы того, что хотим)
     public static function FindSmth($TabName, $ColName, $query){
         $db = Core::DB();
         if (isset($TabName) && !empty($TabName) && isset($ColName) && !empty($ColName) && isset($query) && !empty($query)){
