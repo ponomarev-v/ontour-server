@@ -261,7 +261,7 @@ class Utils
         if (isset($TabName) && !empty($TabName) && isset($ColName) && !empty($ColName) && isset($query) && !empty($query)){
             $query = $query.'%'; 
             $res   = $db -> rawQuery("SELECT * FROM $TabName WHERE $ColName LIKE '$query'");
-            return $res[0];
+            return $res;
         } else {
             throw new Exception('некорректно введены данные');
         }        
