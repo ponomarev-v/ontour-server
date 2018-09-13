@@ -260,7 +260,7 @@ class Utils
         $db = Core::DB();
         if (isset($TabName) && !empty($TabName) && isset($ColName) && !empty($ColName) && isset($query) && !empty($query)){
             $query = '%'.$query; 
-            $res   = $db -> rawQuery("SELECT * FROM 'object' WHERE reg LIKE '%rf'");
+            $res   = $db -> rawQuery("SELECT * FROM $TabName WHERE $ColName LIKE '$query'");
             return $res;
         } else {
             throw new Exception('некорректно введены данные');
