@@ -259,7 +259,7 @@ class Utils
     public static function FindSmth($TabName, $ColName, $query){
         $db = Core::DB();
         if (isset($TabName) && !empty($TabName) && isset($ColName) && !empty($ColName) && isset($query) && !empty($query)){
-            $query = '%'.$query; 
+            $query = $query.'%'; 
             $res   = $db -> rawQuery("SELECT * FROM $TabName WHERE $ColName LIKE '$query'");
             return $res[0];
         } else {
