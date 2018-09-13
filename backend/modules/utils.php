@@ -256,7 +256,7 @@ class Utils
         print "</pre>";
     }
     //эта функция осуществляет поиск в базе данных
-    public static function($TabName, $ColName, $query){
+    public static function FindSmth($TabName, $ColName, $query){
         $db = Core::DB();
         if (isset($TabName) && !empty($TabName) && isset($ColName) && !empty($ColName) && isset($query) && !empty($query)){
             $query = '%'.$query; 
