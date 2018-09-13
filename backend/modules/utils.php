@@ -266,3 +266,4 @@ class Utils
             throw new Exception('некорректно введены данные');
         }        
     }
+}
