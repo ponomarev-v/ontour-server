@@ -9,7 +9,7 @@ namespace API {
             $TabName = \Utils::Request('tabname');
             $ColName = \Utils::Request('colname');
             $query   = \Utils::Request('query');
-            return \Utils::FindSmth($TabName, $ColName, $query)
+            return \Utils::FindSmth($TabName, $ColName, $query);
         }
         public function EmailVerification()
         {
