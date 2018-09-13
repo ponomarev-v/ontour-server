@@ -6,8 +6,10 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-           \Utils::UploadPicObjMap();
-
+            $TabName = \Utils::Request('tabname');
+            $ColName = \Utils::Request('colname');
+            $query   = \Utils::Request('query');
+            return \Utils::FindSmth($TabName, $ColName, $query)
         }
         public function EmailVerification()
         {
