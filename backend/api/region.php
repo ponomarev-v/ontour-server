@@ -16,7 +16,7 @@
             //обновляем кол-во объектов
             public static function UpdateObjVal(){
                 $reg = \Utils::Request('reg');
-                if(isset($res) && !empty($res)){
+                if(!isset($reg) || empty($reg)){
                     return Update_Obj_Val();
                 } else {
                     return Update_Obj_Val($reg);
