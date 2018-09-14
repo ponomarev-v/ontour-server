@@ -10,14 +10,9 @@ class Regions{
             throw new Exception('ошибка получения данных из бд');
         }
     }
-    private static function CombinateRegs($ParReg){
-        if (isset($ParReg) && !empty($ParReg)){
-            
-        }
-    }
-    public static function Update_Obj_Val($reg = 'RF'){
-        $db  = Core::DB();
-        $res = $db -> where('reg', $reg) -> get('object');
+    
+    public static function Update_Obj_Val($query = 'RF'){
+        $res = FindSmth('object', 'reg', $query)
         if(isset($res) && !empty($res)){
             return count($res);
         } else {
