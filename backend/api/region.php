@@ -17,9 +17,9 @@
             public static function UpdateObjVal(){
                 $reg = \Utils::Request('reg');
                 if(!isset($reg) || empty($reg)){
-                    return Update_Obj_Val();
+                    return \Regions::Update_Obj_Val();
                 } else {
-                    return Update_Obj_Val($reg);
+                    return \Regions::Update_Obj_Val($reg);
                 }
             }
         }
