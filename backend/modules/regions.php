@@ -12,7 +12,7 @@ class Regions{
     }
     
     public static function Update_Obj_Val($query = 'RF'){
-        $res = FindSmth('object', 'reg', $query);
+        $res = Utils::FindSmth('object', 'reg', $query);
         if(isset($res) && !empty($res)){
             return count($res);
         } else {
