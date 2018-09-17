@@ -9,9 +9,9 @@ $(window).on("load",function(){
                            "#path42"];
     
 
-    Central_Map.setStyleForObjects("fill","#a1e736");
-    Central_Map.setStyleForObjects("stroke","#71a12a");
-    Central_Map.setStyleForObjects("transition","0.2s");
+    Central_Map.setStyleForObjects("fill","#a1e736",Central_Map.objects);
+    Central_Map.setStyleForObjects("stroke","#71a12a",Central_Map.objects);
+    Central_Map.setStyleForObjects("transition","0.2s",Central_Map.objects);
    
     objCentral.forEach(element => {
        //$(element,svgCentral).css("fill","#a1e736");
