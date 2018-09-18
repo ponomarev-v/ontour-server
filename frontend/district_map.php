@@ -8,6 +8,6 @@
             <p>Ваш браузер не поддерживает svg</p>
         </object>
     </div>
-    <script src="js/count_obj.js"></script>
+    <script src="js/Map.js"></script>
     <script src="js/federal_map.js"></script>
 <?php include "footer.php" ?>

@@ -38,22 +38,22 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
-	 $("#Far_Eastern",Federal_Map.content).css("fill","#f1ce82");
-	  $("#Far_Eastern",Federal_Map.content).css("stroke","#f1ce82");
-	 $("#Siberia",Federal_Map.content).css("fill","#c2cdd3");
-	 $("#Siberia",Federal_Map.content).css("stroke","#c2cdd3");
-	 $("#Urals",Federal_Map.content).css("fill","#8ecdef");
-	  $("#Urals",Federal_Map.content).css("stroke","#8ecdef");
-	 $("#Northwestern",Federal_Map.content).css("fill","#9eb8f9");
-	  $("#Northwestern",Federal_Map.content).css("stroke","#9eb8f9");
-	 $("#Volga",Federal_Map.content).css("fill","#fbe230");
-	 $("#Volga",Federal_Map.content).css("stroke","#fbe230");
-	 $("#Central",Federal_Map.content).css("fill","#a1e736");
-	 $("#Central",Federal_Map.content).css("stroke","#a1e736");
-	 $("#KL",Federal_Map.content).css("fill","#eea268");
-	 $("#KL",Federal_Map.content).css("stroke","#eea268");
-	 $("#KC",Federal_Map.content).css("fill","#d27387");
-     $("#KC",Federal_Map.content).css("stroke","#d27387");
+	// $("#Far_Eastern",Federal_Map.content).css("fill","#f1ce82");
+	 // $("#Far_Eastern",Federal_Map.content).css("stroke","#f1ce82");
+	 //$("#Siberia",Federal_Map.content).css("fill","#c2cdd3");
+	// $("#Siberia",Federal_Map.content).css("stroke","#c2cdd3");
+	 //$("#Urals",Federal_Map.content).css("fill","#8ecdef");
+	  //$("#Urals",Federal_Map.content).css("stroke","#8ecdef");
+	// $("#Northwestern",Federal_Map.content).css("fill","#9eb8f9");
+	  //$("#Northwestern",Federal_Map.content).css("stroke","#9eb8f9");
+	 //$("#Volga",Federal_Map.content).css("fill","#fbe230");
+	// $("#Volga",Federal_Map.content).css("stroke","#fbe230");
+	 //$("#Central",Federal_Map.content).css("fill","#a1e736");
+	 ///$("#Central",Federal_Map.content).css("stroke","#a1e736");
+	// $("#KL",Federal_Map.content).css("fill","#eea268");
+	// $("#KL",Federal_Map.content).css("stroke","#eea268");
+	// $("#KC",Federal_Map.content).css("fill","#d27387");
+    // $("#KC",Federal_Map.content).css("stroke","#d27387");
      
      $("#Central",Federal_Map.content).click(function(){
         window.location = "/CFD_map.php"
