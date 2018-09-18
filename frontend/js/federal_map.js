@@ -5,7 +5,6 @@ $(window).on("load",function(){
     Federal_Map.objects = ["#Central","#Volga","#Urals","#Siberia",
     "#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
     Federal_Map.objects.forEach(element => {
-        $(element,Federal_Map.content).css("transition","0.2s");
 
         $(element,Federal_Map.content).hover(function(){
             $(element,Federal_Map.content).css("opacity","0.7");     
