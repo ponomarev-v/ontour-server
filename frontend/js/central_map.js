@@ -8,20 +8,16 @@ $(window).on("load",function(){
                            "#path44","#path78","#path66","#path98","#path74","#path64","#path82",
                            "#path42"];
     
-
-    Central_Map.setStyleForObjects("fill","#a1e736",Central_Map.objects);
-    Central_Map.setStyleForObjects("stroke","#71a12a",Central_Map.objects);
-    Central_Map.setStyleForObjects("transition","0.2s",Central_Map.objects);
-   Central_Map.objects.forEach(element => {
-       //$(element,Central_Map.content).css("fill","#a1e736");
-      //$(element,Central_Map.content).css("stroke","#71a12a");
-       //$(element,Central_Map.content).css("transition","0.2s");
+    Central_Map.objects.forEach(element => {
+        $(element,Central_Map.content).css("fill","#a1e736");
+        $(element,Central_Map.content).css("stroke","#71a12a");
+        $(element,Central_Map.content).css("transition","0.2s");
        
-    $(element,Central_Map.content).hover(function(){
-        $(element,Central_Map.content).css("opacity","0.7");     
-        });
-    $(element,Central_Map.content).mouseout(function(){
-        $(element,Central_Map.content).css("opacity","1");   
+        $(element,Central_Map.content).hover(function(){
+            $(element,Central_Map.content).css("opacity","0.7");     
+            });
+        $(element,Central_Map.content).mouseout(function(){
+            $(element,Central_Map.content).css("opacity","1");   
         });
     });
     $("[data-tooltip]",Central_Map.content).mousemove(function (eventObject) {
@@ -44,8 +40,6 @@ $(window).on("load",function(){
                         "left" : 0
                      });
     });
-
-    count_obj("#path96",Central_Map.content);
 
     $("#path96",Central_Map.content).click(function(){
         window.location = "/Vladimir_map.php"

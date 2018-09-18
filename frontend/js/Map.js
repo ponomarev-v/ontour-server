@@ -59,9 +59,3 @@ Object.defineProperty(Map,"content",{
     configurable:true,
     enumerable:true
 });
-
-Map.setStyleForObjects = function(type,style,objects){
-    objects.forEach(element => {
-        $(element,Map.content).css(type,style);
-    });
-}
