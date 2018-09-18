@@ -2,9 +2,12 @@ $(window).on("load",function(){
     var Federal_Map = Object.create(Map);
     Federal_Map.map = $("#federal_map")[0];
     Federal_Map.content = Federal_Map.map.contentDocument;
+    Federal_Map.map.find("path").each(function(i){
+        alert(i.target.id);
+    })
     Federal_Map.objects = ["#Central","#Volga","#Urals","#Siberia",
-    "#Far_Eastern","#Northwestern","#KC","#KL","#path4765"]
-    Federal_Map.objects.forEach(element => {
+    "#Far_Eastern","#Northwestern","#KC","#KL"]
+    Federal_Map.objects.forEach(element => {    
 
         $(element,Federal_Map.content).hover(function(){
             $(element,Federal_Map.content).css("opacity","0.7");     
