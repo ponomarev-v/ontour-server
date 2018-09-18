@@ -7,6 +7,7 @@ namespace API {
         public  function TestFunc()
         {
             $res = \Utils::Request('idobj');
+            echo $res;
             return \Regions::Update_Obj_Val($res);
         }
         public function EmailVerification()
