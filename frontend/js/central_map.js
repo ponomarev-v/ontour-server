@@ -9,13 +9,13 @@ $(window).on("load",function(){
                            "#path42"];
     
 
-    //Central_Map.setStyleForObjects("fill","#a1e736",Central_Map.objects);
-    //Central_Map.setStyleForObjects("stroke","#71a12a",Central_Map.objects);
-    //Central_Map.setStyleForObjects("transition","0.2s",Central_Map.objects);
+    Central_Map.setStyleForObjects("fill","#a1e736",Central_Map.objects);
+    Central_Map.setStyleForObjects("stroke","#71a12a",Central_Map.objects);
+    Central_Map.setStyleForObjects("transition","0.2s",Central_Map.objects);
    Central_Map.objects.forEach(element => {
-       $(element,Central_Map.content).css("fill","#a1e736");
-       $(element,Central_Map.content).css("stroke","#71a12a");
-       $(element,Central_Map.content).css("transition","0.2s");
+       //$(element,Central_Map.content).css("fill","#a1e736");
+      //$(element,Central_Map.content).css("stroke","#71a12a");
+       //$(element,Central_Map.content).css("transition","0.2s");
        
     $(element,Central_Map.content).hover(function(){
         $(element,Central_Map.content).css("opacity","0.7");     
