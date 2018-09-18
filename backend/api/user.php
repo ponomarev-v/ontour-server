@@ -8,7 +8,7 @@ namespace API {
         {
             $res = \Utils::Request('idobj');
             echo $res;
-            return \Regions::Update_Obj_Val($res);
+            return \Regions::DataObjsInRegion($res);
         }
         public function EmailVerification()
         {

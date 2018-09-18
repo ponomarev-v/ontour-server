@@ -23,11 +23,9 @@ class Regions{
     public static function DataObjsInRegion($idobj)
     {
         echo $idobj;
-        $otv = str_replace('%', $idobj);
         $db  = Core::DB();
         $obj = $db->get('object');
-        return $otv;
-        return $obj-> having($otv);
+        return $obj-> having($idobj);
     }
 
 }
