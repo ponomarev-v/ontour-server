@@ -6,8 +6,8 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            //ntcnbc
-            return \Regions::Update_Obj_Val();
+            $res = \Utils::Request();
+            return \Regions::Update_Obj_Val($res);
         }
         public function EmailVerification()
         {

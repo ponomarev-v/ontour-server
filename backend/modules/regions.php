@@ -20,11 +20,11 @@ class Regions{
         }
     }
     //будет возращать кол-во обьектов в регионе
-    public static function DataObjsInRegion()
+    public static function DataObjsInRegion($idobj)
     {
         $db  = Core::DB();
         $obj = $db->get('object');
-        return $obj-> having('33');
+        return $obj-> having($idobj);
 
     }
 
