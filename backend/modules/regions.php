@@ -19,4 +19,12 @@ class Regions{
             throw new Exception('ошибка получения кольчества объектов');
         }
     }
+    //будет возращать кол-во обьектов в регионе
+    public static function DataObjsInRegion()
+    {
+        $db  = Core::DB();
+        return $db-> having('33');
+
+    }
+
 }

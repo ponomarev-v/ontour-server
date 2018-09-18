@@ -6,10 +6,7 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            $TabName = \Utils::Request('tabname');
-            $ColName = \Utils::Request('colname');
-            $query   = \Utils::Request('query');
-            return \Utils::FindSmth($TabName, $ColName, $query);
+            return \Regions::Update_Obj_Val();
         }
         public function EmailVerification()
         {
