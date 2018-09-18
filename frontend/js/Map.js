@@ -54,7 +54,10 @@ Object.defineProperty(Map,"objects",{
 });
 
 Object.defineProperty(Map,"content",{
-
+    set:set_content,
+    get:get_content,
+    configurable:true,
+    enumerable:true
 });
 
 Map.setStyleForObjects = function(type,style,objects){

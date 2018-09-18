@@ -12,8 +12,7 @@ $(window).on("load",function(){
     //Central_Map.setStyleForObjects("fill","#a1e736",Central_Map.objects);
     //Central_Map.setStyleForObjects("stroke","#71a12a",Central_Map.objects);
     //Central_Map.setStyleForObjects("transition","0.2s",Central_Map.objects);
-   obj = Central_Map.objects;
-   obj.forEach(element => {
+   Central_Map.objects.forEach(element => {
        $(element,Central_Map.content).css("fill","#a1e736");
        $(element,Central_Map.content).css("stroke","#71a12a");
        $(element,Central_Map.content).css("transition","0.2s");
