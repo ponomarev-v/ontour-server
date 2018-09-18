@@ -26,7 +26,7 @@ class Regions{
         $otv = str_replace('%', $idobj);
         $db  = Core::DB();
         $obj = $db->get('object');
-        print $otv;
+        return $otv;
         return $obj-> having($otv);
     }
 
