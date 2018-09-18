@@ -18,14 +18,14 @@ $(window).on("load",function(){
        //$(element,svgCentral).css("stroke","#71a12a");
        //$(element,svgCentral).css("transition","0.2s");
        
-    $(element,svgCentral).hover(function(){
-        $(element,svgCentral).css("opacity","0.7");     
+    $(element,Central_Map.content).hover(function(){
+        $(element,Central_Map.content).css("opacity","0.7");     
         });
-    $(element,svgCentral).mouseout(function(){
-        $(element,svgCentral).css("opacity","1");   
+    $(element,Central_Map.content).mouseout(function(){
+        $(element,Central_Map.content).css("opacity","1");   
         });
     });
-    $("[data-tooltip]",svgCentral).mousemove(function (eventObject) {
+    $("[data-tooltip]",Central_Map.content).mousemove(function (eventObject) {
 
         $data_tooltip_central = $(this).attr("data-tooltip");
         
@@ -46,9 +46,9 @@ $(window).on("load",function(){
                      });
     });
 
-    count_obj("#path96",svgCentral);
+    count_obj("#path96",Central_Map.content);
 
-    $("#path96",svgCentral).click(function(){
+    $("#path96",Central_Map.content).click(function(){
         window.location = "/Vladimir_map.php"
     });
 
