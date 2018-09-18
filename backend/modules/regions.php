@@ -25,7 +25,7 @@ class Regions{
         echo $idobj;
         $db  = Core::DB();
         $obj = $db->get('object');
-        return $obj-> having($idobj);
+        return $obj-> orWhere($idobj);
     }
 
 }
