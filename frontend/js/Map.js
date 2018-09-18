@@ -58,7 +58,7 @@ Object.defineProperty(Map,"content",{
 });
 
 Map.setStyleForObjects = function(type,style,objects){
-    objects.forEach($element => {
+    objects.forEach(element => {
         $(element,Map.content).css(type,style);
     });
 }
