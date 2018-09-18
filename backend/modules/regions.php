@@ -23,7 +23,8 @@ class Regions{
     public static function DataObjsInRegion()
     {
         $db  = Core::DB();
-        return $db-> having('33');
+        $obj = $db->get('object');
+        return $obj-> having('33');
 
     }
 
