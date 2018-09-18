@@ -6,7 +6,7 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            $res = \Utils::Request();
+            $res = \Utils::Request('idobj');
             return \Regions::Update_Obj_Val($res);
         }
         public function EmailVerification()
