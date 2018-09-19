@@ -75,7 +75,7 @@ namespace API {
             );
             $pizda = $new_data['email'];
             $status_email = \Utils::FindSmth('user','email', $new_data['email']);
-            echo $new_data;
+            echo $pizda;
             return $status_email;
             if($status_email['count(*)'] > 0)
                 throw new \Exception("Пользователь с такой почтой уже есть.");
