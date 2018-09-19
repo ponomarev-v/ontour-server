@@ -149,7 +149,7 @@ class Users
             throw new \Exception("email отсутствует или указан неверно");
         if($res['email'] != $data['email'])
         {
-            if(!empty($data['email']) && Utils::FindBd('phone', $data['email']))
+            if(!empty($data['email']) && Utils::FindBd('email', $data['email']))
                 throw new Exception('Указанный email занят другим пользователем');
 
         }

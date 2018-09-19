@@ -73,16 +73,9 @@ namespace API {
                 'email' => \Utils::Request('email'),
                 'school' => \Utils::Request('school'),
             );
-            $pizda = $new_data['email'];
-            $status_email = \Utils::FindSmth('user','email', $new_data['email']);
-            echo $pizda;
-            return $status_email;
-            if($status_email['count(*)'] > 0)
-                throw new \Exception("Пользователь с такой почтой уже есть.");
-
             $id = $_SESSION['userid'];
            // return \Users::ChangeUserProfile($id, $new_data);
-            //return \Users::UpdateUserProfile($id, $new_data);
+            return \Users::UpdateUserProfile($id, $new_data);
         }
         //поменять password
 
