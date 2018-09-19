@@ -6,9 +6,12 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            $res = \Utils::Request('idobj');
-            echo $res;
-            return \Regions::DataObjsInRegion($res);
+            $tn  = \Utils::Request('TN');
+            $cn  = \Utils::Request('CN');
+            $q   = \Utils::Request('Q');
+            $res = \Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
+            echo $res
+            return \Utils::FindSmth($tn, $cn, $q);
         }
         public function EmailVerification()
         {
