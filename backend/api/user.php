@@ -80,7 +80,7 @@ namespace API {
 
             $id = $_SESSION['userid'];
            // return \Users::ChangeUserProfile($id, $new_data);
-            return \Users::UpdateUserProfile($id, $new_data);
+            //return \Users::UpdateUserProfile($id, $new_data);
         }
         //поменять password
 
