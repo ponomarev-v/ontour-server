@@ -12,9 +12,9 @@ class Regions{
     }
     
     public static function Update_Obj_Val($query = 'RF'){
-        $res = Utils::FindSmth('object', 'reg', $query);
+        $res = Core::DB() -> rawQuery("SELECT count(*) FROM 'object' WHERE 'reg' LIKE '$query'");
         if(isset($res) && !empty($res)){
-            return count($res);
+            return $res;
         } else {
             throw new Exception('ошибка получения кольчества объектов');
         }
