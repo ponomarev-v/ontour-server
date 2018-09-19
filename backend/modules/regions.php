@@ -13,7 +13,8 @@ class Regions{
     
     public static function Update_Obj_Val($query = 'rf'){
         $query.='%';
-        $res = Core::DB() -> rawQuery("SELECT count(*) FROM 'object' WHERE 'reg' LIKE '$query'");
+        $obj = 'object';
+        $res = Core::DB() -> rawQuery("SELECT count(*) FROM $obj WHERE 'reg' LIKE '$query'");
         if(isset($res) && !empty($res)){
             return $res;
         } else {
