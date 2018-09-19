@@ -24,7 +24,7 @@ class Regions{
     {
         echo $idobj;
         $db  = Core::DB();
-        $obj = $db->get('object')->where('reg', $idobj,BETWEEN);
+        $obj = $db->get('object')->where('reg', $idobj);
         return $obj;
     }
 
