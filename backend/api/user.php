@@ -74,6 +74,7 @@ namespace API {
                 'school' => \Utils::Request('school'),
             );
             $status_email = \Utils::FindSmth('user','email',$new_data(email));
+            return $status_email;
             if($status_email['count(*)'] > 0)
                 throw new \Exception("Пользователь с такой почтой уже есть.");
 
