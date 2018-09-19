@@ -11,10 +11,12 @@ class Regions{
         }
     }
     
-    public static function Update_Obj_Val($query = 'RF'){
-        $res = Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
+    public static function Update_Obj_Val($query = 'rf'){
+        $query.='%';
+        $obj = 'object';
+        $res = Core::DB() -> rawQuery("SELECT count(*) FROM $obj WHERE 'reg' LIKE '$query'");
         if(isset($res) && !empty($res)){
-            return count($res);
+            return $res;
         } else {
             throw new Exception('ошибка получения кольчества объектов');
         }
@@ -24,9 +26,7 @@ class Regions{
     {
         echo $idobj;
         $db  = Core::DB();
-        $db->where('reg','%$idobj', 'like');
-        $result = $db->get('object');
-        return $result;
+        return $db ->where('reg', $idobj,'LIKE')->get('object');
     }
 
 }
