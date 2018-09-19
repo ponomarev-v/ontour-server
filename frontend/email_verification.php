@@ -23,7 +23,7 @@
     echo "Ответ на Ваш запрос: ".$response;
     ?>
     <!--<form>-->
-        <input type="submit" value="Назад" class="button">
+    <input type="submit" value="Назад" class="button">
     <!--</form>-->
 </a>
 </body>
