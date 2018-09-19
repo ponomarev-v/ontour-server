@@ -9,8 +9,8 @@ namespace API {
             $tn  = \Utils::Request('TN');
             $cn  = \Utils::Request('CN');
             $q   = \Utils::Request('Q');
-            $res = \Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
-            echo $res
+        //    $res = \Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
+        //    echo $res
             return \Utils::FindSmth($tn, $cn, $q);
         }
         public function EmailVerification()
