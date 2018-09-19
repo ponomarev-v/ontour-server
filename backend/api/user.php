@@ -73,6 +73,7 @@ namespace API {
                 'email' => \Utils::Request('email'),
                 'school' => \Utils::Request('school'),
             );
+            $pizda = $new_data['email'];
             $status_email = \Utils::FindSmth('user','email', $new_data['email']);
             echo $new_data;
             return $status_email;
