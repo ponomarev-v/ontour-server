@@ -24,7 +24,9 @@ class Regions{
     {
         echo $idobj;
         $db  = Core::DB();
-        return $db ->where('reg', $idobj,'LIKE')->get('object');
+        $db->where('reg','%33', 'like');
+        $result = $db->get('object');
+        return $result;
     }
 
 }
