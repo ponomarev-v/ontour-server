@@ -12,7 +12,7 @@ class Regions{
     }
     
     public static function Update_Obj_Val($query = 'RF'){
-        $res = Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
+        $res = Utils::FindSmth('object', 'reg', $query);
         if(isset($res) && !empty($res)){
             return count($res);
         } else {
@@ -24,9 +24,7 @@ class Regions{
     {
         echo $idobj;
         $db  = Core::DB();
-        $db->where('reg','%$idobj', 'like');
-        $result = $db->get('object');
-        return $result;
+        return $db ->where('reg', $idobj,'LIKE')->get('object');
     }
 
 }
