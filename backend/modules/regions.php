@@ -11,11 +11,12 @@ class Regions{
         }
     }
     
-    public static function Update_Obj_Val($query = 'RF'){
+    public static function Update_Obj_Val($query = 'rf'){
+        $query.='%';
         $res = Core::DB() -> rawQuery("SELECT count(*) FROM 'object' WHERE 'reg' LIKE '$query'");
         if(isset($res) && !empty($res)){
             return $res;
-        } else {
+        } else {''
             throw new Exception('ошибка получения кольчества объектов');
         }
     }
