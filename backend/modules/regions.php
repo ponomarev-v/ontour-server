@@ -16,7 +16,7 @@ class Regions{
         $res = Core::DB() -> rawQuery("SELECT count(*) FROM 'object' WHERE 'reg' LIKE '$query'");
         if(isset($res) && !empty($res)){
             return $res;
-        } else {''
+        } else {
             throw new Exception('ошибка получения кольчества объектов');
         }
     }
