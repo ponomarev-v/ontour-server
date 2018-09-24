@@ -1,9 +1,9 @@
 <?php
 class Regions{
 
-    public static function GetReg($reg = 'RF'){
+    public static function GetReg($par = 'rf'){
         $db  = Core::DB();
-        $res = $db -> where('reg', $reg) -> get('region');
+        $res = $db -> where('parent', $reg) -> get('region');
         if (isset($res) && !empty($res)){
             return $res;
         } else {
