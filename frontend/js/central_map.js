@@ -3,10 +3,9 @@ $(window).on("load",function(){
 
     Central_Map.map = $("#central_map")[0];
     Central_Map.content = Central_Map.map.contentDocument;
-    Central_Map.objects = ["#path68000","#path96","#path94","#path92","#path46",
-                           "#path50","#path60","#path68","#path54","#path62","#path4926",
-                           "#path44","#path78","#path66","#path98","#path74","#path64","#path82",
-                           "#path42"];
+    Central_Map.objects = ["#Vladimir","#Bransk","#Smolensk","#Ivanovo","#Kostroma",
+                           "#Tver","#Yroslavl","#Kalyga","#Kyrsk","#Lipeck","#Moskva",
+                           "#Moskva_obl","#Orlov","#Tyla","#Belgorod","#Razan","#Tambov","#Voronez"];
     
     Central_Map.objects.forEach(element => {
         $(element,Central_Map.content).css("fill","#a1e736");

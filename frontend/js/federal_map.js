@@ -2,9 +2,6 @@ $(window).on("load",function(){
     var Federal_Map = Object.create(Map);
     Federal_Map.map = $("#federal_map")[0];
     Federal_Map.content = Federal_Map.map.contentDocument;
-    $("#federal_map").find("path").each(function(i){
-        alert(i.target.id);
-    })
     Federal_Map.objects = ["#Central","#Volga","#Urals","#Siberia",
     "#Far_Eastern","#Northwestern","#KC","#KL"]
     Federal_Map.objects.forEach(element => {    
