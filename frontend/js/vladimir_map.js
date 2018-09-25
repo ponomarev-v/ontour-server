@@ -1,7 +1,7 @@
 $(window).on("load",function(){
     var vladimirMap = $("#vladimir_map")[0];
     var svgVladimir = vladimirMap.contentDocument;
-    var objVladimir = ["#Sobinka","#Gys-Xrystalnyi","#Selevanovo","#Myrom_obl","#Kovrov_obl","#Kameskovo","#Sydogda","#Myrom","#Gys-Xrystalnyi","#Kovrov","#Vladimir","#Radyznyi","#Vazniki","#Gorohovec","#Syzdal","#Melenki","#Kolcygino","#Petyshki","#Yuriev-Polskiy","#Aleksandrov","#Kirzach"]
+    var objVladimir = ["#Sobinka","#Gys-Xrystalnyi","#Selevanovo","#Myrom_obl","#Kovrov_obl","#Kameskovo","#Sydogda","#Myrom","#Gys-Xrystalnyi","#Kovrov","#Vladimir","#Radyznyi","#Vazniki","#Gorohovec","#Syzdal","#Melenki","#Kolcygino","#Petyshki","#Yuriev-Polskiy","#Aleksandrov","#Kirzach","#Gorohovecs"]
     var state;
     objVladimir.forEach(element => {
         $(element,svgVladimir).css("fill","#a1e736");
