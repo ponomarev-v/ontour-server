@@ -1,14 +1,11 @@
 <?php
 class Regions{
 
-    public static function GetReg($par = 'rf'){
+    public static function GetReg($parent){
         $db  = Core::DB();
-        $res = $db -> where('parent', $reg) -> get('region');
-        if (isset($res) && !empty($res)){
-            return $res;
-        } else {
-            throw new Exception('ошибка получения данных из бд');
-        }
+        $db->where('parent', $parent);
+        $res =  $db->get('region');
+        return $res;
     }
     
     public static function Update_Obj_Val($query = 'rf'){

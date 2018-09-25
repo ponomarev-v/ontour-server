@@ -1,19 +1,13 @@
 <?php
     namespace API{
         class Region{
-            //получаем карту
+            
             public static function Get(){
-                $reg = \Utils::Request('reg');
-                if(isset($reg) && !empty($reg)){
-                    return \Regions::GetReg($reg);
-                }
-                elseif (!isset($reg) || empty($reg)){
-                    return \Regions::GetReg();
-                }else{
-                    throw new \Exception('некорректные данные');
-                }
+                $parent = \Utils::Request('parent');
+                return \Regions::GetReg($parent);
             }
-            //обновляем кол-во объектов
+
+            //обновляем кол-во объектов 
             public static function UpdateObjVal(){
                 $reg = \Utils::Request('reg');
                 if(!isset($reg) || empty($reg)){
