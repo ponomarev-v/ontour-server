@@ -178,7 +178,7 @@ class Utils
             }
         }
     }
-//хз шо
+//хз шоreturn 
     public static function CreateGUID($namespace = '', $format = true)
     {
         $uid = uniqid("", true);
