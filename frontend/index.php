@@ -6,6 +6,7 @@ include "header.php";/*подключение головы сайта*/
 include "footer.php";/*подключение ног сайта*/
 ?>
 <script>
+    /*
      $.ajax({
             type: "POST",
             url: "http://api.turneon.ru/?method=user.GeoIpLocation",
@@ -21,4 +22,5 @@ include "footer.php";/*подключение ног сайта*/
                 }
             }
         });
+        */
 </script>
