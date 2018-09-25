@@ -9,6 +9,7 @@ include "header.php";
         <object type="image/svg+xml" data="images/district_map.svg" id="federal_map" width="70%">
             <p>Ваш браузер не поддерживает svg</p>
         </object>
+
     </div>
 <?php
 include "footer.php";
