@@ -264,6 +264,6 @@ class Utils
             return $res;
         } else {
             throw new Exception('некорректно введены данные');
-        }        
+        }
     }
 }
