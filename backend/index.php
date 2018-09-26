@@ -30,7 +30,7 @@ try {
                     $res = array('data' => $res);
                 }
                 $keys = array_keys($res);
-                if($keys[0] == 0 && $keys[sizeof($keys) - 1] == sizeof($keys) - 1)
+                if(sizeof($keys) > 0 && $keys[0] == 0 && $keys[sizeof($keys) - 1] == sizeof($keys) - 1)
                     $res = array('count' => sizeof($res), 'items' => $res);
                 $res = array_merge(array('result' => 'success'), $res);
             } else {
