@@ -40,7 +40,7 @@ $(window).on("load",function(){
                      });
     });
 
-    $("#path96",Central_Map.content).click(function(){
+    $("#Vladimir",Central_Map.content).click(function(){
         window.location = "/Vladimir_map.php"
     });
 
