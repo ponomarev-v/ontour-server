@@ -47,9 +47,9 @@
             }
             //добавление объекта
             public static function AddtoFav(){
-                $act = \Utils::Request('act');
-                $objid = \Utils::Request('objid');
-                $id = $_SESSION['userid'];
+                $act   = \Utils::Request('act');
+                //$objid = \Utils::Request('objid');
+                $id    = $_SESSION['userid'];
                 return \Objects::Add_to_Fav($act, $objid, $id);
             }
             
