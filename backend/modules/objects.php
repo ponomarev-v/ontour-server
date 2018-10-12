@@ -94,7 +94,7 @@ class Objects
         $db = Core::DB();
         $ures = $db ->where('id', $id)
                     ->get('user');
-        $ores = $db ->where('id', $id)
+        $ores = $db ->where('id', $objid)
                     ->get('object');
         $ures['favorites'] = $ores['id'];
         if($act == 'add'){
