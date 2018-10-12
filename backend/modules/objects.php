@@ -96,9 +96,12 @@ class Objects
                     ->get('user');
         $ores = $db ->where('id', $id)
                     ->get('object');
-        $ures['favorites'] = $ures['favorites'] + ',' + $ores['id'];
-        $db->where('id', $id) -> update('user', $ures);
-        return $ores['id'];
+        $ures['favorites'] = $ores['id'];
+        if($act == 'add'){
+            $db ->where('id', $id) 
+                ->update('user', $ures);
+        }
+        return $ores['name'];
     }
 
 }
