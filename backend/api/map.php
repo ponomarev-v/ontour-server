@@ -45,6 +45,7 @@
                 $str = \Utils::Request('find');
                 return \Objects::Find_obj($str);
             }
+            //добавление объекта
             public static function AddtoFav(){
                 $act = \Utils::Request('act');
                 $objid = \Utils::Request('objid');
