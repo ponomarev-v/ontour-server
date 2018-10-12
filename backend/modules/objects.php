@@ -90,8 +90,15 @@ class Objects
         return $res;
     }
     //метод для ненужного метода
-    public static function Get(){
-        return ;
+    public static function Add_to_Fav($act, $objid, $id){
+        $db = Core::DB();
+        $ures = $db ->where('id', $id)
+                    ->get('user');
+        $ores = $db ->where('id', $id)
+                    ->get('object');
+        $ures['favorites'] = $ures['favorites'] + ',' + $ores['id'];
+        $db->where('id', $id) -> update('user', $ures);
+        return $ores['id'];
     }
 
 }

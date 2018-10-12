@@ -41,10 +41,16 @@
                     return \Objects::Delete_obj($cx, $cy);
             }
             //поиск обьекта
-            public static function Find_Target(){
+            public static function FindTarget(){
                 $str = \Utils::Request('find');
                 return \Objects::Find_obj($str);
             }
-
+            public static function AddtoFav(){
+                $act = \Utils::Request('act');
+                $objid = \Utils::Request('objid');
+                $id = $_SESSION['userid'];
+                return \Objects::Add_to_Fav($act, $objid, $id);
+            }
+            
         }
     }
