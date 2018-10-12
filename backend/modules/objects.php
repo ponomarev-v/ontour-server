@@ -92,7 +92,7 @@ class Objects
     //метод для ненужного метода
     public static function Add_to_Fav($act, $objid, $id){
         $db = Core::DB();
-        $objid = (int) $objid;
+        $objid = (int)$objid;
         $ures = $db ->where('id', $id)
                     ->get('user');
         $ores = $db ->where('id', $objid)
