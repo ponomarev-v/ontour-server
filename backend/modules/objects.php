@@ -95,7 +95,7 @@ class Objects
         $update = array(
             'user_id'   => $id,
             'object_id' => $objid,
-            'date'      => time()
+            'add_date'      => time()
         );
         if($act == 'add'){
             $db->insert('favorites', $update);
