@@ -17,6 +17,13 @@ class Regions
             ->getOne('region', array('id', 'parent', 'name', 'geoip'));
     }
 
+    public static function GetChildren($parent)
+    {
+        return Core::DB()
+            ->where('psrent', $parent)
+            ->getOne('region', array('id', 'parent', 'name', 'geoip', 'path'));
+    }
+
 
     public static function Update_Obj_Val($query = 'rf')
     {
@@ -37,4 +44,5 @@ class Regions
         $db = Core::DB();
         return $db->where('reg', $idobj, 'LIKE')->get('object');
     }
+
 }
