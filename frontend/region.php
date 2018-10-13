@@ -9,7 +9,7 @@ include "header.php";
     function loadRegion(id) {
         $.ajax({
             type: "POST",
-            url: "http://api.turneon.ru/?method=region.getinfo&id="+id,
+            url: "http://api.turneon.ru/?method=region.get&id="+id,
             xhrFields: {withCredentials: true},
             success: function (data) {
                 alert(data);
