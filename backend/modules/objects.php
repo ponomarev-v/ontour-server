@@ -89,7 +89,7 @@ class Objects
         $res = $db->rawQuery("SELECT * FROM object WHERE name LIKE '$str'");
         return $res;
     }
-    //метод для ненужного метода
+    //метод для действия с таблицей favorites
     public static function ActionWithFav($act, $objid, $id){
         $db = Core::DB();
         $update = array(
