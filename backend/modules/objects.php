@@ -98,7 +98,7 @@ class Objects
             'add_date'      => time()
         );
         if($act == 'add'){
-            $res = $db->insert('favorites', $update);
+            $db->insert('favorites', $update);
         }
         elseif($act == 'get_user'){
             $res = $db ->where('user_id', $id)
