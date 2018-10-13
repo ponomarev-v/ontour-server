@@ -21,7 +21,7 @@ class Regions
     {
         return Core::DB()
             ->where('parent', $parent)
-            ->get('region', 0, array('id', 'parent', 'name', 'geoip', 'path'));
+            ->get('region', null, array('id', 'parent', 'name', 'geoip', 'path'));
     }
 
 
