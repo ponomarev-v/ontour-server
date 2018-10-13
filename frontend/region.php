@@ -2,25 +2,38 @@
 include "header.php";
 ?>
 <!-- <?php print_r($_SERVER); ?> -->
-    <div class="center">
-        <h1>Приложение</h1>
-    </div>
-    <script>
+<div class="center">
+    <h1>Приложение</h1>
+</div>
+<script>
+    function loadRegion(parent) {
         $.ajax({
             type: "POST",
-            url: "http://api.turneon.ru/?method=user.GeoIpLocation",
+            url: "http://api.turneon.ru/?method=region.get&parent="+parent,
             xhrFields: {withCredentials: true},
             success: function (data) {
-                data = eval("(" + data + ")");
-                if (data.result == "success") {
-                    if (data.data == "Vladimir") {
+                alert(data);
+                response = eval("(" + data + ")");
+                /*
+                if (response.result == "success") {
+                    if (response.data == "Vladimir") {
                         window.location = "/Vladimir_map.php"
                     } else {
                         window.location = "/district_map.php"
                     }
                 }
+                */
             }
         });
-    </script>
+    }
+
+    $(document).ready(function(){
+        current_region = $.cookie('region');
+        if(current_region)
+            loadRegion(current_region);
+        else
+            loadRegion('auto');
+    });
+</script>
 <?php
 include "footer.php";
