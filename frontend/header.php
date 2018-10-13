@@ -9,6 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--кодировка-->
     <script src="/js/jquery-3.3.1.js"></script><!--скрипт jquery-->
     <script src="/js/jquery.mask.js"></script><!--скрипт jquery.mask-->
+    <script src="/js/jquery.cookie.js"></script><!--скрипт jquery.mask-->
     <script src="/js/app.js"></script><!--скрипт app-->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
 </head>
