@@ -23,6 +23,7 @@ namespace API {
             }
 
             $root['items'] = \Regions::GetChildren($root['id']);
+            print_r($root);
             return $root;
         }
 
