@@ -1,18 +1,26 @@
 <?php
 include "header.php";
 ?>
-<div id="tooltip"></div>
-<div class="content">
-    <h3 class="map_header">
-        Россия
-    </h3>
-    <object type="image/svg+xml" data="images/district_map2.svg" id="federal_map" width="70%">
-        <p>Ваш браузер не поддерживает svg</p>
-    </object>
-</div>
 <script>
+    var svg   = document.documentElement;
+    var svgNS = svg.namespaceURI;
+
+    var rect = document.createElementNS(svgNS,'rect');
+    rect.setAttribute('x',5);
+    rect.setAttribute('y',5);
+    rect.setAttribute('width',500);
+    rect.setAttribute('height',500);
+    rect.setAttribute('fill','#95B3D7');
+    svg.appendChild(rect);
+    document.body.appendChild(svg);
+
+    var h=document.createElement('a');
+    var t=document.createTextNode('Hello World');
+    h.appendChild(t);
+    document.body.appendChild(h);
+
     $(window).on("load",function(){
-        $("#federal_map").css("visibility","visible")
+
     });
 </script>
 <?php
