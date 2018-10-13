@@ -20,7 +20,7 @@ class Regions
     public static function GetChildren($parent)
     {
         return Core::DB()
-            ->where('psrent', $parent)
+            ->where('parent', $parent)
             ->getOne('region', array('id', 'parent', 'name', 'geoip', 'path'));
     }
 
