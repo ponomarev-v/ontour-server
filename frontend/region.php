@@ -12,17 +12,9 @@ include "header.php";
             url: "http://api.turneon.ru/?method=region.get&id="+id,
             xhrFields: {withCredentials: true},
             success: function (data) {
-                alert(data);
                 response = eval("(" + data + ")");
-                /*
                 if (response.result == "success") {
-                    if (response.data == "Vladimir") {
-                        window.location = "/Vladimir_map.php"
-                    } else {
-                        window.location = "/district_map.php"
-                    }
                 }
-                */
             }
         });
     }
