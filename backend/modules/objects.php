@@ -90,7 +90,7 @@ class Objects
         return $res;
     }
     //метод для ненужного метода
-    public static function Add_to_Fav($act, $objid, $id){
+    public static function ActionWithFav($act, $objid, $id){
         $db = Core::DB();
         $update = array(
             'user_id'   => $id,
@@ -99,6 +99,14 @@ class Objects
         );
         if($act == 'add'){
             $db->insert('favorites', $update);
+        }
+        elseif($act == 'get_user'){
+            $db ->where('user_id', $id)
+                ->get('favorites');
+        }
+        elseif($act == 'get_object') {
+            $db->where('object_id', $objid)
+                ->get('favorites');
         }
         return $db->getLastError();
     }

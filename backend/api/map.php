@@ -46,11 +46,11 @@
                 return \Objects::Find_obj($str);
             }
             //добавление объекта
-            public static function AddtoFav(){
+            public static function ActWithFav(){
                 $act   = \Utils::Request('act');
                 $objid = \Utils::Request('objid');
                 $id    = $_SESSION['userid'];
-                return \Objects::Add_to_Fav($act, $objid, $id);
+                return \Objects::ActionWithFav($act, $objid, $id);
             }
             
         }
