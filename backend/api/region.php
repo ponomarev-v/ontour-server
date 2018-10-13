@@ -5,14 +5,7 @@ namespace API {
     {
         public static function Get()
         {
-            $id = \Utils::Request('id');
-            $root = null;
-            if($id == "auto") {
-                if($geoip = $_SERVER['GEOIP_COUNTRY_CODE'] . '-' . $_SERVER['GEOIP_REGION'])
-                    $root = \Regions::GetByGeoIP($geoip);
-            } else {
-                $root = \Regions::GetByID($id);
-            }
+            $root = self::GetInfo();
             if(empty($root)) {
                 $root = array(
                     'id'     => '',
@@ -21,9 +14,7 @@ namespace API {
                     'geoip'  => '',
                 );
             }
-
             $root['items'] = \Regions::GetChildren($root['id']);
-            print_r($root);
             return $root;
         }
 
