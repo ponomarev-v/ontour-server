@@ -3,13 +3,15 @@
 namespace API {
     class Region
     {
-        public static function Get()
+        public static function GetInfo()
         {
-            $parent = \Utils::Request('parent');
-            if($parent == "auto") {
-                $reg = "";
+            $id = \Utils::Request('id');
+            if($id == "auto") {
+                if($geoip = $_SERVER['GEOIP_COUNTRY_CODE'].'-'.$_SERVER['GEOIP_REGION'])
+                    return \Regions::GetByGeoIP($geoip);
+            } else {
+                return \Regions::GetByID($id);
             }
-            return \Regions::GetReg($parent);
         }
 
         //обновляем кол-во объектов

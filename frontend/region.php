@@ -6,10 +6,10 @@ include "header.php";
     <h1>Приложение</h1>
 </div>
 <script>
-    function loadRegion(parent) {
+    function loadRegion(id) {
         $.ajax({
             type: "POST",
-            url: "http://api.turneon.ru/?method=region.get&parent="+parent,
+            url: "http://api.turneon.ru/?method=region.getinfo&id="+id,
             xhrFields: {withCredentials: true},
             success: function (data) {
                 alert(data);
