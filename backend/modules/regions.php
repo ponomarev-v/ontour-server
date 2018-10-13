@@ -20,6 +20,7 @@ class Regions
     public static function GetChildren($parent)
     {
         return Core::DB()
+            ->arrayBuilder()
             ->where('parent', $parent)
             ->get('region', array('id', 'parent', 'name', 'geoip', 'path'));
     }
