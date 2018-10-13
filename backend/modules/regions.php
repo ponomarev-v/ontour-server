@@ -5,12 +5,16 @@ class Regions
 
     public static function GetByID($id)
     {
-        return Core::DB()->where('id', $id)->getOne('region');
+        return Core::DB()
+            ->where('id', $id)
+            ->getOne('region', array('id', 'parent', 'name', 'geoip'));
     }
 
     public static function GetByGeoIP($geoip)
     {
-        return Core::DB()->where('geoip', $geoip)->getOne('region');
+        return Core::DB()
+            ->where('geoip', $geoip)
+            ->getOne('region', array('id', 'parent', 'name', 'geoip'));
     }
 
 
