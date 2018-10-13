@@ -1,4 +1,4 @@
-<?php include "header.php";/*подключение головы сайта*/ ?>
+<?php include "header.php";?>
 <div class="content">
     <div class="center">
         <h1>Приложение</h1>
@@ -6,4 +6,4 @@
         <p>еще немного Бла - Бла и ссылки на скачивание</p>
     </div>
 </div>
-<?php include "footer.php";/*подключение ног сайта*/ ?>
+<?php include "footer.php";?>

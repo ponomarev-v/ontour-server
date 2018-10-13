@@ -195,6 +195,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .content {
-    height: calc(100% - 70px);
+    min-height: calc(100% - 220px);
     width: 100%;
 }
