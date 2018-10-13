@@ -92,16 +92,15 @@ class Objects
     //метод для ненужного метода
     public static function Add_to_Fav($act, $objid, $id){
         $db = Core::DB();
-        $ures = $db ->where('id', $id)
-                    ->get('user');
-        $ores = $db ->where('id', $objid)
-                    ->get('object');
-        $ures['favorites'] = $ores['id'];
+        $update = array(
+            'user_id'   => $id,
+            'object_id' => $objid,
+            'date'      => time()
+        );
         if($act == 'add'){
-            $db ->where('id', $id) 
-                ->update('user', $ures);
+            $db->insert('favorites', $update);
         }
-        return $ores['name'];
+        return $db->getLastError();
     }
 
 }
