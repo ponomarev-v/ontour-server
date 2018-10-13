@@ -98,17 +98,17 @@ class Objects
             'add_date'      => time()
         );
         if($act == 'add'){
-            $db->insert('favorites', $update);
+            $res = $db->insert('favorites', $update);
         }
         elseif($act == 'get_user'){
-            $db ->where('user_id', $id)
-                ->get('favorites');
+            $res = $db ->where('user_id', $id)
+                       ->get('favorites');
         }
         elseif($act == 'get_object') {
-            $db->where('object_id', $objid)
-                ->get('favorites');
+            $res = $db ->where('object_id', $objid)
+                       ->get('favorites');
         }
-        return $db->getLastError();
+        return $res;
     }
 
 }
