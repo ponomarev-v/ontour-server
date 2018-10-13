@@ -22,7 +22,7 @@ class Regions
         return Core::DB()
             ->arrayBuilder()
             ->where('parent', $parent)
-            ->get('region', array('id', 'parent', 'name', 'geoip', 'path'));
+            ->get('region', 0, array('id', 'parent', 'name', 'geoip', 'path'));
     }
 
 
