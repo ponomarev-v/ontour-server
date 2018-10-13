@@ -108,7 +108,7 @@ class Objects
             $res = $db ->where('object_id', $objid)
                        ->get('favorites');
         }
-        return $res;
+        return isset($res) && !empty($res) ? $res : $db->getLastError();
     }
 
 }
