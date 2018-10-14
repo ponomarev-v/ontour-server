@@ -64,8 +64,6 @@ include "header.php";
                     svg_bounds = {left: 0, top: 0, right: 0, bottom: 0};
                     svg_init = false;
                     $(svg).css({width: "1px", height: "1px"});
-                    if(response.transform)
-                        svg.setAttribute('transform', response.transform);
                     $(".map_content").append(svg);
                     for(elem in response.items) {
                         if(response.items[elem].path){
@@ -91,6 +89,8 @@ include "header.php";
                     svg_bounds.right = svg_bounds.right - parentBounds.left;
                     svg_bounds.top = svg_bounds.top - parentBounds.top;
                     svg_bounds.bottom = svg_bounds.bottom - parentBounds.top;
+                    if(response.transform)
+                        svg.setAttribute('transform', response.transform);
                     adjustSvg();
                 }
             }
