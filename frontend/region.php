@@ -16,14 +16,10 @@ include "header.php";
             svgWidth = 0.7 * parentBounds.width;
             svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
             svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
-            offsetLeft =  svg_bounds.left * svg.currentScale;
-            offsetTop = svg_bounds.top * svg.currentScale;
-            svg.setAttribute('viewBox', offsetLeft + ' ' + offsetTop + ' ' + (svgWidth + offsetLeft) + ' ' + (svgHeight + offsetTop));
+            svg.setAttribute('viewBox', svg_bounds.left + ' ' + svg_bounds.top + ' ' + svg_bounds.right + ' ' + svg_bounds.bottom);
             $(svg).css({
                 width: (svgWidth) + "px",
                 height: (svgHeight) + "px",
-                //marginLeft: offsetLeft + "px",
-                //marginTop: offsetTop + "px",
             });
             $(svg.parentNode).css({
                 height: (svgHeight) + "px",
