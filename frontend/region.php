@@ -11,6 +11,14 @@ include "header.php";
     var svg_bounds = null;
     
     function adjustSvg() {
+        if(svg) {
+            clientWidth = svg.parent.getBoundingClientRect().width;
+            svg.currentScale = clientWidth/(svg_bounds.right - svg_bounds.left);
+            $(svg).css({
+                width: (svg_bounds.right - svg_bounds.left) + "px",
+                height: (svg_bounds.bottom - svg_bounds.top) + "px",
+            });
+        }
         /*
         if(svg) {
             bounds = {left: 0, top: 0, right: 0, bottom: 0};
