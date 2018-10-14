@@ -2,7 +2,7 @@
 include "header.php";
 ?>
 <!-- <?php print_r($_SERVER); ?> -->
-<div class="center">
+<div class="content">
     <h3 class="map_header"></h3>
     <div class="map_content"></div>
     <div class="map_footer"></div>
