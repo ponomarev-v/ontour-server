@@ -55,7 +55,10 @@ include "header.php";
                             path.setAttribute('d', response.items[elem].path);
                             path.setAttribute('id', response.items[elem].id);
                             path.setAttribute('data-tooltip', response.items[elem].name);
-                            path.setAttribute('style', 'fill: #fefee9; fill-opacity: 0.5; opacity: 1; stroke:#646464; stroke-width:0.3; stroke-opacity:1;');
+                            // TODO рассчитать исходя из прогресса пользователя
+                            op = 0.5;
+                            path.setAttribute('data-opacity', op);
+                            path.setAttribute('style', 'fill: #fefee9; fill-opacity: ' + op + '; opacity: 1; stroke:#646464; stroke-width:0.3; stroke-opacity:1;');
                             svg.appendChild(path);
                             rect = path.getBoundingClientRect();
                             if(!svg_init || (svg_bounds.left > rect.left)) svg_bounds.left = rect.left;
@@ -65,6 +68,7 @@ include "header.php";
                             svg_init = true;
                             $(path).mousemove(function (eventObject) {
                                 tooltip = $(this).attr("data-tooltip");
+                                $(this).css({"fill-opacity": 1});
                                 $("#tooltip").text(tooltip);
                                 $("#tooltip").css({
                                         "top" : eventObject.pageY - 30,
@@ -74,6 +78,7 @@ include "header.php";
                             });
                             $(path).mouseout(function () {
                                 $("#tooltip").hide();
+                                $(this).css({"fill-opacity": $(this).attr("data-opacity")});
                             });
                             $(path).click(function(eventObject){
                                 alert(this.id);

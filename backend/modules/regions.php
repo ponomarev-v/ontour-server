@@ -2,7 +2,6 @@
 
 class Regions
 {
-
     public static function GetByID($id)
     {
         return Core::DB()
@@ -23,7 +22,6 @@ class Regions
             ->where('parent', $parent)
             ->get('region', null, array('id', 'parent', 'name', 'geoip', 'path'));
     }
-
 
     public static function Update_Obj_Val($query = 'rf')
     {
