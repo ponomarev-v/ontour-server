@@ -14,8 +14,8 @@ include "header.php";
         if(svg) {
             parentBounds = svg.parentElement.getBoundingClientRect();
             svgWidth = 0.6 * parentBounds.width;
-            svg.currentScale = svgWidth/(svg_bounds.right);
-            svgHeight = svg.currentScale * (svg_bounds.bottom);
+            svg.currentScale = svgWidth/(svg_bounds.right + svg_bounds.left);
+            svgHeight = svg.currentScale * (svg_bounds.bottom) + 50;
             //offsetLeft =  (parentBounds.left - svg_bounds.left) * svg.currentScale;
             //offsetTop = (parentBounds.top - svg_bounds.top) * svg.currentScale;
             $(svg).css({
