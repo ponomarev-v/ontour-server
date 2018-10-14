@@ -1,7 +1,6 @@
 <?php
 include "header.php";
 ?>
-<!-- <?php print_r($_SERVER); ?> -->
 <div class="content">
     <h3 class="map_header"></h3>
     <div class="map_content"></div>
@@ -19,7 +18,7 @@ include "header.php";
                 if (response.result == "success") {
                     $(".map_header").text(response.name);
                     if(svg) {
-                        $(".map_content").removeChild(svg);
+                        $(".map_content").remove(svg);
                     }
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
                     for(elem in response.items) {
@@ -27,7 +26,7 @@ include "header.php";
                         path.setAttribute('d', elem.path);
                         svg.appendChild(path);
                     }
-                    $(".map_content").appendChild(svg);
+                    $(".map_content").append(svg);
                 }
             }
         });
