@@ -24,6 +24,9 @@ include "header.php";
                 //marginLeft: offsetLeft + "px",
                 //marginTop: offsetTop + "px",
             });
+            $(svg.parentElement).css({
+                height: (svgHeight) + "px",
+            });
         }
         /*
         if(svg) {
