@@ -12,12 +12,16 @@ include "header.php";
     
     function adjustSvg() {
         if(svg) {
-            clientWidth = svg.parentElement.getBoundingClientRect().width;
-            svgWidth = 0.8 * clientWidth;
+            parentBounds = svg.parentElement.getBoundingClientRect();
+            svgWidth = 0.8 * parentBounds.width;
             svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
+            offsetLeft =  (parentBounds.left - svg_bounds.left) * svg.currentScale;
+            offsetTop = (parentBounds.top - svg_bounds.top) * svg.currentScale;
             $(svg).css({
                 width: (svgWidth) + "px",
                 height: (svg_bounds.bottom - svg_bounds.top)*svg.currentScale + "px",
+                marginLeft: offsetLeft + "px",
+                marginTop: offsetTop + "px",
             });
         }
         /*
