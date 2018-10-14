@@ -150,6 +150,14 @@ body {
     font-size: 25px;
 }
 
+.map_parent {
+    text-align: center;
+    color: #1396e2;
+    font-size: 22px;
+    text-decoration: underline;
+    cursor: hand;
+}
+
 .search_form {
     vertical-align: middle;
     padding: 15px;

@@ -15,6 +15,11 @@ namespace API {
                 );
             }
             $root['items'] = \Regions::GetChildren($root['id']);
+            if(!empty($root['parent'])) {
+                $root['parentInfo'] = \Regions::GetByID($root['parent']);
+            } else {
+                $root['parentInfo'] = null;
+            }
             return $root;
         }
 

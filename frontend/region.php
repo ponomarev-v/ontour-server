@@ -2,6 +2,7 @@
 include "header.php";
 ?>
 <div class="content">
+    <h3 class="map_parent"></h3>
     <h3 class="map_header"></h3>
     <div class="map_content"></div>
     <div class="map_footer"></div>
@@ -10,7 +11,7 @@ include "header.php";
 <script>
     var svg = null;
     var svg_bounds = null;
-    
+
     function adjustSvg() {
         if(svg) {
             parentBounds = svg.parentNode.getBoundingClientRect();
@@ -40,7 +41,13 @@ include "header.php";
             success: function (data) {
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
+                    if(response.parentInfo)
+                        $(".map_parent").text(response.parentInfo.name);
+                    else
+                        $(".map_parent").text("");
+
                     $(".map_header").text(response.name);
+
                     if(svg) {
                         $(".map_content").remove(svg);
                     }
