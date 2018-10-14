@@ -90,7 +90,7 @@ include "header.php";
                                     alert(this.id);
                                 } else {
                                     $.cookie('region', this.id);
-                                    loadRegion(this.id);
+                                    window.location = "/region.php?reg="+this.id;
                                 }
                             });
                         }
@@ -116,7 +116,7 @@ include "header.php";
     $(".map_parent").click(function(){
         if(top_region) {
             $.cookie('region', top_region);
-            loadRegion(top_region);
+            window.location = "/region.php?reg="+top_region;
         }
     });
     $(window).resize(adjustSvg);
