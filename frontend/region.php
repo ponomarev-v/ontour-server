@@ -67,7 +67,7 @@ include "header.php";
                                 tooltip = $(this).attr("data-tooltip");
                                 $("#tooltip").text(tooltip);
                                 $("#tooltip").css({
-                                        "top" : eventObject.pageY,
+                                        "top" : eventObject.pageY - 20,
                                         "left" : eventObject.pageX,
                                     });
                                 $("#tooltip").show();
