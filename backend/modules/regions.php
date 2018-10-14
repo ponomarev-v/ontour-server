@@ -7,14 +7,14 @@ class Regions
     {
         return Core::DB()
             ->where('id', $id)
-            ->getOne('region', array('id', 'parent', 'name', 'geoip'));
+            ->getOne('region');
     }
 
     public static function GetByGeoIP($geoip)
     {
         return Core::DB()
             ->where('geoip', $geoip)
-            ->getOne('region', array('id', 'parent', 'name', 'geoip'));
+            ->getOne('region');
     }
 
     public static function GetChildren($parent)
