@@ -20,6 +20,7 @@ include "header.php";
                 if(elem == 0 || (bounds.bottom < rect.bottom)) bounds.bottom = rect.bottom;
             }
             rect = svg.getBoundingClientRect();
+
             $(svg).css({
                 width: bounds.right + "px",
                 height: bounds.bottom + "px",
