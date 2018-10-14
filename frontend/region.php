@@ -83,6 +83,7 @@ include "header.php";
                                 $(this).css({"fill-opacity": $(this).attr("data-opacity")});
                             });
                             $(path).click(function(eventObject){
+
                                 alert(this.id);
                             });
                         }
