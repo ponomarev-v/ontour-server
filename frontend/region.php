@@ -20,6 +20,7 @@ include "header.php";
                     if(svg) {
                         $(".map_content").remove(svg);
                     }
+                    bounds = {left: 0; top: 0; right: 0; bottom: 0};
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
                     $(svg).css({width: "2000px", height: "2000px"});
                     for(elem in response.items) {
@@ -27,8 +28,14 @@ include "header.php";
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
                             path.setAttribute('d', response.items[elem].path);
                             svg.appendChild(path);
+                            rect = path.getBoundingClientRect();
+                            if(elem == 0 || (bounds.left > rect.left)) bounds.left = rect.left;
+                            if(elem == 0 || (bounds.top > rect.top)) bounds.top = rect.top;
+                            if(elem == 0 || (bounds.right < rect.right)) bounds.right = rect.right;
+                            if(elem == 0 || (bounds.bottom < rect.bottom)) bounds.bottom = rect.bottom;
                         }
                     }
+
                     $(".map_content").append(svg);
                 }
             }
