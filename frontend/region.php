@@ -13,12 +13,12 @@ include "header.php";
     function adjustSvg() {
         if(svg) {
             parentBounds = svg.parentElement.getBoundingClientRect();
-            svgWidth = 0.8 * parentBounds.width;
+            svgWidth = 0.6 * parentBounds.width;
             svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
             offsetLeft =  (parentBounds.left - svg_bounds.left) * svg.currentScale;
             offsetTop = (parentBounds.top - svg_bounds.top) * svg.currentScale;
             $(svg).css({
-                width: (svgWidth) + "px",
+                width: (svgWidth - offsetLeft) + "px",
                 height: (svg_bounds.bottom - svg_bounds.top)*svg.currentScale + "px",
                 marginLeft: offsetLeft + "px",
                 marginTop: offsetTop + "px",
