@@ -22,7 +22,8 @@ include "header.php";
                     }
                     bounds = {left: 0, top: 0, right: 0, bottom: 0};
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                    $(svg).css({width: "2000px", height: "2000px"});
+                    $(svg).css({width: "1px", height: "1px"});
+                    $(".map_content").append(svg);
                     for(elem in response.items) {
                         if(response.items[elem].path){
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -35,8 +36,6 @@ include "header.php";
                             if(elem == 0 || (bounds.bottom < rect.bottom)) bounds.bottom = rect.bottom;
                         }
                     }
-
-                    $(".map_content").append(svg);
                 }
             }
         });
