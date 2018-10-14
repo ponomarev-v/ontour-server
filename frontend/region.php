@@ -71,18 +71,6 @@ include "header.php";
 
                         }
                     }
-                    for(elem in response.items) {
-                        if(response.items[elem].path){
-                            path = document.getElementById(response.items[elem].id);
-                            rect = path.getBoundingClientRect();
-                            text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                            text.setAttribute('x', rect.left);
-                            text.setAttribute('y', rect.top);
-                            text.setAttribute('fill', '#cccccc');
-                            text.textContent = response.items[elem].name;
-                            svg.appendChild(text);
-                        }
-                    }
                     parentBounds = svg.parentNode.getBoundingClientRect();
                     svg_bounds.left = svg_bounds.left - parentBounds.left;
                     svg_bounds.right = svg_bounds.right - parentBounds.left;
