@@ -45,7 +45,7 @@ function exec_ajax_request(data, handler, error) {
     });
 }
 
-function getUrlParameter(sParam) {
+var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
@@ -58,7 +58,7 @@ function getUrlParameter(sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
-}
+};
 
 $(document).ready(function() {
     $(".close").click(close_active_window);
