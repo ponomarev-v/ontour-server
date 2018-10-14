@@ -78,6 +78,13 @@ include "header.php";
                             if(elem == 0 || (svg_bounds.top > rect.top)) svg_bounds.top = rect.top;
                             if(elem == 0 || (svg_bounds.right < rect.right)) svg_bounds.right = rect.right;
                             if(elem == 0 || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
+
+                            text = document.createElementNS('ttp://www.w3.org/2000/svg', 'text');
+                            text.setAttribute('x', (rect.right - rect.left)/2);
+                            text.setAttribute('y', (rect.bottom - rect.top)/2);
+                            text.setAttribute('fill', '#fff');
+                            text.textContent = response.items[elem].name;
+                            svg.appendChild(text);
                         }
                     }
                     parentBounds = svg.parentNode.getBoundingClientRect();
