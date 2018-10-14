@@ -14,11 +14,11 @@ include "header.php";
         if(svg) {
             parentBounds = svg.parentNode.getBoundingClientRect();
             svgWidth = 0.6 * parentBounds.width;
-            svg.currentScale = svgWidth/(svg_bounds.right + svg_bounds.left);
-            svgHeight = svg.currentScale * (svg_bounds.bottom) + 50;
-            //offsetLeft =  (parentBounds.left - svg_bounds.left) * svg.currentScale;
-            //offsetTop = (parentBounds.top - svg_bounds.top) * svg.currentScale;
-            svg.setAttribute('viewBox', '0 0 '+svgWidth+' '+svgHeight);
+            svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
+            svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
+            offsetLeft =  svg_bounds.left * svg.currentScale;
+            offsetTop = svg_bounds.top * svg.currentScale;
+            svg.setAttribute('viewBox', offsetLeft + ' ' + offsetTop + ' ' + svgWidth + ' ' + svgHeight);
             $(svg).css({
                 width: (svgWidth) + "px",
                 height: (svgHeight) + "px",
