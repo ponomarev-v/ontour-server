@@ -12,7 +12,7 @@ include "header.php";
     
     function adjustSvg() {
         if(svg) {
-            clientWidth = svg.parent.getBoundingClientRect().width;
+            clientWidth = svg.parentElement.getBoundingClientRect().width;
             svg.currentScale = clientWidth/(svg_bounds.right - svg_bounds.left);
             $(svg).css({
                 width: (svg_bounds.right - svg_bounds.left) + "px",
