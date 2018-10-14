@@ -16,7 +16,7 @@ include "header.php";
             success: function (data) {
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
-                    $(".map_header").text(response.data.name);
+                    $(".map_header").text(response.name);
                 }
             }
         });
