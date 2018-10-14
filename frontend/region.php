@@ -23,8 +23,8 @@ include "header.php";
             $(svg).css({
                 width: bounds.right + "px",
                 height: bounds.bottom + "px",
-                marginLeft: -bounds.left + "px",
-                marginTop: -bounds.top + "px"
+                marginLeft: (rect.left - bounds.left) + "px",
+                marginTop: (rect.top - bounds.top) + "px"
             });
         }
     }
