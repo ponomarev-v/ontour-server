@@ -61,6 +61,7 @@ include "header.php";
                             if(elem == 0 || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
                         }
                     }
+                    adjustSvg();
                 }
             }
         });
@@ -73,6 +74,8 @@ include "header.php";
         else
             loadRegion('auto');
     });
+
+    $(window).resize(adjustSvg);
 </script>
 <?php
 include "footer.php";
