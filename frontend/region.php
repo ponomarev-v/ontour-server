@@ -84,7 +84,7 @@ include "header.php";
                             });
                             $(path).click(function(){
                                 if($(this).attr("data-point")) {
-                                    alert(this.id);
+                                    window.location = "/map.php?pt="+$(this).attr("data-point");
                                 } else {
                                     $.cookie('region', this.id);
                                     window.location = "/region.php?reg="+this.id;
