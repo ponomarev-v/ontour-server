@@ -6,6 +6,7 @@ include "header.php";
     <div class="map_content"></div>
     <div class="map_footer"></div>
 </div>
+<div id="tooltip"></div>
 <script>
     var svg = null;
     var svg_bounds = null;
@@ -53,6 +54,7 @@ include "header.php";
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
                             path.setAttribute('d', response.items[elem].path);
                             path.setAttribute('id', response.items[elem].id);
+                            path.setAttribute('data-tooltip', response.items[elem].name);
                             path.setAttribute('style', 'fill: #fefee9; fill-opacity: 0.5; opacity: 1; stroke:#646464; stroke-width:0.3; stroke-opacity:1;');
                             svg.appendChild(path);
                             rect = path.getBoundingClientRect();
@@ -61,6 +63,21 @@ include "header.php";
                             if(!svg_init || (svg_bounds.right < rect.right)) svg_bounds.right = rect.right;
                             if(!svg_init || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
                             svg_init = true;
+                            $(path).mousemove(function (eventObject) {
+                                name = $(this).attr("data-tooltip");
+                                $("#tooltip").text($data_tooltip);
+                                $("#tooltip").css({
+                                        "top" : eventObject.pageY + 55,
+                                        "left" : eventObject.pageX,
+                                    });
+                                $("#tooltip").show();
+                            });
+                            $(path).mouseout(function () {
+                                $("#tooltip").hide();
+                            });
+                            $(path).click(function(eventObject){
+                                alert(this.id);
+                            });
                         }
                     }
                     parentBounds = svg.parentNode.getBoundingClientRect();
