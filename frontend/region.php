@@ -59,7 +59,7 @@ include "header.php";
                             path.setAttribute('d', response.items[elem].path);
                             path.setAttribute('id', response.items[elem].id);
                             path.setAttribute('data-tooltip', response.items[elem].name);
-                            path.setAttribute('data-point', response.items[elem].point);
+                            path.setAttribute('data-point', response.items[elem].point ? response.items[elem].point : "");
                             // TODO рассчитать исходя из прогресса пользователя
                             op = 0.5;
                             path.setAttribute('data-opacity', op);
