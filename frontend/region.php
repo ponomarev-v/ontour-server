@@ -3,7 +3,9 @@ include "header.php";
 ?>
 <!-- <?php print_r($_SERVER); ?> -->
 <div class="center">
-    <h1>Приложение</h1>
+    <h3 class="map_header"></h3>
+    <div class="map_content"></div>
+    <div class="map_footer"></div>
 </div>
 <script>
     function loadRegion(id) {
@@ -14,6 +16,7 @@ include "header.php";
             success: function (data) {
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
+                    $(".map_header").text(response.data.name);
                 }
             }
         });
