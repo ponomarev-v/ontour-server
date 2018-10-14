@@ -13,10 +13,11 @@ include "header.php";
     function adjustSvg() {
         if(svg) {
             clientWidth = svg.parentElement.getBoundingClientRect().width;
-            svg.currentScale = clientWidth/(svg_bounds.right - svg_bounds.left);
+            svgWidth = 0.8 * clientWidth;
+            svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
             $(svg).css({
-                width: (svg_bounds.right - svg_bounds.left) + "px",
-                height: (svg_bounds.bottom - svg_bounds.top) + "px",
+                width: (svgWidth) + "px",
+                height: (svg_bounds.bottom - svg_bounds.top)*svg.currentScale + "px",
             });
         }
         /*
