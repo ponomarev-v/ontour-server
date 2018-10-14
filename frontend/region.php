@@ -45,9 +45,6 @@ include "header.php";
                     top_region = response.parent;
                     $(".map_parent").text(response.parentInfo ? response.parentInfo.name : "");
                     $(".map_header").text(response.name);
-                    if(svg) {
-                        $(".map_content").remove(svg);
-                    }
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
                     svg_bounds = {left: 0, top: 0, right: 0, bottom: 0};
                     svg_init = false;
