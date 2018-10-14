@@ -13,7 +13,7 @@ include "header.php";
     function adjustSvg() {
         if(svg) {
             parentBounds = svg.parentNode.getBoundingClientRect();
-            svgWidth = 0.6 * parentBounds.width;
+            svgWidth = 0.7 * parentBounds.width;
             svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
             svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
             offsetLeft =  svg_bounds.left * svg.currentScale;
@@ -27,6 +27,7 @@ include "header.php";
             });
             $(svg.parentNode).css({
                 height: (svgHeight) + "px",
+                paddingLeft: ((parentBounds.width - svgWidth)/2) + "px",
             });
         }
         /*
