@@ -14,7 +14,7 @@ include "header.php";
         if(svg) {
             parentBounds = svg.parentNode.getBoundingClientRect();
             svg.currentScale = Math.min(
-                ((0.7 * parentBounds.width)/(svg_bounds.right - svg_bounds.left),
+                (0.7 * parentBounds.width)/(svg_bounds.right - svg_bounds.left),
                 window.innerHeight/(svg_bounds.bottom - svg_bounds.top)
             );
             svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
