@@ -69,6 +69,7 @@ include "header.php";
                         if(response.items[elem].path){
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
                             path.setAttribute('d', response.items[elem].path);
+                            path.setAttribute('id', response.items[elem].id);
                             svg.appendChild(path);
                             rect = path.getBoundingClientRect();
                             if(!svg_init || (svg_bounds.left > rect.left)) svg_bounds.left = rect.left;
