@@ -11,10 +11,9 @@ require_once "header.php";
         <input type="button" value="Submit" id="btn_add">
     </form>
     </div>
-    <script src="js/count_obj.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="js/yandex_map.js"></script>
-    <script src="js/add_obj.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="js/map.js"></script>
+    <!--<script src="js/add_obj.js"></script>-->
 <?php
 include "footer.php";
 ?>

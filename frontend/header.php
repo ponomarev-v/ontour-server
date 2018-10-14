@@ -11,7 +11,6 @@
     <script src="/js/jquery.mask.js"></script><!--скрипт jquery.mask-->
     <script src="/js/jquery.cookie.js"></script><!--скрипт jquery.mask-->
     <script src="/js/app.js"></script><!--скрипт app-->
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script><!--скрипт яндекс.карт-->
 </head>
 <body>
     <div class="header_down">
