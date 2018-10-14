@@ -4,7 +4,9 @@ include "header.php";
 <div class="content">
     <h3 class="map_parent"></h3>
     <h3 class="map_header"></h3>
-    <div class="map_content"></div>
+    <div class="map_content">
+        <img class="map_loading" src="/images/loading.gif">
+    </div>
     <div class="map_footer"></div>
 </div>
 <div id="tooltip"></div>
@@ -43,6 +45,7 @@ include "header.php";
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
                     top_region = response.parent;
+                    $(".map_loading").hide();
                     $(".map_parent").text(response.parentInfo ? response.parentInfo.name : "");
                     $(".map_header").text(response.name);
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
