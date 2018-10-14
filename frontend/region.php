@@ -18,7 +18,7 @@ include "header.php";
             svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
             offsetLeft =  svg_bounds.left * svg.currentScale;
             offsetTop = svg_bounds.top * svg.currentScale;
-            svg.setAttribute('viewBox', offsetLeft + ' ' + offsetTop + ' ' + svgWidth + ' ' + svgHeight);
+            svg.setAttribute('viewBox', offsetLeft + ' ' + offsetTop + ' ' + (svgWidth + offsetLeft) + ' ' + (svgHeight + offsetTop));
             $(svg).css({
                 width: (svgWidth) + "px",
                 height: (svgHeight) + "px",
