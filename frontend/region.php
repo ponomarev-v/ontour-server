@@ -64,8 +64,8 @@ include "header.php";
                             if(!svg_init || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
                             svg_init = true;
                             $(path).mousemove(function (eventObject) {
-                                name = $(this).attr("data-tooltip");
-                                $("#tooltip").text($data_tooltip);
+                                tooltip = $(this).attr("data-tooltip");
+                                $("#tooltip").text(tooltip);
                                 $("#tooltip").css({
                                         "top" : eventObject.pageY + 55,
                                         "left" : eventObject.pageX,
