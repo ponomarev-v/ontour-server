@@ -59,7 +59,7 @@ include "header.php";
     }
 
     $(document).ready(function(){
-        current_region = <?php empty($_REQUEST['reg']) ? "$.cookie('region')" : json_encode($_REQUEST['reg']) ?>;
+        current_region = <?php echo empty($_REQUEST['reg']) ? "$.cookie('region')" : json_encode($_REQUEST['reg']) ?>;
         if(current_region)
             loadRegion(current_region);
         else
