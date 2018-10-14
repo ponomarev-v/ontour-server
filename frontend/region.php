@@ -8,6 +8,7 @@ include "header.php";
     <div class="map_footer"></div>
 </div>
 <script>
+    var svg = null;
     function loadRegion(id) {
         $.ajax({
             type: "POST",
@@ -17,6 +18,16 @@ include "header.php";
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
                     $(".map_header").text(response.name);
+                    if(svg) {
+                        $(".map_content").removeChild(svg);
+                    }
+                    svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                    for(elem in response.items) {
+                        path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        path.setAttribute('d', elem.path);
+                        svg.appendChild(path);
+                    }
+                    $(".map_content").appendChild(svg);
                 }
             }
         });
