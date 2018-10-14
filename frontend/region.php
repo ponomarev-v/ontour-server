@@ -50,7 +50,7 @@ include "header.php";
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
                             path.setAttribute('d', response.items[elem].path);
                             path.setAttribute('id', response.items[elem].id);
-                            path.setAttribute('style', 'fill: #fefee9; opacity: 0.5; stroke:#646464; stroke-width:0.3; stroke-opacity:1;');
+                            path.setAttribute('style', 'fill: #fefee9; fill-opacity: 0.5; opacity: 1; stroke:#646464; stroke-width:0.3; stroke-opacity:1;');
                             svg.appendChild(path);
                             rect = path.getBoundingClientRect();
                             if(!svg_init || (svg_bounds.left > rect.left)) svg_bounds.left = rect.left;
