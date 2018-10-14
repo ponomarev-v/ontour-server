@@ -20,7 +20,7 @@ include "header.php";
                     if(svg) {
                         $(".map_content").remove(svg);
                     }
-                    bounds = {left: 0; top: 0; right: 0; bottom: 0};
+                    bounds = {left: 0, top: 0, right: 0, bottom: 0};
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
                     $(svg).css({width: "2000px", height: "2000px"});
                     for(elem in response.items) {
