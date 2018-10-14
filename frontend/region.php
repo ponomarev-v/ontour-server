@@ -19,7 +19,13 @@ include "header.php";
                 if(elem == 0 || (bounds.right < rect.right)) bounds.right = rect.right;
                 if(elem == 0 || (bounds.bottom < rect.bottom)) bounds.bottom = rect.bottom;
             }
-            $(svg).css({width: bounds.right + "px", height: bounds.bottom + "px"});
+            rect = svg.getBoundingClientRect();
+            $(svg).css({
+                width: bounds.right + "px",
+                height: bounds.bottom + "px",
+                marginLeft: -bounds.left + "px",
+                marginTop: -bounds.top + "px"
+            });
         }
     }
     
