@@ -5,7 +5,7 @@ include "header.php";
     <h3 class="map_parent"></h3>
     <h3 class="map_header"></h3>
     <div class="map_content">
-        <img class="map_loading" src="/images/loading.gif">
+        <img id="map_loading" src="/images/loading.gif">
     </div>
     <div class="map_footer"></div>
 </div>
@@ -16,8 +16,10 @@ include "header.php";
     var top_region = null;
 
     function adjustSvg() {
+        img = document.getElementById('map_loading');
+        parentBounds = img.parentNode.getBoundingClientRect();
+        img.setAttribute('style', 'margin-left:'+(parentBounds.width - 127)+'px');
         if(svg) {
-            parentBounds = svg.parentNode.getBoundingClientRect();
             svg.currentScale = Math.min(
                 (0.7 * parentBounds.width)/(svg_bounds.right - svg_bounds.left),
                 window.innerHeight/(svg_bounds.bottom - svg_bounds.top)
