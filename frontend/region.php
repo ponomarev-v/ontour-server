@@ -80,8 +80,8 @@ include "header.php";
                             if(elem == 0 || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
 
                             text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                            text.setAttribute('x', (rect.right - rect.left)/2);
-                            text.setAttribute('y', (rect.bottom - rect.top)/2);
+                            text.setAttribute('x', rect.left + rect.width/2);
+                            text.setAttribute('y', rect.top + rect.height/2);
                             text.setAttribute('fill', '#fff');
                             text.textContent = response.items[elem].name;
                             svg.appendChild(text);
