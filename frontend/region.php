@@ -21,7 +21,7 @@ include "header.php";
                         $(".map_content").remove(svg);
                     }
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                    $(svg).style("width:2000px; height: 2000px;");
+                    $(svg).css({width: "2000px", height: "2000px"});
                     for(elem in response.items) {
                         if(response.items[elem].path){
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
