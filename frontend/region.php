@@ -41,13 +41,8 @@ include "header.php";
             success: function (data) {
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
-                    if(response.parentInfo)
-                        $(".map_parent").text(response.parentInfo.name);
-                    else
-                        $(".map_parent").text("");
-
+                    $(".map_parent").text(response.parentInfo ? response.parentInfo.name : "");
                     $(".map_header").text(response.name);
-
                     if(svg) {
                         $(".map_content").remove(svg);
                     }
