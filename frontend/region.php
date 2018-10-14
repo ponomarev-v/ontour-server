@@ -13,9 +13,12 @@ include "header.php";
     function adjustSvg() {
         if(svg) {
             parentBounds = svg.parentNode.getBoundingClientRect();
-            svgWidth = 0.7 * parentBounds.width;
-            svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
+            svg.currentScale = Math.min(
+                (0.7 * parentBounds.width)/(svg_bounds.right - svg_bounds.left),
+                (window.innerHeight/(svg_bounds.bottom - svg_bounds.top)
+            );
             svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
+            svgWidth = svg.currentScale * (svg_bounds.right - svg_bounds.left);
             svg.setAttribute('viewBox', (svg_bounds.left) + ' ' + (svg_bounds.top) + ' ' + (svg.currentScale * svg_bounds.right) + ' ' + (svg.currentScale * svg_bounds.bottom));
             $(svg).css({
                 width: (svgWidth) + "px",
