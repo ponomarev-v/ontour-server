@@ -12,7 +12,7 @@ include "header.php";
     
     function adjustSvg() {
         if(svg) {
-            parentBounds = svg.parentElement.getBoundingClientRect();
+            parentBounds = svg.parentNode.getBoundingClientRect();
             svgWidth = 0.6 * parentBounds.width;
             svg.currentScale = svgWidth/(svg_bounds.right + svg_bounds.left);
             svgHeight = svg.currentScale * (svg_bounds.bottom) + 50;
@@ -24,7 +24,7 @@ include "header.php";
                 //marginLeft: offsetLeft + "px",
                 //marginTop: offsetTop + "px",
             });
-            $(svg.parentElement).css({
+            $(svg.parentNode).css({
                 height: (svgHeight) + "px",
             });
         }
@@ -78,7 +78,7 @@ include "header.php";
                             if(elem == 0 || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
                         }
                     }
-                    parentBounds = svg.parentElement.getBoundingClientRect();
+                    parentBounds = svg.parentNode.getBoundingClientRect();
                     svg_bounds.left = svg_bounds.left - parentBounds.left;
                     svg_bounds.right = svg_bounds.right - parentBounds.left;
                     svg_bounds.top = svg_bounds.top - parentBounds.top;
