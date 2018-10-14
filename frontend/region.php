@@ -22,9 +22,11 @@ include "header.php";
                     }
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
                     for(elem in response.items) {
-                        path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                        path.setAttribute('d', response.items[elem].path);
-                        svg.appendChild(path);
+                        if(response.items[elem].path){
+                            path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                            path.setAttribute('d', response.items[elem].path);
+                            svg.appendChild(path);
+                        }
                     }
                     $(".map_content").append(svg);
                 }
