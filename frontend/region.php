@@ -26,26 +26,6 @@ include "header.php";
                 paddingLeft: ((parentBounds.width - svgWidth)/2) + "px",
             });
         }
-        /*
-        if(svg) {
-            bounds = {left: 0, top: 0, right: 0, bottom: 0};
-            for(elem = 0; elem < svg.children.length; elem++) {
-                rect = svg.children[elem].getBoundingClientRect();
-                if(elem == 0 || (bounds.left > rect.left)) bounds.left = rect.left;
-                if(elem == 0 || (bounds.top > rect.top)) bounds.top = rect.top;
-                if(elem == 0 || (bounds.right < rect.right)) bounds.right = rect.right;
-                if(elem == 0 || (bounds.bottom < rect.bottom)) bounds.bottom = rect.bottom;
-            }
-            rect = svg.getBoundingClientRect();
-
-            $(svg).css({
-                width: bounds.right + "px",
-                height: bounds.bottom + "px",
-                marginLeft: (rect.left - bounds.left) + "px",
-                marginTop: (rect.top - bounds.top) + "px"
-            });
-        }
-        */
     }
     
     function loadRegion(id) {
@@ -70,6 +50,7 @@ include "header.php";
                             path = document.createElementNS("http://www.w3.org/2000/svg", "path");
                             path.setAttribute('d', response.items[elem].path);
                             path.setAttribute('id', response.items[elem].id);
+                            path.setAttribute('style', 'fill:#fefee9;stroke:#646464;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.32551003;stroke-dasharray:none;stroke-opacity:1');
                             svg.appendChild(path);
                             rect = path.getBoundingClientRect();
                             if(!svg_init || (svg_bounds.left > rect.left)) svg_bounds.left = rect.left;
