@@ -16,7 +16,7 @@ include "header.php";
             svgWidth = 0.7 * parentBounds.width;
             svg.currentScale = svgWidth/(svg_bounds.right - svg_bounds.left);
             svgHeight = svg.currentScale * (svg_bounds.bottom - svg_bounds.top);
-            svg.setAttribute('viewBox', svg_bounds.left + ' ' + svg_bounds.top + ' ' + svg_bounds.right + ' ' + svg_bounds.bottom);
+            svg.setAttribute('viewBox', (svg.currentScale * svg_bounds.left) + ' ' + (svg.currentScale * svg_bounds.top) + ' ' + (svg.currentScale * svg_bounds.right) + ' ' + (svg.currentScale * svg_bounds.bottom));
             $(svg).css({
                 width: (svgWidth) + "px",
                 height: (svgHeight) + "px",
