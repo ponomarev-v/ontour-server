@@ -76,12 +76,14 @@ include "header.php";
                             if(!svg_init || (svg_bounds.right < rect.right)) svg_bounds.right = rect.right;
                             if(!svg_init || (svg_bounds.bottom < rect.bottom)) svg_bounds.bottom = rect.bottom;
                             svg_init = true;
+                            /*
                             text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                             text.setAttribute('x', rect.left + rect.width/2);
                             text.setAttribute('y', rect.top + rect.height/2);
                             text.setAttribute('fill', '#fff');
                             text.textContent = response.items[elem].name;
                             svg.appendChild(text);
+                            */
                         }
                     }
                     parentBounds = svg.parentNode.getBoundingClientRect();
@@ -89,8 +91,6 @@ include "header.php";
                     svg_bounds.right = svg_bounds.right - parentBounds.left;
                     svg_bounds.top = svg_bounds.top - parentBounds.top;
                     svg_bounds.bottom = svg_bounds.bottom - parentBounds.top;
-                    if(response.transform)
-                        svg.setAttribute('transform', response.transform);
                     adjustSvg();
                 }
             }
