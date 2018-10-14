@@ -11,6 +11,7 @@ include "header.php";
 <script>
     var svg = null;
     var svg_bounds = null;
+    var top_region = null;
 
     function adjustSvg() {
         if(svg) {
@@ -41,6 +42,7 @@ include "header.php";
             success: function (data) {
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
+                    top_region = response.parent;
                     $(".map_parent").text(response.parentInfo ? response.parentInfo.name : "");
                     $(".map_header").text(response.name);
                     if(svg) {
@@ -57,6 +59,7 @@ include "header.php";
                             path.setAttribute('d', response.items[elem].path);
                             path.setAttribute('id', response.items[elem].id);
                             path.setAttribute('data-tooltip', response.items[elem].name);
+                            path.setAttribute('data-point', response.items[elem].point);
                             // TODO рассчитать исходя из прогресса пользователя
                             op = 0.5;
                             path.setAttribute('data-opacity', op);
@@ -82,9 +85,13 @@ include "header.php";
                                 $("#tooltip").hide();
                                 $(this).css({"fill-opacity": $(this).attr("data-opacity")});
                             });
-                            $(path).click(function(eventObject){
-
-                                alert(this.id);
+                            $(path).click(function(){
+                                if($(this).attr("data-point")) {
+                                    alert(this.id);
+                                } else {
+                                    $.cookie('region', this.id);
+                                    loadRegion(this.id);
+                                }
                             });
                         }
                     }
@@ -106,7 +113,12 @@ include "header.php";
         else
             loadRegion('auto');
     });
-
+    $(".map_parent").click(function(){
+        if(top_region) {
+            $.cookie('region', top_region);
+            loadRegion(top_region);
+        }
+    });
     $(window).resize(adjustSvg);
 </script>
 <?php
