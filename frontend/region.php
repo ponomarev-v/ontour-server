@@ -12,7 +12,7 @@ include "header.php";
     function adjustSvg() {
         if(svg) {
             bounds = {left: 0, top: 0, right: 0, bottom: 0};
-            for(elem in svg.children) {
+            for(elem = 0; elem < svg.children.length; elem++) {
                 rect = svg.children[elem].getBoundingClientRect();
                 if(elem == 0 || (bounds.left > rect.left)) bounds.left = rect.left;
                 if(elem == 0 || (bounds.top > rect.top)) bounds.top = rect.top;
