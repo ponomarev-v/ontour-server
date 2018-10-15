@@ -15,9 +15,8 @@ include "header.php";
     var top_region = null;
 
     function adjustSvg() {
-        parentBounds = img.parentNode.getBoundingClientRect();
-        img.setAttribute('style', 'margin-left:'+(parentBounds.width - 127)+'px');
         if(svg) {
+            parentBounds = svg.parentNode.getBoundingClientRect();
             svg.currentScale = Math.min(
                 (0.7 * parentBounds.width)/(svg_bounds.right - svg_bounds.left),
                 window.innerHeight/(svg_bounds.bottom - svg_bounds.top)
