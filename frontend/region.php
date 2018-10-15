@@ -5,7 +5,6 @@ include "header.php";
     <h3 class="map_parent"></h3>
     <h3 class="map_header"></h3>
     <div class="map_content">
-        <img id="map_loading" src="/images/loading.gif">
     </div>
     <div class="map_footer"></div>
 </div>
@@ -16,7 +15,6 @@ include "header.php";
     var top_region = null;
 
     function adjustSvg() {
-        img = document.getElementById('map_loading');
         parentBounds = img.parentNode.getBoundingClientRect();
         img.setAttribute('style', 'margin-left:'+(parentBounds.width - 127)+'px');
         if(svg) {
@@ -47,7 +45,6 @@ include "header.php";
                 response = eval("(" + data + ")");
                 if (response.result == "success") {
                     top_region = response.parent;
-                    $(".map_loading").hide();
                     $(".map_parent").text(response.parentInfo ? response.parentInfo.name : "");
                     $(".map_header").text(response.name);
                     svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
