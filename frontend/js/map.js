@@ -37,7 +37,7 @@ function init () {
                 data = eval("(" + data + ")");
                 if (data.result == "success") {
                     json_string = JSON.stringify(data);
-                    objects = JSON.parse(json_string)
+                    objects = JSON.parse(json_string)   
                     delete objects.result
                     delete objects.reg
                     delete objects.count
