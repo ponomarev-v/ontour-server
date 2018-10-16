@@ -39,20 +39,19 @@ function init () {
                     json_string = JSON.stringify(data);
                     objects = JSON.parse(json_string)
                     delete objects.result
+                    delete objects.reg
+                    delete objects.count
                     json_res_start = '{"type": "FeatureCollection","features": ['
                     json_res_end = "]}"
                     
-                   // alert(json_res)
-                    for(key in objects){
-                        
-                        cx = objects[key]['cx']
-                        cy = objects[key]['cy']
-                        id = objects[key]['id']
-                        balloonHeader = objects[key]['name']
-                        balloonContent = objects[key]['description']
+                    for(key in objects['items']){
+                        cx = objects['items'][parseInt(key)]['cx']
+                        cy = objects['items'][parseInt(key)]['cy']
+                        id = objects['items'][parseInt(key)]['id']
+                        balloonHeader =objects['items'][parseInt(key)]['name']
+                        balloonContent =objects['items'][parseInt(key)]['description']
                         obj = {"type":"Future","id":id,"geometry":{"type":"Point","coordinates":[cx,cy]},"properties":{"balloonContentHeader": balloonHeader, "balloonContentBody": balloonContent}}
                         json_res_start +=JSON.stringify(obj)+","
-                        //alert(JSON.stringify(obj))
                     }
                     
                     json_res_start = json_res_start.substring(0, json_res_start.length - 1)+json_res_end
