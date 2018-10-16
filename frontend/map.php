@@ -13,7 +13,7 @@ require_once "header.php";
     </div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="js/map.js"></script>
-    <!--<script src="js/add_obj.js"></script>-->
+    <script src="js/add_obj.js"></script>
 <?php
 include "footer.php";
 ?>
