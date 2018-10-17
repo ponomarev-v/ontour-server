@@ -287,7 +287,7 @@ class Users
             Core::DB()->where('id', $id)->update('user', array(
                 'email-status' => 1,
             ));
-            $new_url = 'http://turneon.ru/region.php';
+            $new_url = 'http://turneon.ru/emailVerificated.php';
             header('Location: '.$new_url);
             return true;
         }
