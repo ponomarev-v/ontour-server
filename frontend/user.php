@@ -214,12 +214,12 @@
         $("#btn_logout_none").click(function () {
             close_active_window();
         });
-
+/*
         if ($("#btn_change_password_cancel").click()){
             $("#window_change_password").hide();
             $("#window_settings").show();
         }
-
+*/
         $("#btn_change_password").click(function () {
             update_user_info();
         });
