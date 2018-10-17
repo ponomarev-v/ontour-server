@@ -264,11 +264,13 @@ class Users
         $keyNoE['password'] = $bd['password'];
         $keyNoE['key'] = $bd['activate_code'];
         //$key = encrypt("$keyNoE",$bd['password']);
+        //генерим сам ключь по нано технологии....
         $key = hash_hmac('ripemd160',$keyNoE['key'], $keyNoE['password']);
-        $link = "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
+
+        $text = "Для подтверждения почты перейдите по ссылке ниже: \n" . "http://api.turneon.ru/?method=user.EmailVerification&id=" . $user . "&key=" . $key;
         $email = $bd['email'];
         $headers = 'From:EmailVerification@turneon.ru' . "\r\n";
-        return mail( $email,'Код активации',$link, $headers);
+        return mail( $email,'Код активации',$text, $headers);
     }
     //функция для проверки почты..
     public static function EmailVerification($id , $KeyGet)
