@@ -243,7 +243,7 @@ class Users
     }
     // код потверждения юзера при вызове функции генерит новый код и записавает в бд
     //че не так было?
-
+//ключь к мылу
     public static function CreateCodeVerification($user)
     {
         $key = \Utils::generateRandomString();
@@ -285,6 +285,8 @@ class Users
             Core::DB()->where('id', $id)->update('user', array(
                 'email-status' => 1,
             ));
+            $new_url = 'http://turneon.ru/region.php';
+            header('Location: '.$new_url);
             return true;
         }
         else
