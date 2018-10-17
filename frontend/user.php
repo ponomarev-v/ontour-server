@@ -91,7 +91,7 @@
                 <input type="text" class="form" placeholder="Старый пароль" name="old_password">
                 <input type="text" class="form" placeholder="Новый пароль"  name="new_password">
                 <input type="text" class="form" placeholder="Повтор пароля" name="new_password_repeat">
-                <input type="button" value="Назад" class="button" id="btn_change_password_cancel">
+                <input type="button" value="Назад" class="button window_btn" id="btn_change_password_cancel" window-id="window_settings">
                 <input type="submit" class="button" value="Сменить пароль">
             </form>
             <div class="error"></div>
@@ -214,12 +214,7 @@
         $("#btn_logout_none").click(function () {
             close_active_window();
         });
-/*
-        if ($("#btn_change_password_cancel").click()){
-            $("#window_change_password").hide();
-            $("#window_settings").show();
-        }
-*/
+
         $("#btn_change_password").click(function () {
             update_user_info();
         });
