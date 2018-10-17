@@ -217,6 +217,7 @@
 
         $("#btn_change_password_cancel").click(function () {
             $("#window_settings").show();
+            $("#window_change_password").hide();
         });
 
         $("#btn_change_password").click(function () {
