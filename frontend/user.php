@@ -216,8 +216,8 @@
         });
 
         $("#btn_change_password_cancel").click(function () {
-            $("#window_settings").show();
             $("#window_change_password").hide();
+            $("#window_settings").show();
         });
 
         $("#btn_change_password").click(function () {
