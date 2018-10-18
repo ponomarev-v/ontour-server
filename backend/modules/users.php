@@ -340,8 +340,7 @@ class Users
             ));
             $math = 3 - $upd['attempts']
                 //ну?
-            throw new Exception('неверный код активации осталось:' . $math);
-
+            throw new Exception("неверный код активации осталось: $math");
         } else {
 
             Core::DB()->where('id', $user)->update('user', array(
