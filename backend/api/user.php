@@ -12,9 +12,10 @@ namespace API {
         //    $res = \Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
         //    echo $res
         //    return \Utils::FindSmth($TabName, $ColName, $query);
-            $phone = \Utils::Request('phone');
-            $msg = \Utils::Request('msg');
-            return \Utils::newsendSMS($phone,$msg);
+            //$phone = \Utils::Request('phone');
+            //$msg = \Utils::Request('msg');
+            $id = \Utils::Request('id');
+            return \Users::SmsCodeVerification($id);
         }
         public function EmailVerification()
         {

@@ -297,5 +297,16 @@ class Users
 
         }
     }
+//очень небезопасный ключь к мобиле
+    public static function SmsCodeVerification($user){
+        $key = rand(1000,9999);
+        Core::DB()->where('id', $user)->update('user', array(
+            'phone-activation-code' => $key,
+            'phone-status' => 0,
+        ));
+        return true;
+
+    }
+
 
 }
