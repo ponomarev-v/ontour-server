@@ -46,11 +46,10 @@
                 return \Objects::Find_obj($str);
             }
             //добавление объекта
-            public static function ActWithFav(){
-                $act   = \Utils::Request('act');
+            public static function DelFromhFav(){
                 $objid = \Utils::Request('objid');
                 $id    = $_SESSION['userid'];
-                return \Objects::ActionWithFav($act, $objid, $id);
+                return \Objects::RemoveWithFav( $objid, $id);
             }
             
         }
