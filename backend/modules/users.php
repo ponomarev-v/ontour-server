@@ -338,9 +338,9 @@ class Users
             Core::DB()->where('id', $user)->update('user', array(
                 'attempts' => $upd['attempts'],
             ));
-            $math = 3 - $upd['attempts']
+            $math = 3 - $upd['attempts'];
                 //ну?
-            throw new Exception('неверный код активации осталось:');
+            throw new Exception('неверный код активации осталось: ' . $math);
         } else {
 
             Core::DB()->where('id', $user)->update('user', array(
