@@ -339,9 +339,8 @@ class Users
             Core::DB()->where('id', $user)->update('user', array(
                 'attempts' => $upd['attempts'],
             ));
-            $math = 3 - $upd['attempts'];
-                //ну?
-            if($bd['attempts'] >= 3)
+            //считаем
+            if($bd['attempts'] >= 5)
             {
                 Users::CreateSmsCodeVerification($user);
                 Users::SmsCodeVerificationSend($user);
