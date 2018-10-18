@@ -333,10 +333,10 @@ class Users
         $bd = $res[0];
         if ($bd['phone-activation-code'] != $code)
         {
-            $attempts = $bd['attempts'] + 1;
-
+            $upd['attempts'] = $bd['attempts'] + 1;
+            echo  $upd;
             Core::DB()->where('id', $user)->update('user', array(
-                'attempts' => $attempts,
+                'attempts' => $upd['attempts'],
             ));
             throw new Exception('неверный код активации осталось:' . 3 - $attempts);
 
