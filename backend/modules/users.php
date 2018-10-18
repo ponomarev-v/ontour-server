@@ -331,6 +331,11 @@ class Users
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $bd = $res[0];
+        if($bd['attempts'] == 0)
+        {
+            Users::CreateSmsCodeVerification($user);
+            Users::SmsCodeVerificationSend($user);
+        }
         if ($bd['phone-activation-code'] != $code)
         {
             $upd['attempts'] = $bd['attempts'] + 1;
@@ -340,7 +345,7 @@ class Users
             ));
             $math = 3 - $upd['attempts'];
                 //ну?
-            throw new Exception('неверный код активации осталось: ' . $math);
+            return false;
         } else {
 
             Core::DB()->where('id', $user)->update('user', array(
