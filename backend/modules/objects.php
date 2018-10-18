@@ -114,7 +114,7 @@ class Objects
     public static function RemoveFromFav($objid, $id){
         $db = Core::DB();
         return $db->where('user_id', $id)
-                  ->where('oject_id', $objid)
+                  ->where('object_id', $objid)
                   ->delete('favorites');
     }
     //метод для действия с таблицей favorites
