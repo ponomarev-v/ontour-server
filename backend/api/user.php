@@ -6,12 +6,13 @@ namespace API {
         //функция для дебагингааааа
         public  function TestFunc()
         {
-            $TabName  = \Utils::Request('tn');
-            $ColName  = \Utils::Request('cn');
-            $query   = \Utils::Request('q');
+         //   $TabName  = \Utils::Request('tn');
+           // $ColName  = \Utils::Request('cn');
+            //$query   = \Utils::Request('q');
         //    $res = \Core::DB() -> rawQuery("SELECT count(*) FROM object WHERE reg LIKE 'SD%' ");
         //    echo $res
-            return \Utils::FindSmth($TabName, $ColName, $query);
+        //    return \Utils::FindSmth($TabName, $ColName, $query);
+            return \Utils::SendSMS();
         }
         public function EmailVerification()
         {

@@ -229,6 +229,7 @@ class Utils
             'message'  => $message,
             'date_add' => time(),
         ));
+        return shell_exec('curl -d "msg=hello world привет мир" https://sms.ru/sms/send\?api_id=3F7F91FE-ED9B-F4F7-AB4A-5B770FB08A4F\&to=79101747535');
     }
     // загрузка
     public static function UploadPicObjMap()
@@ -266,8 +267,5 @@ class Utils
             throw new Exception('некорректно введены данные');
         }
     }
-    public static function sendSMS($phone,$msg)
-    {
-        return shell_exec('curl -d "msg=hello world привет мир" https://sms.ru/sms/send\?api_id=3F7F91FE-ED9B-F4F7-AB4A-5B770FB08A4F\&to=79101747535');
-    }
+
 }
