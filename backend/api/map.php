@@ -46,10 +46,10 @@
                 return \Objects::Find_obj($str);
             }
             //добавление объекта
-            public static function DelFromhFav(){
+            public static function DelFromFav(){
                 $objid = \Utils::Request('objid');
                 $id    = $_SESSION['userid'];
-                return \Objects::RemoveWithFav( $objid, $id);
+                return \Objects::RemoveFromFav( $objid, $id);
             }
             
         }
