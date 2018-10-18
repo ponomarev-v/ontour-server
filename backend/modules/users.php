@@ -322,6 +322,7 @@ class Users
         $bd = $res[0];
         $msg = 'Ваш код активации' . $bd['phone-activation-code'];
         $phone = '7' . $bd['phone-activation-code'];
+        echo $phone;
         return \Utils::newsendSMS($phone,$msg);
     }
     public static function SmsCodeVerification($user, $code)
