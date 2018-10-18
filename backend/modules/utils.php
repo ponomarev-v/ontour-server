@@ -267,7 +267,7 @@ class Utils
         }
     }
     public static function newsendSMS($phone, $msg){
-        echo 'curl -d "msg="' . $msg . 'https://sms.ru/sms/send\?api_id=3F7F91FE-ED9B-F4F7-AB4A-5B770FB08A4F\&to=' . $phone;
+        echo 'curl -d "msg=' . $msg .'" ' https://sms.ru/sms/send\?api_id=3F7F91FE-ED9B-F4F7-AB4A-5B770FB08A4F\&to=' . $phone;
         return shell_exec('curl -d "msg="' . $msg . 'https://sms.ru/sms/send\?api_id=3F7F91FE-ED9B-F4F7-AB4A-5B770FB08A4F\&to=' . $phone);
     }
 }
