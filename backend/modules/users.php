@@ -331,11 +331,7 @@ class Users
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $bd = $res[0];
-        if($bd['attempts'] >= 3)
-        {
-            Users::CreateSmsCodeVerification($user);
-            Users::SmsCodeVerificationSend($user);
-        }
+
         if ($bd['phone-activation-code'] != $code)
         {
             $upd['attempts'] = $bd['attempts'] + 1;
@@ -345,6 +341,11 @@ class Users
             ));
             $math = 3 - $upd['attempts'];
                 //ну?
+            if($bd['attempts'] >= 3)
+            {
+                Users::CreateSmsCodeVerification($user);
+                Users::SmsCodeVerificationSend($user);
+            }
             return false;
         } else {
 
@@ -354,5 +355,6 @@ class Users
             ));
             return true;
         }
+
     }
 }
