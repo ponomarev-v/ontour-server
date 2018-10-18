@@ -331,7 +331,7 @@ class Users
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $bd = $res[0];
-        if($bd['attempts'] == 0)
+        if($bd['attempts'] >= 3)
         {
             Users::CreateSmsCodeVerification($user);
             Users::SmsCodeVerificationSend($user);
