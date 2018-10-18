@@ -84,10 +84,13 @@ class Users
             throw new Exception('Непредвиденная ошибка при сохранении данных.'.(Config::DEBUG ? ' '.$msg : ''));
         if($new_id > 0) {
             //генерит код при регестрации
+            Users::CreateSmsCodeVerification($new_id);
             $status = Users::CreateCodeVerification($new_id);
             if($status == true)
                 if(!empty($data['email']))
                     Users::SendEmailVerification($new_id);
+                if(!empty($data['phone']))
+                    Users::SmsCodeVerificationSend($new_id);
             return $new_id;
         }
         else
@@ -195,6 +198,11 @@ class Users
             Users::CreateCodeVerification($id);
             Users::SendEmailVerification($id);
         }
+        if($res['phone'] != $data['phone'])
+        {
+           Users::CreateSmsCodeVerification($id);
+           Users::SmsCodeVerificationSend($id);
+        }
 
         return true;
 
@@ -298,8 +306,8 @@ class Users
         }
     }
 //очень небезопасный ключь к мобиле
-    public static function SmsCodeVerification($user){
-        $key = rand(1000,9999);
+    public static function CreateSmsCodeVerification($user){
+        $key = rand(1000,9999); //люблю rand ;)
         Core::DB()->where('id', $user)->update('user', array(
             'phone-activation-code' => $key,
             'phone-status' => 0,
@@ -308,5 +316,35 @@ class Users
 
     }
 
+    public static function SmsCodeVerificationSend($user){
+        $db = Core::DB();
+        $res = $db->where('id',$user)->get('user');
+        $bd = $res[0];
+        $msg = 'Ваш код активации' . $bd['phone-activation-code'];
+        $phone = '7' . $bd['phone-activation-code'];
+        return \Utils::newsendSMS($phone,$msg);
+    }
+    public static function SmsCodeVerification($user, $code)
+    {
+        $db = Core::DB();
+        $res = $db->where('id',$user)->get('user');
+        $bd = $res[0];
+        if ($bd['phone-activation-code'] != $code)
+        {
+            $attempts = $bd['attempts'] + 1;
 
+            Core::DB()->where('id', $user)->update('user', array(
+                'attempts' => $attempts,
+            ));
+            throw new Exception('неверный код активации осталось:' . 3 - $attempts);
+
+        } else {
+
+            Core::DB()->where('id', $user)->update('user', array(
+                'attempts' => 0,
+                'phone-status' => 1,
+            ));
+            return true;
+        }
+    }
 }
