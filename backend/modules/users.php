@@ -339,6 +339,7 @@ class Users
                 'attempts' => $upd['attempts'],
             ));
             $math = 3 - $upd['attempts']
+                //ну?
            throw new Exception('неверный код активации осталось:' . $math);
 
         } else {
