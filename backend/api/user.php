@@ -15,7 +15,7 @@ namespace API {
             //$phone = \Utils::Request('phone');
             //$msg = \Utils::Request('msg');
             $id = \Utils::Request('id');
-            return \Users::SmsCodeVerification($id);
+            return \Users::SmsCodeVerificationSend($id);
         }
         public function EmailVerification()
         {
