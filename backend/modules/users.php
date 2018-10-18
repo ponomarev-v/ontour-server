@@ -305,7 +305,7 @@ class Users
 
         }
     }
-//очень небезопасный ключь к мобиле
+//очень небезопасный ключь к мобиле но генериться норм
     public static function CreateSmsCodeVerification($user){
         $key = rand(1000,9999); //люблю rand ;)
         Core::DB()->where('id', $user)->update('user', array(
@@ -315,16 +315,17 @@ class Users
         return true;
 
     }
-
+//отпровляет смс по полученому id user
     public static function SmsCodeVerificationSend($user){
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $bd = $res[0];
-        $msg = 'Ваш код активации' . $bd['phone-activation-code'];
+        $msg = 'Ваш код активации: ' . $bd['phone-activation-code'];
         $phone = '7' . $bd['phone'];
         echo $phone;
         return \Utils::newsendSMS($phone,$msg);
     }
+    //потверждает юзера на его мобилу
     public static function SmsCodeVerification($user, $code)
     {
         $db = Core::DB();
