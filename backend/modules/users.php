@@ -320,7 +320,7 @@ class Users
         $db = Core::DB();
         $res = $db->where('id',$user)->get('user');
         $bd = $res[0];
-        $msg = 'Ваш код активации: ' . $bd['phone-activation-code'];
+        $msg = 'Ваш код активации:' . $bd['phone-activation-code'];
         $phone = '7' . $bd['phone'];
         echo $phone;
         return \Utils::newsendSMS($phone,$msg);
