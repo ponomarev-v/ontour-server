@@ -24,6 +24,12 @@ namespace API {
             return \Users::EmailVerification($id,$KeyGet);
 
         }
+        public function SmsVerification()
+        {
+            $id = \Utils::Request('id');
+            $code = \Utils::Request('code');
+            return \Users::SmsCodeVerification($id,$code);
+        }
 
         public function GeoIpLocation()
         {
