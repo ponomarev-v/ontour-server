@@ -89,13 +89,42 @@ class Objects
         $res = $db->rawQuery("SELECT * FROM object WHERE name LIKE '$str'");
         return $res;
     }
+//методы для действия с таблицей favorites
+    public static function AddtohFav($objid, $id){
+        $db = Core::DB();
+        $update = array(
+            'user_id'   => $id,
+            'object_id' => $objid,
+            'add_date'  => time()
+        );
+        $db->insert('favorites', $update);
+        return $db->getLastError();
+    }
+
+    public static function GetObjsFromFav($objid){
+        return Core::DB()->where('object_id', $objid)
+                         ->get('favorites');
+    }
+
+    public static function GetUesersFromFav($id){
+        return Core::DB()->where('user_id', $id)
+                         ->get('favorites');
+    }
+
+    public static function RemoveFromFav($objid, $id){
+        $db = Core::DB();
+        return $db->where('user_id', $id)
+                  ->where('object_id', $objid)
+                  ->delete('favorites');
+    }
     //метод для действия с таблицей favorites
+    //это в одном, но больше он не нужен
     public static function ActionWithFav($act, $objid, $id){
         $db = Core::DB();
         $update = array(
             'user_id'   => $id,
             'object_id' => $objid,
-            'add_date'      => time()
+            'add_date'  => time()
         );
         if($act == 'add'){
             $db->insert('favorites', $update);
