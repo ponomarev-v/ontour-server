@@ -139,5 +139,11 @@ class Objects
         }
         return isset($res) && !empty($res) ? $res : $db->getLastError();
     }
+    public static function Obj_Screen_Return($Min_X,$Min_Y,$Max_X,$Max_Y)
+    {
+        $db = Core::DB();
+        $res = $db -> rawQuery("SELECT name FROM object WHERE $Max_X>cx>$Min_X and $Max_Y>cy>$Min_Y");
+        return $res;
+    }
 
 }
