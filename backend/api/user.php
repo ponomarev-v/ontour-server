@@ -20,7 +20,7 @@ namespace API {
            // $Max_Y =\Utils::Request('Max_Y');
            // $Min_X =\Utils::Request('Min_X');
           //  $Max_X =\Utils::Request('Max_X');
-          /return \Objects::Obj_Screen_Return(56,40,100,100);
+          return \Objects::Obj_Screen_Return(56,40,100,100);
 
         }
         public function EmailVerification()
