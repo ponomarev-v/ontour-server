@@ -142,7 +142,7 @@ class Objects
     public static function Obj_Screen_Return($Min_X,$Min_Y,$Max_X,$Max_Y)
     {
         $db = Core::DB();
-        $res = $db -> rawQuery("SELECT FROM object WHERE $Max_X > 'cx' > $Min_X AND $Max_Y > 'cy' > $Min_Y");
+        $res = $db -> rawQuery("SELECT FROM object WHERE $Max_X > cx > $Min_X AND $Max_Y > cy > $Min_Y");
         $msg = $db->getLastError();
         echo  $msg;
         echo json_encode($res);
