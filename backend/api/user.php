@@ -21,7 +21,7 @@ namespace API {
            // $Min_X =\Utils::Request('Min_X');
           //  $Max_X =\Utils::Request('Max_X');
           //  return \Objects::Obj_Screen_Return($Min_X,$Min_Y,$Max_X,$Max_Y);
-            return \Utils::FindSmth('objects', 'cx','56');
+            return \Utils::FindSmth('object', 'cx','56');
         }
         public function EmailVerification()
         {
