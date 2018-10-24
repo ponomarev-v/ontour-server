@@ -143,6 +143,8 @@ class Objects
     {
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT name FROM object WHERE $Max_X>'cx'>$Min_X AND $Max_Y>'cy'>$Min_Y");
+        $msg = $db->getLastError();
+        echo  $msg;
         echo json_encode($res);
         return $res;
     }
