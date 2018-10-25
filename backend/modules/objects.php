@@ -139,6 +139,7 @@ class Objects
         }
         return isset($res) && !empty($res) ? $res : $db->getLastError();
     }
+    // обьекты на экран
     public static function Obj_Screen_Return($Min_X,$Min_Y,$Max_X,$Max_Y)
     {
         $db = Core::DB();
