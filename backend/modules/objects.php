@@ -140,8 +140,13 @@ class Objects
         return isset($res) && !empty($res) ? $res : $db->getLastError();
     }
     // обьекты на экран
-    public static function Obj_Screen_Return($Min_X,$Min_Y,$Max_X,$Max_Y)
+    public static function Obj_Screen_Return($bbox,$callback)
     {
+        $input = explode(",",$bbox);
+        $Min_X = $input[0];
+        $Min_Y = $input[1];
+        $Max_X = $input[2];
+        $Max_Y = $input[3];
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
 
