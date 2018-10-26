@@ -143,11 +143,11 @@ class Objects
     public static function Obj_Screen_Return($bbox,$callback)
     {
         $input = explode(",",$bbox);
-        //$Min_X = $input[0];
-        //$Min_Y = $input[1];
-        //$Max_X = $input[2];
-        //$Max_Y = $input[3];
-        echo "$Max_X $Min_X $Max_Y $Min_Y";
+        $Min_X = $input[0];
+        $Min_Y = $input[1];
+        $Max_X = $input[2];
+        $Max_Y = $input[3];
+        //echo "$Max_X $Min_X $Max_Y $Min_Y";
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
         $data = $res[0];
