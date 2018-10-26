@@ -143,7 +143,7 @@ class Objects
     public static function Obj_Screen_Return($Min_X,$Min_Y,$Max_X,$Max_Y)
     {
         $db = Core::DB();
-        $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= 56 AND `cx` <= 100");
+        $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
 
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
         $msg = $db->getLastError();
