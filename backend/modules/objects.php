@@ -146,9 +146,9 @@ class Objects
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
 
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
-        $msg = $db->getLastError();
-        echo  $msg;
-        echo json_encode($res);
+       // $msg = $db->getLastError();
+       // echo  $msg;
+       // echo json_encode($res);
         return $res;
     }
 
