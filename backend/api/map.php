@@ -51,7 +51,7 @@
                 $id    = $_SESSION['userid'];
                 return \Objects::RemoveFromFav( $objid, $id);
             }
-            public static function Screenobj()
+            public static function ScreenObj()
             {
                 $bbox = \Utils::Request('bbox');
                 $callback = \Utils::Request('callback');
