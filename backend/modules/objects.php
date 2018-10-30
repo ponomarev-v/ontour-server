@@ -162,7 +162,6 @@ class Objects
             $name = $karl[$i]['name'];
             $description = $karl[$i]['description'];
             $mes[$i] = [
-                "features" => [
                     "type" => "Feature",
                     "id" => $id,
                     "geometry" => [
@@ -173,7 +172,6 @@ class Objects
                         "clusterCaption" => "$id",
                         "hintContent" => "$description"
                         ]
-                ]
             ];
         }
         $otes = [
