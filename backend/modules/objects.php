@@ -170,7 +170,7 @@ class Objects
        // $msg = $db->getLastError();
        // echo  $msg;
        // echo json_encode($res);
-        return $res;
+       // return $res;
     }
 
 }
