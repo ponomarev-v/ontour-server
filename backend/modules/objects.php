@@ -176,7 +176,7 @@ class Objects
                 ]
             ];
         }
-        $otvet = [
+        $otes = [
             "type" => "FeatureCollection",
             "features" => $mes
         ];
@@ -185,7 +185,7 @@ class Objects
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
        // $msg = $db->getLastError();
        // echo  $msg;
-       echo json_encode($otvet);
+       echo json_encode($otes);
        // return $res;
     }
 
