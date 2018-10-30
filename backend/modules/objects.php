@@ -153,7 +153,7 @@ class Objects
         $n = count($res);
         //print_r($res);
         $karl = $res;
-        print_r($karl);
+      //  print_r($karl);
         $cx = $karl[0]['cx'];
         $cy = $karl[0]['cy'];
         for($i = 0; $i < $n; $i++) {
