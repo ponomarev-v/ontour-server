@@ -155,7 +155,7 @@ class Objects
         $n = count($karl) -1 ;
         print_r($karl);
         $cx = $karl[0][cx];
-        $cy = &karl[0][cy];
+        $cy = $karl[0][cy];
         $mes =[
             "type" => "FeatureCollection",
             "features" => [
