@@ -154,13 +154,14 @@ class Objects
         //print_r($res);
         $karl = $res;
       //  print_r($karl);
-        $cx = $karl[0]['cx'];
-        $cy = $karl[0]['cy'];
+
         for($i = 0; $i < $n; $i++) {
+            $cx = $karl[$i]['cx'];
+            $cy = $karl[$i]['cy'];
             $mes[$i] = [
                 "features" => [
                     "type" => "Feature",
-                    "id" => $karl[0]['id'],
+                    "id" => $karl[$i]['id'],
                     "geometry" => [
                         "type" => "Point",
                         "coordinates" => "[$cx , $cy ]",
