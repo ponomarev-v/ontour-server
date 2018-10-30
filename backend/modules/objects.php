@@ -152,7 +152,7 @@ class Objects
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
         //print_r($res);
         $kosl =$res[0];
-        $mes =[
+        $mes =array_values([
             "type" => "FeatureCollection",
             "features" => [
                 "type" => "Feature",
@@ -162,7 +162,7 @@ class Objects
                     "coordinates" => "[$kosl[cx] , $kosl[cy]]" ,
                 ]
             ]
-        ];
+        ]);
         print_r($mes);
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
        // $msg = $db->getLastError();
