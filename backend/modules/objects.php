@@ -152,6 +152,7 @@ class Objects
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
         //print_r($res);
         $kosl =$res[0];
+        echo count($kosl);
         $mes =array_values([
             "type" => "FeatureCollection",
             "features" => [
