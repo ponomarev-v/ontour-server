@@ -178,13 +178,14 @@ class Objects
             "type" => "FeatureCollection",
             "features" => $mes
         ];
+        $final = json_encode($otes);
+        $respone = "$callback({$final})";
         //"type" => "FeatureCollection",
         //print_r($mes);
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
        // $msg = $db->getLastError();
        // echo  $msg;
-       echo json_encode($otes);
-       // return $res;
+        return $respone;
     }
 
 }
