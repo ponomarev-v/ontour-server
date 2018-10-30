@@ -161,7 +161,7 @@ class Objects
                 "id" => $kosl[0][id],
                 "geometry" => [
                     "type" => "Point",
-                    "coordinates" => "[$kosl[0]["cx"] , $kosl[0]["cy"]]",
+                    "coordinates" => "[$kosl[0][cx] , $kosl[0][cy]]",
                 ]
             ]
         ]);
