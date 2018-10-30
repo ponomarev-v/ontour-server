@@ -151,9 +151,9 @@ class Objects
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
         //print_r($res);
-        $kosl =$res;
+        $kosl =$res[0];
         echo count($kosl);
-        print_r($kosl);
+        print_r(array_values($kosl));
         $mes =array_values([
             "type" => "FeatureCollection",
             "features" => [
@@ -161,7 +161,7 @@ class Objects
                 "id" => $kosl[0][id],
                 "geometry" => [
                     "type" => "Point",
-                    "coordinates" => "[$kosl[0][cx] , $kosl[0][cy]]" ,
+                    "coordinates" => "[$kosl[0]["cx"] , $kosl[0]["cy"]]",
                 ]
             ]
         ]);
