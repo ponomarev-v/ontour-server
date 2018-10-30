@@ -156,7 +156,7 @@ class Objects
         print_r($karl);
         $cx = $karl[0]['cx'];
         $cy = $karl[0]['cy'];
-        echo $n = count($res);
+        echo count($res);
         $mes =[
             "type" => "FeatureCollection",
             "features" => [
