@@ -153,6 +153,7 @@ class Objects
         //print_r($res);
         $kosl =$res[0];
         echo count($kosl);
+        print_r($kosl);
         $mes =array_values([
             "type" => "FeatureCollection",
             "features" => [
