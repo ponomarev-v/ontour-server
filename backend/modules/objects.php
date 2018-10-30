@@ -150,24 +150,25 @@ class Objects
         //echo "$Max_X $Min_X $Max_Y $Min_Y";
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
-        echo count($res);
+        $n = count($res);
         //print_r($res);
         $karl = $res;
         print_r($karl);
         $cx = $karl[0]['cx'];
         $cy = $karl[0]['cy'];
-
-        $mes =[
-            "type" => "FeatureCollection",
-            "features" => [
-                "type" => "Feature",
-                "id" => $karl[0]['id'],
-                "geometry" => [
-                    "type" => "Point",
-                    "coordinates" =>"[$cx , $cy ]",
+        for($i = 0; $i < $n; $i++) {
+            $mes[$i] = [
+                "features" => [
+                    "type" => "Feature",
+                    "id" => $karl[0]['id'],
+                    "geometry" => [
+                        "type" => "Point",
+                        "coordinates" => "[$cx , $cy ]",
+                    ]
                 ]
-            ]
-        ];
+            ];
+        }
+        //"type" => "FeatureCollection",
         print_r($mes);
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
        // $msg = $db->getLastError();
