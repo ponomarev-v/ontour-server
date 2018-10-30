@@ -158,10 +158,10 @@ class Objects
             "type" => "FeatureCollection",
             "features" => [
                 "type" => "Feature",
-                "id" => $kosl[id],
+                "id" => $kosl[0][id],
                 "geometry" => [
                     "type" => "Point",
-                    "coordinates" => "[$kosl[cx] , $kosl[cy]]" ,
+                    "coordinates" => "[$kosl[0][cx] , $kosl[0][cy]]" ,
                 ]
             ]
         ]);
