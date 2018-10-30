@@ -154,6 +154,8 @@ class Objects
         $karl = $res;
         $n = count($karl) -1 ;
         print_r($karl);
+        $cx = $karl[0][cx];
+        $cy = &karl[0][cy];
         $mes =[
             "type" => "FeatureCollection",
             "features" => [
@@ -161,7 +163,7 @@ class Objects
                 "id" => $karl[0][id],
                 "geometry" => [
                     "type" => "Point",
-                    "coordinates" =>"[" . [$karl[0][cx] . "," . $karl[0][cy] . "]",
+                    "coordinates" =>"[$cx , $cy ]",
                 ]
             ]
         ];
