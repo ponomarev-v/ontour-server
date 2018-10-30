@@ -151,7 +151,7 @@ class Objects
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
         //print_r($res);
-        $kosl =$res[0];
+        $kosl =$res;
         echo count($kosl);
         print_r($kosl);
         $mes =array_values([
