@@ -154,14 +154,14 @@ class Objects
         $karl = $res;
         $n = count($karl) -1 ;
         print_r($karl);
-        $cx = $karl[0][cx];
-        $cy = $karl[0][cy];
-
+        $cx = $karl[0]['cx'];
+        $cy = $karl[0]['cy'];
+        echo $n = count($res);
         $mes =[
             "type" => "FeatureCollection",
             "features" => [
                 "type" => "Feature",
-                "id" => $karl[0][id],
+                "id" => $karl[0]['id'],
                 "geometry" => [
                     "type" => "Point",
                     "coordinates" =>"[$cx , $cy ]",
@@ -172,7 +172,7 @@ class Objects
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
        // $msg = $db->getLastError();
        // echo  $msg;
-       echo json_encode($res);
+       //echo json_encode($res);
        // return $res;
     }
 
