@@ -150,13 +150,13 @@ class Objects
         //echo "$Max_X $Min_X $Max_Y $Min_Y";
         $db = Core::DB();
         $res = $db -> rawQuery("SELECT * FROM `object` WHERE `cx` >= $Min_X AND `cx` <= $Max_X AND `cy` >= $Min_Y AND `cy` <= $Max_Y");
+        echo count($res);
         //print_r($res);
         $karl = $res;
-        $n = count($karl) -1 ;
         print_r($karl);
         $cx = $karl[0]['cx'];
         $cy = $karl[0]['cy'];
-        echo count($res);
+
         $mes =[
             "type" => "FeatureCollection",
             "features" => [
