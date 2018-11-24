@@ -3,7 +3,7 @@
 namespace API {
     class User
     {
-        //функция для дебагингааааа
+        //функция для дебагинга
         public  function TestFunc()
         {
          //   $TabName  = \Utils::Request('tn');
