@@ -60,9 +60,7 @@ try {
         $res['dberror'] = Core::DB()->getLastError();
     }
 }
-if (!isset($res)){
+if (isset($res)){
     echo json_encode($res);
-} else {
-    echo "No";
-}
+} 
 
