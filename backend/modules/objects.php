@@ -167,7 +167,7 @@ class Objects
                     "id" => $id,
                     "geometry" => [
                         "type" => "Point",
-                        "coordinates" => "[$cx , $cy ]",
+                        "coordinates" => [$cx , $cy ],
                         ],
                     "properties" => ["balloonContent"=>"$name",
                         "clusterCaption" => "$id",
