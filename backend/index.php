@@ -39,7 +39,7 @@ try {
                     $res = array('count' => sizeof($res), 'items' => $res);
                 $res = array_merge(array('result' => 'success'), $res);
             } else {
-                echo $res;
+                echo $instance->$method();
                 throw new Exception('Unknown method');
             }
         } else {
