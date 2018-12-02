@@ -40,12 +40,7 @@ try {
                 throw new Exception('Unknown method');
             }
         } else {
-            if(method_exists($instance, $method)) {
                 $res = $instance->$method();
-                
-                if(!is_array($res)) {
-                        $res = array('data' => $res);
-                }
             }
         }
         } else {
