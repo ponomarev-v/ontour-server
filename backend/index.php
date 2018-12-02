@@ -24,7 +24,7 @@ try {
         if(load_api_class($method[0]) && class_exists($class_name)) {
             $instance = new $class_name;
             $method = $method[1];
-            if($method != "ScreenObj"){
+            //if($method != "ScreenObj"){
             if(method_exists($instance, $method)) {
                 $res = $instance->$method();
                 
@@ -39,9 +39,9 @@ try {
                 
                 throw new Exception('Unknown method');
             }
-        } else {
+        //} else {
 
-        }
+        //}
         } else {
             throw new Exception('Unknown class');
         }
