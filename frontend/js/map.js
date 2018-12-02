@@ -30,8 +30,8 @@ function init () {
             clusterDisableClickZoom: true
         });
 
-    
-    myMap.geoObjects.add(objectManager);
+    myMap.geoObjects.add(remoteObjectManager);
+    //myMap.geoObjects.add(objectManager);
     var json_res_start;
     $.ajax({
             type:"POST",
@@ -60,7 +60,7 @@ function init () {
                     
                     json_res_start = json_res_start.substring(0, json_res_start.length - 1)+json_res_end
                     json = JSON.parse(json_res_start)
-                    objectManager.add(json)
+                    //objectManager.add(json)
                 }
             }
         });
