@@ -40,8 +40,9 @@ try {
                 throw new Exception('Unknown method');
             }
         } else {
+            if(method_exists($instance, $method)) 
                 $res = $instance->$method();
-            }
+            
         }
         } else {
             throw new Exception('Unknown class');
