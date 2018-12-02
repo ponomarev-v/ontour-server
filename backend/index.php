@@ -40,7 +40,7 @@ try {
                 throw new Exception('Unknown method');
             }
         } else {
-            
+
         }
         } else {
             throw new Exception('Unknown class');
@@ -60,5 +60,7 @@ try {
         $res['dberror'] = Core::DB()->getLastError();
     }
 }
+if (!is_null($res)){
+    echo json_encode($res);
+}
 
-echo json_encode($res);
