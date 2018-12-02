@@ -24,30 +24,31 @@ try {
         if(load_api_class($method[0]) && class_exists($class_name)) {
             $instance = new $class_name;
             $method = $method[1];
-            
+            if($method != "ScreenObj"){
             if(method_exists($instance, $method)) {
                 $res = $instance->$method();
                 
                 if(!is_array($res)) {
-                   
                         $res = array('data' => $res);
-                    
-
                 }
                 $keys = array_keys($res);
                 if(sizeof($keys) > 0 && $keys[0] == 0 && $keys[sizeof($keys) - 1] == sizeof($keys) - 1)
                     $res = array('count' => sizeof($res), 'items' => $res);
                 $res = array_merge(array('result' => 'success'), $res);
             } else {
-                echo $method;
+                
                 throw new Exception('Unknown method');
             }
+        } else {
+            
+        }
         } else {
             throw new Exception('Unknown class');
         }
     } else {
         throw new Exception('Invalid method');
     }
+
 } catch(Exception $e) {
     $res = array(
 
