@@ -40,7 +40,7 @@ try {
                 throw new Exception('Unknown method');
             }
         } else {
-
+            echo "Sucess";
         }
         } else {
             throw new Exception('Unknown class');
