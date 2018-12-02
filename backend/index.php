@@ -29,12 +29,9 @@ try {
                 $res = $instance->$method();
                 
                 if(!is_array($res)) {
-                   if($res == "ScreenObj"){
-                    
-                   }
-                    else {
+                   
                         $res = array('data' => $res);
-                    }
+                    
 
                 }
                 $keys = array_keys($res);
@@ -42,6 +39,7 @@ try {
                     $res = array('count' => sizeof($res), 'items' => $res);
                 $res = array_merge(array('result' => 'success'), $res);
             } else {
+                echo $res;
                 throw new Exception('Unknown method');
             }
         } else {
