@@ -55,7 +55,7 @@
             {
                 $bbox = \Utils::Request('bbox');
                 $callback = \Utils::Request('callback');
-                return \Objects::Obj_Screen_Return($bbox,$callback);
+                echo \Objects::Obj_Screen_Return($bbox,$callback);
 
             }
         }
