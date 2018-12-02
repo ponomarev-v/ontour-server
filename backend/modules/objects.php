@@ -161,6 +161,7 @@ class Objects
             $cy = $karl[$i]['cy'];
             $name = $karl[$i]['name'];
             $description = $karl[$i]['description'];
+            $mes = NULL;
             $mes[$i] = [
                     "type" => "Feature",
                     "id" => $id,
