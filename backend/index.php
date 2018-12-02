@@ -60,6 +60,7 @@ try {
         $res['dberror'] = Core::DB()->getLastError();
     }
 }
+echo isset($res);
 if (!isset($res)){
     echo json_encode($res);
 }
