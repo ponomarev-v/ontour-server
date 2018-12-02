@@ -12,6 +12,10 @@ function init () {
             y = pt[1];
         }
     }
+    var remoteObjectManager = new ymaps.RemoteObjectManager('http://api.turneon.ru/?method=map.ScreenObj&bbox=%b',
+    {   
+      clusterHasBalloon: false
+    });
     var myMap = new ymaps.Map('map', {
             center: [x, y],
             zoom: 10
