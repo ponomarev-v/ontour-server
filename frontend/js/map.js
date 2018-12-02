@@ -14,7 +14,8 @@ function init () {
     }
     var remoteObjectManager = new ymaps.RemoteObjectManager('http://api.turneon.ru/?method=map.ScreenObj&bbox=%b',
     {   
-      clusterHasBalloon: false
+      clusterHasBalloon: false,
+      paddingTemplate: 'myCallback_%c'
     });
     var myMap = new ymaps.Map('map', {
             center: [x, y],
