@@ -161,7 +161,7 @@ class Objects
             $cy = $karl[$i]['cy'];
             $name = $karl[$i]['name'];
             $description = $karl[$i]['description'];
-            $mes = NULL;
+            
             $mes[$i] = [
                     "type" => "Feature",
                     "id" => $id,
@@ -186,7 +186,7 @@ class Objects
         //$res = $db -> rawQuery("SELECT * FROM object WHERE $Max_X > 'cx' AND 'cx' > $Min_X AND $Max_Y > 'cy' AND 'cy' > $Min_Y");
        // $msg = $db->getLastError();
        // echo  $msg;
-        echo $respone;
+        return $respone;
     }
 
 }
